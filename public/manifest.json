@@ -1,0 +1,8 @@
+{
+  "short_name": "Ramis Portfolio",
+  "name": "Ramis Portfolio with React and Three.js",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
