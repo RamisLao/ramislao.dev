@@ -14,7 +14,7 @@ export const StyledRow = styled.div.attrs((props) => ({
 	flex-direction: row;
 `;
 
-export const StyledRowAlignCenter = styled(FlexRow)`
+export const StyledRowAlignCenter = styled(StyledRow)`
 	align-items: center;
 `;
 

@@ -14,17 +14,15 @@ const MainContainer = styled.div`
 const Frame = styled.div`
 	position: absolute;
 	overflow: hidden; // Clip the image if it goes outside the frame dimensions
-	background-repeat: no-repeat;
-	// Add other background properties as needed
+	z-index: 10;
 `;
 
 const TopFrame = styled(Frame)`
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 193px; // Adjust as needed
+	height: 160px; // Adjust as needed
 	background-image: url('/images/bg_top.png');
-	// Other background properties
 `;
 
 const LeftFrame = styled(Frame)`
@@ -33,7 +31,6 @@ const LeftFrame = styled(Frame)`
 	bottom: 0;
 	width: 109px; // Adjust as needed
 	background-image: url('/images/bg_left.png');
-	// Other background properties
 `;
 
 const RightFrame = styled(Frame)`
@@ -42,11 +39,11 @@ const RightFrame = styled(Frame)`
 	bottom: 0;
 	width: 159px; // Adjust as needed
 	background-image: url('/images/bg_right.png');
-	// Other background properties
 `;
 
 const Content = styled.div`
-	overflow-y: scroll; // Enables scrolling for content
+	overflow-y: auto; // Enables scrolling for content
+	height: 100%;
 `;
 
 export default function RootLayout({ children }) {
@@ -67,7 +64,20 @@ export default function RootLayout({ children }) {
 					href='/favicon.ico'
 				/>
 				<link
-					href='https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'
+					rel='preconnect'
+					href='https://fonts.googleapis.com'
+				/>
+				<link
+					rel='preconnect'
+					href='https://fonts.gstatic.com'
+					crossorigin
+				/>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap'
+					rel='stylesheet'
+				/>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Baloo:wght@400;800&display=swap'
 					rel='stylesheet'
 				/>
 			</head>
