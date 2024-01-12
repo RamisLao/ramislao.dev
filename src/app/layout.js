@@ -44,6 +44,7 @@ const RightFrame = styled(Frame)`
 const Content = styled.div`
 	overflow-y: auto; // Enables scrolling for content
 	height: 100%;
+	width: 100%;
 `;
 
 export default function RootLayout({ children }) {

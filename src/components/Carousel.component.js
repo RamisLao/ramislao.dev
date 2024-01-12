@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { StyledRowAlignCenter, StyledButtonNoStyle } from '@/styles/common.styles';
+import colors from '@/styles/colors.styles';
 
 const StyledArrowButtons = styled(StyledButtonNoStyle)`
 	transition: all 0.2s ease-in-out;
@@ -25,7 +26,10 @@ export default function Carousel({ children }) {
 	return (
 		<StyledRowAlignCenter
 			style={{
-				gap: '30px',
+				gap: '50px',
+				backgroundColor: colors.yellow.light,
+				padding: '50px',
+				borderRadius: '20px',
 			}}>
 			<StyledArrowButtons onClick={handlePrev}>
 				<img
