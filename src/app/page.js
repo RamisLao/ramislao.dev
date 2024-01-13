@@ -1,12 +1,12 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
+import MenuLink from '@/components/MenuLink.component';
 
 const ScrollSnapContainer = styled.div`
 	scroll-snap-type: y mandatory;
@@ -21,7 +21,15 @@ const ScrollSnapSection = styled(StyledCol)`
 	height: 100vh;
 `;
 
-const Page = () => {
+const MainPage = () => {
+	const sectionGamesRef = useRef(null);
+
+	const scrollToSection = (ref) => {
+		if (ref.current) {
+			ref.current.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+
 	return (
 		<ScrollSnapContainer>
 			<ScrollSnapSection
@@ -62,42 +70,15 @@ const Page = () => {
 						gap: '100px',
 					}}>
 					<MenuLink
-						href='/'
-						padding={'0px 0px 0px 12px'}
-						width={'102px'}
-						height={'66px'}
-						margin={'0px 20px 0px 0px'}>
+						onClick={() => {
+							scrollToSection(sectionGamesRef);
+						}}>
 						Games
 					</MenuLink>
-					<MenuLink
-						href='/'
-						width={'83px'}
-						height={'55px'}
-						padding={'0px 10px 0px 0px'}>
-						Tech
-					</MenuLink>
-					<MenuLink
-						href='/'
-						width={'175px'}
-						height={'65px'}
-						padding={'0px 0px 0px 0px'}>
-						Illustrations
-					</MenuLink>
-					<MenuLink
-						href='/'
-						width={'115px'}
-						height={'50px'}
-						padding={'0px 18px 0px 0px'}
-						margin={'0px 0px 0px 20px'}>
-						Music
-					</MenuLink>
-					<MenuLink
-						href='/'
-						width={'103px'}
-						height={'56px'}
-						padding={'0px 4px 0px 0px'}>
-						About
-					</MenuLink>
+					<MenuLink>Tech</MenuLink>
+					<MenuLink>Illustrations</MenuLink>
+					<MenuLink>Music</MenuLink>
+					<MenuLink>About</MenuLink>
 				</StyledRowAlignCenter>
 				<img
 					src='/images/separator_top.png'
@@ -109,12 +90,13 @@ const Page = () => {
 			</ScrollSnapSection>
 
 			<ScrollSnapSection
+				ref={sectionGamesRef}
 				style={{
 					alignItems: 'center',
 					justifyContent: 'center',
 					height: '100vh',
 					width: '100%',
-					backgroundColor: colors.yellow.light,
+					backgroundColor: colors.white,
 				}}>
 				<span
 					style={{
@@ -131,44 +113,4 @@ const Page = () => {
 	);
 };
 
-const LinkBackground = styled(StyledCol)`
-	align-items: center;
-	justify-content: center;
-	width: ${(props) => props.width};
-	height: ${(props) => props.height};
-	background-image: none;
-	transition: transform 0.1s ease-in-out;
-
-	&:hover {
-		color: ${colors.yellow.light};
-		transform: scale(1.1);
-	}
-`;
-
-const MenuLink = ({ href, children, imageUrl, padding, width, height, margin }) => {
-	return (
-		<Link
-			href={href}
-			style={{
-				textDecoration: 'none',
-				color: colors.blueGreen.medium,
-				fontSize: '32px',
-				fontWeight: '900',
-				margin,
-			}}>
-			<LinkBackground
-				$imageUrl={imageUrl}
-				width={width}
-				height={height}>
-				<span
-					style={{
-						padding,
-					}}>
-					{children}
-				</span>
-			</LinkBackground>
-		</Link>
-	);
-};
-
-export default Page;
+export default MainPage;
