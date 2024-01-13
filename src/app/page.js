@@ -144,7 +144,7 @@ const LinkBackground = styled(StyledCol)`
 	background-image: none;
 
 	&:hover {
-		background-image: ${(props) => props.imageurl};
+		background-image: ${(props) => props.$imageUrl};
 	}
 `;
 
@@ -160,7 +160,7 @@ const MenuLink = ({ href, children, imageUrl, padding, width, height, margin }) 
 				margin,
 			}}>
 			<LinkBackground
-				imageurl={imageUrl}
+				$imageUrl={imageUrl}
 				width={width}
 				height={height}>
 				<span
