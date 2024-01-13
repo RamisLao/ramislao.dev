@@ -19,10 +19,25 @@ const ScrollSnapContainer = styled.div`
 const ScrollSnapSection = styled(StyledCol)`
 	scroll-snap-align: start;
 	height: 100vh;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	background-color: ${(props) => props.backgroundColor || colors.white};
+`;
+
+const StyledSectionTitle = styled.span`
+	font-family: 'Baloo';
+	font-size: 128px;
+	color: ${(props) => props.color || colors.black};
+	font-weight: bold;
 `;
 
 const MainPage = () => {
 	const sectionGamesRef = useRef(null);
+	const sectionTechRef = useRef(null);
+	const sectionIllustrationsRef = useRef(null);
+	const sectionMusicRef = useRef(null);
+	const sectionAboutRef = useRef(null);
 
 	const scrollToSection = (ref) => {
 		if (ref.current) {
@@ -32,12 +47,7 @@ const MainPage = () => {
 
 	return (
 		<ScrollSnapContainer>
-			<ScrollSnapSection
-				style={{
-					alignItems: 'center',
-					justifyContent: 'center',
-					height: '100vh',
-				}}>
+			<ScrollSnapSection>
 				<span
 					style={{
 						fontFamily: 'Baloo',
@@ -75,10 +85,30 @@ const MainPage = () => {
 						}}>
 						Games
 					</MenuLink>
-					<MenuLink>Tech</MenuLink>
-					<MenuLink>Illustrations</MenuLink>
-					<MenuLink>Music</MenuLink>
-					<MenuLink>About</MenuLink>
+					<MenuLink
+						onClick={() => {
+							scrollToSection(sectionTechRef);
+						}}>
+						Tech
+					</MenuLink>
+					<MenuLink
+						onClick={() => {
+							scrollToSection(sectionIllustrationsRef);
+						}}>
+						Illustrations
+					</MenuLink>
+					<MenuLink
+						onClick={() => {
+							scrollToSection(sectionMusicRef);
+						}}>
+						Music
+					</MenuLink>
+					<MenuLink
+						onClick={() => {
+							scrollToSection(sectionAboutRef);
+						}}>
+						About
+					</MenuLink>
 				</StyledRowAlignCenter>
 				<img
 					src='/images/separator_top.png'
@@ -89,25 +119,21 @@ const MainPage = () => {
 				/>
 			</ScrollSnapSection>
 
-			<ScrollSnapSection
-				ref={sectionGamesRef}
-				style={{
-					alignItems: 'center',
-					justifyContent: 'center',
-					height: '100vh',
-					width: '100%',
-					backgroundColor: colors.white,
-				}}>
-				<span
-					style={{
-						fontFamily: 'Baloo',
-						fontSize: '128px',
-						color: colors.pink.lightPure,
-						fontWeight: 'bold',
-					}}>
-					Games
-				</span>
+			<ScrollSnapSection ref={sectionGamesRef}>
+				<StyledSectionTitle color={colors.pink.lightPure}>Games</StyledSectionTitle>
 				<GamesCarousel />
+			</ScrollSnapSection>
+			<ScrollSnapSection ref={sectionTechRef}>
+				<StyledSectionTitle color={colors.blueGreen.medium}>Tech</StyledSectionTitle>
+			</ScrollSnapSection>
+			<ScrollSnapSection ref={sectionIllustrationsRef}>
+				<StyledSectionTitle color={colors.pink.light}>Illustrations</StyledSectionTitle>
+			</ScrollSnapSection>
+			<ScrollSnapSection ref={sectionMusicRef}>
+				<StyledSectionTitle color={colors.yellow.light}>Music</StyledSectionTitle>
+			</ScrollSnapSection>
+			<ScrollSnapSection ref={sectionAboutRef}>
+				<StyledSectionTitle>About</StyledSectionTitle>
 			</ScrollSnapSection>
 		</ScrollSnapContainer>
 	);
