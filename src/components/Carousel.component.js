@@ -27,8 +27,6 @@ export default function Carousel({ children }) {
 		<StyledRowAlignCenter
 			style={{
 				gap: '50px',
-				backgroundColor: colors.yellow.light,
-				padding: '50px',
 				borderRadius: '20px',
 			}}>
 			<StyledArrowButtons onClick={handlePrev}>

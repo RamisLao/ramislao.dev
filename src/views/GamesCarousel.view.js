@@ -54,6 +54,7 @@ export default function GamesCarousel() {
 
 const CallToAction = styled.span`
 	font-size: 25px;
+	font-weight: bold;
 	color: ${colors.pink.lightPure};
 	transition: all 0.2s ease-in-out;
 	width: fit-content;

@@ -5,6 +5,7 @@ const colors = {
 		darkDull: '#525d5e',
 	},
 	yellow: {
+		veryLightDull: '#f7efa8',
 		light: '#e0d35e',
 	},
 	pink: {

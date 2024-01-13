@@ -33,37 +33,36 @@ const Page = () => {
 				<span
 					style={{
 						fontFamily: 'Baloo',
-						fontSize: '140px',
+						fontSize: '160px',
 						color: colors.blueGreen.light,
 						lineHeight: '1',
-						marginBottom: '20px',
+						marginBottom: '30px',
 						fontWeight: '400',
 					}}>
 					Ramis Lao
 				</span>
 				<span
 					style={{
-						fontSize: '20px',
+						fontSize: '24px',
 						color: colors.pink.light,
 						fontWeight: 'bold',
 					}}>
-					Game Designer, Programmer, Illustrator
+					Programmer, Game Designer, Illustrator
 				</span>
 				<img
 					src='/images/separator_top.png'
 					style={{
-						marginTop: '30px',
-						width: '630px',
+						marginTop: '90px',
+						width: '800px',
 					}}
 				/>
 				<StyledRowAlignCenter
 					style={{
 						marginTop: '30px',
-						gap: '80px',
+						gap: '100px',
 					}}>
 					<MenuLink
 						href='/'
-						imageUrl={'url(/images/ornament_games.png)'}
 						padding={'0px 0px 0px 12px'}
 						width={'102px'}
 						height={'66px'}
@@ -72,7 +71,6 @@ const Page = () => {
 					</MenuLink>
 					<MenuLink
 						href='/'
-						imageUrl={'url(/images/ornament_tech.png)'}
 						width={'83px'}
 						height={'55px'}
 						padding={'0px 10px 0px 0px'}>
@@ -80,7 +78,6 @@ const Page = () => {
 					</MenuLink>
 					<MenuLink
 						href='/'
-						imageUrl={'url(/images/ornament_illustrations.png)'}
 						width={'175px'}
 						height={'65px'}
 						padding={'0px 0px 0px 0px'}>
@@ -88,7 +85,6 @@ const Page = () => {
 					</MenuLink>
 					<MenuLink
 						href='/'
-						imageUrl={'url(/images/ornament_music.png)'}
 						width={'115px'}
 						height={'50px'}
 						padding={'0px 18px 0px 0px'}
@@ -97,7 +93,6 @@ const Page = () => {
 					</MenuLink>
 					<MenuLink
 						href='/'
-						imageUrl={'url(/images/ornament_about.png)'}
 						width={'103px'}
 						height={'56px'}
 						padding={'0px 4px 0px 0px'}>
@@ -105,10 +100,10 @@ const Page = () => {
 					</MenuLink>
 				</StyledRowAlignCenter>
 				<img
-					src='/images/separator_bottom.png'
+					src='/images/separator_top.png'
 					style={{
 						marginTop: '30px',
-						width: '630px',
+						width: '800px',
 					}}
 				/>
 			</ScrollSnapSection>
@@ -119,14 +114,14 @@ const Page = () => {
 					justifyContent: 'center',
 					height: '100vh',
 					width: '100%',
+					backgroundColor: colors.yellow.light,
 				}}>
 				<span
 					style={{
-						fontSize: '80px',
-						color: colors.yellow.light,
+						fontFamily: 'Baloo',
+						fontSize: '128px',
+						color: colors.pink.lightPure,
 						fontWeight: 'bold',
-						marginTop: '150px',
-						marginBottom: '50px',
 					}}>
 					Games
 				</span>
@@ -142,9 +137,11 @@ const LinkBackground = styled(StyledCol)`
 	width: ${(props) => props.width};
 	height: ${(props) => props.height};
 	background-image: none;
+	transition: transform 0.1s ease-in-out;
 
 	&:hover {
-		background-image: ${(props) => props.$imageUrl};
+		color: ${colors.yellow.light};
+		transform: scale(1.1);
 	}
 `;
 
@@ -155,7 +152,7 @@ const MenuLink = ({ href, children, imageUrl, padding, width, height, margin }) 
 			style={{
 				textDecoration: 'none',
 				color: colors.blueGreen.medium,
-				fontSize: '30px',
+				fontSize: '32px',
 				fontWeight: '900',
 				margin,
 			}}>
