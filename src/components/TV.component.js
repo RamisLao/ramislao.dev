@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const VideoContainer = styled.div`
 	position: relative;
-	width: 846px; // Set the width to your preference or dynamically
-	height: 542px; // Set the height to match the aspect ratio of the video
+	width: 809px; // Set the width to your preference or dynamically
+	height: 461px; // Set the height to match the aspect ratio of the video
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -3,7 +3,7 @@
 import './globals.css';
 import styled from 'styled-components';
 
-import StyledComponentsRegistry from '@/lib/registry.lib';
+import StyledComponentsRegistry from '@/libs/registry.lib';
 
 const MainContainer = styled.div`
 	position: relative;

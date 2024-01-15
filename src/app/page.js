@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
 import MenuLink from '@/components/MenuLink.component';
+import PopupGames from '@/components/PopupGames.component';
 
 const ScrollSnapContainer = styled.div`
 	scroll-snap-type: y mandatory;
@@ -39,6 +40,8 @@ const MainPage = () => {
 	const sectionMusicRef = useRef(null);
 	const sectionAboutRef = useRef(null);
 
+	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
+
 	const scrollToSection = (ref) => {
 		if (ref.current) {
 			ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -46,96 +49,105 @@ const MainPage = () => {
 	};
 
 	return (
-		<ScrollSnapContainer>
-			<ScrollSnapSection>
-				<span
-					style={{
-						fontFamily: 'Baloo',
-						fontSize: '160px',
-						color: colors.blueGreen.light,
-						lineHeight: '1',
-						marginBottom: '30px',
-						fontWeight: '400',
-					}}>
-					Ramis Lao
-				</span>
-				<span
-					style={{
-						fontSize: '24px',
-						color: colors.pink.light,
-						fontWeight: 'bold',
-					}}>
-					Programmer, Game Designer, Illustrator
-				</span>
-				<img
-					src='/images/separator_top.png'
-					style={{
-						marginTop: '90px',
-						width: '800px',
+		<>
+			{/* {isPopupGamesOpen && (
+				<PopupGames
+					onClose={() => {
+						setIsPopupGamesOpen(false);
 					}}
 				/>
-				<StyledRowAlignCenter
-					style={{
-						marginTop: '30px',
-						gap: '100px',
-					}}>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionGamesRef);
+			)} */}
+			<ScrollSnapContainer>
+				<ScrollSnapSection>
+					<span
+						style={{
+							fontFamily: 'Baloo',
+							fontSize: '160px',
+							color: colors.blueGreen.light,
+							lineHeight: '1',
+							marginBottom: '30px',
+							fontWeight: '400',
 						}}>
-						Games
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionTechRef);
+						Ramis Lao
+					</span>
+					<span
+						style={{
+							fontSize: '24px',
+							color: colors.pink.light,
+							fontWeight: 'bold',
 						}}>
-						Tech
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionIllustrationsRef);
+						Programmer, Game Designer, Illustrator
+					</span>
+					<img
+						src='/images/separator_top.png'
+						style={{
+							marginTop: '90px',
+							width: '800px',
+						}}
+					/>
+					<StyledRowAlignCenter
+						style={{
+							marginTop: '30px',
+							gap: '100px',
 						}}>
-						Illustrations
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionMusicRef);
-						}}>
-						Music
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionAboutRef);
-						}}>
-						About
-					</MenuLink>
-				</StyledRowAlignCenter>
-				<img
-					src='/images/separator_top.png'
-					style={{
-						marginTop: '30px',
-						width: '800px',
-					}}
-				/>
-			</ScrollSnapSection>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionGamesRef);
+							}}>
+							Games
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionTechRef);
+							}}>
+							Tech
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionIllustrationsRef);
+							}}>
+							Illustrations
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionMusicRef);
+							}}>
+							Music
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionAboutRef);
+							}}>
+							About
+						</MenuLink>
+					</StyledRowAlignCenter>
+					<img
+						src='/images/separator_top.png'
+						style={{
+							marginTop: '30px',
+							width: '800px',
+						}}
+					/>
+				</ScrollSnapSection>
 
-			<ScrollSnapSection ref={sectionGamesRef}>
-				<StyledSectionTitle color={colors.pink.lightPure}>Games</StyledSectionTitle>
-				<GamesCarousel />
-			</ScrollSnapSection>
-			<ScrollSnapSection ref={sectionTechRef}>
-				<StyledSectionTitle color={colors.blueGreen.medium}>Tech</StyledSectionTitle>
-			</ScrollSnapSection>
-			<ScrollSnapSection ref={sectionIllustrationsRef}>
-				<StyledSectionTitle color={colors.pink.light}>Illustrations</StyledSectionTitle>
-			</ScrollSnapSection>
-			<ScrollSnapSection ref={sectionMusicRef}>
-				<StyledSectionTitle color={colors.yellow.light}>Music</StyledSectionTitle>
-			</ScrollSnapSection>
-			<ScrollSnapSection ref={sectionAboutRef}>
-				<StyledSectionTitle>About</StyledSectionTitle>
-			</ScrollSnapSection>
-		</ScrollSnapContainer>
+				<ScrollSnapSection ref={sectionGamesRef}>
+					<StyledSectionTitle color={colors.pink.lightPure}>Games</StyledSectionTitle>
+					<GamesCarousel />
+				</ScrollSnapSection>
+				<ScrollSnapSection ref={sectionTechRef}>
+					<StyledSectionTitle color={colors.blueGreen.medium}>Tech</StyledSectionTitle>
+				</ScrollSnapSection>
+				<ScrollSnapSection ref={sectionIllustrationsRef}>
+					<StyledSectionTitle color={colors.pink.light}>Illustrations</StyledSectionTitle>
+				</ScrollSnapSection>
+				<ScrollSnapSection ref={sectionMusicRef}>
+					<StyledSectionTitle color={colors.yellow.light}>Music</StyledSectionTitle>
+				</ScrollSnapSection>
+				<ScrollSnapSection ref={sectionAboutRef}>
+					<StyledSectionTitle>About</StyledSectionTitle>
+				</ScrollSnapSection>
+			</ScrollSnapContainer>
+		</>
 	);
 };
 
