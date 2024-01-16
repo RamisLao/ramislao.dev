@@ -19,7 +19,7 @@ export default function GamesCarousel() {
 					}}
 				/>
 			)}
-			<Carousel>
+			<Carousel childWidth={'1200px'}>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
 					title={'Luna (2022)'}
@@ -118,6 +118,7 @@ const ItemGame = ({ videoUrl, title, description, descriptionSize, playUrl, onDe
 		<StyledRowAlignCenter
 			style={{
 				gap: '20px',
+				width: '1200px',
 			}}>
 			<TV url={urlAutoplayMute} />
 			<StyledCol
