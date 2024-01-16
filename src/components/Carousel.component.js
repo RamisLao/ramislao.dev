@@ -13,14 +13,14 @@ const StyledArrowButtons = styled(StyledButtonNoStyle)`
 
 const StyledCarouselContainer = styled.div`
 	display: flex;
-	width: ${(props) => props.childWidth};
+	width: ${(props) => props.$childWidth};
 	overflow: hidden;
 `;
 
 const StyledItemContainer = styled.div`
 	display: flex;
 	transition: transform 0.3s ease-in-out;
-	width: ${(props) => props.totalWidth};
+	width: ${(props) => props.$totalWidth};
 `;
 
 const StyledItem = styled.div`
@@ -54,9 +54,9 @@ export default function Carousel({ children, childWidth }) {
 					alt='Arrow Left'
 				/>
 			</StyledArrowButtons>
-			<StyledCarouselContainer childWidth={childWidth}>
+			<StyledCarouselContainer $childWidth={childWidth}>
 				<StyledItemContainer
-					totalWidth={`${children.length * 100}%`}
+					$totalWidth={`${children.length * 100}%`}
 					style={{
 						transform: `translateX(-${activeIndex * 100}%)`,
 					}}>

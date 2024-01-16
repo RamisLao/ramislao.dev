@@ -24,7 +24,7 @@ const StyledPopupGenericFullScreen = styled.div`
 	height: 100vh;
 	background-color: white;
 	z-index: ${(props) => props.zIndex || 20};
-	animation: ${(props) => (props.isClosing ? slideOutToLeft : slideInFromLeft)} 0.5s ease-out forwards;
+	animation: ${(props) => (props.isClosing ? slideOutToLeft : slideInFromLeft)} 0.3s ease-out forwards;
 `;
 
 export default function PopupGenericFullScreen({ children, onClickOutside, zIndex = 10, style = {} }) {
