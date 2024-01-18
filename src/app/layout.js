@@ -14,7 +14,6 @@ const MainContainer = styled.div`
 
 const Frame = styled.div`
 	position: absolute;
-	overflow: hidden; // Clip the image if it goes outside the frame dimensions
 	z-index: 10;
 `;
 
@@ -22,48 +21,18 @@ const TopFrame = styled(Frame)`
 	top: 0;
 	left: 0;
 	right: 0;
-
-	@media only screen and (max-width: 767px) {
-		height: 166px;
-		background-image: url('/images/mobile_android/bg_top.png');
-	}
-
-	@media only screen and (min-width: 768px) {
-		height: 160px;
-		background-image: url('/images/desktop_big/bg_top.png');
-	}
 `;
 
 const LeftFrame = styled(Frame)`
 	top: 0;
 	left: 0;
 	bottom: 0;
-
-	@media only screen and (max-width: 767px) {
-		width: 101px; // Adjust as needed
-		background-image: url('/images/mobile_android/bg_left.png');
-	}
-
-	@media only screen and (min-width: 768px) {
-		width: 109px; // Adjust as needed
-		background-image: url('/images/desktop_big/bg_left.png');
-	}
 `;
 
 const RightFrame = styled(Frame)`
 	top: 0;
 	right: 0;
 	bottom: 0;
-
-	@media only screen and (max-width: 767px) {
-		width: 91px; // Adjust as needed
-		background-image: url('/images/mobile_android/bg_right.png');
-	}
-
-	@media only screen and (min-width: 768px) {
-		width: 159px; // Adjust as needed
-		background-image: url('/images/desktop_big/bg_right.png');
-	}
 `;
 
 const Content = styled.div`
@@ -110,9 +79,72 @@ export default function RootLayout({ children }) {
 				<VFXProvider>
 					<StyledComponentsRegistry>
 						<MainContainer>
-							<TopFrame />
-							<LeftFrame />
-							<RightFrame />
+							<TopFrame>
+								<picture>
+									<source
+										media='(max-width: 767px)'
+										srcSet='/images/mobile_android/bg_top.png'
+									/>
+									<source
+										media='(min-width: 768px)'
+										srcSet='/images/desktop_big/bg_top.png'
+									/>
+									<img
+										src='/images/mobile_android/bg_top.png'
+										alt='Top Frame'
+										style={{
+											width: 'auto',
+											height: '100%',
+											maxWidth: '100%',
+											objectFit: 'cover',
+										}}
+									/>
+								</picture>
+							</TopFrame>
+							<LeftFrame>
+								<picture>
+									<source
+										media='(max-width: 767px)'
+										srcSet='/images/mobile_android/bg_left.png'
+									/>
+									<source
+										media='(min-width: 768px)'
+										srcSet='/images/desktop_big/bg_left.png'
+									/>
+									<img
+										src='/images/mobile_android/bg_left.png'
+										alt='Left Frame'
+										style={{
+											width: 'auto',
+											height: '100%',
+											maxWidth: '100%',
+											objectFit: 'cover',
+										}}
+									/>
+								</picture>
+							</LeftFrame>
+							<RightFrame>
+								<picture>
+									<source
+										media='(max-width: 767px)'
+										srcSet='/images/mobile_android/bg_right.png'
+									/>
+									<source
+										media='(min-width: 768px)'
+										srcSet='/images/desktop_big/bg_right.png'
+									/>
+									<img
+										src='/images/mobile_android/bg_right.png'
+										alt='Right Frame'
+										style={{
+											width: 'auto',
+											height: '100%',
+											maxWidth: '100%',
+											objectFit: 'cover',
+										}}
+									/>
+								</picture>
+							</RightFrame>
 							<Content>{children}</Content>
 						</MainContainer>
 					</StyledComponentsRegistry>
