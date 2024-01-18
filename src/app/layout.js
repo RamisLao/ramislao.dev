@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
 											width: '100%',
 											height: 'auto',
 											maxHeight: '100%',
-											objectFit: 'cover',
+											objectFit: 'contain',
 										}}
 									/>
 								</picture>
@@ -118,7 +118,7 @@ export default function RootLayout({ children }) {
 											width: 'auto',
 											height: '100%',
 											maxWidth: '100%',
-											objectFit: 'cover',
+											objectFit: 'contain',
 										}}
 									/>
 								</picture>
@@ -140,7 +140,7 @@ export default function RootLayout({ children }) {
 											width: 'auto',
 											height: '100%',
 											maxWidth: '100%',
-											objectFit: 'cover',
+											objectFit: 'contain',
 										}}
 									/>
 								</picture>

@@ -8,6 +8,22 @@ import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
 import MenuLink from '@/components/MenuLink.component';
+import { NotMobile } from '@/components/MediaQueryConditionals.component';
+
+const MainTitle = styled.span`
+	font-family: 'Baloo';
+	color: ${colors.blueGreen.light};
+	line-height: 1;
+	font-weight: 400;
+
+	@media (max-width: 768px) {
+		font-size: 100px;
+	}
+
+	@media (min-width: 769px) {
+		font-size: 160px;
+	}
+`;
 
 const ScrollSnapContainer = styled.div`
 	scroll-snap-type: y mandatory;
@@ -109,17 +125,12 @@ const MainPage = () => {
 	return (
 		<ScrollSnapContainer id='scroll-container'>
 			<ScrollSnapSection ref={sectionRefs['title']}>
-				<span
+				<MainTitle
 					style={{
-						fontFamily: 'Baloo',
-						fontSize: '160px',
-						color: colors.blueGreen.light,
-						lineHeight: '1',
 						marginBottom: '30px',
-						fontWeight: '400',
 					}}>
 					Ramis Lao
-				</span>
+				</MainTitle>
 				<span
 					style={{
 						fontSize: '24px',
@@ -128,56 +139,59 @@ const MainPage = () => {
 					}}>
 					Programmer, Game Designer, Illustrator
 				</span>
-				<img
-					src='/images/separator_top.png'
-					style={{
-						marginTop: '90px',
-						width: '800px',
-					}}
-				/>
-				<StyledRowAlignCenter
-					style={{
-						marginTop: '30px',
-						gap: '100px',
-					}}>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionRefs['games']);
+				<NotMobile>
+					<img
+						src='/images/separator_top.png'
+						style={{
+							marginTop: '90px',
+							width: '800px',
+						}}
+					/>
+
+					<StyledRowAlignCenter
+						style={{
+							marginTop: '30px',
+							gap: '100px',
 						}}>
-						Games
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionRefs['tech']);
-						}}>
-						Tech
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionRefs['illustrations']);
-						}}>
-						Illustrations
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionRefs['music']);
-						}}>
-						Music
-					</MenuLink>
-					<MenuLink
-						onClick={() => {
-							scrollToSection(sectionRefs['about']);
-						}}>
-						About
-					</MenuLink>
-				</StyledRowAlignCenter>
-				<img
-					src='/images/separator_top.png'
-					style={{
-						marginTop: '30px',
-						width: '800px',
-					}}
-				/>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionRefs['games']);
+							}}>
+							Games
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionRefs['tech']);
+							}}>
+							Tech
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionRefs['illustrations']);
+							}}>
+							Illustrations
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionRefs['music']);
+							}}>
+							Music
+						</MenuLink>
+						<MenuLink
+							onClick={() => {
+								scrollToSection(sectionRefs['about']);
+							}}>
+							About
+						</MenuLink>
+					</StyledRowAlignCenter>
+					<img
+						src='/images/separator_top.png'
+						style={{
+							marginTop: '30px',
+							width: '800px',
+						}}
+					/>
+				</NotMobile>
 			</ScrollSnapSection>
 
 			<ScrollSnapSection ref={sectionRefs['games']}>
