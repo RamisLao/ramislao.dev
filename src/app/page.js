@@ -205,7 +205,6 @@ const MainPage = () => {
 				<StyledUpButton
 					ref={upButtonRef}
 					onClick={() => {
-						console.log('click');
 						scrollToSection(sectionRefs['title']);
 					}}>
 					Back to Top

@@ -30,6 +30,7 @@ export default function GamesCarousel() {
 					onDetailClick={() => {
 						setIsPopupGamesOpen(true);
 					}}
+					videoID={'zUCQtuZVYwY'}
 				/>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/YX2algRcixM?si=pVER7DGEQm1scnBU'}
@@ -41,6 +42,7 @@ export default function GamesCarousel() {
 					onDetailClick={() => {
 						setIsPopupGamesOpen(true);
 					}}
+					videoID={'YX2algRcixM'}
 				/>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/BnvL6Wmxgyo?si=3Y8URVpSdAuNWQPw'}
@@ -52,6 +54,7 @@ export default function GamesCarousel() {
 					onDetailClick={() => {
 						setIsPopupGamesOpen(true);
 					}}
+					videoID={'BnvL6Wmxgyo'}
 				/>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/VY78dX4p_Yk?si=GwJv45GHE4PKWu_S'}
@@ -63,6 +66,7 @@ export default function GamesCarousel() {
 					onDetailClick={() => {
 						setIsPopupGamesOpen(true);
 					}}
+					videoID={'VY78dX4p_Yk'}
 				/>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/whVxHwvY5Qw?si=KqjFkuDMXigFkhHG'}
@@ -74,6 +78,7 @@ export default function GamesCarousel() {
 					onDetailClick={() => {
 						setIsPopupGamesOpen(true);
 					}}
+					videoID={'whVxHwvY5Qw'}
 				/>
 			</Carousel>
 		</>
@@ -111,8 +116,8 @@ const CallToAction = styled.span`
 	}
 `;
 
-const ItemGame = ({ videoUrl, title, description, descriptionSize, playUrl, onDetailClick }) => {
-	const urlAutoplayMute = videoUrl + '&autoplay=1&mute=1';
+const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, playUrl, onDetailClick }) => {
+	const urlAutoplayMute = videoUrl + `&autoplay=1&mute=1&loop=1&playlist=${videoID}`;
 
 	return (
 		<StyledRowAlignCenter

@@ -4,6 +4,7 @@ import './globals.css';
 import styled from 'styled-components';
 
 import StyledComponentsRegistry from '@/libs/registry.lib';
+import { VFXProvider } from 'react-vfx';
 
 const MainContainer = styled.div`
 	position: relative;
@@ -21,24 +22,48 @@ const TopFrame = styled(Frame)`
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 160px; // Adjust as needed
-	background-image: url('/images/bg_top.png');
+
+	@media only screen and (max-width: 767px) {
+		height: 166px;
+		background-image: url('/images/mobile_android/bg_top.png');
+	}
+
+	@media only screen and (min-width: 768px) {
+		height: 160px;
+		background-image: url('/images/desktop_big/bg_top.png');
+	}
 `;
 
 const LeftFrame = styled(Frame)`
 	top: 0;
 	left: 0;
 	bottom: 0;
-	width: 109px; // Adjust as needed
-	background-image: url('/images/bg_left.png');
+
+	@media only screen and (max-width: 767px) {
+		width: 101px; // Adjust as needed
+		background-image: url('/images/mobile_android/bg_left.png');
+	}
+
+	@media only screen and (min-width: 768px) {
+		width: 109px; // Adjust as needed
+		background-image: url('/images/desktop_big/bg_left.png');
+	}
 `;
 
 const RightFrame = styled(Frame)`
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 159px; // Adjust as needed
-	background-image: url('/images/bg_right.png');
+
+	@media only screen and (max-width: 767px) {
+		width: 91px; // Adjust as needed
+		background-image: url('/images/mobile_android/bg_right.png');
+	}
+
+	@media only screen and (min-width: 768px) {
+		width: 159px; // Adjust as needed
+		background-image: url('/images/desktop_big/bg_right.png');
+	}
 `;
 
 const Content = styled.div`
@@ -82,14 +107,16 @@ export default function RootLayout({ children }) {
 				/>
 			</head>
 			<body>
-				<StyledComponentsRegistry>
-					<MainContainer>
-						<TopFrame />
-						<LeftFrame />
-						<RightFrame />
-						<Content>{children}</Content>
-					</MainContainer>
-				</StyledComponentsRegistry>
+				<VFXProvider>
+					<StyledComponentsRegistry>
+						<MainContainer>
+							<TopFrame />
+							<LeftFrame />
+							<RightFrame />
+							<Content>{children}</Content>
+						</MainContainer>
+					</StyledComponentsRegistry>
+				</VFXProvider>
 			</body>
 		</html>
 	);
