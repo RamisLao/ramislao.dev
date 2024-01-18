@@ -93,9 +93,9 @@ export default function RootLayout({ children }) {
 										src='/images/mobile_android/bg_top.png'
 										alt='Top Frame'
 										style={{
-											width: 'auto',
-											height: '100%',
-											maxWidth: '100%',
+											width: '100%',
+											height: 'auto',
+											maxHeight: '100%',
 											objectFit: 'cover',
 										}}
 									/>
