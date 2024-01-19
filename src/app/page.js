@@ -17,11 +17,26 @@ const MainTitle = styled.span`
 	font-weight: 400;
 
 	@media (max-width: 768px) {
-		font-size: 100px;
+		font-size: 60px;
+		margin-bottom: 15px;
 	}
 
 	@media (min-width: 769px) {
 		font-size: 160px;
+		margin-bottom: 30px;
+	}
+`;
+
+const MainSubtitle = styled.span`
+	color: ${colors.pink.light};
+	font-weight: bold;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+
+	@media (min-width: 769px) {
+		font-size: 24px;
 	}
 `;
 
@@ -125,20 +140,8 @@ const MainPage = () => {
 	return (
 		<ScrollSnapContainer id='scroll-container'>
 			<ScrollSnapSection ref={sectionRefs['title']}>
-				<MainTitle
-					style={{
-						marginBottom: '30px',
-					}}>
-					Ramis Lao
-				</MainTitle>
-				<span
-					style={{
-						fontSize: '24px',
-						color: colors.pink.light,
-						fontWeight: 'bold',
-					}}>
-					Programmer, Game Designer, Illustrator
-				</span>
+				<MainTitle>Ramis Lao</MainTitle>
+				<MainSubtitle>Programmer, Game Designer, Illustrator</MainSubtitle>
 				<NotMobile>
 					<img
 						src='/images/separator_top.png'
