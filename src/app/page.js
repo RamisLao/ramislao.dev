@@ -8,7 +8,7 @@ import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
 import MenuLink from '@/components/MenuLink.component';
-import { NotMobile } from '@/components/MediaQueryConditionals.component';
+import { NotMobile, Mobile } from '@/components/MediaQueryConditionals.component';
 
 const MainTitle = styled.span`
 	font-family: 'Baloo';
@@ -100,6 +100,44 @@ const StyledUpButton = styled.button`
 	}
 `;
 
+const StyledMenuDesktop = styled(StyledCol)`
+	@media (max-width: 767px) {
+		display: none;
+	}
+`;
+
+const StyledMenuMobile = styled(StyledCol)`
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
+const StyledMobileMenuButton = styled(StyledCol)`
+	background-image: url(${(props) => props.$image});
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100px;
+	height: 100px;
+	transition: all 0.2s ease-in-out;
+
+	align-items: center;
+	justify-content: center;
+
+	font-family: 'Baloo';
+	font-size: 20px;
+	font-weight: bold;
+	color: ${colors.white};
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+`;
+
 const MainPage = () => {
 	const sectionRefs = {
 		title: useRef(null),
@@ -142,7 +180,66 @@ const MainPage = () => {
 			<ScrollSnapSection ref={sectionRefs['title']}>
 				<MainTitle>Ramis Lao</MainTitle>
 				<MainSubtitle>Programmer, Game Designer, Illustrator</MainSubtitle>
-				<NotMobile>
+				<StyledMenuMobile>
+					<img
+						src='/images/separator_top.png'
+						style={{
+							marginTop: '30px',
+							width: '250px',
+						}}
+					/>
+					<StyledRowAlignCenter
+						style={{
+							gap: '50px',
+						}}>
+						<StyledMobileMenuButton
+							$image='/images/mobile_android/menu_button_games.png'
+							onClick={() => {
+								scrollToSection(sectionRefs['games']);
+							}}>
+							<span>Games</span>
+						</StyledMobileMenuButton>
+						<StyledMobileMenuButton
+							$image='/images/mobile_android/menu_button_tech.png'
+							onClick={() => {
+								scrollToSection(sectionRefs['tech']);
+							}}>
+							<span>Tech</span>
+						</StyledMobileMenuButton>
+					</StyledRowAlignCenter>
+					<StyledRowAlignCenter
+						style={{
+							gap: '50px',
+						}}>
+						<StyledMobileMenuButton
+							style={{
+								fontSize: '14px',
+							}}
+							$image='/images/mobile_android/menu_button_illustrations.png'
+							onClick={() => {
+								scrollToSection(sectionRefs['illustrations']);
+							}}>
+							<span>Illustrations</span>
+						</StyledMobileMenuButton>
+						<StyledMobileMenuButton
+							$image='/images/mobile_android/menu_button_music.png'
+							onClick={() => {
+								scrollToSection(sectionRefs['music']);
+							}}>
+							<span>Music</span>
+						</StyledMobileMenuButton>
+					</StyledRowAlignCenter>
+					<StyledRowAlignCenter>
+						<StyledMobileMenuButton
+							$image='/images/mobile_android/menu_button_about.png'
+							onClick={() => {
+								scrollToSection(sectionRefs['about']);
+							}}>
+							<span>About</span>
+						</StyledMobileMenuButton>
+					</StyledRowAlignCenter>
+				</StyledMenuMobile>
+				<StyledMenuDesktop>
 					<img
 						src='/images/separator_top.png'
 						style={{
@@ -150,7 +247,6 @@ const MainPage = () => {
 							width: '800px',
 						}}
 					/>
-
 					<StyledRowAlignCenter
 						style={{
 							marginTop: '30px',
@@ -194,7 +290,7 @@ const MainPage = () => {
 							width: '800px',
 						}}
 					/>
-				</NotMobile>
+				</StyledMenuDesktop>
 			</ScrollSnapSection>
 
 			<ScrollSnapSection ref={sectionRefs['games']}>
