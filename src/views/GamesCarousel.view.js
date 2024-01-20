@@ -1,14 +1,17 @@
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import Carousel from '@/components/Carousel.component';
 import TV from '@/components/TV.component';
-import { StyledRowAlignCenter, StyledCol } from '@/styles/common.styles';
+import { StyledCol } from '@/styles/common.styles';
 import colors from '@/styles/colors.styles';
 import PopupGames from '@/components/PopupGames.component';
 
 export default function GamesCarousel() {
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
+	const theme = useTheme();
+	const isMobile = useMediaQuery({ query: theme.devices.mobile });
 
 	return (
 		<>
@@ -19,7 +22,7 @@ export default function GamesCarousel() {
 					}}
 				/>
 			)}
-			<Carousel childWidth={'1200px'}>
+			<Carousel childWidth={isMobile ? '280px' : '1200px'}>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
 					title={'Luna (2022)'}
@@ -116,15 +119,31 @@ const CallToAction = styled.span`
 	}
 `;
 
+const StyledItemContainer = styled.div`
+	gap: 20px;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 280px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 1200px;
+	}
+`;
+
 const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, playUrl, onDetailClick }) => {
 	const urlAutoplayMute = videoUrl + `&autoplay=1&mute=1&loop=1&playlist=${videoID}`;
 
 	return (
-		<StyledRowAlignCenter
-			style={{
-				gap: '20px',
-				width: '1200px',
-			}}>
+		<StyledItemContainer>
 			<TV url={urlAutoplayMute} />
 			<StyledCol
 				style={{
@@ -167,6 +186,6 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 					Play the game!
 				</CallToAction>
 			</StyledCol>
-		</StyledRowAlignCenter>
+		</StyledItemContainer>
 	);
 };

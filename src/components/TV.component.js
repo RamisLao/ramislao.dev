@@ -2,11 +2,19 @@ import styled from 'styled-components';
 
 const VideoContainer = styled.div`
 	position: relative;
-	width: 809px; // Set the width to your preference or dynamically
-	height: 461px; // Set the height to match the aspect ratio of the video
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		width: 280px;
+		height: 158px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		width: 809px; // Set the width to your preference or dynamically
+		height: 461px; // Set the height to match the aspect ratio of the video
+	}
 `;
 
 const TransparentGif = styled.img`
@@ -19,8 +27,15 @@ const TransparentGif = styled.img`
 `;
 
 const YouTubeVideo = styled.iframe`
-	width: 652.8px;
-	height: 367.2px;
+	@media ${(props) => props.theme.devices.mobile} {
+		width: 224px;
+		height: 126px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		width: 652.8px;
+		height: 367.2px;
+	}
 `;
 
 export default function TV({ url }) {

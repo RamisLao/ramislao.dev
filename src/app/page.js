@@ -8,7 +8,6 @@ import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
 import MenuLink from '@/components/MenuLink.component';
-import { NotMobile, Mobile } from '@/components/MediaQueryConditionals.component';
 
 const MainTitle = styled.span`
 	font-family: 'Baloo';
@@ -16,12 +15,12 @@ const MainTitle = styled.span`
 	line-height: 1;
 	font-weight: 400;
 
-	@media (max-width: 768px) {
+	@media ${(props) => props.theme.devices.mobile} {
 		font-size: 60px;
 		margin-bottom: 15px;
 	}
 
-	@media (min-width: 769px) {
+	@media ${(props) => props.theme.devices.notMobile} {
 		font-size: 160px;
 		margin-bottom: 30px;
 	}
@@ -31,11 +30,11 @@ const MainSubtitle = styled.span`
 	color: ${colors.pink.light};
 	font-weight: bold;
 
-	@media (max-width: 768px) {
+	@media ${(props) => props.theme.devices.mobile} {
 		font-size: 14px;
 	}
 
-	@media (min-width: 769px) {
+	@media ${(props) => props.theme.devices.notMobile} {
 		font-size: 24px;
 	}
 `;
@@ -75,21 +74,24 @@ const ScrollSnapSection = styled(StyledCol)`
 
 const StyledSectionTitle = styled.span`
 	font-family: 'Baloo';
-	font-size: 128px;
 	color: ${(props) => props.color || colors.black};
 	font-weight: bold;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		font-size: 64px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		font-size: 128px;
+	}
 `;
 
 const StyledUpButton = styled.button`
 	position: fixed;
-	bottom: 20px;
-	right: 120px;
-	padding: 10px 20px;
 	border-radius: 20px;
 	background-color: ${colors.blueGreen.light};
 	color: ${colors.white};
 	font-family: 'Baloo';
-	font-size: 24px;
 	font-weight: bold;
 	border: none;
 	transition: all 0.2s ease-in-out;
@@ -98,11 +100,19 @@ const StyledUpButton = styled.button`
 		cursor: pointer;
 		background-color: ${colors.blueGreen.medium};
 	}
-`;
 
-const StyledMenuDesktop = styled(StyledCol)`
-	@media (max-width: 767px) {
-		display: none;
+	@media ${(props) => props.theme.devices.mobile} {
+		padding: 5px 10px;
+		font-size: 14px;
+		bottom: 15px;
+		right: 60px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		padding: 10px 20px;
+		font-size: 24px;
+		bottom: 20px;
+		right: 120px;
 	}
 `;
 
@@ -110,7 +120,13 @@ const StyledMenuMobile = styled(StyledCol)`
 	align-items: center;
 	justify-content: center;
 
-	@media (min-width: 768px) {
+	@media ${(props) => props.theme.devices.notMobile} {
+		display: none;
+	}
+`;
+
+const StyledMenuDesktop = styled(StyledCol)`
+	@media ${(props) => props.theme.devices.mobile} {
 		display: none;
 	}
 `;
