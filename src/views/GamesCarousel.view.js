@@ -10,6 +10,8 @@ import { StyledCol } from '@/styles/common.styles';
 import colors from '@/styles/colors.styles';
 import PopupGames from '@/components/PopupGames.component';
 
+// TODO Only play video when it's visible on screen
+
 export default function GamesCarousel() {
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
 	const theme = useTheme();
@@ -149,6 +151,8 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 			<StyledCol
 				style={{
 					height: '100%',
+					justifyContent: 'center',
+					alignItems: 'center',
 				}}>
 				<span
 					style={{
@@ -157,17 +161,15 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 						lineHeight: '1',
 						fontWeight: '400',
 						marginBottom: '30px',
-						maxWidth: '300px',
 					}}>
 					{title}
 				</span>
-				<span
+				<div
 					style={{
 						fontSize: descriptionSize || '20px',
-						maxWidth: '300px',
 					}}>
 					{description}
-				</span>
+				</div>
 				<CallToAction
 					style={{
 						marginTop: '24px',
