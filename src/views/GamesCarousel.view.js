@@ -1,8 +1,7 @@
 'use client';
 
 import styled, { useTheme } from 'styled-components';
-import { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { useState } from 'react';
 
 import Carousel from '@/components/Carousel.component';
 import TV from '@/components/TV.component';
@@ -14,7 +13,6 @@ import PopupGames from '@/components/PopupGames.component';
 
 export default function GamesCarousel() {
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
-	const theme = useTheme();
 
 	return (
 		<>
