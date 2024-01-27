@@ -161,14 +161,14 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 						lineHeight: '1',
 						fontWeight: '400',
 						marginBottom: '30px',
-						color: colors.black;
+						color: colors.black,
 					}}>
 					{title}
 				</span>
 				<div
 					style={{
 						fontSize: descriptionSize || '20px',
-						color: colors.black;
+						color: colors.black,
 					}}>
 					{description}
 				</div>
