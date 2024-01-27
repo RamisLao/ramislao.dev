@@ -68,15 +68,13 @@ const ScrollSnapSection = styled(StyledCol)`
 	height: 100vh;
 	width: 100%;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: center;
 	background-color: ${(props) => props.backgroundColor || colors.white};
 
 	@media ${(props) => props.theme.devices.mobile} {
-		padding: 30px 0px 0px 0px;
 	}
 
 	@media ${(props) => props.theme.devices.notMobile} {
-		padding: 45px 0px 0px 0px;
 	}
 `;
 
@@ -201,12 +199,7 @@ const MainPage = () => {
 
 	return (
 		<ScrollSnapContainer id='scroll-container'>
-			<ScrollSnapSection
-				ref={sectionRefs['title']}
-				style={{
-					justifyContent: 'center',
-					padding: '0px',
-				}}>
+			<ScrollSnapSection ref={sectionRefs['title']}>
 				<MainTitle>Ramis Lao</MainTitle>
 				<MainSubtitle>Programmer, Game Designer, Illustrator</MainSubtitle>
 				<StyledMenuMobile>
