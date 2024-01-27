@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -13,14 +15,21 @@ const StyledArrowButtons = styled(StyledButtonNoStyle)`
 
 const StyledCarouselContainer = styled.div`
 	display: flex;
-	width: ${(props) => props.$childWidth};
 	overflow: hidden;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		width: 280px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		width: 1200px;
+	}
 `;
 
 const StyledItemContainer = styled.div`
 	display: flex;
 	transition: transform 0.3s ease-in-out;
-	width: ${(props) => props.$totalWidth};
+	width: ${(props) => props.$totalWidth || '1200px'};
 `;
 
 const StyledItem = styled.div`
@@ -28,7 +37,7 @@ const StyledItem = styled.div`
 	flex-shrink: 0;
 `;
 
-export default function Carousel({ children, childWidth }) {
+export default function Carousel({ children }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const previousIndex = activeIndex - 1 < 0 ? children.length - 1 : activeIndex - 1;
@@ -54,7 +63,7 @@ export default function Carousel({ children, childWidth }) {
 					alt='Arrow Left'
 				/>
 			</StyledArrowButtons>
-			<StyledCarouselContainer $childWidth={childWidth}>
+			<StyledCarouselContainer>
 				<StyledItemContainer
 					$totalWidth={`${children.length * 100}%`}
 					style={{

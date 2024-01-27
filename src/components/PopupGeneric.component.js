@@ -1,3 +1,5 @@
+'use client';
+
 // Third-party
 import React, { useRef } from 'react';
 import styled from 'styled-components';

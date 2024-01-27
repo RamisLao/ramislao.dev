@@ -1,3 +1,5 @@
+'use client';
+
 import colors from '@/styles/colors.styles';
 
 const deviceBreakpoints = {

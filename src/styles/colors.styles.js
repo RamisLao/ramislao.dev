@@ -1,3 +1,5 @@
+'use client';
+
 const colors = {
 	blueGreen: {
 		light: '#6fd1e0',

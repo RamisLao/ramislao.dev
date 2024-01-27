@@ -1,5 +1,7 @@
+'use client';
+
 import styled, { useTheme } from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import Carousel from '@/components/Carousel.component';
@@ -11,7 +13,6 @@ import PopupGames from '@/components/PopupGames.component';
 export default function GamesCarousel() {
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
 	const theme = useTheme();
-	const isMobile = useMediaQuery({ query: theme.devices.mobile });
 
 	return (
 		<>
@@ -22,7 +23,7 @@ export default function GamesCarousel() {
 					}}
 				/>
 			)}
-			<Carousel childWidth={isMobile ? '280px' : '1200px'}>
+			<Carousel>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
 					title={'Luna (2022)'}

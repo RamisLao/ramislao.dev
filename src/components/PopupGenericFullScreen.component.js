@@ -1,3 +1,5 @@
+'use client';
+
 // Third-party
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
