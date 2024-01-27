@@ -49,7 +49,7 @@ export default function Carousel({ children }) {
 	const handleTouchEnd = () => {
 		// Determine swipe direction
 		const direction = touchStartPosition - touchEndPosition;
-		if (direction > 0) {
+		if (direction > 0 && direction > 50) {
 			// Swipe left (show next)
 			handleNext();
 		} else {
