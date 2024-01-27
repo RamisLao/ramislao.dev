@@ -39,16 +39,35 @@ const StyledItem = styled.div`
 
 export default function Carousel({ children }) {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [touchStartPosition, setTouchStartPosition] = useState(0);
+	const [touchEndPosition, setTouchEndPosition] = useState(0);
 
-	const previousIndex = activeIndex - 1 < 0 ? children.length - 1 : activeIndex - 1;
-	const nextIndex = activeIndex + 1 == children.length ? 0 : activeIndex + 1;
+	const handleTouchStart = (e) => {
+		setTouchStartPosition(e.touches[0].clientX);
+	};
 
-	const handleNext = () => {
-		setActiveIndex(nextIndex);
+	const handleTouchEnd = () => {
+		// Determine swipe direction
+		const direction = touchStartPosition - touchEndPosition;
+		if (direction > 0) {
+			// Swipe left (show next)
+			handleNext();
+		} else {
+			// Swipe right (show previous)
+			handlePrev();
+		}
+	};
+
+	const handleTouchMove = (e) => {
+		setTouchEndPosition(e.touches[0].clientX);
 	};
 
 	const handlePrev = () => {
-		setActiveIndex(previousIndex);
+		setActiveIndex(activeIndex - 1 < 0 ? children.length - 1 : activeIndex - 1);
+	};
+
+	const handleNext = () => {
+		setActiveIndex(activeIndex + 1 == children.length ? 0 : activeIndex + 1);
 	};
 
 	return (
@@ -63,7 +82,10 @@ export default function Carousel({ children }) {
 					alt='Arrow Left'
 				/>
 			</StyledArrowButtons>
-			<StyledCarouselContainer>
+			<StyledCarouselContainer
+				onTouchStart={handleTouchStart}
+				onTouchEnd={handleTouchEnd}
+				onTouchMove={handleTouchMove}>
 				<StyledItemContainer
 					$totalWidth={`${children.length * 100}%`}
 					style={{
