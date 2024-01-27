@@ -70,6 +70,14 @@ const ScrollSnapSection = styled(StyledCol)`
 	align-items: center;
 	justify-content: flex-start;
 	background-color: ${(props) => props.backgroundColor || colors.white};
+
+	@media ${(props) => props.theme.devices.mobile} {
+		padding: 30px 0px 0px 0px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		padding: 45px 0px 0px 0px;
+	}
 `;
 
 const StyledSectionTitle = styled.span`
@@ -197,6 +205,7 @@ const MainPage = () => {
 				ref={sectionRefs['title']}
 				style={{
 					justifyContent: 'center',
+					padding: '0px',
 				}}>
 				<MainTitle>Ramis Lao</MainTitle>
 				<MainSubtitle>Programmer, Game Designer, Illustrator</MainSubtitle>
@@ -313,11 +322,7 @@ const MainPage = () => {
 				</StyledMenuDesktop>
 			</ScrollSnapSection>
 
-			<ScrollSnapSection
-				ref={sectionRefs['games']}
-				style={{
-					paddingTop: '30px',
-				}}>
+			<ScrollSnapSection ref={sectionRefs['games']}>
 				<StyledSectionTitle color={colors.pink.lightPure}>Games</StyledSectionTitle>
 				<GamesCarousel />
 			</ScrollSnapSection>

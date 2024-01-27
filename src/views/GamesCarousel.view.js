@@ -89,8 +89,56 @@ export default function GamesCarousel() {
 	);
 }
 
-const CallToAction = styled.span`
-	font-size: 25px;
+const StyledItemContainer = styled.div`
+	gap: 20px;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 280px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 1200px;
+	}
+`;
+
+const StyledItemTitle = styled.div`
+	font-family: 'Baloo';
+	font-weight: 400;
+	line-height: 1;
+	color: ${colors.black};
+	max-width: 300px;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		font-size: 25px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		font-size: 30px;
+	}
+`;
+
+const StyledItemDescription = styled.div`
+	color: ${colors.black};
+	max-width: 300px;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		font-size: 16px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		font-size: 20px;
+	}
+`;
+
+const StyledItemCallToAction = styled.span`
 	font-weight: bold;
 	color: ${colors.pink.lightPure};
 	transition: all 0.2s ease-in-out;
@@ -118,29 +166,17 @@ const CallToAction = styled.span`
 			width: 100%;
 		}
 	}
-`;
-
-const StyledItemContainer = styled.div`
-	gap: 20px;
 
 	@media ${(props) => props.theme.devices.mobile} {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 280px;
+		font-size: 20px;
 	}
 
 	@media ${(props) => props.theme.devices.notMobile} {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 1200px;
+		font-size: 25px;
 	}
 `;
 
-const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, playUrl, onDetailClick }) => {
+const ItemGame = ({ videoUrl, videoID, title, description, playUrl, onDetailClick }) => {
 	const urlAutoplayMute = videoUrl + `&autoplay=1&mute=1&loop=1&playlist=${videoID}`;
 
 	return (
@@ -152,25 +188,14 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 					justifyContent: 'center',
 					alignItems: 'center',
 				}}>
-				<span
+				<StyledItemTitle
 					style={{
-						fontFamily: 'Baloo',
-						fontSize: '30px',
-						lineHeight: '1',
-						fontWeight: '400',
 						marginBottom: '30px',
-						color: colors.black,
 					}}>
 					{title}
-				</span>
-				<div
-					style={{
-						fontSize: descriptionSize || '20px',
-						color: colors.black,
-					}}>
-					{description}
-				</div>
-				<CallToAction
+				</StyledItemTitle>
+				<StyledItemDescription>{description}</StyledItemDescription>
+				<StyledItemCallToAction
 					style={{
 						marginTop: '24px',
 					}}
@@ -178,8 +203,8 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 						onDetailClick();
 					}}>
 					Read about my role
-				</CallToAction>
-				<CallToAction
+				</StyledItemCallToAction>
+				<StyledItemCallToAction
 					style={{
 						marginTop: '10px',
 					}}
@@ -187,7 +212,7 @@ const ItemGame = ({ videoUrl, videoID, title, description, descriptionSize, play
 						open(playUrl, '_blank');
 					}}>
 					Play the game!
-				</CallToAction>
+				</StyledItemCallToAction>
 			</StyledCol>
 		</StyledItemContainer>
 	);
