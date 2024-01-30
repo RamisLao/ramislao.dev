@@ -8,6 +8,7 @@ import TV from '@/components/TV.component';
 import { StyledCol } from '@/styles/common.styles';
 import colors from '@/styles/colors.styles';
 import PopupGames from '@/components/PopupGames.component';
+import { StyledItem } from '@/styles/carousel.styles';
 
 // TODO Only play video when it's visible on screen
 
@@ -25,67 +26,89 @@ export default function GamesCarousel() {
 			)}
 			<Carousel
 				title='Games'
-				titleColor={colors.pink.lightPure}>
-				<ItemGame
-					videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
-					title={'Luna (2022)'}
-					description={
-						'LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who must prove herself and pass the sacred Trial of the Gates in order to become a master. Aid Luna in the path to test her connections to the 4 Teuschen Chakras!'
-					}
-					playUrl={'https://vfs-gdpg.itch.io/luna'}
-					onDetailClick={() => {
-						setIsPopupGamesOpen(true);
-					}}
-					videoID={'zUCQtuZVYwY'}
-				/>
-				<ItemGame
-					videoUrl={'https://www.youtube.com/embed/YX2algRcixM?si=pVER7DGEQm1scnBU'}
-					title={'Buriti (2022)'}
-					description={
-						"Buriti is a 2D, deck-building game where you play as Master Buriti. Build the strongest deck to stop Mauarí's curse and reclaim the hallowed grove!"
-					}
-					playUrl={'https://ssaannttiibb.itch.io/buriti'}
-					onDetailClick={() => {
-						setIsPopupGamesOpen(true);
-					}}
-					videoID={'YX2algRcixM'}
-				/>
-				<ItemGame
-					videoUrl={'https://www.youtube.com/embed/BnvL6Wmxgyo?si=3Y8URVpSdAuNWQPw'}
-					title={'Gummy Clash (2021)'}
-					description={
-						'Gummy Clash is a multiplayer 3D platform arena game, where ragdoll gummy characters compete against each other in a real-time shapeshifting stage to try and collect the biggest amount of berries!'
-					}
-					playUrl={'https://ramislao.itch.io/gummy-clash'}
-					onDetailClick={() => {
-						setIsPopupGamesOpen(true);
-					}}
-					videoID={'BnvL6Wmxgyo'}
-				/>
-				<ItemGame
-					videoUrl={'https://www.youtube.com/embed/VY78dX4p_Yk?si=GwJv45GHE4PKWu_S'}
-					title={'Unbeatable TicTacToe (2021)'}
-					description={
-						'Relive your childhood moments in this augmented version of the classical game TicTacToe, featuring an AI built with the Minimax algorithm.'
-					}
-					playUrl={'https://ramislao.itch.io/unbeatable-tictactoe'}
-					onDetailClick={() => {
-						setIsPopupGamesOpen(true);
-					}}
-					videoID={'VY78dX4p_Yk'}
-				/>
-				<ItemGame
-					videoUrl={'https://www.youtube.com/embed/whVxHwvY5Qw?si=KqjFkuDMXigFkhHG'}
-					title={'Shapeshifting Arkanoid (2021)'}
-					description={
-						'A devilishly difficult take on the classic game Arkanoid. The destroyable blocks keep shifting shape in unpredictable ways! Try to survive while your ball accelerates through time until barely noticeable.'
-					}
-					playUrl={'https://ramislao.itch.io/shapeshifting-arkanoid'}
-					onDetailClick={() => {
-						setIsPopupGamesOpen(true);
-					}}
-					videoID={'whVxHwvY5Qw'}
-				/>
+				titleColor={colors.pink.lightPure}
+				childrenLength={5}>
+				{({ activeIndex }) => {
+					return (
+						<>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
+									title={'Luna (2022)'}
+									description={
+										'LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who must prove herself and pass the sacred Trial of the Gates in order to become a master. Aid Luna in the path to test her connections to the 4 Teuschen Chakras!'
+									}
+									playUrl={'https://vfs-gdpg.itch.io/luna'}
+									onDetailClick={() => {
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'zUCQtuZVYwY'}
+									isActive={activeIndex == 0}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/YX2algRcixM?si=pVER7DGEQm1scnBU'}
+									title={'Buriti (2022)'}
+									description={
+										"Buriti is a 2D, deck-building game where you play as Master Buriti. Build the strongest deck to stop Mauarí's curse and reclaim the hallowed grove!"
+									}
+									playUrl={'https://ssaannttiibb.itch.io/buriti'}
+									onDetailClick={() => {
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'YX2algRcixM'}
+									isActive={activeIndex == 1}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/BnvL6Wmxgyo?si=3Y8URVpSdAuNWQPw'}
+									title={'Gummy Clash (2021)'}
+									description={
+										'Gummy Clash is a multiplayer 3D platform arena game, where ragdoll gummy characters compete against each other in a real-time shapeshifting stage to try and collect the biggest amount of berries!'
+									}
+									playUrl={'https://ramislao.itch.io/gummy-clash'}
+									onDetailClick={() => {
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'BnvL6Wmxgyo'}
+									isActive={activeIndex == 2}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/VY78dX4p_Yk?si=GwJv45GHE4PKWu_S'}
+									title={'Unbeatable TicTacToe (2021)'}
+									description={
+										'Relive your childhood moments in this augmented version of the classical game TicTacToe, featuring an AI built with the Minimax algorithm.'
+									}
+									playUrl={'https://ramislao.itch.io/unbeatable-tictactoe'}
+									onDetailClick={() => {
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'VY78dX4p_Yk'}
+									isActive={activeIndex == 3}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/whVxHwvY5Qw?si=KqjFkuDMXigFkhHG'}
+									title={'Shapeshifting Arkanoid (2021)'}
+									description={
+										'A devilishly difficult take on the classic game Arkanoid. The destroyable blocks keep shifting shape in unpredictable ways! Try to survive while your ball accelerates through time until barely noticeable.'
+									}
+									playUrl={'https://ramislao.itch.io/shapeshifting-arkanoid'}
+									onDetailClick={() => {
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'whVxHwvY5Qw'}
+									isActive={activeIndex == 4}
+								/>
+							</StyledItem>
+						</>
+					);
+				}}
 			</Carousel>
 		</>
 	);
@@ -178,8 +201,8 @@ const StyledItemCallToAction = styled.span`
 	}
 `;
 
-const ItemGame = ({ videoUrl, videoID, title, description, playUrl, onDetailClick }) => {
-	const urlAutoplayMute = videoUrl + `&autoplay=1&mute=1&loop=1&playlist=${videoID}`;
+const ItemGame = ({ videoUrl, videoID, title, description, playUrl, onDetailClick, isActive }) => {
+	const urlAutoplayMute = videoUrl + `&${isActive ? 'autoplay=1&mute=1&loop=1&' : ''}playlist=${videoID}`;
 
 	return (
 		<StyledItemContainer>

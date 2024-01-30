@@ -5,91 +5,25 @@ import styled from 'styled-components';
 
 import { StyledRowAlignCenter, StyledButtonNoStyle, StyledCol, StyledSpan } from '@/styles/common.styles';
 import colors from '@/styles/colors.styles';
+import {
+	StyledCarousel,
+	StyledTitle,
+	StyledSubTitle,
+	StyledArrowButtons,
+	StyledCarouselContainer,
+	StyledItemContainer,
+	StyledItem,
+} from '@/styles/carousel.styles';
 
-const StyledCarousel = styled(StyledCol)`
-	align-items: center;
-	justify-content: center;
-`;
-
-const StyledTitle = styled.span`
-	font-family: 'Baloo';
-	color: ${(props) => props.color || colors.black};
-	font-weight: bold;
-	line-height: 1;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		font-size: 56px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		font-size: 128px;
-	}
-`;
-
-const StyledSubTitle = styled.span`
-	font-family: 'Baloo';
-	color: ${(props) => props.color || colors.black};
-	font-weight: bold;
-	line-height: 1;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		font-size: 24px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		font-size: 40px;
-	}
-`;
-
-const StyledArrowButtons = styled(StyledButtonNoStyle)`
-	transition: all 0.2s ease-in-out;
-
-	&:hover {
-		transform: scale(1.1);
-	}
-
-	@media ${(props) => props.theme.devices.mobile} {
-		display: ${(props) => (props.$isMobile ? '' : 'none')};
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		display: ${(props) => (props.$isMobile ? 'none' : '')};
-	}
-`;
-
-const StyledCarouselContainer = styled.div`
-	display: flex;
-	overflow: hidden;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		width: 280px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		width: 1200px;
-	}
-`;
-
-const StyledItemContainer = styled.div`
-	display: flex;
-	transition: transform 0.3s ease-in-out;
-	width: ${(props) => props.$totalWidth || '1200px'};
-`;
-
-const StyledItem = styled.div`
-	flex-basis: 100%;
-	flex-shrink: 0;
-`;
-
-export default function Carousel({ title, titleColor, children }) {
+export default function Carousel({ title, titleColor, children, childrenLength }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	const handlePrev = () => {
-		setActiveIndex(activeIndex - 1 < 0 ? children.length - 1 : activeIndex - 1);
+		setActiveIndex(activeIndex - 1 < 0 ? childrenLength - 1 : activeIndex - 1);
 	};
 
 	const handleNext = () => {
-		setActiveIndex(activeIndex + 1 == children.length ? 0 : activeIndex + 1);
+		setActiveIndex(activeIndex + 1 == childrenLength ? 0 : activeIndex + 1);
 	};
 
 	return (
@@ -118,7 +52,7 @@ export default function Carousel({ title, titleColor, children }) {
 							marginBottom: '20px',
 						}}>
 						<StyledTitle color={titleColor}>{title}</StyledTitle>
-						<StyledSubTitle>{`${activeIndex + 1}/${children.length}`}</StyledSubTitle>
+						<StyledSubTitle>{`${activeIndex + 1}/${childrenLength}`}</StyledSubTitle>
 					</StyledCol>
 					<StyledArrowButtons
 						onClick={handleNext}
@@ -142,13 +76,16 @@ export default function Carousel({ title, titleColor, children }) {
 				</StyledArrowButtons>
 				<StyledCarouselContainer>
 					<StyledItemContainer
-						$totalWidth={`${children.length * 100}%`}
+						$totalWidth={`${childrenLength * 100}%`}
 						style={{
 							transform: `translateX(-${activeIndex * 100}%)`,
 						}}>
-						{children.map((child, index) => {
-							return <StyledItem key={index}>{child}</StyledItem>;
+						{children({
+							activeIndex,
 						})}
+						{/* {children.map((child, index) => {
+							return <StyledItem key={index}>{child}</StyledItem>;
+						})} */}
 					</StyledItemContainer>
 				</StyledCarouselContainer>
 				<StyledArrowButtons
