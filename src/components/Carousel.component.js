@@ -3,13 +3,57 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { StyledRowAlignCenter, StyledButtonNoStyle } from '@/styles/common.styles';
+import { StyledRowAlignCenter, StyledButtonNoStyle, StyledCol, StyledSpan } from '@/styles/common.styles';
+import colors from '@/styles/colors.styles';
+
+const StyledCarousel = styled(StyledCol)`
+	align-items: center;
+	justify-content: center;
+`;
+
+const StyledTitle = styled.span`
+	font-family: 'Baloo';
+	color: ${(props) => props.color || colors.black};
+	font-weight: bold;
+	line-height: 1;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		font-size: 56px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		font-size: 128px;
+	}
+`;
+
+const StyledSubTitle = styled.span`
+	font-family: 'Baloo';
+	color: ${(props) => props.color || colors.black};
+	font-weight: bold;
+	line-height: 1;
+
+	@media ${(props) => props.theme.devices.mobile} {
+		font-size: 24px;
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		font-size: 40px;
+	}
+`;
 
 const StyledArrowButtons = styled(StyledButtonNoStyle)`
 	transition: all 0.2s ease-in-out;
 
 	&:hover {
 		transform: scale(1.1);
+	}
+
+	@media ${(props) => props.theme.devices.mobile} {
+		display: ${(props) => (props.$isMobile ? '' : 'none')};
+	}
+
+	@media ${(props) => props.theme.devices.notMobile} {
+		display: ${(props) => (props.$isMobile ? 'none' : '')};
 	}
 `;
 
@@ -37,30 +81,8 @@ const StyledItem = styled.div`
 	flex-shrink: 0;
 `;
 
-export default function Carousel({ children }) {
+export default function Carousel({ title, titleColor, children }) {
 	const [activeIndex, setActiveIndex] = useState(0);
-	const [touchStartPosition, setTouchStartPosition] = useState(0);
-	const [touchEndPosition, setTouchEndPosition] = useState(0);
-
-	const handleTouchStart = (e) => {
-		setTouchStartPosition(e.touches[0].clientX);
-	};
-
-	const handleTouchEnd = () => {
-		// Determine swipe direction
-		const direction = touchStartPosition - touchEndPosition;
-		if (direction > 0 && direction > 50) {
-			// Swipe left (show next)
-			handleNext();
-		} else {
-			// Swipe right (show previous)
-			handlePrev();
-		}
-	};
-
-	const handleTouchMove = (e) => {
-		setTouchEndPosition(e.touches[0].clientX);
-	};
 
 	const handlePrev = () => {
 		setActiveIndex(activeIndex - 1 < 0 ? children.length - 1 : activeIndex - 1);
@@ -71,37 +93,73 @@ export default function Carousel({ children }) {
 	};
 
 	return (
-		<StyledRowAlignCenter
+		<StyledCarousel
 			style={{
-				gap: '50px',
 				borderRadius: '20px',
 			}}>
-			<StyledArrowButtons onClick={handlePrev}>
-				<img
-					src='/images/arrow_left.png'
-					alt='Arrow Left'
-				/>
-			</StyledArrowButtons>
-			<StyledCarouselContainer
-				onTouchStart={handleTouchStart}
-				onTouchEnd={handleTouchEnd}
-				onTouchMove={handleTouchMove}>
-				<StyledItemContainer
-					$totalWidth={`${children.length * 100}%`}
+			{title && (
+				<StyledRowAlignCenter
 					style={{
-						transform: `translateX(-${activeIndex * 100}%)`,
+						gap: '20px',
 					}}>
-					{children.map((child, index) => {
-						return <StyledItem key={index}>{child}</StyledItem>;
-					})}
-				</StyledItemContainer>
-			</StyledCarouselContainer>
-			<StyledArrowButtons onClick={handleNext}>
-				<img
-					src='/images/arrow_right.png'
-					alt='Arrow Right'
-				/>
-			</StyledArrowButtons>
-		</StyledRowAlignCenter>
+					<StyledArrowButtons
+						onClick={handlePrev}
+						$isMobile={true}>
+						<img
+							src='/images/arrow_left.png'
+							alt='Arrow Left'
+							height={40}
+						/>
+					</StyledArrowButtons>
+					<StyledCol
+						style={{
+							alignItems: 'center',
+							justifyContent: 'center',
+							marginBottom: '20px',
+						}}>
+						<StyledTitle color={titleColor}>{title}</StyledTitle>
+						<StyledSubTitle>{`${activeIndex + 1}/${children.length}`}</StyledSubTitle>
+					</StyledCol>
+					<StyledArrowButtons
+						onClick={handleNext}
+						$isMobile={true}>
+						<img
+							src='/images/arrow_right.png'
+							alt='Arrow Left'
+							height={40}
+						/>
+					</StyledArrowButtons>
+				</StyledRowAlignCenter>
+			)}
+			<StyledRowAlignCenter>
+				<StyledArrowButtons
+					onClick={handlePrev}
+					$isMobile={false}>
+					<img
+						src='/images/arrow_left.png'
+						alt='Arrow Left'
+					/>
+				</StyledArrowButtons>
+				<StyledCarouselContainer>
+					<StyledItemContainer
+						$totalWidth={`${children.length * 100}%`}
+						style={{
+							transform: `translateX(-${activeIndex * 100}%)`,
+						}}>
+						{children.map((child, index) => {
+							return <StyledItem key={index}>{child}</StyledItem>;
+						})}
+					</StyledItemContainer>
+				</StyledCarouselContainer>
+				<StyledArrowButtons
+					onClick={handleNext}
+					$isMobile={false}>
+					<img
+						src='/images/arrow_right.png'
+						alt='Arrow Right'
+					/>
+				</StyledArrowButtons>
+			</StyledRowAlignCenter>
+		</StyledCarousel>
 	);
 }

@@ -23,7 +23,9 @@ export default function GamesCarousel() {
 					}}
 				/>
 			)}
-			<Carousel>
+			<Carousel
+				title='Games'
+				titleColor={colors.pink.lightPure}>
 				<ItemGame
 					videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
 					title={'Luna (2022)'}

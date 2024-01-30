@@ -111,7 +111,7 @@ const StyledUpButton = styled.button`
 		padding: 5px 10px;
 		font-size: 14px;
 		bottom: 15px;
-		right: 60px;
+		right: 50px;
 	}
 
 	@media ${(props) => props.theme.devices.notMobile} {
@@ -316,7 +316,6 @@ const MainPage = () => {
 			</ScrollSnapSection>
 
 			<ScrollSnapSection ref={sectionRefs['games']}>
-				<StyledSectionTitle color={colors.pink.lightPure}>Games</StyledSectionTitle>
 				<GamesCarousel />
 			</ScrollSnapSection>
 			<ScrollSnapSection ref={sectionRefs['tech']}>
