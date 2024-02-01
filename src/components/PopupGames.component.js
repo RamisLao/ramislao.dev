@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import PopupGenericFullScreen from './PopupGenericFullScreen.component';
 import { StyledRowAlignCenter } from '@/styles/common.styles';
+import theme from '@/libs/styledComponentsTheme.lib';
 
 const StyledContainer = styled.div`
 	position: relative;
@@ -14,7 +15,7 @@ const StyledContainer = styled.div`
 	align-items: center;
 `;
 
-const StyledTransparentGif = styled.img`
+const StyledBackground = styled.img`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -37,7 +38,20 @@ export default function PopupGames({ onClose }) {
 				return (
 					<StyledContainer>
 						<StyledCloseButton onClick={handleClose}>Close</StyledCloseButton>
-						<StyledTransparentGif src='/gifs/tv.gif' />
+						<picture>
+							<source
+								media={theme.devices.mobile}
+								srcSet='/images/mobile_android/popup_fullscreen.png'
+							/>
+							<source
+								media={theme.devices.notMobile}
+								srcSet='/images/mobile_android/popup_fullscreen.png'
+							/>
+							<StyledBackground
+								src='/images/mobile_android/popup_fullscreen.png'
+								alt='Popup Background'
+							/>
+						</picture>
 						<StyledRowAlignCenter
 							style={{
 								margin: '0 300px',

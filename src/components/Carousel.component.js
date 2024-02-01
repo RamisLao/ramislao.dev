@@ -83,9 +83,6 @@ export default function Carousel({ title, titleColor, children, childrenLength }
 						{children({
 							activeIndex,
 						})}
-						{/* {children.map((child, index) => {
-							return <StyledItem key={index}>{child}</StyledItem>;
-						})} */}
 					</StyledItemContainer>
 				</StyledCarouselContainer>
 				<StyledArrowButtons
