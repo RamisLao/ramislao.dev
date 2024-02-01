@@ -19,8 +19,8 @@ const StyledBackground = styled.img`
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%; // Match the container's size
-	height: 100%; // Match the container's size
+	width: 100vw; // Match the container's size
+	height: 100vh; // Match the container's size
 	pointer-events: none; // Make sure the gif doesn't block clicks
 `;
 
