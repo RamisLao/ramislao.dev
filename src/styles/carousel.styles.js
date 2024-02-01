@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { StyledRowAlignCenter, StyledButtonNoStyle, StyledCol, StyledSpan } from '@/styles/common.styles';
+import { StyledButtonNoStyle, StyledCol } from '@/styles/common.styles';
 import colors from '@/styles/colors.styles';
 
 export const StyledCarousel = styled(StyledCol)`

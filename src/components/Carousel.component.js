@@ -1,10 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import styled from 'styled-components';
 
-import { StyledRowAlignCenter, StyledButtonNoStyle, StyledCol, StyledSpan } from '@/styles/common.styles';
-import colors from '@/styles/colors.styles';
+import { StyledRowAlignCenter, StyledCol } from '@/styles/common.styles';
 import {
 	StyledCarousel,
 	StyledTitle,
@@ -12,7 +10,6 @@ import {
 	StyledArrowButtons,
 	StyledCarouselContainer,
 	StyledItemContainer,
-	StyledItem,
 } from '@/styles/carousel.styles';
 
 export default function Carousel({ title, titleColor, children, childrenLength }) {

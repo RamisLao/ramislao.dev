@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import PopupGenericFullScreen from './PopupGenericFullScreen.component';
-import { StyledRowAlignCenter, StyledButtonNoStyle } from '@/styles/common.styles';
+import { StyledButtonNoStyle } from '@/styles/common.styles';
 import theme from '@/libs/styledComponentsTheme.lib';
 
 const StyledContainer = styled.div`
@@ -11,8 +11,6 @@ const StyledContainer = styled.div`
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 `;
 
 const StyledBackground = styled.img`
@@ -31,7 +29,7 @@ const StyledCloseButton = styled(StyledButtonNoStyle)`
 	z-index: 1;
 `;
 
-export default function PopupGames({ onClose }) {
+export default function PopupGames({ onClose, children }) {
 	return (
 		<PopupGenericFullScreen onClickOutside={onClose}>
 			{({ handleClose }) => {
@@ -61,35 +59,12 @@ export default function PopupGames({ onClose }) {
 								alt='Popup Background'
 							/>
 						</picture>
-						<StyledRowAlignCenter
+						<div
 							style={{
-								margin: '0 300px',
+								zIndex: 2,
 							}}>
-							<img
-								src='/images/screenshots/tictactoe.png'
-								alt='Screenshot'
-								style={{
-									width: '100%',
-									height: 'auto',
-									maxWidth: '100%',
-									marginRight: '50px',
-								}}
-							/>
-							<div
-								style={{
-									width: '100%',
-									minWidth: '300px',
-								}}>
-								<h1>Tic Tac Toe</h1>
-								<p
-									style={{
-										fontSize: '1.2rem',
-									}}>
-									Play the classic game of Tic Tac Toe against the computer. The computer uses the
-									minimax algorithm to determine the best move.
-								</p>
-							</div>
-						</StyledRowAlignCenter>
+							{children}
+						</div>
 					</StyledContainer>
 				);
 			}}

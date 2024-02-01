@@ -1,18 +1,24 @@
 'use client';
 
 import styled, { useTheme } from 'styled-components';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
+// Components
 import Carousel from '@/components/Carousel.component';
 import TV from '@/components/TV.component';
-import { StyledCol } from '@/styles/common.styles';
-import colors from '@/styles/colors.styles';
 import PopupGames from '@/components/PopupGames.component';
+import FlipCard from '@/components/FlipCard.component';
+
+// Styles
+import colors from '@/styles/colors.styles';
+import { StyledCol, StyledSpan, StyledP, StyledRowAlignCenter } from '@/styles/common.styles';
 import { StyledItem } from '@/styles/carousel.styles';
 
-// TODO Only play video when it's visible on screen
+// State
+import { GlobalContext } from '@/contexts/global.context';
 
 export default function GamesCarousel() {
+	const { currentGlobalState, setCurrentGlobalState } = useContext(GlobalContext);
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
 
 	return (
@@ -21,8 +27,60 @@ export default function GamesCarousel() {
 				<PopupGames
 					onClose={() => {
 						setIsPopupGamesOpen(false);
-					}}
-				/>
+					}}>
+					<StyledCol
+						style={{
+							alignItems: 'center',
+							padding: '50px',
+						}}>
+						<StyledSpan
+							style={{
+								fontFamily: 'Baloo',
+								fontWeight: 'bold',
+								fontSize: '32px',
+								lineHeight: '1',
+								color: colors.black,
+							}}>
+							Luna
+						</StyledSpan>
+						<StyledP>
+							<StyledSpan
+								style={{
+									fontWeight: 'bold',
+									color: colors.black,
+								}}>
+								High Concept:{' '}
+							</StyledSpan>
+							'LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who
+							must prove herself and pass the sacred Trial of the Gates in order to become a master. Aid
+							Luna in the path to test her connections to the 4 Teuschen Chakras!'
+						</StyledP>
+						<StyledP>
+							<StyledSpan
+								style={{
+									fontWeight: 'bold',
+									color: colors.black,
+								}}>
+								When and where:{' '}
+							</StyledSpan>
+							Luna was developed in 2022 at Vancouver Film School. It was made by a team of 6 people, and
+							we used Unity to develop it. It won the Best Final Project award at the VFS Game Design
+							program.
+						</StyledP>
+						<StyledRowAlignCenter
+							style={{
+								flexWrap: 'wrap',
+							}}>
+							<FlipCard
+								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
+								imageAlt={'Designer'}
+								text={
+									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
+								}
+							/>
+						</StyledRowAlignCenter>
+					</StyledCol>
+				</PopupGames>
 			)}
 			<Carousel
 				title='Games'
@@ -40,6 +98,9 @@ export default function GamesCarousel() {
 									}
 									playUrl={'https://vfs-gdpg.itch.io/luna'}
 									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'luna',
+										});
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'zUCQtuZVYwY'}
@@ -55,6 +116,9 @@ export default function GamesCarousel() {
 									}
 									playUrl={'https://ssaannttiibb.itch.io/buriti'}
 									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'buriti',
+										});
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'YX2algRcixM'}
@@ -70,6 +134,9 @@ export default function GamesCarousel() {
 									}
 									playUrl={'https://ramislao.itch.io/gummy-clash'}
 									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'gummy-clash',
+										});
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'BnvL6Wmxgyo'}
@@ -85,6 +152,9 @@ export default function GamesCarousel() {
 									}
 									playUrl={'https://ramislao.itch.io/unbeatable-tictactoe'}
 									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'unbeatable-tictactoe',
+										});
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'VY78dX4p_Yk'}
@@ -100,6 +170,9 @@ export default function GamesCarousel() {
 									}
 									playUrl={'https://ramislao.itch.io/shapeshifting-arkanoid'}
 									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'shapeshifting-arkanoid',
+										});
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'whVxHwvY5Qw'}

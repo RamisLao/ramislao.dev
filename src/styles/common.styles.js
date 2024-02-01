@@ -32,3 +32,5 @@ export const StyledButtonNoStyle = styled.button`
 `;
 
 export const StyledSpan = styled.span``;
+
+export const StyledP = styled.p``;
