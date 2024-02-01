@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import PopupGenericFullScreen from './PopupGenericFullScreen.component';
-import { StyledRowAlignCenter } from '@/styles/common.styles';
+import { StyledRowAlignCenter, StyledButtonNoStyle } from '@/styles/common.styles';
 import theme from '@/libs/styledComponentsTheme.lib';
 
 const StyledContainer = styled.div`
@@ -24,10 +24,10 @@ const StyledBackground = styled.img`
 	pointer-events: none; // Make sure the gif doesn't block clicks
 `;
 
-const StyledCloseButton = styled.button`
+const StyledCloseButton = styled(StyledButtonNoStyle)`
 	position: absolute;
-	top: 30px;
-	right: 30px;
+	top: 10px;
+	right: 10px;
 	z-index: 1;
 `;
 
@@ -37,7 +37,16 @@ export default function PopupGames({ onClose }) {
 			{({ handleClose }) => {
 				return (
 					<StyledContainer>
-						<StyledCloseButton onClick={handleClose}>Close</StyledCloseButton>
+						<StyledCloseButton onClick={handleClose}>
+							<img
+								src='/images/icon_close.png'
+								alt='Close'
+								style={{
+									width: '25px',
+									height: 'auto',
+								}}
+							/>
+						</StyledCloseButton>
 						<picture>
 							<source
 								media={theme.devices.mobile}

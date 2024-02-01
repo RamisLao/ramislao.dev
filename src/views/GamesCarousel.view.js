@@ -153,6 +153,7 @@ const StyledItemTitle = styled.div`
 const StyledItemDescription = styled.div`
 	color: ${colors.black};
 	max-width: 300px;
+	text-align: center;
 
 	@media ${(props) => props.theme.devices.mobile} {
 		font-size: 16px;
