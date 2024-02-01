@@ -51,9 +51,9 @@ export default function GamesCarousel() {
 								}}>
 								High Concept:{' '}
 							</StyledSpan>
-							'LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who
+							LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who
 							must prove herself and pass the sacred Trial of the Gates in order to become a master. Aid
-							Luna in the path to test her connections to the 4 Teuschen Chakras!'
+							Luna in the path to test her connections to the 4 Teuschen Chakras!
 						</StyledP>
 						<StyledP>
 							<StyledSpan
