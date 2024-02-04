@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import colors from '@/styles/colors.styles';
+
 // FlipCard Container
 const StyledFlipCard = styled.div`
+	grid-area: ${(props) => props.$gridArea};
 	background-color: transparent;
-	width: 200px;
-	height: 200px;
+	width: ${(props) => props.$size};
+	height: ${(props) => props.$size};
 	perspective: 1000px;
+	border-radius: 10px; /* Example radius */
+	overflow: hidden; /* Ensure inner parts do not overflow the rounded corners */
 `;
 
 // Inner Content
@@ -28,11 +33,11 @@ const StyledFlipCardFront = styled.div`
 	height: 100%;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	background-color: #bbb;
-	color: black;
+	background-color: ${colors.white};
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 10px;
 `;
 
 // Back Side
@@ -43,11 +48,12 @@ const StyledFlipCardBack = styled.div`
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	background-color: dodgerblue;
-	color: white;
 	transform: rotateY(180deg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 10px;
+	font-size: 12px;
 `;
 
 // StyledImage Component
@@ -56,7 +62,7 @@ const StyledImage = styled.img`
 	max-height: 100%;
 `;
 
-const FlipCard = ({ imageUrl, imageAlt, text }) => {
+const FlipCard = ({ imageUrl, imageAlt, text, size = '200px', gridArea = '' }) => {
 	const [flipped, setFlipped] = useState(false);
 
 	const handleFlip = () => {
@@ -64,7 +70,10 @@ const FlipCard = ({ imageUrl, imageAlt, text }) => {
 	};
 
 	return (
-		<StyledFlipCard onClick={handleFlip}>
+		<StyledFlipCard
+			$gridArea={gridArea}
+			onClick={handleFlip}
+			$size={size}>
 			<StyledFlipCardInner $flipped={flipped}>
 				<StyledFlipCardFront>
 					<StyledImage

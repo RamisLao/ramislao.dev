@@ -17,6 +17,16 @@ import { StyledItem } from '@/styles/carousel.styles';
 // State
 import { GlobalContext } from '@/contexts/global.context';
 
+const StyledFlipCardGrid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'card1 card2'
+		'card3 card4';
+	gap: 20px;
+`;
+
 export default function GamesCarousel() {
 	const { currentGlobalState, setCurrentGlobalState } = useContext(GlobalContext);
 	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
@@ -32,6 +42,7 @@ export default function GamesCarousel() {
 						style={{
 							alignItems: 'center',
 							padding: '50px',
+							gap: '20px',
 						}}>
 						<StyledSpan
 							style={{
@@ -43,7 +54,11 @@ export default function GamesCarousel() {
 							}}>
 							Luna
 						</StyledSpan>
-						<StyledP>
+						<StyledP
+							style={{
+								color: colors.black,
+								fontSize: '14px',
+							}}>
 							<StyledSpan
 								style={{
 									fontWeight: 'bold',
@@ -52,10 +67,13 @@ export default function GamesCarousel() {
 								High Concept:{' '}
 							</StyledSpan>
 							LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who
-							must prove herself and pass the sacred Trial of the Gates in order to become a master. Aid
-							Luna in the path to test her connections to the 4 Teuschen Chakras!
+							must prove herself and pass the sacred Trial of the Gates in order to become a master.
 						</StyledP>
-						<StyledP>
+						<StyledP
+							style={{
+								color: colors.black,
+								fontSize: '14px',
+							}}>
 							<StyledSpan
 								style={{
 									fontWeight: 'bold',
@@ -67,18 +85,44 @@ export default function GamesCarousel() {
 							we used Unity to develop it. It won the Best Final Project award at the VFS Game Design
 							program.
 						</StyledP>
-						<StyledRowAlignCenter
-							style={{
-								flexWrap: 'wrap',
-							}}>
+						<StyledFlipCardGrid>
 							<FlipCard
+								gridArea='card1'
 								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
 								imageAlt={'Designer'}
 								text={
 									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
 								}
+								size={'120px'}
 							/>
-						</StyledRowAlignCenter>
+							<FlipCard
+								gridArea='card2'
+								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
+								imageAlt={'Designer'}
+								text={
+									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
+								}
+								size={'120px'}
+							/>
+							<FlipCard
+								gridArea='card3'
+								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
+								imageAlt={'Designer'}
+								text={
+									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
+								}
+								size={'120px'}
+							/>
+							<FlipCard
+								gridArea='card4'
+								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
+								imageAlt={'Designer'}
+								text={
+									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
+								}
+								size={'120px'}
+							/>
+						</StyledFlipCardGrid>
 					</StyledCol>
 				</PopupGames>
 			)}
