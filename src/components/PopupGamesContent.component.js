@@ -146,24 +146,24 @@ export default function PopupGamesContent({ popupGamesId }) {
 					<StyledPopupTitle>Unbeatable Tic-Tac-Toe</StyledPopupTitle>
 					<StyledP>
 						<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>
-						Unbeatable Tic-Tac-Toe is a digital version of the classical game where you can play{' '}
-						<StyledSpanBold>against a friend</StyledSpanBold> or by yourself, facing an{' '}
+						Unbeatable Tic-Tac-Toe is a digital version of the classical game where you can play
+						<StyledSpanBold>against a friend</StyledSpanBold> or by yourself, facing an
 						<StyledSpanBold>AI with 3 levels of difficulty</StyledSpanBold>.
 					</StyledP>
 					<StyledP>
 						<StyledPopupSubtitle>When and why: </StyledPopupSubtitle>
-						This game was made in 2021 as an exercise to learn about the{' '}
+						This game was made in 2021 as an exercise to learn about the
 						<StyledSpanBold>Minimax algorithm</StyledSpanBold>
 					</StyledP>
 					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
 					<StyledUl>
 						<StyledLi>
-							Implemented the entire UI using <StyledSpanBold>C# </StyledSpanBold>and the{' '}
+							Implemented the entire UI using <StyledSpanBold>C# </StyledSpanBold>and the
 							<StyledSpanBold>Windows Console</StyledSpanBold>.
 						</StyledLi>
 						<StyledLi>
-							Implemented the <StyledSpanBold>AI</StyledSpanBold> using the{' '}
-							<StyledSpanBold>Minimax algorithm</StyledSpanBold> with{' '}
+							Implemented the <StyledSpanBold>AI</StyledSpanBold> using the
+							<StyledSpanBold>Minimax algorithm</StyledSpanBold> with
 							<StyledSpanBold>Alpha-Beta pruning</StyledSpanBold>.
 						</StyledLi>
 						<StyledLi>
