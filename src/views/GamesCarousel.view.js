@@ -1,62 +1,21 @@
 'use client';
 
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { useState, useContext } from 'react';
 
 // Components
 import Carousel from '@/components/Carousel.component';
 import TV from '@/components/TV.component';
 import PopupGames from '@/components/PopupGames.component';
+import PopupGamesContent from '@/components/PopupGamesContent.component';
 
 // Styles
 import colors from '@/styles/colors.styles';
-import { StyledCol, StyledSpan, StyledSpanBold, StyledP, StyledUl, StyledLi } from '@/styles/common.styles';
+import { StyledCol } from '@/styles/common.styles';
 import { StyledItem } from '@/styles/carousel.styles';
 
 // State
 import { GlobalContext } from '@/contexts/global.context';
-
-const StyledPopupContent = styled(StyledCol)`
-	align-items: flex-start;
-	justify-content: flex-start;
-	padding: 60px 50px 50px 50px;
-	gap: 20px;
-	height: 100%;
-	color: ${colors.black};
-
-	// media query for devices with height equal or less than 700
-	@media (max-height: 740px) {
-		font-size: 14px;
-	}
-
-	// media query for devices with height more than 700
-	@media (min-height: 741px) {
-		font-size: 17px;
-	}
-`;
-
-const StyledPopupTitle = styled(StyledSpan)`
-	font-family: 'Baloo';
-	font-weight: bold;
-	font-size: 32px;
-	line-height: 1;
-	color: ${colors.pink.lightPure};
-	align-self: center;
-
-	// media query for devices with height equal or less than 700
-	@media (max-height: 740px) {
-		font-size: 32px;
-	}
-
-	// media query for devices with height more than 700
-	@media (min-height: 741px) {
-		font-size: 36px;
-	}
-`;
-
-const StyledPopupSubtitle = styled(StyledSpanBold)`
-	color: ${colors.pink.lightPure};
-`;
 
 export default function GamesCarousel() {
 	const { currentGlobalState, setCurrentGlobalState } = useContext(GlobalContext);
@@ -69,38 +28,7 @@ export default function GamesCarousel() {
 					onClose={() => {
 						setIsPopupGamesOpen(false);
 					}}>
-					<StyledPopupContent>
-						<StyledPopupTitle>Luna</StyledPopupTitle>
-						<StyledP>
-							<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>
-							Luna is a <StyledSpanBold>3D, isometric, hack and slash</StyledSpanBold> game about a young
-							Patagonian monk named Luna, who must prove herself and pass the sacred Trial of the Gates in
-							order to become a master.
-						</StyledP>
-						<StyledP>
-							<StyledPopupSubtitle>When and where: </StyledPopupSubtitle>
-							Luna was developed in <StyledSpanBold>2022 at Vancouver Film School</StyledSpanBold>. It was
-							made by a team of 6 people, and we used Unity to develop it. It won the{' '}
-							<StyledSpanBold>Best Final Project </StyledSpanBold>award at the VFS Game Design program.
-						</StyledP>
-						<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
-						<StyledUl>
-							<StyledLi>
-								Designed <StyledSpanBold>AI flowcharts</StyledSpanBold> and implemented 5 AI agents
-								using <StyledSpanBold>Behavior State Machines</StyledSpanBold>
-							</StyledLi>
-							<StyledLi>
-								Implemented <StyledSpanBold>flocking </StyledSpanBold> behaviors and a{' '}
-								<StyledSpanBold>Ticket System </StyledSpanBold> to coordinate AI agents
-							</StyledLi>
-							<StyledLi>
-								Created <StyledSpanBold>Inspector tools</StyledSpanBold> for Game Designers. For
-								example, I created a <StyledSpanBold>Trial Designer</StyledSpanBold>, where designers
-								could easily add and remove beats from the Trial, define setup and cleanup actions,
-								define win and lose conditions, and more
-							</StyledLi>
-						</StyledUl>
-					</StyledPopupContent>
+					<PopupGamesContent popupGamesId={currentGlobalState.popupGamesId} />
 				</PopupGames>
 			)}
 			<Carousel

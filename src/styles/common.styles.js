@@ -61,3 +61,5 @@ export const StyledLi = styled.li`
 		top: 0; /* Adjust this value as needed to align with the first line */
 	}
 `;
+
+export const StyledImg = styled.img``;
