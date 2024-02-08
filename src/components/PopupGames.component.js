@@ -26,7 +26,7 @@ const StyledCloseButton = styled(StyledButtonNoStyle)`
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	z-index: 1;
+	z-index: 2;
 `;
 
 export default function PopupGames({ onClose, children }) {
@@ -61,7 +61,7 @@ export default function PopupGames({ onClose, children }) {
 						</picture>
 						<div
 							style={{
-								zIndex: 2,
+								zIndex: 1,
 							}}>
 							{children}
 						</div>

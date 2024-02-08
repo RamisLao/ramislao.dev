@@ -5,7 +5,6 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import theme from '@/libs/styledComponentsTheme.lib';
 import StyledComponentsRegistry from '@/libs/registry.lib';
-import { VFXProvider } from 'react-vfx';
 import { GlobalContextProvider } from '@/contexts/global.context';
 
 const MainContainer = styled.div`
@@ -79,81 +78,79 @@ export default function RootLayout({ children }) {
 			</head>
 			<body>
 				<GlobalContextProvider>
-					<VFXProvider>
-						<ThemeProvider theme={theme}>
-							<StyledComponentsRegistry>
-								<MainContainer>
-									<TopFrame>
-										<picture>
-											<source
-												media={theme.devices.mobile}
-												srcSet='/images/mobile_android/bg_top.png'
-											/>
-											<source
-												media={theme.devices.notMobile}
-												srcSet='/images/desktop_big/bg_top.png'
-											/>
-											<img
-												src='/images/mobile_android/bg_top.png'
-												alt='Top Frame'
-												style={{
-													width: '100%',
-													height: 'auto',
-													maxHeight: '100%',
-													objectFit: 'contain',
-												}}
-											/>
-										</picture>
-									</TopFrame>
-									<LeftFrame>
-										<picture>
-											<source
-												media={theme.devices.mobile}
-												srcSet='/images/mobile_android/bg_left.png'
-											/>
-											<source
-												media={theme.devices.notMobile}
-												srcSet='/images/desktop_big/bg_left.png'
-											/>
-											<img
-												src='/images/mobile_android/bg_left.png'
-												alt='Left Frame'
-												style={{
-													width: 'auto',
-													height: '100%',
-													maxWidth: '100%',
-													objectFit: 'contain',
-												}}
-											/>
-										</picture>
-									</LeftFrame>
-									<RightFrame>
-										<picture>
-											<source
-												media={theme.devices.mobile}
-												srcSet='/images/mobile_android/bg_right.png'
-											/>
-											<source
-												media={theme.devices.notMobile}
-												srcSet='/images/desktop_big/bg_right.png'
-											/>
-											<img
-												src='/images/mobile_android/bg_right.png'
-												alt='Right Frame'
-												style={{
-													width: 'auto',
-													height: '100%',
-													maxWidth: '100%',
-													objectFit: 'contain',
-												}}
-											/>
-										</picture>
-									</RightFrame>
-									<Content>{children}</Content>
-								</MainContainer>
-							</StyledComponentsRegistry>
-						</ThemeProvider>
-					</VFXProvider>
+					<ThemeProvider theme={theme}>
+						<StyledComponentsRegistry>
+							<MainContainer>
+								<TopFrame>
+									<picture>
+										<source
+											media={theme.devices.mobile}
+											srcSet='/images/mobile_android/bg_top.png'
+										/>
+										<source
+											media={theme.devices.notMobile}
+											srcSet='/images/desktop_big/bg_top.png'
+										/>
+										<img
+											src='/images/mobile_android/bg_top.png'
+											alt='Top Frame'
+											style={{
+												width: '100%',
+												height: 'auto',
+												maxHeight: '100%',
+												objectFit: 'contain',
+											}}
+										/>
+									</picture>
+								</TopFrame>
+								<LeftFrame>
+									<picture>
+										<source
+											media={theme.devices.mobile}
+											srcSet='/images/mobile_android/bg_left.png'
+										/>
+										<source
+											media={theme.devices.notMobile}
+											srcSet='/images/desktop_big/bg_left.png'
+										/>
+										<img
+											src='/images/mobile_android/bg_left.png'
+											alt='Left Frame'
+											style={{
+												width: 'auto',
+												height: '100%',
+												maxWidth: '100%',
+												objectFit: 'contain',
+											}}
+										/>
+									</picture>
+								</LeftFrame>
+								<RightFrame>
+									<picture>
+										<source
+											media={theme.devices.mobile}
+											srcSet='/images/mobile_android/bg_right.png'
+										/>
+										<source
+											media={theme.devices.notMobile}
+											srcSet='/images/desktop_big/bg_right.png'
+										/>
+										<img
+											src='/images/mobile_android/bg_right.png'
+											alt='Right Frame'
+											style={{
+												width: 'auto',
+												height: '100%',
+												maxWidth: '100%',
+												objectFit: 'contain',
+											}}
+										/>
+									</picture>
+								</RightFrame>
+								<Content>{children}</Content>
+							</MainContainer>
+						</StyledComponentsRegistry>
+					</ThemeProvider>
 				</GlobalContextProvider>
 			</body>
 		</html>

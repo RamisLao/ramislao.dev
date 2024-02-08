@@ -1,6 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
+import colors from './colors.styles';
 
 export const StyledCol = styled.div.attrs((props) => ({
 	className: props.className || '',
@@ -33,4 +34,30 @@ export const StyledButtonNoStyle = styled.button`
 
 export const StyledSpan = styled.span``;
 
+export const StyledSpanBold = styled(StyledSpan)`
+	font-weight: bold;
+`;
+
 export const StyledP = styled.p``;
+
+export const StyledUl = styled.ul`
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	line-height: 1.5em;
+`;
+
+export const StyledLi = styled.li`
+	position: relative;
+	padding-left: 20px;
+
+	&::before {
+		content: '•';
+		color: ${colors.pink.lightPure};
+		font-size: 1.5em;
+		position: absolute;
+		left: 0;
+		/* Position the bullet in line with the first line of text */
+		top: 0; /* Adjust this value as needed to align with the first line */
+	}
+`;

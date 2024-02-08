@@ -7,24 +7,55 @@ import { useState, useContext } from 'react';
 import Carousel from '@/components/Carousel.component';
 import TV from '@/components/TV.component';
 import PopupGames from '@/components/PopupGames.component';
-import FlipCard from '@/components/FlipCard.component';
 
 // Styles
 import colors from '@/styles/colors.styles';
-import { StyledCol, StyledSpan, StyledP, StyledRowAlignCenter } from '@/styles/common.styles';
+import { StyledCol, StyledSpan, StyledSpanBold, StyledP, StyledUl, StyledLi } from '@/styles/common.styles';
 import { StyledItem } from '@/styles/carousel.styles';
 
 // State
 import { GlobalContext } from '@/contexts/global.context';
 
-const StyledFlipCardGrid = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas:
-		'card1 card2'
-		'card3 card4';
+const StyledPopupContent = styled(StyledCol)`
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 60px 50px 50px 50px;
 	gap: 20px;
+	height: 100%;
+	color: ${colors.black};
+
+	// media query for devices with height equal or less than 700
+	@media (max-height: 740px) {
+		font-size: 14px;
+	}
+
+	// media query for devices with height more than 700
+	@media (min-height: 741px) {
+		font-size: 17px;
+	}
+`;
+
+const StyledPopupTitle = styled(StyledSpan)`
+	font-family: 'Baloo';
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 1;
+	color: ${colors.pink.lightPure};
+	align-self: center;
+
+	// media query for devices with height equal or less than 700
+	@media (max-height: 740px) {
+		font-size: 32px;
+	}
+
+	// media query for devices with height more than 700
+	@media (min-height: 741px) {
+		font-size: 36px;
+	}
+`;
+
+const StyledPopupSubtitle = styled(StyledSpanBold)`
+	color: ${colors.pink.lightPure};
 `;
 
 export default function GamesCarousel() {
@@ -38,92 +69,38 @@ export default function GamesCarousel() {
 					onClose={() => {
 						setIsPopupGamesOpen(false);
 					}}>
-					<StyledCol
-						style={{
-							alignItems: 'center',
-							padding: '50px',
-							gap: '20px',
-						}}>
-						<StyledSpan
-							style={{
-								fontFamily: 'Baloo',
-								fontWeight: 'bold',
-								fontSize: '32px',
-								lineHeight: '1',
-								color: colors.black,
-							}}>
-							Luna
-						</StyledSpan>
-						<StyledP
-							style={{
-								color: colors.black,
-								fontSize: '14px',
-							}}>
-							<StyledSpan
-								style={{
-									fontWeight: 'bold',
-									color: colors.black,
-								}}>
-								High Concept:{' '}
-							</StyledSpan>
-							LUNA is a 3D, isometric, hack and slash game about a young Patagonian monk named Luna, who
-							must prove herself and pass the sacred Trial of the Gates in order to become a master.
+					<StyledPopupContent>
+						<StyledPopupTitle>Luna</StyledPopupTitle>
+						<StyledP>
+							<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>
+							Luna is a <StyledSpanBold>3D, isometric, hack and slash</StyledSpanBold> game about a young
+							Patagonian monk named Luna, who must prove herself and pass the sacred Trial of the Gates in
+							order to become a master.
 						</StyledP>
-						<StyledP
-							style={{
-								color: colors.black,
-								fontSize: '14px',
-							}}>
-							<StyledSpan
-								style={{
-									fontWeight: 'bold',
-									color: colors.black,
-								}}>
-								When and where:{' '}
-							</StyledSpan>
-							Luna was developed in 2022 at Vancouver Film School. It was made by a team of 6 people, and
-							we used Unity to develop it. It won the Best Final Project award at the VFS Game Design
-							program.
+						<StyledP>
+							<StyledPopupSubtitle>When and where: </StyledPopupSubtitle>
+							Luna was developed in <StyledSpanBold>2022 at Vancouver Film School</StyledSpanBold>. It was
+							made by a team of 6 people, and we used Unity to develop it. It won the{' '}
+							<StyledSpanBold>Best Final Project </StyledSpanBold>award at the VFS Game Design program.
 						</StyledP>
-						<StyledFlipCardGrid>
-							<FlipCard
-								gridArea='card1'
-								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
-								imageAlt={'Designer'}
-								text={
-									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
-								}
-								size={'120px'}
-							/>
-							<FlipCard
-								gridArea='card2'
-								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
-								imageAlt={'Designer'}
-								text={
-									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
-								}
-								size={'120px'}
-							/>
-							<FlipCard
-								gridArea='card3'
-								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
-								imageAlt={'Designer'}
-								text={
-									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
-								}
-								size={'120px'}
-							/>
-							<FlipCard
-								gridArea='card4'
-								imageUrl={'/images/screenshots/luna/flowchart_voodoo_doll.png'}
-								imageAlt={'Designer'}
-								text={
-									'I was the game designer, responsible for the game mechanics, level design, and narrative.'
-								}
-								size={'120px'}
-							/>
-						</StyledFlipCardGrid>
-					</StyledCol>
+						<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
+						<StyledUl>
+							<StyledLi>
+								Designed <StyledSpanBold>AI flowcharts</StyledSpanBold> and implemented 5 AI agents
+								using <StyledSpanBold>Behavior State Machines</StyledSpanBold>
+							</StyledLi>
+							<StyledLi>
+								Implemented <StyledSpanBold>flocking </StyledSpanBold> behaviors and a{' '}
+								<StyledSpanBold>Ticket System </StyledSpanBold> to coordinate AI agents
+							</StyledLi>
+							<StyledLi>
+								Created <StyledSpanBold>Inspector tools</StyledSpanBold> for Game Designers. For
+								example, I created a <StyledSpanBold>Trial Designer</StyledSpanBold>, where designers
+								could easily add and remove beats from the Trial, define setup and cleanup actions,
+								define win and lose conditions, and more
+							</StyledLi>
+						</StyledUl>
+					</StyledPopupContent>
 				</PopupGames>
 			)}
 			<Carousel

@@ -47,7 +47,7 @@ const StyledFlipCardBack = styled.div`
 	height: 100%;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	background-color: dodgerblue;
+	background-color: ${colors.pink.light};
 	transform: rotateY(180deg);
 	display: flex;
 	align-items: center;
