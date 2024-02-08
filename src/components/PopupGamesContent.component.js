@@ -84,12 +84,12 @@ export default function PopupGamesContent({ popupGamesId }) {
 					<StyledP>
 						<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>
 						Buriti is a <StyledSpanBold>2D, deck-building</StyledSpanBold> game where you play as Master
-						Buriti. Build the strongest deck to stop Mauarí's curse and reclaim the hallowed grove!
+						Buriti. Build the strongest deck to stop Mauarí&apos;s curse and reclaim the hallowed grove!
 					</StyledP>
 					<StyledP>
 						<StyledPopupSubtitle>When and where: </StyledPopupSubtitle>
-						Buriti was developed in <StyledSpanBold>2022</StyledSpanBold> for the{' '}
-						<StyledSpanBold>Game Jam Plus 22/23</StyledSpanBold>. It won{' '}
+						Buriti was developed in <StyledSpanBold>2022</StyledSpanBold> for the
+						<StyledSpanBold>Game Jam Plus 22/23</StyledSpanBold>. It won
 						<StyledSpanBold>2nd place</StyledSpanBold> in the Regional Phase. It was made by a team of 5
 						people using <StyledSpanBold>Unity</StyledSpanBold>.
 					</StyledP>
@@ -116,7 +116,7 @@ export default function PopupGamesContent({ popupGamesId }) {
 					</StyledP>
 					<StyledP>
 						<StyledPopupSubtitle>When and where: </StyledPopupSubtitle>
-						Gummy Clash was developed in 2021 for the{' '}
+						Gummy Clash was developed in 2021 for the
 						<StyledSpanBold>Team Project at Vancouver Film School</StyledSpanBold>. It was made by a team of
 						5 people using <StyledSpanBold>Unity</StyledSpanBold>.
 					</StyledP>
