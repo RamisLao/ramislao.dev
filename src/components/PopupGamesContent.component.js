@@ -6,7 +6,7 @@ import colors from '@/styles/colors.styles';
 const StyledPopupContent = styled(StyledCol)`
 	align-items: flex-start;
 	justify-content: flex-start;
-	padding: 60px 50px 50px 50px;
+	padding: 50px;
 	gap: 20px;
 	height: 100%;
 	color: ${colors.black};
@@ -27,6 +27,8 @@ const StyledPopupTitle = styled(StyledSpan)`
 	line-height: 1;
 	color: ${colors.pink.lightPure};
 	align-self: center;
+	width: 100%;
+	text-align: center;
 
 	@media (max-height: 740px) {
 		font-size: 32px;
@@ -44,6 +46,43 @@ const StyledPopupSubtitle = styled(StyledSpanBold)`
 export default function PopupGamesContent({ popupGamesId }) {
 	return (
 		<StyledPopupContent>
+			{popupGamesId === 'party-demon' && (
+				<>
+					<StyledPopupTitle>Party Demon</StyledPopupTitle>
+					<StyledP>
+						<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>
+						Party Demon is a <StyledSpanBold>tower defense, deck-building </StyledSpanBold> game where your
+						main goal is to protect a Lady Demon’s birthday party from human intruders. Build your castle on
+						a budget and defend it in real-time with a deadly Trap Deck full of demonic weapons.
+					</StyledP>
+					<StyledP>
+						<StyledPopupSubtitle>When and by Whom: </StyledPopupSubtitle>
+						Party Demon is currently in development by <StyledSpanBold>Barely Alive Studios</StyledSpanBold>
+						, an indie game studio based in Brazil. I was <StyledSpanBold>Lead Programmer</StyledSpanBold>{' '}
+						but recently left the project to pursue other opportunities.
+					</StyledP>
+					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
+					<StyledUl>
+						<StyledLi>
+							Implemented the system to <StyledSpanBold>dynamically build your castle</StyledSpanBold>{' '}
+							using tiles that you buy from a shop
+						</StyledLi>
+						<StyledLi>
+							Implemented dynamic <StyledSpanBold>Pathfinding</StyledSpanBold> from scratch, using A*.
+						</StyledLi>
+						<StyledLi>
+							Created a tool to build <StyledSpanBold>Enemy Waves </StyledSpanBold> using a combination of
+							procedural and deterministic systems.
+						</StyledLi>
+						<StyledLi>
+							Implemented the <StyledSpanBold>Deck-building system</StyledSpanBold>.
+						</StyledLi>
+						<StyledLi>
+							Co-composed all <StyledSpanBold>music</StyledSpanBold> for the game.
+						</StyledLi>
+					</StyledUl>
+				</>
+			)}
 			{popupGamesId === 'luna' && (
 				<>
 					<StyledPopupTitle>Luna</StyledPopupTitle>
@@ -62,18 +101,20 @@ export default function PopupGamesContent({ popupGamesId }) {
 					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
 					<StyledUl>
 						<StyledLi>
-							Designed <StyledSpanBold>AI flowcharts</StyledSpanBold> and implemented 5 AI agents using{' '}
+							Designed <StyledSpanBold>AI flowcharts</StyledSpanBold> and implemented 5 AI agents using
 							<StyledSpanBold>Behavior State Machines</StyledSpanBold> made from scratch.
 						</StyledLi>
 						<StyledLi>
-							Implemented <StyledSpanBold>flocking </StyledSpanBold> behaviors and a{' '}
+							Implemented <StyledSpanBold>flocking </StyledSpanBold> behaviors and a
 							<StyledSpanBold>Ticket System </StyledSpanBold> to coordinate AI agents.
 						</StyledLi>
 						<StyledLi>
-							Created <StyledSpanBold>Inspector tools</StyledSpanBold> for Game Designers. For example, I
-							created a <StyledSpanBold>Trial Designer</StyledSpanBold>, where designers could easily add
-							and remove beats from a Trial, define setup and cleanup actions, define win and lose
-							conditions, and more.
+							Created <StyledSpanBold>tools for Game Designers</StyledSpanBold>. For example, a
+							<StyledSpanBold>Trial Designer</StyledSpanBold>, to easily add and remove beats from a
+							Trial, define setup and cleanup actions, and define win and lose conditions dynamically.
+						</StyledLi>
+						<StyledLi>
+							Composed all the <StyledSpanBold>music</StyledSpanBold> in the game.
 						</StyledLi>
 					</StyledUl>
 				</>
@@ -123,8 +164,8 @@ export default function PopupGamesContent({ popupGamesId }) {
 					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
 					<StyledUl>
 						<StyledLi>
-							Implemented <StyledSpanBold>Ragdoll Physics</StyledSpanBold> for the characters, using a
-							combination of <StyledSpanBold>Configurable Joints and Animations</StyledSpanBold>.
+							Implemented <StyledSpanBold>Ragdoll Physics</StyledSpanBold> using a combination of{' '}
+							<StyledSpanBold>Configurable Joints and Animations</StyledSpanBold>.
 						</StyledLi>
 						<StyledLi>
 							Implemented <StyledSpanBold>local multiplayer </StyledSpanBold>for 2-4 players, with support
@@ -137,6 +178,9 @@ export default function PopupGamesContent({ popupGamesId }) {
 						<StyledLi>
 							Designed and implemented <StyledSpanBold>procedural systems</StyledSpanBold> for: difficulty
 							progression; level transitions; placement of berries, candies, and decorative props
+						</StyledLi>
+						<StyledLi>
+							Composed all <StyledSpanBold>music </StyledSpanBold> for the game.
 						</StyledLi>
 					</StyledUl>
 				</>
@@ -169,6 +213,37 @@ export default function PopupGamesContent({ popupGamesId }) {
 						<StyledLi>
 							Implemented 3 levels of difficulty: <StyledSpanBold>Easy, Medium, and Hard</StyledSpanBold>,
 							by controlling the depth of the search tree in the Minimax algorithm
+						</StyledLi>
+					</StyledUl>
+				</>
+			)}
+			{popupGamesId === 'shapeshifting-arkanoid' && (
+				<>
+					<StyledPopupTitle>Shapeshifting Arkanoid</StyledPopupTitle>
+					<StyledP>
+						<StyledPopupSubtitle>High Concept: </StyledPopupSubtitle>A devilishly difficult take on the
+						classic game Arkanoid. The destroyable blocks{' '}
+						<StyledSpanBold>keep shifting shape in unpredictable ways</StyledSpanBold>! Try to survive while
+						your ball accelerates through time until barely noticeable.
+					</StyledP>
+					<StyledP>
+						<StyledPopupSubtitle>When and why: </StyledPopupSubtitle>
+						This game was made in 2021 as an exercise to learn about
+						<StyledSpanBold>Game Feel</StyledSpanBold> in games.
+					</StyledP>
+					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
+					<StyledUl>
+						<StyledLi>
+							Implemented a tool that makes it easy to create levels using{' '}
+							<StyledSpanBold>Spreadsheets</StyledSpanBold>.
+						</StyledLi>
+						<StyledLi>
+							Implemented <StyledSpanBold>procedural transitions </StyledSpanBold> between the different
+							block configurations.
+						</StyledLi>
+						<StyledLi>
+							Implemented <StyledSpanBold>Tweening and sound effects</StyledSpanBold> to enhance the Game
+							Feel and increase enjoyment
 						</StyledLi>
 					</StyledUl>
 				</>

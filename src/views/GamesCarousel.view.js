@@ -34,10 +34,29 @@ export default function GamesCarousel() {
 			<Carousel
 				title='Games'
 				titleColor={colors.pink.lightPure}
-				childrenLength={5}>
+				childrenLength={6}>
 				{({ activeIndex }) => {
 					return (
 						<>
+							<StyledItem>
+								<ItemGame
+									videoUrl={'https://www.youtube.com/embed/AR5354rR4b0?si=dlyRLeIWfHj1cej7'}
+									title={'Party Demon (in progress)'}
+									description={
+										'Party Demon is a tower defense, deck-building game where your main goal is to protect a Lady Demon’s birthday party from human intruders. Build your castle on a budget and defend it in real-time with a deadly Trap Deck full of demonic weapons.'
+									}
+									playUrl={'https://store.steampowered.com/app/1659530/Party_Demon/'}
+									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupGamesId: 'party-demon',
+										});
+										setIsPopupGamesOpen(true);
+									}}
+									videoID={'AR5354rR4b0'}
+									isActive={activeIndex == 0}
+									alternativePlayText={'Wishlist the game on Steam!'}
+								/>
+							</StyledItem>
 							<StyledItem>
 								<ItemGame
 									videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
@@ -53,7 +72,7 @@ export default function GamesCarousel() {
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'zUCQtuZVYwY'}
-									isActive={activeIndex == 0}
+									isActive={activeIndex == 1}
 								/>
 							</StyledItem>
 							<StyledItem>
@@ -71,7 +90,7 @@ export default function GamesCarousel() {
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'YX2algRcixM'}
-									isActive={activeIndex == 1}
+									isActive={activeIndex == 2}
 								/>
 							</StyledItem>
 							<StyledItem>
@@ -89,7 +108,7 @@ export default function GamesCarousel() {
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'BnvL6Wmxgyo'}
-									isActive={activeIndex == 2}
+									isActive={activeIndex == 3}
 								/>
 							</StyledItem>
 							<StyledItem>
@@ -107,7 +126,7 @@ export default function GamesCarousel() {
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'VY78dX4p_Yk'}
-									isActive={activeIndex == 3}
+									isActive={activeIndex == 4}
 								/>
 							</StyledItem>
 							<StyledItem>
@@ -125,7 +144,7 @@ export default function GamesCarousel() {
 										setIsPopupGamesOpen(true);
 									}}
 									videoID={'whVxHwvY5Qw'}
-									isActive={activeIndex == 4}
+									isActive={activeIndex == 5}
 								/>
 							</StyledItem>
 						</>
@@ -161,7 +180,8 @@ const StyledItemTitle = styled.div`
 	font-weight: 400;
 	line-height: 1;
 	color: ${colors.black};
-	max-width: 300px;
+	width: 100%;
+	text-align: center;
 
 	@media ${(props) => props.theme.devices.mobile} {
 		font-size: 25px;
@@ -224,7 +244,16 @@ const StyledItemCallToAction = styled.span`
 	}
 `;
 
-const ItemGame = ({ videoUrl, videoID, title, description, playUrl, onDetailClick, isActive }) => {
+const ItemGame = ({
+	videoUrl,
+	videoID,
+	title,
+	description,
+	playUrl,
+	onDetailClick,
+	isActive,
+	alternativePlayText = null,
+}) => {
 	const urlAutoplayMute = videoUrl + `&${isActive ? 'autoplay=1&mute=1&loop=1&' : ''}playlist=${videoID}`;
 
 	return (
@@ -259,7 +288,7 @@ const ItemGame = ({ videoUrl, videoID, title, description, playUrl, onDetailClic
 					onClick={() => {
 						open(playUrl, '_blank');
 					}}>
-					Play the game!
+					{alternativePlayText ? alternativePlayText : 'Play the game!'}
 				</StyledItemCallToAction>
 			</StyledCol>
 		</StyledItemContainer>
