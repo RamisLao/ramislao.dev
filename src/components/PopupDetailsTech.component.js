@@ -16,7 +16,7 @@ export default function PopupDetailsTech({ popupTechId }) {
 					<StyledP>
 						<StyledPopupSubtitle>How: </StyledPopupSubtitle>
 						It was developed using <StyledSpanBold>React, Node, and MySQL</StyledSpanBold>. Data comes from
-						<StyledSpanBold>Unity </StyledSpanBold> and it's made available to Game Designers, QA,
+						<StyledSpanBold>Unity </StyledSpanBold> and it&apos;s made available to Game Designers, QA,
 						Developers, and Marketing teams.
 					</StyledP>
 					<StyledPopupSubtitle>Cool things I did:</StyledPopupSubtitle>
@@ -30,8 +30,8 @@ export default function PopupDetailsTech({ popupTechId }) {
 							<StyledSpanBold>authorization</StyledSpanBold> using JWT.
 						</StyledLi>
 						<StyledLi>
-							Co-designed the app's <StyledSpanBold>UI and UX</StyledSpanBold>, with an emphasis on ease
-							of use and clarity.
+							Co-designed the app&apos;s <StyledSpanBold>UI and UX</StyledSpanBold>, with an emphasis on
+							ease of use and clarity.
 						</StyledLi>
 						<StyledLi>
 							Built the entire <StyledSpanBold>API </StyledSpanBold>to manage data from a very complex and
@@ -73,8 +73,8 @@ export default function PopupDetailsTech({ popupTechId }) {
 							<StyledSpanBold>authorization</StyledSpanBold> using JWT.
 						</StyledLi>
 						<StyledLi>
-							Co-designed the app's <StyledSpanBold>UI and UX</StyledSpanBold>, with an emphasis on ease
-							of use and clarity.
+							Co-designed the app&apos;s <StyledSpanBold>UI and UX</StyledSpanBold>, with an emphasis on
+							ease of use and clarity.
 						</StyledLi>
 						<StyledLi>
 							Built the entire <StyledSpanBold>API </StyledSpanBold>to manage data from a very complex and
