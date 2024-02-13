@@ -1,49 +1,7 @@
-import styled from 'styled-components';
+import { StyledSpanBold, StyledP, StyledUl, StyledLi } from '@/styles/common.styles';
+import { StyledPopupContent, StyledPopupTitle, StyledPopupSubtitle } from '@/styles/popupDetails.styles';
 
-import { StyledCol, StyledSpan, StyledSpanBold, StyledP, StyledUl, StyledLi, StyledImg } from '@/styles/common.styles';
-import colors from '@/styles/colors.styles';
-
-const StyledPopupContent = styled(StyledCol)`
-	align-items: flex-start;
-	justify-content: flex-start;
-	padding: 50px;
-	gap: 20px;
-	height: 100%;
-	color: ${colors.black};
-
-	@media (max-height: 740px) {
-		font-size: 14px;
-	}
-
-	@media (min-height: 741px) {
-		font-size: 17px;
-	}
-`;
-
-const StyledPopupTitle = styled(StyledSpan)`
-	font-family: 'Baloo';
-	font-weight: bold;
-	font-size: 32px;
-	line-height: 1;
-	color: ${colors.pink.lightPure};
-	align-self: center;
-	width: 100%;
-	text-align: center;
-
-	@media (max-height: 740px) {
-		font-size: 32px;
-	}
-
-	@media (min-height: 741px) {
-		font-size: 36px;
-	}
-`;
-
-const StyledPopupSubtitle = styled(StyledSpanBold)`
-	color: ${colors.pink.lightPure};
-`;
-
-export default function PopupGamesContent({ popupGamesId }) {
+export default function PopupDetailsGames({ popupGamesId }) {
 	return (
 		<StyledPopupContent>
 			{popupGamesId === 'party-demon' && (

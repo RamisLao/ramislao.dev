@@ -7,6 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 import colors from '@/styles/colors.styles';
 import { StyledCol, StyledRowAlignCenter } from '@/styles/common.styles';
 import GamesCarousel from '@/views/GamesCarousel.view';
+import TechCarousel from '@/views/TechCarousel.view';
 import MenuLink from '@/components/MenuLink.component';
 
 const MainTitle = styled.span`
@@ -314,12 +315,11 @@ const MainPage = () => {
 					/>
 				</StyledMenuDesktop>
 			</ScrollSnapSection>
-
 			<ScrollSnapSection ref={sectionRefs['games']}>
 				<GamesCarousel />
 			</ScrollSnapSection>
 			<ScrollSnapSection ref={sectionRefs['tech']}>
-				<StyledSectionTitle color={colors.blueGreen.medium}>Tech</StyledSectionTitle>
+				<TechCarousel />
 			</ScrollSnapSection>
 			<ScrollSnapSection ref={sectionRefs['illustrations']}>
 				<StyledSectionTitle color={colors.pink.light}>Illustrations</StyledSectionTitle>

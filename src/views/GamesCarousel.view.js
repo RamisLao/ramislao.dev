@@ -1,17 +1,15 @@
 'use client';
 
-import styled from 'styled-components';
 import { useState, useContext } from 'react';
 
 // Components
 import Carousel from '@/components/Carousel.component';
-import TV from '@/components/TV.component';
-import PopupGames from '@/components/PopupGames.component';
-import PopupGamesContent from '@/components/PopupGamesContent.component';
+import PopupDetails from '@/views/PopupDetails.view';
+import PopupDetailsGames from '@/components/PopupDetailsGames.component';
+import CarouselItem from '@/components/CarouselItem.component';
 
 // Styles
 import colors from '@/styles/colors.styles';
-import { StyledCol } from '@/styles/common.styles';
 import { StyledItem } from '@/styles/carousel.styles';
 
 // State
@@ -19,17 +17,17 @@ import { GlobalContext } from '@/contexts/global.context';
 
 export default function GamesCarousel() {
 	const { currentGlobalState, setCurrentGlobalState } = useContext(GlobalContext);
-	const [isPopupGamesOpen, setIsPopupGamesOpen] = useState(false);
+	const [isPopupDetailsOpen, setIsPopupDetailsOpen] = useState(false);
 
 	return (
 		<>
-			{isPopupGamesOpen && (
-				<PopupGames
+			{isPopupDetailsOpen && (
+				<PopupDetails
 					onClose={() => {
-						setIsPopupGamesOpen(false);
+						setIsPopupDetailsOpen(false);
 					}}>
-					<PopupGamesContent popupGamesId={currentGlobalState.popupGamesId} />
-				</PopupGames>
+					<PopupDetailsGames popupGamesId={currentGlobalState.popupGamesId} />
+				</PopupDetails>
 			)}
 			<Carousel
 				title='Games'
@@ -39,7 +37,7 @@ export default function GamesCarousel() {
 					return (
 						<>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/AR5354rR4b0?si=dlyRLeIWfHj1cej7'}
 									title={'Party Demon (in progress)'}
 									description={
@@ -50,7 +48,7 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'party-demon',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'AR5354rR4b0'}
 									isActive={activeIndex == 0}
@@ -58,7 +56,7 @@ export default function GamesCarousel() {
 								/>
 							</StyledItem>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/zUCQtuZVYwY?si=ik3XE5LKpkZFLXIv'}
 									title={'Luna (2022)'}
 									description={
@@ -69,14 +67,14 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'luna',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'zUCQtuZVYwY'}
 									isActive={activeIndex == 1}
 								/>
 							</StyledItem>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/YX2algRcixM?si=pVER7DGEQm1scnBU'}
 									title={'Buriti (2022)'}
 									description={
@@ -87,14 +85,14 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'buriti',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'YX2algRcixM'}
 									isActive={activeIndex == 2}
 								/>
 							</StyledItem>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/BnvL6Wmxgyo?si=3Y8URVpSdAuNWQPw'}
 									title={'Gummy Clash (2021)'}
 									description={
@@ -105,14 +103,14 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'gummy-clash',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'BnvL6Wmxgyo'}
 									isActive={activeIndex == 3}
 								/>
 							</StyledItem>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/VY78dX4p_Yk?si=GwJv45GHE4PKWu_S'}
 									title={'Unbeatable TicTacToe (2021)'}
 									description={
@@ -123,14 +121,14 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'unbeatable-tictactoe',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'VY78dX4p_Yk'}
 									isActive={activeIndex == 4}
 								/>
 							</StyledItem>
 							<StyledItem>
-								<ItemGame
+								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/whVxHwvY5Qw?si=KqjFkuDMXigFkhHG'}
 									title={'Shapeshifting Arkanoid (2021)'}
 									description={
@@ -141,7 +139,7 @@ export default function GamesCarousel() {
 										setCurrentGlobalState({
 											popupGamesId: 'shapeshifting-arkanoid',
 										});
-										setIsPopupGamesOpen(true);
+										setIsPopupDetailsOpen(true);
 									}}
 									videoID={'whVxHwvY5Qw'}
 									isActive={activeIndex == 5}
@@ -154,143 +152,3 @@ export default function GamesCarousel() {
 		</>
 	);
 }
-
-const StyledItemContainer = styled.div`
-	gap: 20px;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 280px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 1200px;
-	}
-`;
-
-const StyledItemTitle = styled.div`
-	font-family: 'Baloo';
-	font-weight: 400;
-	line-height: 1;
-	color: ${colors.black};
-	width: 100%;
-	text-align: center;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		font-size: 25px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		font-size: 30px;
-	}
-`;
-
-const StyledItemDescription = styled.div`
-	color: ${colors.black};
-	max-width: 300px;
-	text-align: center;
-
-	@media ${(props) => props.theme.devices.mobile} {
-		font-size: 16px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		font-size: 20px;
-	}
-`;
-
-const StyledItemCallToAction = styled.span`
-	font-weight: bold;
-	color: ${colors.pink.lightPure};
-	transition: all 0.2s ease-in-out;
-	width: fit-content;
-	max-width: 300px;
-
-	&:hover {
-		cursor: pointer;
-	}
-
-	&:hover::after {
-		content: '';
-		display: block;
-		width: 100%;
-		height: 2px;
-		background-color: ${colors.pink.lightPure};
-		animation: underlineSlide 0.3s forwards;
-	}
-
-	@keyframes underlineSlide {
-		from {
-			width: 0;
-		}
-		to {
-			width: 100%;
-		}
-	}
-
-	@media ${(props) => props.theme.devices.mobile} {
-		font-size: 20px;
-	}
-
-	@media ${(props) => props.theme.devices.notMobile} {
-		font-size: 25px;
-	}
-`;
-
-const ItemGame = ({
-	videoUrl,
-	videoID,
-	title,
-	description,
-	playUrl,
-	onDetailClick,
-	isActive,
-	alternativePlayText = null,
-}) => {
-	const urlAutoplayMute = videoUrl + `&${isActive ? 'autoplay=1&mute=1&loop=1&' : ''}playlist=${videoID}`;
-
-	return (
-		<StyledItemContainer>
-			<TV url={urlAutoplayMute} />
-			<StyledCol
-				style={{
-					height: '100%',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}>
-				<StyledItemTitle
-					style={{
-						marginBottom: '30px',
-					}}>
-					{title}
-				</StyledItemTitle>
-				<StyledItemDescription>{description}</StyledItemDescription>
-				<StyledItemCallToAction
-					style={{
-						marginTop: '24px',
-					}}
-					onClick={() => {
-						onDetailClick();
-					}}>
-					Read about my role
-				</StyledItemCallToAction>
-				<StyledItemCallToAction
-					style={{
-						marginTop: '10px',
-					}}
-					onClick={() => {
-						open(playUrl, '_blank');
-					}}>
-					{alternativePlayText ? alternativePlayText : 'Play the game!'}
-				</StyledItemCallToAction>
-			</StyledCol>
-		</StyledItemContainer>
-	);
-};

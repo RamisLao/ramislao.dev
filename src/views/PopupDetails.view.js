@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import PopupGenericFullScreen from './PopupGenericFullScreen.component';
+import PopupGenericFullScreen from '../components/PopupGenericFullScreen.component';
 import { StyledButtonNoStyle } from '@/styles/common.styles';
 import theme from '@/libs/styledComponentsTheme.lib';
 
@@ -29,7 +29,7 @@ const StyledCloseButton = styled(StyledButtonNoStyle)`
 	z-index: 2;
 `;
 
-export default function PopupGames({ onClose, children }) {
+export default function PopupDetails({ onClose, children }) {
 	return (
 		<PopupGenericFullScreen onClickOutside={onClose}>
 			{({ handleClose }) => {
