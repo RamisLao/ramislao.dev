@@ -46,7 +46,7 @@ export default function TechCarousel() {
 							<StyledItem>
 								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/jg1zoCG5wBg?si=QYD4hQ8uRzLKLssE'}
-									title={'Hyper Cheats Web App'}
+									title={'Hyper Cheats Web App (2023)'}
 									description={
 										'Hyper Cheats is a web app made for internal use at Mexican game development studio HyperBeard. It allows the team to manage and easily create cheats and rewards for their games. It was developed using React and Node.'
 									}
@@ -66,7 +66,7 @@ export default function TechCarousel() {
 							<StyledItem>
 								<CarouselItem
 									videoUrl={'https://www.youtube.com/embed/T402YGcUt_Y?si=keY8uyQizOrTnDDI'}
-									title={'UE5 Archvis Configurator'}
+									title={'UE5 Archvis Configurator (2023)'}
 									description={
 										'This architecture visualization configurator was developed for the startup Kambio. Made with Unreal Engine 5, it allows the user to customize their home and see the changes in real-time.'
 									}
