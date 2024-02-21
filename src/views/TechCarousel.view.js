@@ -39,7 +39,7 @@ export default function TechCarousel() {
 			<Carousel
 				title='Tech'
 				titleColor={colors.blueGreen.medium}
-				childrenLength={2}>
+				childrenLength={5}>
 				{({ activeIndex }) => {
 					return (
 						<>
@@ -56,7 +56,6 @@ export default function TechCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'jg1zoCG5wBg'}
 									isActive={activeIndex == 0}
 									callToActionColor={colors.blueGreen.medium}
 									playUrl={'https://hyperbeard.com/'}
@@ -76,11 +75,65 @@ export default function TechCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'T402YGcUt_Y'}
 									isActive={activeIndex == 1}
 									callToActionColor={colors.blueGreen.medium}
 									playUrl={'https://www.kambio.co/'}
 									alternativePlayText={"Go to Kambio's website!"}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<CarouselItem
+									videoUrl={'https://www.youtube.com/embed/bPQogR7FPmY?si=xqq_LduETfh7MP29'}
+									title={'Marakana Combine App (2019)'}
+									description={
+										'Combine was the first iteration of the Marakana (now called GetRival) app. It was developed for iOS. It allowed users to record themselves doing physical challenges related to soccer, get evaluated by AI, and compete with friends.'
+									}
+									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupTechId: 'marakana-combine-app',
+										});
+										setIsPopupDetailsOpen(true);
+									}}
+									isActive={activeIndex == 2}
+									callToActionColor={colors.blueGreen.medium}
+									playUrl={'https://www.getrival.com/'}
+									alternativePlayText={"Go to Get Rival's website!"}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<CarouselItem
+									videoUrl={'https://www.youtube.com/embed/H_BtefOD1Go?si=MSCgExwvD_HreC5y'}
+									title={'Custom-Made Touchscreen Table (2018)'}
+									description={
+										'I co-designed and co-developed a custom-made touchscreen table with the startup Catalyst. It was round and 5 meters in diameter and was used to showcase Mexican technology during the 2018 Hannover Messe 4.0 Festival.'
+									}
+									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupTechId: 'custom-made-touchscreen-table',
+										});
+										setIsPopupDetailsOpen(true);
+									}}
+									isActive={activeIndex == 3}
+									callToActionColor={colors.blueGreen.medium}
+									hidePlayButton={true}
+								/>
+							</StyledItem>
+							<StyledItem>
+								<CarouselItem
+									videoUrl={'https://www.youtube.com/embed/6FYEMpUmDBY?si=jD2tcGErI3OgEIWj'}
+									title={'Simple Predict (2017)'}
+									description={
+										"Co-led the team that developed Simple Predict, SimplifAI's first product. Simple Predict was a web app that allowed non-technical users to create and train machine learning models using nothing more than a spreadsheet."
+									}
+									onDetailClick={() => {
+										setCurrentGlobalState({
+											popupTechId: 'simple-predict',
+										});
+										setIsPopupDetailsOpen(true);
+									}}
+									isActive={activeIndex == 4}
+									callToActionColor={colors.blueGreen.medium}
+									hidePlayButton={true}
 								/>
 							</StyledItem>
 						</>

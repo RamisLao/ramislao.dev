@@ -50,7 +50,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'AR5354rR4b0'}
 									isActive={activeIndex == 0}
 									alternativePlayText={'Wishlist the game on Steam!'}
 								/>
@@ -69,7 +68,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'zUCQtuZVYwY'}
 									isActive={activeIndex == 1}
 								/>
 							</StyledItem>
@@ -87,7 +85,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'YX2algRcixM'}
 									isActive={activeIndex == 2}
 								/>
 							</StyledItem>
@@ -105,7 +102,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'BnvL6Wmxgyo'}
 									isActive={activeIndex == 3}
 								/>
 							</StyledItem>
@@ -123,7 +119,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'VY78dX4p_Yk'}
 									isActive={activeIndex == 4}
 								/>
 							</StyledItem>
@@ -141,7 +136,6 @@ export default function GamesCarousel() {
 										});
 										setIsPopupDetailsOpen(true);
 									}}
-									videoID={'whVxHwvY5Qw'}
 									isActive={activeIndex == 5}
 								/>
 							</StyledItem>

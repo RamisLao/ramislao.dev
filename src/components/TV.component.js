@@ -46,7 +46,8 @@ export default function TV({ url }) {
 			<YouTubeVideo
 				src={url}
 				frameBorder='0'
-				allow='autoplay; encrypted-media'
+				title='YouTube video player'
+				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 				allowFullScreen
 			/>
 			<TransparentGif

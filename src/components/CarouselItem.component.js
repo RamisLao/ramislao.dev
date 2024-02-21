@@ -96,20 +96,20 @@ const StyledItemCallToAction = styled.span`
 
 export default function CarouselItem({
 	videoUrl,
-	videoID,
 	title,
 	description,
 	onDetailClick,
 	isActive,
 	callToActionColor = colors.pink.lightPure,
+	hidePlayButton = false,
 	playUrl,
 	alternativePlayText = null,
 }) {
-	const urlAutoplayMute = videoUrl + `&${isActive ? 'autoplay=1&mute=1&loop=1&' : ''}playlist=${videoID}`;
+	const urlAutoplayMute = videoUrl + `&mute=1`;
 
 	return (
 		<StyledItemContainer>
-			<TV url={urlAutoplayMute} />
+			{isActive && <TV url={urlAutoplayMute} />}
 			<StyledCol
 				style={{
 					height: '100%',
@@ -133,16 +133,18 @@ export default function CarouselItem({
 					}}>
 					Read about my role
 				</StyledItemCallToAction>
-				<StyledItemCallToAction
-					$color={callToActionColor}
-					style={{
-						marginTop: '10px',
-					}}
-					onClick={() => {
-						open(playUrl, '_blank');
-					}}>
-					{alternativePlayText ? alternativePlayText : 'Play the game!'}
-				</StyledItemCallToAction>
+				{!hidePlayButton && (
+					<StyledItemCallToAction
+						$color={callToActionColor}
+						style={{
+							marginTop: '10px',
+						}}
+						onClick={() => {
+							open(playUrl, '_blank');
+						}}>
+						{alternativePlayText ? alternativePlayText : 'Play the game!'}
+					</StyledItemCallToAction>
+				)}
 			</StyledCol>
 		</StyledItemContainer>
 	);
