@@ -43,7 +43,7 @@ export function initAbout(root) {
   function render() {
     renderCV();
     photo.innerHTML = about.photo
-      ? `<img src="${esc(about.photo)}" alt="${esc(t('about.photoAlt'))}">`
+      ? `<img src="${esc(resolveSrc(about.photo))}" alt="${esc(t('about.photoAlt'))}">`
       : artworkSVG('about-photo', 'sky');
 
     bio.innerHTML = tr(about.bio)

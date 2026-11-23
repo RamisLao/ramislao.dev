@@ -155,12 +155,17 @@ export function instagramInfo(url) {
 
 /**
  * A plain filename ('about_1.gif') means "in this entry's own folder" (base).
- * Full paths ('/images/...') and web links are used as they are.
+ * Full paths ('/images/...') point into /public; web links are used as they are.
+ * Paths get the site's base folder in front, so they also work when the site
+ * lives in a subfolder (GitHub Pages: /ramislao.dev/). Locally the base is '/'.
  */
+const SITE_BASE = import.meta.env.BASE_URL;
 export function resolveSrc(src, base) {
-  if (!src || !base) return src;
-  if (/^(https?:)?\/\//.test(src) || src.startsWith('/') || src.startsWith('data:')) return src;
-  return `${base.replace(/\/?$/, '/')}${src.replace(/^\.\//, '')}`;
+  if (!src) return src;
+  if (/^(https?:)?\/\//.test(src) || src.startsWith('data:') || src.startsWith('blob:')) return src;
+  if (src.startsWith('/')) return SITE_BASE + src.slice(1);
+  if (!base) return src;
+  return resolveSrc(`${base.replace(/\/?$/, '/')}${src.replace(/^\.\//, '')}`);
 }
 
 function normalize(item, base) {
