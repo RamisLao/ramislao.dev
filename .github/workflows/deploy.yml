@@ -1,5 +1,5 @@
 # Builds the site and publishes it to GitHub Pages on every push to master.
-# One-time setup on github.com: Settings → Pages → Source: "GitHub Actions".
+# One-time setup on github.com: Settings > Pages > Source: "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
@@ -20,17 +20,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24 # same as on your computer
           cache: npm
 
       # Tells the build which folder the site lives in:
       # '/ramislao.dev' on <user>.github.io, or '' with a custom domain.
       - id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - run: npm ci
 
@@ -38,7 +38,7 @@ jobs:
         env:
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -50,4 +50,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
