@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+}
+html.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-bounce), background 0.2s, color 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+/* White text needs a dark fill: --primary and --secondary are both text-safe */
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-dark);
+}
+.btn-primary:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+.btn-small {
+  padding: 9px 18px;
+  font-size: 0.9rem;
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* ---------- Tags ---------- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tag-list li {
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Small colored dot used before labels */
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--entry, var(--accent));
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--on-dark);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s var(--ease-bounce), background 0.2s;
+}
+.to-top:hover {
+  background: var(--accent);
+  transform: translateY(-4px);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 36px var(--gutter) 40px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  background: var(--bg-tint);
+  border-top: 1px solid var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

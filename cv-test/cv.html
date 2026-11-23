@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ramis Lao — CV Docencia 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  /* Same tokens as the portfolio (src/styles/tokens.css) */
+  :root {
+    --bg: #fbf4ec; --bg-tint: #f7ebe0; --surface: #ffffff;
+    --ink: #2a1b2d; --ink-soft: #6b5a6e; --line: #ecdccd;
+    --coral: #ef5a2f; --crimson: #b51a4f; --sun: #f5b31f; --plum: #7c4dbb;
+    --blue: #3d6fb0; --sky: #6aa9b8; --mint: #2f8f7a;
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: #d9cfc6; font-family: var(--font-body); color: var(--ink); font-size: 8.1pt; line-height: 1.34; }
+
+  .page {
+    position: relative;
+    width: 210mm; height: 297mm;
+    margin: 10mm auto;
+    padding: 11mm 12mm 10mm;
+    background: var(--bg);
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  @media print { body { background: none; } .page { margin: 0; } }
+
+  /* ---------- Flat shapes (same as the site's section shapes) ---------- */
+  .shape { --s: 14px; --c: var(--coral); display: inline-block; flex: none; width: var(--s); height: var(--s); background: var(--c); }
+  .circle { border-radius: 50%; }
+  .square { border-radius: 22%; }
+  .half { height: calc(var(--s) / 2); border-radius: var(--s) var(--s) 0 0; align-self: center; }
+  .arch { background: none; border: calc(var(--s) * 0.26) solid var(--c); border-bottom: 0; border-radius: var(--s) var(--s) 0 0; }
+  .ring { background: none; border: calc(var(--s) * 0.24) solid var(--c); border-radius: 50%; }
+  .triangle { clip-path: polygon(50% 4%, 100% 96%, 0 96%); }
+  .pill { height: calc(var(--s) / 2); border-radius: 999px; align-self: center; }
+
+  /* Decorative shapes in the corner, like the hero */
+  .deco { position: absolute; pointer-events: none; }
+
+  /* ---------- Header ---------- */
+  .header {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 64mm;
+    gap: 8mm;
+    align-items: end;
+    padding: 7mm 8mm 6.5mm;
+    margin-bottom: 5.5mm;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #4f93ab 0%, #93c3cb 48%, #ead6c0 82%, #f3c39e 100%);
+    overflow: hidden;
+  }
+  .header h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 31pt;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+  }
+  .legal { margin-top: 2mm; font-size: 9pt; font-weight: 500; }
+  .role {
+    margin-top: 2.6mm;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12pt;
+    letter-spacing: -0.01em;
+  }
+  .tagline {
+    display: inline-block;
+    margin-top: 2.5mm;
+    padding: 1.6mm 4mm;
+    border-radius: 999px;
+    background: rgb(251 244 236 / 0.85);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 8.4pt;
+  }
+  .tagline i { font-style: normal; color: var(--ink-soft); margin: 0 0.35em; }
+  .contact {
+    position: relative;
+    display: grid;
+    gap: 2.2mm;
+    padding: 4.5mm 5mm;
+    border-radius: 14px;
+    background: rgb(251 244 236 / 0.92);
+    font-size: 8pt;
+  }
+  .contact div { display: grid; grid-template-columns: 9px 1fr; gap: 2.6mm; align-items: start; }
+  .contact .shape { --s: 9px; margin-top: 2px; }
+  .contact a { color: inherit; text-decoration: none; }
+
+  /* ---------- Layout ---------- */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  section + section { margin-top: 6mm; }
+  .cols > section + section { margin-top: 0; } /* side-by-side columns */
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 2.6mm;
+    margin-bottom: 2.8mm;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 14pt;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---------- Experience entries ---------- */
+  .entry {
+    position: relative;
+    padding: 2.6mm 3.6mm 2.8mm;
+    border-radius: 12px;
+    background: var(--surface);
+    break-inside: avoid;
+  }
+  .entry + .entry { margin-top: 2.2mm; }
+  .entry::before { /* colored edge in the entry's accent */
+    content: ''; position: absolute; left: 0; top: 4mm; bottom: 4mm; width: 3px; border-radius: 0 3px 3px 0; background: var(--c, var(--coral));
+  }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.6mm; margin-bottom: 1mm; }
+  .date {
+    font-family: var(--font-display); font-weight: 600; font-size: 7.6pt;
+    padding: 0.5mm 2.4mm; border-radius: 999px;
+    background: color-mix(in srgb, var(--c, var(--coral)) 16%, transparent);
+  }
+  .mode { font-size: 7.2pt; color: var(--ink-soft); }
+  .org { font-size: 8.2pt; font-weight: 500; color: var(--ink-soft); }
+  .title { font-family: var(--font-display); font-weight: 700; font-size: 9.4pt; line-height: 1.2; letter-spacing: -0.01em; margin: 0.3mm 0 1.1mm; }
+
+  ul.dots { list-style: none; display: grid; gap: 0.7mm; }
+  ul.dots li { position: relative; padding-left: 3.6mm; }
+  ul.dots li::before {
+    content: ''; position: absolute; left: 0; top: 0.55em; width: 1.7mm; height: 1.7mm; border-radius: 50%; background: var(--c, var(--coral));
+  }
+  em { font-style: italic; }
+
+  /* ---------- Compact list (education, diplomas, awards) ---------- */
+  .list { display: grid; gap: 2.4mm; }
+  .item { display: grid; grid-template-columns: 17mm 1fr; gap: 3mm; break-inside: avoid; }
+  .item .yr { font-family: var(--font-display); font-weight: 600; font-size: 7.8pt; color: var(--ink-soft); padding-top: 0.6mm; }
+  .item .name { font-weight: 700; line-height: 1.25; }
+  .item .note { font-size: 7.9pt; }
+  .item .where { font-size: 7.6pt; color: var(--ink-soft); }
+  .badge {
+    display: inline-block; margin-top: 0.8mm; padding: 0.3mm 2mm; border-radius: 999px;
+    font-size: 7pt; font-weight: 700; background: color-mix(in srgb, var(--sun) 30%, transparent);
+  }
+
+  .card { padding: 4.5mm 5mm; border-radius: 12px; background: var(--surface); }
+
+  /* ---------- Languages ---------- */
+  .langs { display: grid; gap: 2mm; }
+  .lang { display: grid; grid-template-columns: 17mm 1fr auto; gap: 3mm; align-items: center; }
+  .lang b { font-weight: 700; }
+  .meter { display: flex; gap: 1.2mm; }
+  .meter span { width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--line); }
+  .meter span.on { background: var(--c); }
+  .lang small { font-size: 7.4pt; color: var(--ink-soft); }
+
+  /* ---------- Skills as chips (like the project sheets) ---------- */
+  .chips-group + .chips-group { margin-top: 3mm; }
+  .chips-group h3 { font-family: var(--font-display); font-size: 8pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 1.6mm; }
+  .chips { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+  .chips span {
+    display: inline-flex; align-items: center; gap: 1.6mm;
+    padding: 0.9mm 2.6mm 0.9mm 2.2mm; border-radius: 8px;
+    background: color-mix(in srgb, var(--c) 13%, var(--surface));
+    font-weight: 600; font-size: 7.8pt;
+  }
+  .chips span::before { content: ''; width: 1.6mm; height: 1.6mm; border-radius: 1px; background: var(--c); }
+
+  .foot {
+    position: absolute; left: 13mm; right: 13mm; bottom: 7mm;
+    display: flex; justify-content: space-between; font-size: 7pt; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <header class="header">
+    <!-- floating shapes, like the 3D hero -->
+    <span class="deco shape circle" style="--s:22px; --c:var(--coral); right:82mm; top:7mm"></span>
+    <span class="deco shape arch" style="--s:26px; --c:var(--plum); right:96mm; top:19mm; transform:rotate(-14deg)"></span>
+    <span class="deco shape square" style="--s:14px; --c:var(--sun); right:80mm; top:33mm; transform:rotate(18deg)"></span>
+    <span class="deco shape ring" style="--s:16px; --c:#fff4e6; right:110mm; top:5mm"></span>
+
+    <div>
+      <h1>Ramis Lao</h1>
+      <p class="legal">José Ramón Arias González</p>
+      <p class="role">Creative Technologist · Docente</p>
+      <p class="tagline">Videojuegos<i>·</i>Apps<i>·</i>Experiencias interactivas<i>·</i>Docencia</p>
+    </div>
+    <div class="contact">
+      <div><span class="shape circle" style="--c:var(--coral)"></span><span>Escandón, Miguel Hidalgo, CDMX, México</span></div>
+      <div><span class="shape square" style="--c:var(--plum)"></span><span>+52 (55) 1474 3611</span></div>
+      <div><span class="shape triangle" style="--c:var(--mint)"></span><span>joseramon.arias28@gmail.com</span></div>
+      <div><span class="shape half" style="--c:var(--blue)"></span><span>Fecha de nacimiento: 28/mar/1989</span></div>
+    </div>
+  </header>
+
+  <div class="cols">
+    <!-- Teaching -->
+    <section>
+      <h2><span class="shape half" style="--s:18px; --c:var(--plum)"></span>Experiencia docente</h2>
+
+      <article class="entry" style="--c:var(--crimson)">
+        <div class="meta"><span class="date">Nov 2022 – Presente</span><span class="mode">Tiempo parcial</span></div>
+        <p class="org">Nectoma, México</p>
+        <h3 class="title">Cofundadorx, facilitadorx y gestorx de comunidad</h3>
+        <ul class="dots">
+          <li>Diseño e imparto talleres de comunicación asertiva, consentimiento y dinámicas de grupo enfocadas en el aprendizaje colaborativo.</li>
+          <li>Gestiono una comunidad virtual de más de 300 miembrxs, coordinando actividades culturales, espacios de apoyo colectivo y eventos presenciales.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--blue)">
+        <div class="meta"><span class="date">Ene 2020 – Jul 2025</span><span class="mode">Por proyecto</span></div>
+        <p class="org">BEDU, México</p>
+        <h3 class="title">Instructorx senior de Ciencia de Datos y Machine Learning</h3>
+        <ul class="dots">
+          <li>Diseñé e impartí programas de Machine Learning, Ciencia de Datos e IA Ética para más de 1,000 estudiantes y profesionales.</li>
+          <li>Elaboré material didáctico, proyectos prácticos y evaluaciones alineadas con necesidades reales de la industria tecnológica.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--sun)">
+        <div class="meta"><span class="date">Ago 2024 – Jun 2025</span><span class="mode">Por proyecto</span></div>
+        <p class="org">Vancouver Film School, Canadá / LATAM</p>
+        <h3 class="title">Embajadorx académicx y tallerista</h3>
+        <ul class="dots">
+          <li>Diseñé e impartí conferencias y talleres internacionales sobre desarrollo de videojuegos y trayectorias profesionales en la industria del entretenimiento digital.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--coral)">
+        <div class="meta"><span class="date">Ene 2022 – Sep 2022</span><span class="mode">Tiempo parcial</span></div>
+        <p class="org">Instituto SAE, CDMX</p>
+        <h3 class="title">Instructorx senior de Diseño y Programación de Videojuegos</h3>
+        <ul class="dots">
+          <li>Lideré el diseño curricular y la impartición de 3 asignaturas universitarias: Programación de Motores en C++, Arte Técnico en Unity e Inteligencia Artificial para Videojuegos.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--mint)">
+        <div class="meta"><span class="date">2006 – 2016</span><span class="mode">Diversas instituciones</span></div>
+        <p class="org">Colegio Suizo de México / Hacemos Música / The Crew</p>
+        <h3 class="title">Docente de Música e Inglés Técnico</h3>
+        <ul class="dots">
+          <li>Impartí clases de música (teoría, ensamble, ejecución) y dirección musical para puestas en escena teatrales.</li>
+          <li>Ofrecí cursos de inglés avanzado enfocados en negocios y emprendimiento.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Work -->
+    <section>
+      <h2><span class="shape square" style="--s:16px; --c:var(--blue)"></span>Experiencia laboral</h2>
+
+      <article class="entry" style="--c:var(--crimson)">
+        <div class="meta"><span class="date">Ago 2024 – Presente</span><span class="mode">Tiempo parcial</span></div>
+        <p class="org">Crafted Mayhem, México / Canadá</p>
+        <h3 class="title">Cofundadorx y directorx creativx</h3>
+        <ul class="dots">
+          <li>Desarrollo videojuegos propios y soluciones digitales a la medida (aplicaciones web y experiencias interactivas) para clientes.</li>
+          <li>Gestiono proyectos de principio a fin, integrando dirección creativa, diseño UI/UX y programación full-stack.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--mint)">
+        <div class="meta"><span class="date">Mar 2023 – Ago 2024</span><span class="mode">Tiempo completo</span></div>
+        <p class="org">HyperBeard, México</p>
+        <h3 class="title">Diseñadorx y programadorx full-stack</h3>
+        <ul class="dots">
+          <li>Desarrollé herramientas internas en Unity y aplicaciones web para optimizar la producción de videojuegos y los flujos de trabajo de equipos multidisciplinarios (programación, arte, diseño y administración).</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--sun)">
+        <div class="meta"><span class="date">Jul 2017 – Dic 2019</span><span class="mode">Tiempo completo</span></div>
+        <p class="org">Marakana Sports, EE. UU.</p>
+        <h3 class="title">Cofundadorx y Lead Game Developer</h3>
+        <ul class="dots">
+          <li>Diseñé e implementé la app <em>Combine</em>, una suite de minijuegos interactivos con visión por computadora y sensores para evaluar el potencial atlético.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--plum)">
+        <div class="meta"><span class="date">Ene 2018 – Dic 2018</span><span class="mode">Tiempo completo</span></div>
+        <p class="org">Catalyst, México</p>
+        <h3 class="title">Ingenierx de software full-stack</h3>
+        <ul class="dots">
+          <li>Desarrollé aplicaciones web para clientes internacionales como HP y AirTM.</li>
+          <li>Construí soluciones integradas de software y hardware con Unity, presentadas en la feria de tecnología industrial <em>Hannover Messe 4.0</em>.</li>
+        </ul>
+      </article>
+
+      <article class="entry" style="--c:var(--coral)">
+        <div class="meta"><span class="date">Ene 2017 – Ene 2018</span><span class="mode">Tiempo parcial</span></div>
+        <p class="org">SimplifAI, EE. UU.</p>
+        <h3 class="title">Cofundadorx y CTO</h3>
+        <ul class="dots">
+          <li>Diseñé la arquitectura y colaboré en el desarrollo de la aplicación <em>Simple Predict</em>, para democratizar el acceso a las redes neuronales en pequeñas y medianas empresas.</li>
+        </ul>
+      </article>
+    </section>
+  </div>
+
+  <footer class="foot"><span>Ramis Lao · CV 2026</span><span>1 / 2</span></footer>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <span class="deco shape circle" style="--s:46mm; --c:color-mix(in srgb, var(--sun) 22%, transparent); right:-14mm; top:-14mm"></span>
+  <span class="deco shape arch" style="--s:30mm; --c:color-mix(in srgb, var(--plum) 14%, transparent); left:-8mm; bottom:-4mm"></span>
+
+  <div class="cols" style="position:relative">
+    <div>
+      <section>
+        <h2><span class="shape arch" style="--s:18px; --c:var(--coral)"></span>Educación</h2>
+        <div class="card list">
+          <div class="item">
+            <span class="yr">2024 – 2027</span>
+            <div>
+              <p class="name">Licenciatura en Diseño Gráfico Digital</p>
+              <p class="note">Titulación prevista para enero de 2027</p>
+              <p class="where">UNIR</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="yr">2008 – 2016</span>
+            <div>
+              <p class="name">Licenciatura en Composición Musical</p>
+              <p class="note">Créditos concluidos, sin titulación · Promedio 9.7 / 10</p>
+              <p class="where">Facultad de Música, UNAM</p>
+              <span class="badge">Medalla Gabino Barreda</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="shape triangle" style="--s:16px; --c:var(--mint)"></span>Diplomas y cursos</h2>
+        <div class="card list">
+          <div class="item"><span class="yr">2023</span><div><p class="name">Diploma en Ilustración Digital</p><p class="note">Calificación final: 100 / 100</p><p class="where">Escena</p></div></div>
+          <div class="item"><span class="yr">2021 – 2022</span><div><p class="name">Diploma en Diseño de Videojuegos</p><p class="note">Promedio 94.15</p><p class="where">Vancouver Film School, Canadá</p><span class="badge">Premio a la Excelencia en Código</span></div></div>
+          <div class="item"><span class="yr">2017 – 2018</span><div><p class="name">Nanodegree en Inteligencia Artificial</p><p class="where">Udacity</p></div></div>
+          <div class="item"><span class="yr">2017</span><div><p class="name">Nanodegree en Fundamentos de Deep Learning</p><p class="where">Udacity</p></div></div>
+          <div class="item"><span class="yr">2016 – 2017</span><div><p class="name">Especialización en Fundamentos de la Computación</p><p class="where">Coursera / Rice University</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="shape pill" style="--s:22px; --c:var(--sky)"></span>Idiomas</h2>
+        <div class="card langs">
+          <div class="lang" style="--c:var(--coral)"><b>Español</b><small>Lengua materna</small><span class="meter"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span></div>
+          <div class="lang" style="--c:var(--blue)"><b>Inglés</b><small>Nativo</small><span class="meter"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></span></div>
+          <div class="lang" style="--c:var(--plum)"><b>Francés</b><small>Intermedio · DELF B2</small><span class="meter"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></span></div>
+        </div>
+      </section>
+    </div>
+
+    <div>
+      <section>
+        <h2><span class="shape circle" style="--s:16px; --c:var(--sun)"></span>Premios</h2>
+        <div class="card list">
+          <div class="item"><span class="yr">2022</span><div><p class="name">Premios estudiantiles en VFS</p><p class="note">Ganadorx de 3 premios: Mejor Juego de Mesa, Excelencia en Código y Mejor Proyecto Final.</p><p class="where">Vancouver Film School, Canadá</p></div></div>
+          <div class="item"><span class="yr">2021</span><div><p class="name">Beca “VFS’ My Year”</p><p class="note">Ganadorx de una beca con valor de 18,300 CAD.</p><p class="where">Vancouver Film School, Canadá</p></div></div>
+          <div class="item"><span class="yr">2016</span><div><p class="name">Medalla Gabino Barreda a la Excelencia Académica</p><p class="note">Otorgada al promedio más alto de cada generación al concluir sus estudios.</p><p class="where">UNAM, México</p></div></div>
+          <div class="item"><span class="yr">2012 – 2016</span><div><p class="name">Diploma de Aprovechamiento por Excelencia Académica</p><p class="note">Otorgado al mejor promedio de la generación cada semestre. Lo recibí 4 años consecutivos.</p><p class="where">UNAM, México</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="shape ring" style="--s:16px; --c:var(--crimson)"></span>Habilidades técnicas</h2>
+        <div class="card">
+          <div class="chips-group" style="--c:var(--blue)">
+            <h3>Desarrollo</h3>
+            <div class="chips"><span>C#</span><span>Python</span><span>JavaScript</span><span>React.js</span><span>Node.js</span><span>HTML</span><span>CSS</span><span>SQL</span></div>
+          </div>
+          <div class="chips-group" style="--c:var(--coral)">
+            <h3>Motores de juego</h3>
+            <div class="chips"><span>Unity</span><span>Unreal Engine 5</span></div>
+          </div>
+          <div class="chips-group" style="--c:var(--mint)">
+            <h3>Datos e IA</h3>
+            <div class="chips"><span>Machine Learning</span></div>
+          </div>
+          <div class="chips-group" style="--c:var(--plum)">
+            <h3>Diseño y video</h3>
+            <div class="chips"><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>InDesign</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="foot"><span>Ramis Lao · CV 2026</span><span>2 / 2</span></footer>
+</div>
+
+</body>
+</html>

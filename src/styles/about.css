@@ -1,0 +1,179 @@
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) 1.2fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+/* Arch-shaped photo frame */
+.about-photo {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-tint);
+}
+.about-photo > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-intro .section-head {
+  margin-bottom: 24px;
+}
+.about-cv:not(:empty) {
+  margin-top: 24px;
+}
+.about-cv .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-cv .cv-note {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.about-bio {
+  display: grid;
+  gap: 16px;
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+}
+.about-bio p:first-child {
+  color: var(--ink);
+}
+
+/* ---------- Playful skill cards ---------- */
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: 16px;
+}
+.skill {
+  display: grid;
+  gap: 6px;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--c) 13%, var(--surface));
+  transition: transform 0.4s var(--ease-bounce);
+}
+.skill:nth-child(odd) {
+  rotate: -1deg;
+}
+.skill:nth-child(even) {
+  rotate: 1deg;
+}
+.skill:hover {
+  transform: translateY(-6px) rotate(-1deg);
+}
+.skill-shape {
+  --s: 44px;
+  margin-bottom: 10px;
+  transition: transform 0.6s var(--ease-bounce);
+}
+/* Each shape moves in its own way on hover */
+.skill:hover .shape-square,
+.skill:hover .shape-triangle {
+  transform: rotate(180deg) scale(1.1);   /* spin */
+}
+.skill:hover .shape-circle {
+  animation: skill-bounce 0.9s var(--ease-out);   /* bouncing ball */
+}
+.skill:hover .shape-half {
+  animation: skill-seesaw 1s ease-in-out;         /* rocks like a seesaw */
+}
+.skill:hover .shape-arch {
+  animation: skill-jelly 0.8s ease-in-out;        /* wobbles like jelly */
+}
+.skill:hover .shape-ring {
+  animation: skill-coin 0.9s ease-in-out;         /* flips like a coin */
+}
+.skill:hover .shape-pill {
+  animation: skill-stretch 0.8s ease-in-out;      /* stretches and snaps back */
+}
+
+.skill-shape.shape-circle,
+.skill-shape.shape-half,
+.skill-shape.shape-arch {
+  transform-origin: 50% 100%;   /* squash and rock from the bottom */
+}
+.skill-shape.shape-pill {
+  transform-origin: 0 50%;      /* stretch from the left */
+}
+
+@keyframes skill-bounce {
+  15% { transform: scale(1.2, 0.8); }
+  40% { transform: translateY(-20px) scale(0.88, 1.12); }
+  62% { transform: scale(1.15, 0.85); }
+  78% { transform: translateY(-6px) scale(0.96, 1.04); }
+  90% { transform: scale(1.04, 0.96); }
+}
+@keyframes skill-seesaw {
+  20% { transform: rotate(-24deg); }
+  45% { transform: rotate(20deg); }
+  65% { transform: rotate(-11deg); }
+  82% { transform: rotate(5deg); }
+}
+@keyframes skill-jelly {
+  25% { transform: scale(1.28, 0.72); }
+  42% { transform: scale(0.8, 1.22); }
+  60% { transform: scale(1.12, 0.9); }
+  78% { transform: scale(0.96, 1.04); }
+}
+@keyframes skill-coin {
+  to { transform: perspective(240px) rotateY(360deg); }
+}
+@keyframes skill-stretch {
+  30% { transform: scaleX(1.45); }
+  52% { transform: scaleX(0.85); }
+  72% { transform: scaleX(1.12); }
+  88% { transform: scaleX(0.97); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill:hover .skill-shape {
+    animation: none;
+  }
+}
+.skill-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.skill-line {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Software ---------- */
+.software {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 28px 40px;
+}
+.software-group h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+@media (max-width: 760px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+  }
+  .about-photo {
+    max-width: 320px;
+  }
+}

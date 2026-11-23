@@ -1,0 +1,176 @@
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  padding: 14px var(--gutter);
+  pointer-events: none;
+}
+
+.nav-inner {
+  pointer-events: auto;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 8px 8px 20px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid color-mix(in srgb, var(--surface) 60%, transparent);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.site-nav.scrolled .nav-inner {
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* A tiny arch as the logo mark */
+.brand-mark {
+  width: 18px;
+  height: 22px;
+  border: 5px solid var(--accent);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: block;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+.nav-links a[aria-current] {
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.lang-switch {
+  display: flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+.lang-switch button {
+  border: 0;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.lang-switch button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+/* Hamburger (mobile only) */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  position: relative;
+}
+.nav-toggle span {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  height: 2px;
+  background: var(--on-dark);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease-out);
+}
+.nav-toggle span:first-child {
+  transform: translateY(-4px);
+}
+.nav-toggle span:last-child {
+  transform: translateY(4px);
+}
+.menu-open .nav-toggle span:first-child {
+  transform: rotate(45deg);
+}
+.menu-open .nav-toggle span:last-child {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-inner {
+    position: relative;
+  }
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+    border-radius: var(--radius-lg);
+    background: var(--bg);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s, transform 0.25s var(--ease-out), visibility 0.25s;
+  }
+  .menu-open .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .nav-links {
+    flex-direction: column;
+  }
+  .nav-links a {
+    padding: 13px 16px;
+    font-size: 1.05rem;
+  }
+  .lang-switch {
+    align-self: flex-start;
+  }
+}

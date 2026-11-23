@@ -1,0 +1,510 @@
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+.sheet[hidden] {
+  display: none;
+}
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.sheet-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(820px, 100%);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--bg);
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease-out);
+  outline: none;
+}
+
+.sheet.open .sheet-backdrop {
+  opacity: 1;
+}
+.sheet.open .sheet-panel {
+  transform: none;
+}
+
+.sheet-close {
+  position: sticky;
+  top: 16px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin: 16px 16px 0 auto;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--on-dark);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.3s var(--ease-bounce);
+}
+.sheet-close:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
+
+.sheet-body {
+  padding: 0 clamp(20px, 5vw, 48px) 64px;
+  margin-top: -22px;
+}
+
+.sheet-header {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-right: 56px;
+}
+.sheet-kicker {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sheet-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+/* Studio / client badges under the title */
+.sheet-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sheet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--entry) 16%, var(--surface));
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.sheet-badge strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+.sheet-badge a {
+  text-decoration: none;
+}
+.sheet-badge a:hover strong {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+.sheet-badge .ext {
+  margin-left: 3px;
+  font-size: 0.85em;
+  color: var(--ink-soft);
+}
+
+/* Store buttons */
+.btn-store {
+  color: var(--on-dark);
+}
+.btn-steam {
+  background: var(--steam);
+  border-color: var(--steam);
+}
+.btn-itch {
+  background: var(--itch);
+  border-color: var(--itch);
+}
+.btn-steam:hover,
+.btn-itch:hover {
+  filter: brightness(1.15);
+}
+
+/* Credits: name on the left, role on the right */
+/* Tools & tech chips */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tech-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.tech-list li::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--ink);
+  opacity: 0.45;
+}
+
+.credits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+.credits li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.credits li:last-child {
+  border-bottom: 0;
+}
+.credit-name {
+  font-weight: 600;
+}
+.credit-name a {
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+.credit-role {
+  color: var(--ink-soft);
+  text-align: right;
+}
+
+.sheet-subtitle {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Gallery ---------- */
+/*
+  Every item is shown at the SAME HEIGHT (--stage-h); its width follows its own
+  shape (--r = width ÷ height, set per item by sheets/parts.js).
+  --stage-h is the height a 16:9 video needs to fill the sheet's width, so
+  16:9 is full-width and taller shapes (reels, posts, portraits) are narrower.
+*/
+.gallery {
+  container-type: inline-size;
+  margin-bottom: 28px;
+}
+.gallery-stage {
+  --stage-h: min(56.25cqi, 70vh);
+  height: var(--stage-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-frame {
+  --r: 1.7778;
+  aspect-ratio: var(--r);
+  width: min(100%, calc(var(--stage-h) * var(--r)));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-tint);
+  transition: width 0.3s var(--ease-out);
+}
+.media-frame > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+/* Fullscreen button in the corner of the current media */
+.media-frame {
+  position: relative;
+}
+.media-frame > .media-expand {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ink) 72%, transparent);
+  color: var(--on-dark);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: background 0.2s, opacity 0.2s, transform 0.25s var(--ease-bounce);
+}
+.media-frame > .media-expand:hover,
+.media-frame > .media-expand:focus-visible {
+  background: var(--accent);
+  opacity: 1;
+  transform: scale(1.08);
+}
+.media-frame[data-kind='youtube'] {
+  background: var(--ink);
+}
+/* Images fade in once their real size is known */
+.media-frame.is-loading > img,
+.media-frame.is-loading > video {
+  opacity: 0;
+}
+.media-frame > img,
+.media-frame > video {
+  transition: opacity 0.3s;
+}
+/* Instagram's embed (with its own header and footer) is laid out at 326px wide and its
+   natural height, then scaled down evenly to the stage height by sheets/parts.js,
+   so it keeps its real proportions instead of being squeezed. */
+.media-frame[data-kind='instagram'] {
+  position: relative;
+  aspect-ratio: auto;
+  height: 100%;
+  width: calc(var(--stage-h) * 0.53); /* replaced by the exact width once measured */
+  max-width: 100%;
+  background: var(--surface);
+}
+.media-frame[data-kind='instagram'] > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 326px;
+  transform-origin: 0 0;
+}
+
+/* Short description under the current media */
+.gallery-caption {
+  margin: 10px auto 0;
+  max-width: 60ch;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.gallery-caption[hidden] {
+  display: none;
+}
+
+/* Thumbnails: same height, width follows each item's shape */
+.gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.gallery-thumb {
+  --r: 1.7778;
+  position: relative;
+  flex: none;
+  height: 64px;
+  width: calc(64px * var(--r));
+  min-width: 40px;
+  padding: 0;
+  border: 3px solid transparent;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-tint);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.gallery-thumb.active,
+.gallery-thumb:hover {
+  opacity: 1;
+}
+.gallery-thumb.active {
+  border-color: var(--accent);
+}
+.gallery-thumb img,
+.gallery-thumb video {
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumb-play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--on-dark);
+  font-size: 0.9rem;
+  background: color-mix(in srgb, var(--ink-deep) 25%, transparent);
+}
+.thumb-instagram {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--on-dark);
+  background: linear-gradient(45deg, var(--pop), var(--secondary) 50%, var(--primary));
+}
+
+.sheet-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* ---------- Content sections ---------- */
+.sheet-section {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.sheet-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.sheet-section p + p {
+  margin-top: 12px;
+}
+.sheet-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.sheet-list li {
+  position: relative;
+  padding-left: 26px;
+}
+.sheet-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.sheet-list li:nth-child(3n + 2)::before {
+  background: var(--primary);
+  border-radius: 3px;
+}
+.sheet-list li:nth-child(3n)::before {
+  background: var(--highlight);
+  border-radius: 10px 10px 0 0;
+  height: 6px;
+  top: 0.75em;
+}
+/* One-sentence summary under the title */
+.sheet-pitch {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.45;
+  max-width: 46ch;
+  color: var(--ink);
+}
+
+/* Key facts strip */
+.sheet-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+.fact {
+  flex: 1 1 150px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+.fact dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.fact dd {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+}
+/* Impact is the strongest fact: give it the full row */
+.fact-impact {
+  flex-basis: 100%;
+}
+
+/* Folded sections: title row with a +/− toggle */
+.sheet-fold summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+}
+.sheet-fold summary::-webkit-details-marker {
+  display: none;
+}
+.sheet-fold summary h3 {
+  margin: 0;
+  transition: color 0.2s;
+}
+.sheet-fold summary:hover h3 {
+  color: var(--accent-text);
+}
+.fold-icon {
+  position: relative;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  transition: background 0.2s;
+}
+.fold-icon::before,
+.fold-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  margin: -1px 0 0 -6px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform 0.25s var(--ease-out);
+}
+.fold-icon::after {
+  transform: rotate(90deg);
+}
+.sheet-fold[open] .fold-icon::after {
+  transform: rotate(0deg);
+}
+.sheet-fold summary:hover .fold-icon {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.fold-body {
+  padding-top: 12px;
+}
+.fold-body p + p {
+  margin-top: 12px;
+}
+
+.sheet-placeholder {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+

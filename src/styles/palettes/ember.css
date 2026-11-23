@@ -1,0 +1,133 @@
+/* ============================================================================
+   PALETTE: EMBER  —  orange first
+   Reference: #E36234 (primary) · #7B34E3 · #34E3C0 · #E3DE34 · #8E6050
+
+   How to read this file
+   • Every token has a ROLE. The whole site uses these roles, never raw colors,
+     so a palette is just a set of values for the same 22 tokens.
+   • TEXT-SAFE tokens may be used for text: they reach at least 4.5:1 against
+     --bg, --bg-tint and --surface, and white text on them also passes.
+   • DECOR tokens are for shapes, fills, tints and icons only. Never put
+     small text in these colors. Dark text (--ink) on top of them is fine.
+   • Contrast ratios are noted as "x:1 on --bg / on --bg-tint".
+   • To activate this palette, set it in the @import line of tokens.css.
+   ============================================================================ */
+:root {
+  /* ──────────────────────────────────────────────────────────────────────────
+     SURFACES — the backgrounds everything sits on
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Page background. Also: the side sheet, the mobile menu, form fields,
+     the curve under the hero, and (semi-transparent) the floating nav bar
+     and the pill under your title. */
+  --bg: #f8f5f1;
+
+  /* Alternate background for every other section (Teaching, Contact), the
+     footer, and the empty space behind images while they load. */
+  --bg-tint: #f0e9e2;
+
+  /* Cards: project cards, filter chips, the contact form, tags, the active
+     nav link, and the white backing of Instagram embeds. Skill cards and
+     studio badges are this color mixed with a bit of their own color. */
+  --surface: #ffffff;
+
+  /* Thin borders and dividers: filter chips, form fields, tags, the lines
+     between teaching rows, sheet sections and credits, the footer. */
+  --line: #ddd3c9;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TEXT & DARK UI
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Main text: body copy, headings, your name in the hero. Also the dark
+     round buttons (close ×, back to top, scroll arrow, menu toggle), the
+     active filter chip and language button, the outline of regular buttons,
+     the line above the teaching list. Shadows and the dark backdrop behind
+     the side sheet are made from this color. 16.5:1 / 14.9:1 */
+  --ink: #24130d;
+
+  /* Secondary text: intros under section titles, card details (type, studio,
+     roles), years, captions, labels, nav links, the footer. 7.4:1 / 6.7:1 */
+  --ink-soft: #5f4c44;
+
+  /* The darkest tone: the fullscreen image viewer's backdrop, behind videos,
+     and the soft shadow under the balls in the placeholder artwork. */
+  --ink-deep: #170b07;
+
+  /* Text and icons placed ON dark or colored fills: the main button's label,
+     icons in round buttons and teaching arrows, the fullscreen viewer's text.
+     Also the white light in the 3D hero. Keep it light. */
+  --on-dark: #ffffff;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TEXT-SAFE COLORS — brand colors that can also carry text
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* PRIMARY — #E36234 darkened just enough to pass as text and to hold white
+     text. Used for: the main button (e.g. "Send message"), the success
+     message of the form, one of the colored roles under your title, the
+     shape next to "Teaching", the "Visual & UI design" skill, every third
+     bullet in the side sheets. 5.1:1 / 4.6:1 · white on it 5.6:1 */
+  --primary: #b2451a;
+
+  /* A deeper version of primary (here: the reference brown, darkened).
+     Used for: the shape next to "About", the "Programming" skill, a few
+     placeholder artworks and 3D shapes. 7.9:1 / 7.1:1 */
+  --primary-deep: #6b4234;
+
+  /* SECONDARY — the violet. Used for: the main button on hover, the form's
+     error message, one of the colored roles under your title, the
+     "Community" skill, a few placeholder artworks and 3D shapes.
+     5.6:1 / 5.1:1 · white on it 6.1:1 */
+  --secondary: #7b34e3;
+
+  /* The accent color, dark enough for text and focus rings. Used for: the
+     keyboard focus outline on links and buttons, form field borders while
+     typing, folded section titles on hover, one of the colored roles under
+     your title. 7.2:1 / 6.5:1 */
+  --accent-text: #8f3510;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     DECOR COLORS — shapes, fills and tints (no small text in these)
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* ACCENT — the reference orange, the color you see most across the site.
+     Used for: the logo arch, the favicon, round buttons on hover, the shape
+     next to "Featured work", side-sheet bullets, the active thumbnail
+     border, link underlines, the glow around a focused form field, the
+     "Game design" skill, placeholder artwork and 3D shapes.
+     3.2:1 on --bg (fine for shapes and icons, not for small text) */
+  --accent: #e36234;
+
+  /* A light tint of the accent. Used for: a 3D shape color and the warm
+     tone of the sunlight in the 3D hero. */
+  --accent-soft: #f8d0bd;
+
+  /* POP — the aqua, a fresh contrast to the orange. Used for: the
+     "Production" skill, the Instagram thumbnail gradient, placeholder
+     artwork and 3D shapes. */
+  --pop: #34e3c0;
+
+  /* A light tint of pop. Used for: the "Prototyping" skill, the background
+     of the "soft" artwork palette, 3D shapes. */
+  --pop-soft: #a8f0e1;
+
+  /* HIGHLIGHT — the yellow. Used for: the shape next to "Contact", the
+     "Teaching" skill, every third bullet in the side sheets, placeholder
+     artwork and 3D shapes. Very light on --bg, so keep it to shapes. */
+  --highlight: #e3de34;
+
+  /* A light tint of primary. Used for: the "Music" skill and 3D shapes. */
+  --primary-soft: #f6b79b;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     HERO SKY — the gradient behind the 3D shapes, top to bottom
+     Your name sits around the middle, so --sky-mid and --sky-low must stay
+     light enough for --ink (all four are 8:1 or more here).
+     ────────────────────────────────────────────────────────────────────────── */
+  --sky-top: #2bc7a8;      /* top edge, behind the nav bar */
+  --sky-mid: #9bebdb;      /* around your name */
+  --sky-low: #f6efc9;      /* around the roles pill */
+  --sky-horizon: #f8d9a8;  /* bottom edge, just above the curve; also the warm
+                              light bouncing up onto the 3D shapes */
+}

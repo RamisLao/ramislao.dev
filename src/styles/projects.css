@@ -1,0 +1,254 @@
+/* ---------- Featured row (right below the hero) ---------- */
+.section-projects {
+  padding-top: clamp(20px, 3vw, 36px);
+}
+.featured-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.featured-head .section-shape {
+  --s: 26px;
+}
+.featured-head h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+}
+.project-card.is-featured .card-body {
+  padding: 20px 26px 24px;
+}
+.project-card.is-featured .card-title {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+}
+
+/* Hover video preview */
+.card-media {
+  position: relative;
+}
+.card-media .card-preview {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.6s var(--ease-out);
+}
+.project-card.previewing .card-preview {
+  opacity: 1;
+}
+
+/* Phones: a swipeable strip, each card most of the screen wide */
+@media (max-width: 700px) {
+  .featured-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 4px var(--gutter) 14px;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: none;
+  }
+  .featured-grid .project-card {
+    scroll-snap-align: start;
+    animation: none;
+  }
+  .featured-grid .project-card:hover {
+    transform: none;
+  }
+}
+
+.more-head {
+  display: grid;
+  gap: 10px;
+  margin: clamp(56px, 8vw, 96px) 0 28px;
+  max-width: 640px;
+}
+.more-head .sub-head {
+  margin: 0;
+}
+.more-head p {
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr); /* lets chip rows scroll instead of widening the page */
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+.filter-label {
+  flex: none;
+  width: 52px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.25s var(--ease-bounce);
+}
+.chip:hover {
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+.chip.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-dark);
+}
+
+.results-count {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+/* ---------- Grid & cards ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr));
+  gap: clamp(18px, 2.4vw, 28px);
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
+  transition: transform 0.4s var(--ease-bounce), box-shadow 0.3s;
+  animation: card-in 0.5s var(--ease-out) both;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-tint);
+}
+.card-media > * {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card:hover .card-media > * {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 18px 22px 22px;
+  display: grid;
+  gap: 4px;
+}
+.card-type {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.card-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.card-button {
+  all: unset;
+  cursor: pointer;
+}
+/* Makes the whole card keyboard-focusable via the title button */
+.card-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+.card-button:focus-visible::after {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+}
+.card-meta {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.card-studio {
+  color: var(--ink-soft);
+}
+.card-roles {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--ink-soft);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius-lg);
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .chip {
+    flex: none;
+  }
+}

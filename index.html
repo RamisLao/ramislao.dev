@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramis Lao — Creative Technologist</title>
+    <meta name="description" content="Portfolio of Ramis Lao, creative technologist: programming, design and production for games, apps and interactive experiences." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 30V16a10 10 0 0 1 20 0v14h-6V16a4 4 0 0 0-8 0v14z' fill='%23f25e3d'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ============ NAVIGATION ============ -->
+    <header class="site-nav" data-nav>
+      <div class="nav-inner">
+        <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span>Ramis Lao</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-attr="aria-label:nav.menu">
+          <span></span><span></span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+          <nav>
+            <ul class="nav-links">
+              <li><a href="#home" data-i18n="nav.home">Home</a></li>
+              <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+              <li><a href="#teaching" data-i18n="nav.teaching">Teaching</a></li>
+              <li><a href="#about" data-i18n="nav.about">About</a></li>
+              <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="lang-switch" role="group" data-i18n-attr="aria-label:nav.language">
+            <button type="button" data-lang="es" lang="es">ES</button>
+            <button type="button" data-lang="en" lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ HOME ============ -->
+      <section id="home" class="hero">
+        <div class="hero-canvas" data-hero-canvas aria-hidden="true"></div>
+        <!-- Curved edge between the sky and the page -->
+        <div class="hero-wave" aria-hidden="true">
+          <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C240,22 480,22 720,60 C960,98 1200,98 1440,60 L1440,120 L0,120 Z" />
+          </svg>
+        </div>
+        <div class="hero-content">
+          <h1 class="hero-title">Ramis Lao</h1>
+          <p class="hero-role" data-i18n="hero.role">Creative Technologist</p>
+          <p class="hero-roles" data-hero-roles></p>
+        </div>
+        <a class="hero-scroll" href="#projects" data-i18n-attr="aria-label:hero.scroll">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </a>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section id="projects" class="section section-projects">
+        <div class="container">
+          <header class="featured-head" style="--c: var(--accent)">
+            <span class="section-shape shape-arch" aria-hidden="true"></span>
+            <h2 data-i18n="featured.title">Featured work</h2>
+          </header>
+          <div class="featured-grid" data-featured></div>
+
+          <header class="more-head">
+            <h2 class="sub-head" data-i18n="projects.title">More projects</h2>
+            <p data-i18n="projects.intro"></p>
+          </header>
+          <div class="filters" data-filters></div>
+          <p class="results-count" data-count aria-live="polite"></p>
+          <div class="project-grid" data-grid></div>
+        </div>
+      </section>
+
+      <!-- ============ TEACHING ============ -->
+      <section id="teaching" class="section section-tint">
+        <div class="container">
+          <header class="section-head" style="--c: var(--primary)">
+            <span class="section-shape shape-half" aria-hidden="true"></span>
+            <h2 data-i18n="teaching.title">Teaching</h2>
+            <p data-i18n="teaching.intro"></p>
+          </header>
+          <ul class="teach-list" data-teaching></ul>
+        </div>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="about-intro">
+            <figure class="about-photo" data-about-photo></figure>
+            <div>
+              <header class="section-head" style="--c: var(--primary-deep)">
+                <span class="section-shape shape-circle" aria-hidden="true"></span>
+                <h2 data-i18n="about.title">About</h2>
+              </header>
+              <div class="about-bio" data-about-bio></div>
+              <div class="about-cv" data-about-cv></div>
+            </div>
+          </div>
+
+          <h3 class="sub-head" data-i18n="about.skills">What I’m good at</h3>
+          <ul class="skills" data-skills></ul>
+
+          <h3 class="sub-head" data-i18n="about.software">Tools &amp; tech</h3>
+          <div class="software" data-software></div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section section-tint">
+        <div class="container contact-layout">
+          <header class="section-head" style="--c: var(--highlight)">
+            <span class="section-shape shape-square" aria-hidden="true"></span>
+            <h2 data-i18n="contact.title">Contact</h2>
+            <p data-i18n="contact.intro"></p>
+          </header>
+
+          <form class="contact-form" novalidate>
+            <div class="field">
+              <label for="cf-name" data-i18n="contact.name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email" data-i18n="contact.email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-message" data-i18n="contact.message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <!-- Spam trap: hidden from people, bots fill it in -->
+            <input class="trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit" data-i18n="contact.send">Send message</button>
+              <p class="form-status" data-status role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year></span> Ramis Lao. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    </footer>
+
+    <!-- Always-visible back-to-top button -->
+    <a class="to-top" href="#home" data-i18n-attr="aria-label:toTop">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+/* ---------- Fullscreen media viewer (components/lightbox.js) ---------- */
+.lightbox {
+  --lb-gap: clamp(64px, 8vw, 96px); /* room for the arrows on each side */
+  position: fixed;
+  inset: 0;
+  z-index: 200; /* above the side sheet */
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--ink-deep) 94%, transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.lightbox[hidden] {
+  display: none;
+}
+.lightbox.open {
+  opacity: 1;
+}
+
+/* Same sizing rules as the sheet's gallery: one height for every item, width follows its shape */
+.lightbox-stage {
+  --stage-h: calc(100svh - 170px); /* leaves room for the caption below */
+  width: calc(100vw - var(--lb-gap) * 2);
+  height: var(--stage-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox .media-frame {
+  border-radius: var(--radius-sm);
+  background: transparent;
+  transition: none;
+}
+.lightbox .media-frame[data-kind='youtube'] {
+  background: var(--ink-deep);
+}
+.lightbox .media-frame[data-kind='instagram'] {
+  background: var(--surface);
+}
+/* Show the whole image in fullscreen, never cropped */
+.lightbox .media-frame > img,
+.lightbox .media-frame > video {
+  object-fit: contain;
+}
+
+.lightbox-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--on-dark) 12%, transparent);
+  color: var(--on-dark);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.25s var(--ease-bounce);
+}
+.lightbox-btn:hover,
+.lightbox-btn:focus-visible {
+  background: var(--accent);
+}
+.lightbox-close {
+  top: 18px;
+  right: 18px;
+}
+.lightbox-close:hover {
+  transform: rotate(90deg);
+}
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  translate: 0 -50%;
+}
+.lightbox-prev {
+  left: calc((var(--lb-gap) - 52px) / 2);
+}
+.lightbox-next {
+  right: calc((var(--lb-gap) - 52px) / 2);
+}
+.lightbox-prev:hover {
+  transform: translateX(-3px);
+}
+.lightbox-next:hover {
+  transform: translateX(3px);
+}
+/* Only one item: no arrows */
+.lightbox.is-single .lightbox-prev,
+.lightbox.is-single .lightbox-next {
+  display: none;
+}
+
+/* Caption + counter, centered at the bottom */
+.lightbox-info {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  translate: -50% 0;
+  width: min(760px, calc(100vw - 2 * var(--lb-gap)));
+  display: grid;
+  gap: 4px;
+  text-align: center;
+}
+.lightbox-caption {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--on-dark);
+}
+.lightbox-caption:empty {
+  display: none;
+}
+.lightbox-count {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: color-mix(in srgb, var(--on-dark) 75%, transparent);
+}
+
+/* Phones: media uses the full width, arrows sit at the bottom next to the counter */
+@media (max-width: 700px) {
+  .lightbox {
+    --lb-gap: 12px;
+  }
+  .lightbox-stage {
+    --stage-h: calc(100svh - 210px);
+  }
+  .lightbox-prev,
+  .lightbox-next {
+    top: auto;
+    bottom: 14px;
+    translate: none;
+  }
+  .lightbox-prev {
+    left: 18px;
+  }
+  .lightbox-next {
+    right: 18px;
+  }
+  .lightbox-info {
+    bottom: 16px;
+    width: calc(100vw - 172px); /* between the two arrows */
+  }
+  .lightbox-caption {
+    font-size: 0.9rem;
+  }
+}

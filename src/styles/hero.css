@@ -1,0 +1,112 @@
+.hero {
+  position: relative;
+  /* Shorter than the screen so the featured projects peek in below */
+  height: 64vh;
+  height: 64svh;
+  min-height: 460px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--sky-top) 0%,
+    var(--sky-mid) 42%,
+    var(--sky-low) 78%,
+    var(--sky-horizon) 100%
+  );
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+}
+.hero-canvas canvas {
+  display: block;
+}
+
+/* Curve at the bottom — shapes rise from behind it.
+   The extra top padding leaves room for the shadow it casts on the sky. */
+.hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: calc(clamp(56px, 9vh, 100px) + 24px);
+  padding-top: 24px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: var(--bg);
+  filter: drop-shadow(0 -8px 12px color-mix(in srgb, var(--ink) 24%, transparent));
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 0 var(--gutter);
+  pointer-events: none; /* let the mouse reach the 3D scene */
+}
+
+.hero-title {
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.hero-role {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.4vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.hero-roles {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+}
+.hero-sep {
+  color: var(--ink-soft);
+  margin: 0 0.4em;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: clamp(18px, 4vh, 40px);
+  left: 50%;
+  translate: -50% 0;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--on-dark);
+  animation: hero-bob 2.2s ease-in-out infinite;
+  transition: background 0.2s;
+  z-index: 1;
+}
+.hero-scroll:hover {
+  background: var(--accent);
+}
+
+@keyframes hero-bob {
+  50% {
+    transform: translateY(8px);
+  }
+}
