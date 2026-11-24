@@ -32,7 +32,10 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v6
 
-      - run: npm ci
+      # 'npm install' rather than 'npm ci': npm on Windows leaves a few Linux-only
+      # packages (@emnapi/*) out of package-lock.json, and 'npm ci' refuses to
+      # run when anything is missing. Versions still follow the lock file.
+      - run: npm install --no-audit --no-fund
 
       - run: npm run build
         env:
