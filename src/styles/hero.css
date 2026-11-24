@@ -24,7 +24,7 @@
   display: block;
 }
 
-/* Curve at the bottom — shapes rise from behind it.
+/* Straight edge at the bottom (the page color) — shapes rise from behind it.
    The extra top padding leaves room for the shadow it casts on the sky. */
 .hero-wave {
   position: absolute;

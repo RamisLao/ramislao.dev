@@ -11,8 +11,11 @@
  *
  * ── Filled in automatically from the website ───────────────────────────
  *   • Colors and fonts       → src/styles/tokens.css (the active palette)
- *   • "Tools & tech"          → src/data/about.js → software
- *   • Featured project cards  → src/data/projects.js → featured (or the list below)
+ *   • Technical skills        → src/data/about.js → software (same groups as the site)
+ *
+ * ── Layout ─────────────────────────────────────────────────────────────
+ *   Page 1: header · Work experience (left) · Teaching experience (right)
+ *   Page 2: Education, Diplomas & courses, Languages (left) · Awards, Technical skills (right)
  *
  * ── Dates ──────────────────────────────────────────────────────────────
  *   from / to: '2024-08' (year-month), '2016' (year only), or to: null = "Present".
@@ -50,20 +53,14 @@ export const cv = {
     { private: 'birthdate' },
   ],
 
-  // Short intro under the header (2–3 lines)
-  profile: {
-    es: 'Más de diez años desarrollando videojuegos, aplicaciones y experiencias interactivas. Combino diseño, programación full-stack y producción para llevar proyectos de la primera idea al lanzamiento, ya sea liderando equipos o metiéndome de lleno en los detalles.',
-    en: 'More than ten years building games, apps and interactive experiences. I combine design, full-stack programming and production to take projects from the first idea all the way to launch, whether I’m leading the team or deep in the details.',
+  // One line under your name: what you do
+  summary: {
+    es: 'Desarrollo de videojuegos, aplicaciones y experiencias interactivas (diseño, programación full-stack y producción), gestión comunitaria y docencia.',
+    en: 'Building games, apps and interactive experiences (design, full-stack programming and production), community management and teaching.',
   },
 
-  // ── Featured projects (cards with images, page 1) ───────────────────
-  // 'site' = the same projects as the website's featured row.
-  // Or list project ids (file names in src/data/projects/), e.g. ['yanga-casting', 'party-demon'].
-  // Four fit in one row.
-  projects: 'site',
-
-  // ── Project development experience (main section, page 1) ───────────
-  development: [
+  // ── Work experience (page 1, left column) ───────────────────────────
+  work: [
     {
       from: '2024-08', to: null,
       mode: { es: 'Tiempo parcial', en: 'Part-time' },
@@ -120,7 +117,7 @@ export const cv = {
     },
   ],
 
-  // ── Teaching experience (secondary, page 2) ─────────────────────────
+  // ── Teaching experience (page 1, right column) ──────────────────────
   teaching: [
     {
       from: '2022-11', to: null,
@@ -140,8 +137,10 @@ export const cv = {
       org: 'BEDU', place: { es: 'México', en: 'Mexico' },
       title: { es: 'Instructorx senior de Ciencia de Datos y Machine Learning', en: 'Senior Data Science & Machine Learning Instructor' },
       points: [
-        { es: 'Diseñé e impartí programas de Machine Learning, Ciencia de Datos e IA Ética para más de 1000 estudiantes y profesionales, con material didáctico, proyectos prácticos y evaluaciones alineadas con la industria.',
-          en: 'Designed and taught Machine Learning, Data Science and Ethical AI programs for more than 1,000 students and professionals, with teaching materials, hands-on projects and assessments aligned with industry needs.' },
+        { es: 'Diseñé e impartí programas de Machine Learning, Ciencia de Datos e IA Ética para más de 1000 estudiantes y profesionales.',
+          en: 'Designed and taught Machine Learning, Data Science and Ethical AI programs for more than 1,000 students and professionals.' },
+        { es: 'Elaboré material didáctico, proyectos prácticos y evaluaciones alineadas con necesidades reales de la industria tecnológica.',
+          en: 'Created teaching materials, hands-on projects and assessments aligned with the real needs of the tech industry.' },
       ],
     },
     {
@@ -170,8 +169,10 @@ export const cv = {
       org: 'Colegio Suizo de México · Hacemos Música · The Crew', place: '',
       title: { es: 'Docente de Música e Inglés Técnico', en: 'Music & Technical English Teacher' },
       points: [
-        { es: 'Impartí música (teoría, ensamble y ejecución), dirección musical para teatro y cursos de inglés avanzado para negocios.',
-          en: 'Taught music (theory, ensemble and performance), musical direction for theater, and advanced business English.' },
+        { es: 'Impartí clases de música (teoría, ensamble y ejecución) y dirección musical para puestas en escena teatrales.',
+          en: 'Taught music (theory, ensemble and performance) and led musical direction for stage productions.' },
+        { es: 'Ofrecí cursos de inglés avanzado enfocados en negocios y emprendimiento.',
+          en: 'Taught advanced English courses focused on business and entrepreneurship.' },
       ],
     },
   ],
@@ -248,16 +249,14 @@ export const cv = {
 
   // ── Labels (section titles and small words) ─────────────────────────
   labels: {
-    projects:    { es: 'Proyectos destacados', en: 'Featured projects' },
-    development: { es: 'Desarrollo de proyectos', en: 'Project development' },
-    teaching:    { es: 'Docencia', en: 'Teaching' },
-    tools:       { es: 'Herramientas y tecnología', en: 'Tools & tech' },
+    work:        { es: 'Experiencia laboral', en: 'Work experience' },
+    teaching:    { es: 'Experiencia docente', en: 'Teaching experience' },
+    tools:       { es: 'Habilidades técnicas', en: 'Technical skills' },
     education:   { es: 'Educación', en: 'Education' },
     courses:     { es: 'Diplomas y cursos', en: 'Diplomas & courses' },
     awards:      { es: 'Premios', en: 'Awards' },
     languages:   { es: 'Idiomas', en: 'Languages' },
     present:     { es: 'Presente', en: 'Present' },
-    morework:    { es: 'Más proyectos en', en: 'More work at' },
   },
 
   // File names for the exported PDFs.

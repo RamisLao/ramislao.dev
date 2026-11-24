@@ -4,9 +4,6 @@
  */
 import { cv } from './data.js';
 import { about } from '../src/data/about.js';
-import { projects as siteProjects, featured } from '../src/data/projects.js';
-import { projectTypes, roles as roleNames } from '../src/data/taxonomy.js';
-import { artworkSVG } from '../src/components/artwork.js';
 
 // ── Language ───────────────────────────────────────────────────────────
 const params = new URLSearchParams(location.search);
@@ -18,12 +15,13 @@ document.querySelectorAll('.toolbar [data-lang]').forEach((a) => a.classList.tog
 
 /** Text in the current language ('' if missing). */
 const T = (v) => (v == null ? '' : typeof v === 'object' ? (v[lang] ?? '') : String(v));
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
 // cv/private.js is optional (kept off GitHub): its lines fill the { private: 'name' } slots.
 const privateLines = Object.values(import.meta.glob('./private.js', { eager: true, import: 'default' }))[0] || {};
 const contactLines = cv.contact
   .map((c) => (c.private ? privateLines[c.private] : c))
   .filter((c) => c && T(c.text) && !(webCopy && c.web === false));
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 // ── Colors: entries and groups cycle through the palette, like the site ──
 const CYCLE = ['--accent', '--secondary', '--pop', '--primary', '--highlight', '--primary-soft', '--pop-soft'];
@@ -44,10 +42,7 @@ const range = (from, to) => (to === undefined || to === from ? fmtDate(from) : `
 
 // ── Pieces ─────────────────────────────────────────────────────────────
 const shape = (kind, color, extra = '') => `<span class="shape ${kind}" style="--c:${color};${extra}"></span>`;
-
-function h2(label, kind, color, note = '') {
-  return `<h2>${shape(kind, color)}${esc(T(label))}${note}</h2>`;
-}
+const h2 = (label, kind, color) => `<h2>${shape(kind, color)}${esc(T(label))}</h2>`;
 
 function entry(e, i) {
   const place = T(e.place);
@@ -73,25 +68,8 @@ function item(x) {
     </div>`;
 }
 
-function projectCard(p, i) {
-  const src = p.cover ? (p.cover.startsWith('/') || /^https?:/.test(p.cover) ? p.cover : `/images/projects/${p.id}/${p.cover}`) : '';
-  const years = p.start ? range(String(p.start), p.end === null ? null : p.end === undefined ? undefined : String(p.end)) : '';
-  const type = T(projectTypes[p.type]);
-  const roles = (p.roles || []).map((r) => T(roleNames[r])).filter(Boolean).join(' · ');
-  return `
-    <article class="pcard" style="--entry:${colorAt(i)}">
-      <div class="pcard-media">${src ? `<img src="${esc(src)}" alt="">` : artworkSVG(p.id, p.palette)}</div>
-      <div class="pcard-body">
-        <p class="pcard-type">${esc([type, years].filter(Boolean).join(' · '))}</p>
-        <h3 class="pcard-title">${esc(T(p.title))}</h3>
-        ${roles ? `<p class="pcard-roles">${esc(roles)}</p>` : ''}
-        ${T(p.pitch) ? `<p class="pcard-pitch">${esc(T(p.pitch))}</p>` : ''}
-      </div>
-    </article>`;
-}
-
 function footer(n, total) {
-  const site = cv.contact.find((c) => c.shape === 'arch' && c.href) || cv.contact.find((c) => /^https?:/.test(c.href || ''));
+  const site = contactLines.find((c) => /^https?:/.test(c.href || ''));
   return `
     <footer class="foot">
       <span class="brand"><span class="brand-mark"></span>${esc(cv.name)}</span>
@@ -101,73 +79,67 @@ function footer(n, total) {
     </footer>`;
 }
 
-// ── Data from the website ──────────────────────────────────────────────
-const byId = Object.fromEntries(siteProjects.map((p) => [p.id, p]));
-const projectIds = cv.projects === 'site' ? featured : cv.projects || [];
-const cards = projectIds.map((id) => byId[id]).filter(Boolean);
-const site = cv.contact.find((c) => c.shape === 'arch' && c.href);
+// ── Header: one wide column, like the website's hero ───────────────────
+const header = `
+  <header class="hero">
+    <!-- floating flat shapes, like the 3D hero -->
+    ${shape('circle', 'var(--accent)', 'position:absolute;--s:30px;right:22mm;top:9mm')}
+    ${shape('arch', 'var(--primary-deep)', 'position:absolute;--s:34px;right:46mm;top:20mm;transform:rotate(-14deg)')}
+    ${shape('square', 'var(--highlight)', 'position:absolute;--s:20px;right:16mm;top:31mm;transform:rotate(18deg)')}
+    ${shape('ring', 'var(--on-dark)', 'position:absolute;--s:20px;right:66mm;top:7mm')}
+    ${shape('triangle', 'var(--secondary)', 'position:absolute;--s:17px;right:72mm;top:30mm;transform:rotate(-10deg)')}
+    ${shape('pill', 'var(--pop-soft)', 'position:absolute;--s:30px;right:36mm;top:5mm;transform:rotate(-24deg)')}
+    ${shape('half', 'var(--accent-soft)', 'position:absolute;--s:26px;right:88mm;top:17mm;transform:rotate(12deg)')}
 
-// ── Page 1: header, profile, featured projects, project development ───
+    <div class="hero-inner">
+      <h1>${esc(cv.name)}</h1>
+      ${T(cv.legalName) ? `<p class="legal">${esc(T(cv.legalName))}</p>` : ''}
+      <div class="role-row">
+        <p class="role">${esc(T(cv.role))}</p>
+        <p class="disciplines">${cv.disciplines.map((d, i) => `<span style="color:${ROLE_COLORS[i % ROLE_COLORS.length]}">${esc(T(d))}</span>`).join('<i>·</i>')}</p>
+      </div>
+      ${T(cv.summary) ? `<p class="summary">${esc(T(cv.summary))}</p>` : ''}
+      <div class="contact">
+        ${contactLines.map((c, i) => `
+          <span class="contact-item">${shape(c.shape, colorAt(i))}${c.href ? `<a href="${esc(c.href)}">${esc(T(c.text))}</a>` : esc(T(c.text))}</span>`).join('')}
+      </div>
+    </div>
+  </header>`;
+
+// ── Page 1: header · work (left) · teaching (right) ────────────────────
 const page1 = `
   <div class="page page-1">
-    <header class="hero">
-      ${shape('circle', 'var(--accent)', 'position:absolute;--s:22px;right:84mm;top:9mm')}
-      ${shape('arch', 'var(--primary-deep)', 'position:absolute;--s:26px;right:100mm;top:24mm;transform:rotate(-14deg)')}
-      ${shape('square', 'var(--highlight)', 'position:absolute;--s:15px;right:81mm;top:38mm;transform:rotate(18deg)')}
-      ${shape('ring', 'var(--on-dark)', 'position:absolute;--s:16px;right:114mm;top:7mm')}
-      ${shape('triangle', 'var(--secondary)', 'position:absolute;--s:13px;right:118mm;top:40mm;transform:rotate(-10deg)')}
-      ${shape('pill', 'var(--pop-soft)', 'position:absolute;--s:24px;left:4mm;top:5mm;transform:rotate(-24deg)')}
-      <div class="hero-grid">
-        <div>
-          <h1>${esc(cv.name)}</h1>
-          ${T(cv.legalName) ? `<p class="legal">${esc(T(cv.legalName))}</p>` : ''}
-          <p class="role">${esc(T(cv.role))}</p>
-          <p class="disciplines">${cv.disciplines.map((d, i) => `<span style="color:${ROLE_COLORS[i % ROLE_COLORS.length]}">${esc(T(d))}</span>`).join('<i>·</i>')}</p>
-        </div>
-        <div class="contact">
-          ${contactLines.map((c, i) => `
-            <div>${shape(c.shape, colorAt(i))}${c.href ? `<a href="${esc(c.href)}">${esc(T(c.text))}</a>` : `<span>${esc(T(c.text))}</span>`}</div>`).join('')}
-        </div>
-      </div>
-    </header>
-
-    ${T(cv.profile) ? `<p class="profile">${esc(T(cv.profile))}</p>` : ''}
-
-    ${cards.length ? `
-    <section>
-      ${h2(cv.labels.projects, 'circle', 'var(--accent)', site ? `<span class="h2-note">${esc(T(cv.labels.morework))} <b>${esc(T(site.text))}</b></span>` : '')}
-      <div class="projects" style="--n:${Math.min(cards.length, 4)}">${cards.map(projectCard).join('')}</div>
-    </section>` : ''}
-
-    <section>
-      ${h2(cv.labels.development, 'square', 'var(--primary-deep)')}
-      <div class="entries">${cv.development.map(entry).join('')}</div>
-    </section>
-
+    ${header}
+    <div class="cols">
+      <section>
+        ${h2(cv.labels.work, 'square', 'var(--primary-deep)')}
+        ${cv.work.map(entry).join('')}
+      </section>
+      <section>
+        ${h2(cv.labels.teaching, 'half', 'var(--primary)')}
+        ${cv.teaching.map((e, i) => entry(e, i + 2)).join('')}
+      </section>
+    </div>
     ${footer(1, 2)}
   </div>`;
 
-// ── Page 2: teaching (secondary) and everything else ───────────────────
+// ── Page 2: education, courses, languages (left) · awards, skills (right) ──
 const page2 = `
   <div class="page page-2">
-    <section>
-      ${h2(cv.labels.tools, 'ring', 'var(--secondary)')}
-      <div class="card tools">
-        ${about.software.map((g, i) => `
-          <div style="--c:${colorAt(i)}">
-            <h3>${esc(T(g.group))}</h3>
-            <div class="chips">${g.items.map((s) => `<span>${esc(s)}</span>`).join('')}</div>
-          </div>`).join('')}
-      </div>
-    </section>
+    ${shape('circle', 'color-mix(in srgb, var(--highlight) 22%, transparent)', 'position:absolute;--s:56mm;right:-18mm;top:-20mm')}
+    ${shape('arch', 'color-mix(in srgb, var(--secondary) 12%, transparent)', 'position:absolute;--s:36mm;left:-10mm;bottom:-6mm')}
     <div class="cols">
       <div>
-        <section class="compact">
-          ${h2(cv.labels.teaching, 'half', 'var(--primary)')}
-          <div class="entries single">${cv.teaching.map((e, i) => entry(e, i + 1)).join('')}</div>
+        <section>
+          ${h2(cv.labels.education, 'arch', 'var(--accent)')}
+          <div class="card list">${cv.education.map(item).join('')}</div>
         </section>
         <section>
-          ${h2(cv.labels.languages, 'pill', 'var(--pop)')}
+          ${h2(cv.labels.courses, 'triangle', 'var(--pop)')}
+          <div class="card list">${cv.courses.map(item).join('')}</div>
+        </section>
+        <section>
+          ${h2(cv.labels.languages, 'pill', 'var(--primary)')}
           <div class="card langs">
             ${cv.languages.map((l, i) => `
               <div class="lang" style="--c:${colorAt(i)}">
@@ -179,16 +151,18 @@ const page2 = `
       </div>
       <div>
         <section>
-          ${h2(cv.labels.education, 'arch', 'var(--accent)')}
-          <div class="card list">${cv.education.map(item).join('')}</div>
-        </section>
-        <section>
-          ${h2(cv.labels.courses, 'triangle', 'var(--pop)')}
-          <div class="card list">${cv.courses.map(item).join('')}</div>
-        </section>
-        <section>
           ${h2(cv.labels.awards, 'circle', 'var(--highlight)')}
           <div class="card list">${cv.awards.map(item).join('')}</div>
+        </section>
+        <section>
+          ${h2(cv.labels.tools, 'ring', 'var(--secondary)')}
+          <div class="card tools">
+            ${about.software.map((g, i) => `
+              <div style="--c:${colorAt(i)}">
+                <h3>${esc(T(g.group))}</h3>
+                <div class="chips">${g.items.map((s) => `<span>${esc(s)}</span>`).join('')}</div>
+              </div>`).join('')}
+          </div>
         </section>
       </div>
     </div>
@@ -200,12 +174,10 @@ document.getElementById('cv').innerHTML = page1 + page2;
 // ── Warn (on screen only) if a page holds more than fits ───────────────
 async function checkFit() {
   await document.fonts.ready;
-  await Promise.all([...document.images].map((img) => (img.complete ? null : new Promise((r) => { img.onload = img.onerror = r; }))));
   const warnings = [];
   document.querySelectorAll('.page').forEach((page, i) => {
-    const foot = page.querySelector('.foot');
-    const limit = foot ? foot.offsetTop - 2 : page.clientHeight;
-    const lowest = Math.max(...[...page.querySelectorAll('section')].map((s) => s.offsetTop + s.offsetHeight));
+    const limit = page.querySelector('.foot').getBoundingClientRect().top - 2;
+    const lowest = Math.max(...[...page.querySelectorAll('section')].map((s) => s.getBoundingClientRect().bottom));
     const over = lowest > limit;
     page.classList.toggle('overflowing', over);
     if (over) warnings.push(lang === 'es'
@@ -215,6 +187,6 @@ async function checkFit() {
   const box = document.querySelector('.warnings');
   box.hidden = !warnings.length;
   box.innerHTML = warnings.map(esc).join('<br>');
-  document.body.dataset.ready = 'true'; // the PDF export waits for this
+  document.body.dataset.ready = 'true';
 }
 checkFit();

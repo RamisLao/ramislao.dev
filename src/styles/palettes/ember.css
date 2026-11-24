@@ -18,7 +18,7 @@
      ────────────────────────────────────────────────────────────────────────── */
 
   /* Page background. Also: the side sheet, the mobile menu, form fields,
-     the curve under the hero, and (semi-transparent) the floating nav bar
+     the band under the hero, and (semi-transparent) the floating nav bar
      and the pill under your title. */
   --bg: #f8f5f1;
 
@@ -128,6 +128,6 @@
   --sky-top: #2bc7a8;      /* top edge, behind the nav bar */
   --sky-mid: #9bebdb;      /* around your name */
   --sky-low: #f6efc9;      /* around the roles pill */
-  --sky-horizon: #f8d9a8;  /* bottom edge, just above the curve; also the warm
+  --sky-horizon: #f8d9a8;  /* bottom edge, just above the edge; also the warm
                               light bouncing up onto the 3D shapes */
 }
