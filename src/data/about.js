@@ -11,7 +11,8 @@ export const about = {
   // One file for both languages:   cv: 'ramis-lao-cv.pdf',
   // Or one per language:           cv: { en: 'ramis-lao-cv-en.pdf', es: 'ramis-lao-cv-es.pdf' },
   // The "Download CV" button only appears once the file actually exists.
-  cv: 'ramis-lao-cv.pdf',
+  // These two are made by `npm run cv` (names set in cv/data.js → files.web).
+  cv: { en: 'ramis-lao-cv-en.pdf', es: 'ramis-lao-cv-es.pdf' },
 
   // Paragraphs are separated by a blank line (\n\n).
   bio: {

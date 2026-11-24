@@ -1,0 +1,32 @@
+<!doctype html>
+<!--
+  CV template. The content is in cv/data.js; the styles in cv/cv.css.
+  Preview: npm run dev → http://localhost:5173/cv/cv.html?lang=es  (or ?lang=en)
+  Export:  npm run cv  → cv/pdf/
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ramis Lao — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- The website's palette and fonts -->
+  <link rel="stylesheet" href="../src/styles/tokens.css" />
+  <link rel="stylesheet" href="./cv.css" />
+</head>
+<body>
+  <!-- Screen-only bar (not printed) -->
+  <div class="toolbar">
+    <a href="?lang=es" data-lang="es">ES</a>
+    <a href="?lang=en" data-lang="en">EN</a>
+    <span class="toolbar-note">Ctrl + P → Guardar como PDF · o <code>npm run cv</code></span>
+  </div>
+  <div class="warnings" hidden></div>
+
+  <main id="cv"></main>
+
+  <script type="module" src="./cv.js"></script>
+</body>
+</html>

@@ -115,6 +115,27 @@ cv: { en: 'ramis-lao-cv-en.pdf', es: 'ramis-lao-cv-es.pdf' },        // or one p
 
 A "Download CV / Descargar CV" button appears under the bio, but only once the file exists.
 
+### Making the CV (PDF, Spanish and English)
+
+The CV is built from the same palette and data as the site, in `cv/`:
+
+| File | What it's for |
+|---|---|
+| `cv/data.js` | **All the CV's content**, both languages. This is the only file you normally edit. |
+| `cv/cv.css` | The CV's look (sizes, spacing). Colors come from `src/styles/tokens.css`. |
+| `cv/cv.html`, `cv/cv.js` | The template. No need to touch. |
+
+Filled in automatically from the site: the colors and fonts, the **Tools & tech** groups
+(`src/data/about.js → software`) and the **featured project cards** (`src/data/projects.js → featured`,
+or your own list in `cv/data.js → projects`).
+
+1. **Preview** with `npm run dev` running: http://localhost:5173/cv/cv.html?lang=es (or `?lang=en`).
+   It updates as you save. A red banner appears if a page holds more than fits.
+2. **Export** both PDFs: `npm run cv` → `cv/pdf/Ramis_Lao_CV_ES.pdf` and `cv/pdf/Ramis_Lao_CV_EN.pdf`.
+   It uses Edge or Chrome in the background (set `CV_BROWSER` to another path if needed).
+
+The CV isn't part of the website build, so it is never published on the site by itself.
+
 ### Contact form
 
 By default the form opens the visitor's email app addressed to `site.email`.

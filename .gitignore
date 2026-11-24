@@ -8,3 +8,7 @@ media-originals/
 .claude/
 .env
 .env.*
+
+# CV: private details and the full PDFs (with phone) stay on this computer
+cv/private.js
+cv/pdf/

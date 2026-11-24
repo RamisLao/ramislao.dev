@@ -7,7 +7,7 @@ export const site = {
   name: 'Ramis Lao',
 
   // Where contact-form messages go.
-  email: 'ramis.el.pod@gmail.com',
+  email: 'ramislao@craftedmayhem.studio',
 
   // Optional: a form service URL (e.g. https://formspree.io/f/xxxxxxx).
   // If empty, the contact form opens the visitor's email app instead.
