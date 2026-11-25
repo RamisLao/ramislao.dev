@@ -5,7 +5,7 @@ import { esc } from '../utils/dom.js';
 const ROLE_COLORS = ['var(--accent-text)', 'var(--primary)', 'var(--secondary)'];
 
 export function initHero() {
-  // "Programming · Design · Production" — each word in its own color
+  // "Production · Programming · Design" — each word in its own color
   const roles = document.querySelector('[data-hero-roles]');
   const renderRoles = () => {
     roles.innerHTML = t('hero.roles')

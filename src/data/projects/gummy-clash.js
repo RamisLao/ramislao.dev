@@ -3,7 +3,7 @@ export default {
   id: 'gummy-clash',                           // = this file's name, no spaces
   title: 'Gummy Clash',
   type: 'videogame',                           // a key from taxonomy.js → projectTypes
-  roles: ['programmer'],                       // keys from taxonomy.js → roles
+  roles: ['programmer', 'composer'],           // keys from taxonomy.js → roles
   start: 2021,
   // end: 2022,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'soft',                            // colors from config.js, used when there's no cover

@@ -2,7 +2,7 @@ export default {
   // ── Basics ──────────────────────────────────────────────
   id: 'catalyst',                              // = this file's name, no spaces
   title: 'Catalyst',
-  type: 'interactive',                         // a key from taxonomy.js → projectTypes
+  type: 'other',                               // a key from taxonomy.js → projectTypes
   roles: ['programmer'],                       // keys from taxonomy.js → roles
   start: 2018,
   // end: 2019,                                // null = ongoing ("Present") · leave commented for a single year

@@ -8,17 +8,16 @@ export const projectTypes = {
   videogame:   { en: 'Videogame', es: 'Videojuego' },
   webapp:      { en: 'Web app', es: 'App web' },
   mobile:      { en: 'Mobile app', es: 'App móvil' },
-  animation:   { en: 'Animation', es: 'Animación' },
-  interactive: { en: 'Interactive', es: 'Interactivo' },
   branding:    { en: 'Branding', es: 'Branding' },
-  community:   { en: 'Community Manager', es: 'Community Manager' },
+  other:       { en: 'Other', es: 'Otro' },
 };
 
 export const roles = {
+  // The main three first, in the same order as the hero
   producer:    { en: 'Producer', es: 'Producción' },
-  artDirector: { en: 'Art Director', es: 'Dirección de arte' },
-  designer:    { en: 'Designer', es: 'Diseño' },
   programmer:  { en: 'Programmer', es: 'Programación' },
-  editor:      { en: 'Editor', es: 'Edición' },
-  moderator:   { en: 'Moderator', es: 'Moderación' },
+  designer:    { en: 'Designer', es: 'Diseño' },
+  artDirector: { en: 'Art Director', es: 'Dirección de arte' },
+  composer:    { en: 'Composer', es: 'Composición' },
+  community:   { en: 'Community Manager', es: 'Gestión de comunidad' },
 };

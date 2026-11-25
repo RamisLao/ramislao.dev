@@ -2,7 +2,7 @@ export default {
   // ── Basics ──────────────────────────────────────────────
   id: 'simplifai',                             // = this file's name, no spaces
   title: 'Simplifai',
-  type: 'webapp',                              // a key from taxonomy.js → projectTypes
+  type: 'webapp',                               // a key from taxonomy.js → projectTypes
   roles: ['programmer', 'designer'],           // keys from taxonomy.js → roles
   start: 2017,
   // end: 2018,                                // null = ongoing ("Present") · leave commented for a single year

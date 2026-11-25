@@ -16,7 +16,7 @@ export const strings = {
     'nav.language': 'Language',
 
     'hero.role': 'Creative Technologist',
-    'hero.roles': ['Programming', 'Design', 'Production'],
+    'hero.roles': ['Production', 'Programming', 'Design'],
     'hero.scroll': 'Scroll down',
 
     'featured.title': 'Featured work',
@@ -103,7 +103,7 @@ export const strings = {
     'nav.language': 'Idioma',
 
     'hero.role': 'Creative Technologist',
-    'hero.roles': ['Programación', 'Diseño', 'Producción'],
+    'hero.roles': ['Producción', 'Programación', 'Diseño'],
     'hero.scroll': 'Desplázate hacia abajo',
 
     'featured.title': 'Proyectos destacados',

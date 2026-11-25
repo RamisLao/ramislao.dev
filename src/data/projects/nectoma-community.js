@@ -2,8 +2,8 @@ export default {
   // ── Basics ──────────────────────────────────────────────
   id: 'nectoma-community',                     // = this file's name, no spaces
   title: 'Nectoma',
-  type: 'community',                           // a key from taxonomy.js → projectTypes
-  roles: ['designer', 'editor', 'moderator'],  // keys from taxonomy.js → roles
+  type: 'other',                               // a key from taxonomy.js → projectTypes
+  roles: ['designer', 'community'],            // keys from taxonomy.js → roles
   start: 2022,
   end: null,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'primary',                            // colors from config.js, used when there's no cover
