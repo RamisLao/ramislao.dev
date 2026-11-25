@@ -30,15 +30,15 @@ export const teaching = [
     //   // e.g. '/media/teaching/nectoma/workshop.jpg',
     // ],
     // // Example content — replace with the real thing.
-    // description: {
-    //   en: 'Describe the course: who the students were, the format, and your approach.',
-    //   es: 'Describe el curso: quiénes eran los estudiantes, el formato y tu enfoque.',
-    // },
-    // topics: [
-    //   { en: 'A topic you taught', es: 'Un tema que enseñaste' },
-    //   { en: 'Another topic', es: 'Otro tema' },
-    // ],
-    // highlights: [{ en: 'Something you’re proud of', es: 'Algo de lo que estés orgullosx' }],
+    description: {
+       en: '',
+       es: '',
+    },
+    topics: [
+      { en: 'A topic you taught', es: 'Un tema que enseñaste' },
+      { en: 'Another topic', es: 'Otro tema' },
+    ],
+    highlights: [{ en: 'Something you’re proud of', es: 'Algo de lo que estés orgullosx' }],
   },
   {
     id: 'bedu',

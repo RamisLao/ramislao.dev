@@ -3,7 +3,7 @@ export default {
   id: 'shutterbug-skies',                      // = this file's name, no spaces
   title: 'Shutterbug Skies',
   type: 'videogame',                           // a key from taxonomy.js → projectTypes
-  roles: ['producer', 'artDirector', 'programmer', 'designer'], // keys from taxonomy.js → roles
+  roles: ['producer', 'artDirector', 'programmer', 'uxDesigner', 'gameDesigner'], // keys from taxonomy.js → roles
   start: 2026,
   end: null,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'pop',                              // colors from config.js, used when there's no cover

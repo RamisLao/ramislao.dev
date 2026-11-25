@@ -15,7 +15,7 @@ export const site = {
 
   // true  = side-sheet sections with no content show "Coming soon."
   // false = empty sections are hidden.
-  showEmptySections: true,
+  showEmptySections: false,
 };
 
 /**

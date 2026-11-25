@@ -3,7 +3,7 @@ export default {
   id: 'yanga-casting',                         // = this file's name, no spaces
   title: 'Wayob by Yanga',
   type: 'webapp',                              // a key from taxonomy.js → projectTypes
-  roles: ['producer', 'designer', 'programmer'],            // keys from taxonomy.js → roles
+  roles: ['producer', 'uxDesigner', 'graphicDesigner', 'programmer'],            // keys from taxonomy.js → roles
   start: 2026,
   // end: 2027,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'soft',                            // colors from config.js, used when there's no cover

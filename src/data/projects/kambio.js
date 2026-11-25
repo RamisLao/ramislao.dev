@@ -38,7 +38,7 @@ export default {
     team: { en: '3 people', es: '3 personas' },
     platform: { en: 'Web app · any device', es: 'App web · cualquier dispositivo' },
     format: { en: 'Architectural visualization tool', es: 'Herramienta de visualización arquitectónica' },
-    status: { en: 'Completed', es: 'Terminado' },
+    status: { en: 'Completed · not in production', es: 'Terminado · no está en producción' },
     impact: { en: '', es: '' },
   },
 

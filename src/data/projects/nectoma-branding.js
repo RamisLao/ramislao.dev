@@ -3,7 +3,7 @@ export default {
   id: 'nectoma-branding',                      // = this file's name, no spaces
   title: 'Nectoma',
   type: 'branding',                            // a key from taxonomy.js → projectTypes
-  roles: ['designer'],                         // keys from taxonomy.js → roles
+  roles: ['graphicDesigner'],                         // keys from taxonomy.js → roles
   start: 2024,
   // end: 2025,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'highlight',                              // colors from config.js, used when there's no cover

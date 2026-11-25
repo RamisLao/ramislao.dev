@@ -3,7 +3,7 @@
 //   id: 'extraction',
 //   title: 'Extraction',
 //   type: 'videogame',
-//   roles: ['designer', 'programmer'],
+//   roles: ['uxDesigner', 'programmer'],
 //   start: 2024,
 //   palette: 'accent',
 // },

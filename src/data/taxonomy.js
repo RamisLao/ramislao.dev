@@ -13,11 +13,13 @@ export const projectTypes = {
 };
 
 export const roles = {
-  // The main three first, in the same order as the hero
-  producer:    { en: 'Producer', es: 'Producción' },
-  programmer:  { en: 'Programmer', es: 'Programación' },
-  designer:    { en: 'Designer', es: 'Diseño' },
-  artDirector: { en: 'Art Director', es: 'Dirección de arte' },
-  composer:    { en: 'Composer', es: 'Composición' },
-  community:   { en: 'Community Manager', es: 'Gestión de comunidad' },
+  // Production, programming and the three kinds of design first (the hero's "Design" covers all three)
+  producer:        { en: 'Producer', es: 'Producción' },
+  programmer:      { en: 'Programmer', es: 'Programación' },
+  gameDesigner:    { en: 'Game Designer', es: 'Diseño de juegos' },
+  uxDesigner:      { en: 'UI/UX Designer', es: 'Diseño UI/UX' },
+  graphicDesigner: { en: 'Graphic Designer', es: 'Diseño gráfico' },
+  artDirector:     { en: 'Art Director', es: 'Dirección de arte' },
+  music:           { en: 'Music', es: 'Música' },
+  community:       { en: 'Community Manager', es: 'Gestión de comunidad' },
 };

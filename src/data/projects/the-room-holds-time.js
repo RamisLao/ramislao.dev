@@ -3,7 +3,7 @@ export default {
   id: 'the-room-holds-time',                   // = this file's name, no spaces
   title: 'The Room Holds Time',
   type: 'other',                               // a key from taxonomy.js → projectTypes
-  roles: ['designer', 'programmer'],           // keys from taxonomy.js → roles
+  roles: ['graphicDesigner', 'programmer'],           // keys from taxonomy.js → roles
   start: 2025,
   // end: 2026,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'secondary',                          // colors from config.js, used when there's no cover
