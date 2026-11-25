@@ -8,23 +8,22 @@ export default {
   end: 2024,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'deep',                             // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/hyperbeard/main.jpg', // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/hyperbeard/main.jpg', // card image, 16:9
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    { src: '/images/projects/hyperbeard/screenshot_1.png', caption: { en: 'Creating a group, with its own color and icon', es: 'La creación de un grupo, con su propio color e ícono' } },
-    { src: '/images/projects/hyperbeard/screenshot_2.png', caption: { en: 'The user list, filterable by role and group', es: 'La lista de usuarios, con filtros por rol y grupo' } },
-    { src: '/images/projects/hyperbeard/screenshot_3.png', caption: { en: 'Creating a partial snapshot for a specific game and version', es: 'La creación de un snapshot parcial para un juego y una versión específicos' } },
-    { src: '/images/projects/hyperbeard/screenshot_4.png', caption: { en: 'Editing a code batch: game, version, groups and the codes that trigger it', es: 'La edición de un code batch: juego, versión, grupos y los códigos que lo activan' } },
-    { src: '/images/projects/hyperbeard/screenshot_5.png', caption: { en: 'Curating a game’s variables so they’re easy to read in the platform', es: 'La curaduría de las variables de un juego para que sean fáciles de leer en la plataforma' } },
-    { src: '/images/projects/hyperbeard/screenshot_6.png', caption: { en: 'The code batch editor: choosing which game variables a code changes', es: 'El editor de code batches: la elección de las variables del juego que modifica un código' } },
+    { src: '/media/projects/hyperbeard/screenshot_1.png', caption: { en: 'Creating a group, with its own color and icon', es: 'La creación de un grupo, con su propio color e ícono' } },
+    { src: '/media/projects/hyperbeard/screenshot_2.png', caption: { en: 'The user list, filterable by role and group', es: 'La lista de usuarios, con filtros por rol y grupo' } },
+    { src: '/media/projects/hyperbeard/screenshot_3.png', caption: { en: 'Creating a partial snapshot for a specific game and version', es: 'La creación de un snapshot parcial para un juego y una versión específicos' } },
+    { src: '/media/projects/hyperbeard/screenshot_4.png', caption: { en: 'Editing a code batch: game, version, groups and the codes that trigger it', es: 'La edición de un code batch: juego, versión, grupos y los códigos que lo activan' } },
+    { src: '/media/projects/hyperbeard/screenshot_5.png', caption: { en: 'Curating a game’s variables so they’re easy to read in the platform', es: 'La curaduría de las variables de un juego para que sean fáciles de leer en la plataforma' } },
+    { src: '/media/projects/hyperbeard/screenshot_6.png', caption: { en: 'The code batch editor: choosing which game variables a code changes', es: 'El editor de code batches: la elección de las variables del juego que modifica un código' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  studio: { name: 'Hyperbeard Games', url: 'https://hyperbeard.com/' }, // or 'freelance' · 'independent' · 'Studio name'
+  org: { name: 'Hyperbeard Games', url: 'https://hyperbeard.com/', type: 'studio' }, // type: studio · startup · company · collective · freelance · independent
   // client: { name: '…', url: 'https://…' },  // or 'Client name'
-  // cofounded: { name: '…', url: 'https://…' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',

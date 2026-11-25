@@ -6,11 +6,11 @@
  *   id, institution, subject {en, es}, start, end (null = ongoing, leave out for one year)
  *   palette     accent color from config.js
  *   media       optional gallery, same format as in projects.js:
- *                 '/images/teaching/<id>/01.jpg'                image or GIF
- *                 '/images/teaching/<id>/clip.mp4'              looping video (plays like a GIF)
+ *                 '/media/teaching/<id>/01.jpg'                image or GIF
+ *                 '/media/teaching/<id>/clip.mp4'              looping video (plays like a GIF)
  *                 'https://www.youtube.com/watch?v=VIDEO_ID'    YouTube (Shorts too)
  *                 'https://www.instagram.com/p/POST_ID/'        Instagram post or reel
- *               Files go in public/images/teaching/<id>/ — then just write the filename,
+ *               Files go in public/media/teaching/<id>/ — then just write the filename,
  *               e.g. 'workshop.jpg'. Leave media out for no gallery.
  *   description paragraph(s) about the course / role
  *   topics      list: what you taught
@@ -27,7 +27,7 @@ export const teaching = [
     end: null,
     palette: 'primary',
     // media: [
-    //   // e.g. '/images/teaching/nectoma/workshop.jpg',
+    //   // e.g. '/media/teaching/nectoma/workshop.jpg',
     // ],
     // // Example content — replace with the real thing.
     // description: {

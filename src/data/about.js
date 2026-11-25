@@ -3,9 +3,9 @@
  */
 
 export const about = {
-  // Put your photo in /public/images/about/ and set e.g. '/images/about/photo.jpg'.
+  // Put your photo in /public/media/about/ and set e.g. '/media/about/photo.jpg'.
   // While empty, a placeholder illustration is shown.
-  photo: '/images/about/me.jpg',
+  photo: '/media/about/me.jpg',
 
   // Your CV: put the PDF in /public/files/ and write its filename.
   // One file for both languages:   cv: 'ramis-lao-cv.pdf',

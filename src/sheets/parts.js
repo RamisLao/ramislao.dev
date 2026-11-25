@@ -95,8 +95,8 @@ export function tagList(labels) {
 // ---------- Media gallery ----------
 //
 // A media item can be written two ways:
-//   '/images/projects/luna/01.jpg'                        image or GIF (shape detected automatically)
-//   '/images/projects/luna/clip.mp4'                      looping video: plays like a GIF — silent, autoplay, loops (.mp4 / .webm)
+//   '/media/projects/luna/01.jpg'                        image or GIF (shape detected automatically)
+//   '/media/projects/luna/clip.mp4'                      looping video: plays like a GIF — silent, autoplay, loops (.mp4 / .webm)
 //   'https://www.youtube.com/watch?v=VIDEO_ID'            YouTube video → 16:9
 //   'https://www.youtube.com/shorts/VIDEO_ID'             YouTube Short → 9:16
 //   'https://www.instagram.com/p/POST_ID/'                Instagram post → 4:5
@@ -155,7 +155,7 @@ export function instagramInfo(url) {
 
 /**
  * A plain filename ('about_1.gif') means "in this entry's own folder" (base).
- * Full paths ('/images/...') point into /public; web links are used as they are.
+ * Full paths ('/media/...') point into /public; web links are used as they are.
  * Paths get the site's base folder in front, so they also work when the site
  * lives in a subfolder (GitHub Pages: /ramislao.dev/). Locally the base is '/'.
  */

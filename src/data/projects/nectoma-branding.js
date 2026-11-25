@@ -8,8 +8,8 @@ export default {
   // end: 2025,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'highlight',                              // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/nectoma-branding/main.jpg', // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/nectoma-branding/main.jpg', // card image, 16:9
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
@@ -17,9 +17,8 @@ export default {
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  // studio: { name: '…', url: 'https://…' },  // or 'freelance' · 'independent' · 'Studio name'
+  org: { name: 'Nectoma', url: 'https://www.instagram.com/nectoma', type: 'collective' }, // type: studio · startup · company · collective · freelance · independent
   // client: { name: '…', url: 'https://…' },  // or 'Client name'
-  cofounded: { name: 'Nectoma', url: 'https://www.instagram.com/nectoma' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',

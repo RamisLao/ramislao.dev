@@ -3,23 +3,23 @@ export default {
   id: 'kambio',                                // = this file's name, no spaces
   title: 'Kambio',
   type: 'webapp',                              // a key from taxonomy.js → projectTypes
-  roles: ['producer', 'programmer', 'designer'], // keys from taxonomy.js → roles
+  roles: ['producer', 'programmer'], // keys from taxonomy.js → roles
   start: 2022,
   // end: 2023,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'highlight',                              // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/kambio/main.jpg',   // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/kambio/main.jpg',   // card image, 16:9
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
+    { src: 'https://youtu.be/T402YGcUt_Y', caption: { en: 'A full walkthrough of the app', es: 'Un recorrido completo por la aplicación' } },
     // { src: 'screenshot_1.png', caption: { en: '', es: '' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  studio: 'freelance',                         // or 'freelance' · 'independent' · 'Studio name'
+  org: { name: 'Crafted Mayhem', url: 'https://www.craftedmayhem.studio/', type: 'studio' }, // type: studio · startup · company · collective · freelance · independent
   client: { name: 'Kambio', url: 'https://wearekambio.com/' }, // or 'Client name'
-  // cofounded: { name: '…', url: 'https://…' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',
@@ -31,39 +31,42 @@ export default {
   // ── Top of the side sheet ───────────────────────────────
   // pitch: ONE sentence, ~25 words: what it is + what you did
   pitch: {
-    en: '',
-    es: '',
+    en: 'A web app built in Unreal Engine 5 for exploring and customizing homes in real time before buying them. I produced it and programmed its logic and streaming.',
+    es: 'Una aplicación web en Unreal Engine 5 para recorrer y personalizar viviendas en tiempo real antes de comprarlas. La produje y programé su lógica y su transmisión.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
-    team: { en: '', es: '' },
-    platform: { en: '', es: '' },
-    format: { en: '', es: '' },
-    status: { en: '', es: '' },
+    team: { en: '3 people', es: '3 personas' },
+    platform: { en: 'Web app · any device', es: 'App web · cualquier dispositivo' },
+    format: { en: 'Architectural visualization tool', es: 'Herramienta de visualización arquitectónica' },
+    status: { en: 'Completed', es: 'Terminado' },
     impact: { en: '', es: '' },
   },
 
   // ── Texts (folded in the sheet) · new paragraph = \n\n ──
   description: {
-    en: 'Jimena Maldonado is a Mexican composer. For her piece The Room Holds Time, which portrays a day in her life raising her baby, she wanted an animation the musicians could play in sync with. I built it in p5.js: it follows the exact tempo of the piece and acts as a steady guide, showing each musician when to come in and how long each note lasts. It also sets the mood, accompanying the music with emotions expressed visually.',
-    es: 'Jimena Maldonado es una compositora mexicana. Para su pieza The Room Holds Time, que retrata un día de su vida criando a su bebé, quería una animación que permitiera a los músicxs tocar en sincronía con ella. La desarrollé en p5.js: sigue el tempo exacto de la pieza y funciona como una guía estable para que cada músicx sepa cuándo entrar y cuánto dura cada nota. Además, aporta ambientación, acompañando la música con emociones expresadas de forma visual.',
+    en: 'Kambio is a startup that sells homes and buildings made with materials and techniques that make construction much easier, cheaper and faster. We built them a web app where their customers could view a home in real time and customize it to their liking before buying it.\n\nThe tool showed the home in 3D and let customers change the materials of walls, floors and ceilings, choose their colors, and decide which furniture to include in the purchase. They could also walk through it in first person, to get a close feel for what living there would be like.\n\nWe built it in Unreal Engine 5. Nanite and Lumen sped up asset creation and lighting, and Pixel Streaming made it possible to view the home in high resolution and fine detail from any device: desktops, laptops, tablets or phones.',
+    es: 'Kambio es una startup que comercializa viviendas y construcciones hechas con materiales y técnicas que vuelven la construcción mucho más fácil, barata y rápida. Le desarrollamos una aplicación web en la que sus clientes podían visualizar una vivienda en tiempo real y personalizarla a su gusto antes de comprarla.\n\nLa herramienta mostraba la vivienda en 3D y permitía cambiar los materiales de paredes, pisos y techos, elegir sus colores y decidir qué muebles incluir en la compra. También se podía recorrer en primera persona, para experimentar de cerca cómo sería habitarla.\n\nLa desarrollamos en Unreal Engine 5. Nanite y Lumen agilizaron la creación de assets y la iluminación, y Pixel Streaming permitió ver la vivienda en alta resolución y con gran nivel de detalle desde cualquier dispositivo: computadoras de escritorio, laptops, tablets o móviles.',
   },
   roleDetails: {
-    en: 'First and foremost, my role was to understand Jimena’s piece in depth and identify the emotional pillars it’s built on. I did extensive research to find technologies that would fit her budget. I designed the visuals, choosing a color palette and visual language that matched the music. Finally, I programmed the entire animation in p5.js.',
-    es: 'Mi rol consistió, ante todo, en comprender a fondo la pieza de Jimena e identificar los pilares emocionales que la conforman. Hice una investigación exhaustiva para encontrar tecnologías que se ajustaran a su presupuesto. Diseñé la parte visual, eligiendo una paleta de colores y un lenguaje visual acordes con la música. Finalmente, programé toda la animación con p5.js.',
+    en: 'As producer, I researched Kambio’s business model, its needs and exactly how it wanted to use the app. I coordinated the team (a designer, a 3D modeler and me): I planned and assigned everyone’s tasks and made sure everything was delivered on time. I was also the client’s point of contact, planning the production pipeline in detail and making adjustments based on their feedback.\n\nAs programmer, I implemented all the designs and 3D models, as well as the app’s logic, and set up Pixel Streaming to test it on any device. I also designed and built a flexible system so Kambio could easily add new house designs.',
+    es: 'Como productorx, investigué a fondo el modelo de negocio de Kambio, sus necesidades y el uso concreto que quería darle a la aplicación. Coordiné al equipo (un diseñador, una modeladora 3D y yo): planeé y repartí las tareas de cada quien y me aseguré de que todo se entregara a tiempo. También fui el punto de contacto con el cliente, para planear en detalle el pipeline de producción y hacer ajustes a partir de su retroalimentación.\n\nComo programadorx, implementé todos los diseños y modelos 3D, además de la lógica de la aplicación, y configuré Pixel Streaming para probarla en cualquier dispositivo. También diseñé e implementé un sistema flexible para que Kambio pudiera añadir nuevos diseños de viviendas con facilidad.',
   },
   built: [
-    { en: 'A visual design that reflects the narrative and emotional weight of the piece', es: 'Diseño visual que refleja la narrativa y la carga emocional de la pieza' },
-    { en: 'An animation that clearly shows the tempo, each instrument’s entrances and the length of every note', es: 'Animación que muestra con claridad el tempo, las entradas de cada instrumento y la duración de cada nota' },
-    { en: 'A final video edited from several takes of the animation', es: 'Video final editado a partir de varias tomas de la animación' },
+    { en: 'Researched the client’s business model and needs', es: 'Investigué el modelo de negocio y las necesidades del cliente' },
+    { en: 'Managed the project and coordinated a team of 3', es: 'Gestioné el proyecto y coordiné a un equipo de 3 personas' },
+    { en: 'Designed and implemented all of the app’s logic in Unreal Engine 5', es: 'Diseñé e implementé toda la lógica de la aplicación en Unreal Engine 5' },
+    { en: 'Designed a system that makes it easy to add new house designs', es: 'Diseñé un sistema para añadir nuevos diseños de viviendas de forma sencilla' },
+    { en: 'Set up Pixel Streaming so the app runs in high resolution on any device', es: 'Configuré Pixel Streaming para usar la aplicación en alta resolución desde cualquier dispositivo' },
   ],
-  tech: ['p5.js'],                             // chips, e.g. ['Unity', 'C#', 'Blender']
+  tech: ['Unreal Engine 5', 'Pixel Streaming', 'Nanite + Lumen', 'Trello'],                             // chips, e.g. ['Unity', 'C#', 'Blender']
   challenges: [
     {
-      en: 'The animation had to run without a single interruption, however brief. Because the piece is very long, p5.js occasionally showed glitches lasting a few milliseconds, so I solved it in post-production: I recorded the animation several times and assembled a final version from the sections that looked flawless.',
-      es: 'Era fundamental que la animación corriera sin ninguna interrupción, por mínima que fuera. Como la pieza es muy larga, p5.js a veces presentaba glitches de unas milésimas de segundo, así que lo resolví en postproducción: grabé la animación varias veces y armé una versión final editando las secciones que se veían impecables.',
+      en: 'Construction calls for very precise measurements and very specific requirements. The biggest challenge was carrying those measurements, sizes and textures into the app to reproduce each home as faithfully as possible.',
+      es: 'La construcción exige medidas muy precisas y requisitos muy específicos. El mayor reto fue trasladar esas medidas, tamaños y texturas a la aplicación para reproducir cada vivienda con la mayor fidelidad posible.',
     },
   ],
   credits: [
-    { name: 'Jimena Maldonado', role: { en: 'Music composition', es: 'Composición musical' } },
+    { name: 'Jimena Fernández', role: { en: '3D modeling', es: 'Modelado 3D' } },
+    { name: 'Adrián Regnier', role: { en: 'UI/UX design', es: 'Diseño UI/UX' } },
   ],
 };

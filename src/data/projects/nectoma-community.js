@@ -8,15 +8,15 @@ export default {
   end: null,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'primary',                            // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/nectoma-community/main.jpg', // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/nectoma-community/main.jpg', // card image, 16:9
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    { src: '/images/projects/nectoma-community/post_1.jpg', caption: { en: 'Poster I designed for an Incubadora de Amiguis (friendship incubator) co-hosted with Conexión en Boga', es: 'Cartel que diseñé para una Incubadora de Amiguis organizada junto con Conexión en Boga' } },
-    { src: '/images/projects/nectoma-community/post_2.jpg', caption: { en: 'Poster I designed for the workshop “Apapachos y cuidados más allá de la pareja” (affection and care beyond romantic partners)', es: 'Cartel que diseñé para el taller “Apapachos y cuidados más allá de la pareja”' } },
-    { src: '/images/projects/nectoma-community/post_3.jpg', caption: { en: 'Poster I designed for a Fiesta de Apapachos (cuddle party)', es: 'Cartel que diseñé para una Fiesta de Apapachos' } },
-    { src: '/images/projects/nectoma-community/post_4.jpg', caption: { en: 'Poster I designed for the “Preferred Identities” edition of the Incubadora de Amiguis, with costumes', es: 'Cartel que diseñé para la Incubadora de Amiguis, edición “Identidades preferidas”, con disfraces' } },
+    { src: '/media/projects/nectoma-community/post_1.jpg', caption: { en: 'Poster I designed for an Incubadora de Amiguis (friendship incubator) co-hosted with Conexión en Boga', es: 'Cartel que diseñé para una Incubadora de Amiguis organizada junto con Conexión en Boga' } },
+    { src: '/media/projects/nectoma-community/post_2.jpg', caption: { en: 'Poster I designed for the workshop “Apapachos y cuidados más allá de la pareja” (affection and care beyond romantic partners)', es: 'Cartel que diseñé para el taller “Apapachos y cuidados más allá de la pareja”' } },
+    { src: '/media/projects/nectoma-community/post_3.jpg', caption: { en: 'Poster I designed for a Fiesta de Apapachos (cuddle party)', es: 'Cartel que diseñé para una Fiesta de Apapachos' } },
+    { src: '/media/projects/nectoma-community/post_4.jpg', caption: { en: 'Poster I designed for the “Preferred Identities” edition of the Incubadora de Amiguis, with costumes', es: 'Cartel que diseñé para la Incubadora de Amiguis, edición “Identidades preferidas”, con disfraces' } },
     { src: 'https://www.instagram.com/reel/DcjHPv-hMH8/?utm_source=ig_web_copy_link&hvrq=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
     { src: 'https://www.instagram.com/reel/Ddg36tSRWyW/?utm_source=ig_web_button_share_sheet&gwpx=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
     { src: 'https://www.instagram.com/reel/DdWec-aRv1-/?utm_source=ig_web_copy_link&hvrq=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
@@ -24,9 +24,8 @@ export default {
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  // studio: { name: '…', url: 'https://…' },  // or 'freelance' · 'independent' · 'Studio name'
+  org: { name: 'Nectoma', url: 'https://www.instagram.com/nectoma', type: 'collective' }, // type: studio · startup · company · collective · freelance · independent
   // client: { name: '…', url: 'https://…' },  // or 'Client name'
-  cofounded: { name: 'Nectoma', url: 'https://www.instagram.com/nectoma' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',

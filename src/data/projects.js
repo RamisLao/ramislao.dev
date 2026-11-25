@@ -21,18 +21,18 @@
  * end       last year · null = ongoing ("Present") · leave out for a single year
  * palette   color set from config.js (used when there's no cover image)
  *
- * IMAGES: put files in this project's folder,  public/images/projects/<id>/
+ * MEDIA:  put files in this project's folder,  public/media/projects/<id>/
  *         then just write the filename, e.g. 'cover.jpg' or 'about_1.mp4'.
- *         (Full paths like '/images/projects/<id>/cover.jpg' also work.)
+ *         (Full paths like '/media/projects/<id>/cover.jpg' also work.)
  *
  * cover     the card's main image (JPG, PNG, WebP or GIF), shown at 16:9
  *
  * media     the side sheet's gallery — as many items as you like, in order.
  *           The first one is shown big; the rest appear as thumbnails.
  *           All items are shown at the same height; the width follows each item's shape.
- *             '/images/projects/<id>/01.jpg'                 image (any shape, detected automatically)
- *             '/images/projects/<id>/gameplay.gif'           GIF   (any shape, detected automatically)
- *             '/images/projects/<id>/gameplay.mp4'           looping video — plays like a GIF but ~10× smaller (.mp4 / .webm)
+ *             '/media/projects/<id>/01.jpg'                 image (any shape, detected automatically)
+ *             '/media/projects/<id>/gameplay.gif'           GIF   (any shape, detected automatically)
+ *             '/media/projects/<id>/gameplay.mp4'           looping video — plays like a GIF but ~10× smaller (.mp4 / .webm)
  *             'https://www.youtube.com/watch?v=VIDEO_ID'     YouTube video        → 16:9  (youtu.be links too)
  *             'https://www.youtube.com/shorts/VIDEO_ID'      YouTube Short        → 9:16
  *             'https://www.instagram.com/p/POST_ID/'         Instagram post       → 4:5
@@ -45,15 +45,20 @@
  *             alt: { en: '…', es: '…' }                      description for screen readers
  *           If media is empty, the sheet shows the cover (or the generated illustration).
  *
- * studio      who you made it with (all optional):
- *               'Crafted Mayhem'                                         name only
- *               { name: 'Crafted Mayhem', url: 'https://…' }             name + website
- *               'freelance' → "Freelance"  ·  'independent' → "Independent / Independiente"
- * client      who it was for (optional), same format as studio:
- *               'Nectoma'   or   { name: 'Nectoma', url: 'https://…' }
- * cofounded   a company you co-founded and made this for (optional), same format:
- *               { name: 'Nectoma', url: 'https://…' }  → "Co-founder · Nectoma" / "Cofundadorx · Nectoma"
- *             (use it instead of studio/client)
+ * org         who / how you made it (optional). Shown on the card and as a badge in the sheet:
+ *               'freelance'                                                → "Freelance"
+ *               'independent'                                              → "Independent / Independiente"
+ *               { name: 'Crafted Mayhem', url: '…', type: 'studio' }       → "Studio / Estudio: Crafted Mayhem"
+ *             type (sets the word and the icon):
+ *               studio      Studio / Estudio
+ *               startup     Startup / Startup
+ *               company     Company / Empresa
+ *               collective  Collective / Colectivo
+ *               (no type)   just the name
+ *             label (optional): false → hide the word · { en: 'Agency', es: 'Agencia' } → your own word
+ * client      who it was for (optional): 'Kambio'   or   { name: 'Kambio', url: 'https://…' }
+ *             org + client together = client work: done at that org
+ *             (e.g. Crafted Mayhem + Kambio), or as a freelancer ('freelance' + client).
  * steam       Steam store page link (optional) → "View on Steam" button
  * itch        itch.io page link (optional)     → "View on itch.io" button
  * links       any other buttons: [{ label: { en, es }, url: 'https://...' }]
@@ -68,7 +73,8 @@
  * except the description when there's no pitch. Keep them as long as you like.
  * description paragraph(s); separate paragraphs with a blank line (\n\n)
  * roleDetails what you did in your role(s)
- * built       list: things you built
+ * built       list: what you did — things you built or made, but also things like
+ *             "Managed a team of 5" (shown as "What I did / Lo que hice")
  * tech        technologies / platforms used, shown as chips (optional):
  *               ['Unity', 'Blender', 'p5.js', 'Node.js']
  * challenges  list
@@ -80,7 +86,8 @@
 
 /**
  * FEATURED — shown as big cards right below the hero, in this order (use the project ids).
- * On hover they play a looping video: `preview: 'clip.mp4'` on the project, or else its first .mp4 in media.
+ * On hover, every card (featured or not) plays a looping video: `preview: 'clip.mp4'` on the project,
+ * or else its first .mp4 in media. Projects without either just show their cover.
  * Featured projects are left out of the grid below (unless a filter is active), so they don't show twice.
  */
 export const featured = ['shutterbug-skies', 'yanga-casting', 'party-demon', 'hyperbeard'];
@@ -95,15 +102,15 @@ export const order = [
   'nectoma-community',
   'yanga-casting',
   'the-room-holds-time',
-  'nectoma-branding',
+  // 'nectoma-branding',
   'hyperbeard',
   'party-demon',
-  // 'kambio',
-  // 'luna',
-  // 'gummy-clash',
-  // 'marakana-sports',
-  // 'catalyst',
-  // 'simplifai',
+  'kambio',
+  'luna',
+  'gummy-clash',
+  'marakana-sports',
+  'catalyst',
+  'simplifai',
 ];
 
 // ── Loading (no need to edit below) ──────────────────────────────────

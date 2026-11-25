@@ -8,27 +8,26 @@ export default {
   // end: 2027,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'soft',                            // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/yanga-casting/main.jpg', // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/yanga-casting/main.jpg', // card image, 16:9
   preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    { src: '/images/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it: personal details, contact info, photos and videos', es: 'El perfil de un talento visto por el equipo de Yanga: datos personales, contacto, fotos y videos' } },
-    { src: '/images/projects/yanga-casting/screenshot_2.png', caption: { en: 'The talent database, showing each person’s agency and tags', es: 'La base de datos de talentos, con la agencia y las etiquetas de cada persona' } },
-    { src: '/images/projects/yanga-casting/screenshot_3.png', caption: { en: 'The admin panel: users and their roles (Admin, Booking, Casting)', es: 'El panel de administración: usuarios y sus roles (Admin, Booking, Casting)' } },
-    { src: '/images/projects/yanga-casting/screenshot_4.png', caption: { en: 'The talent’s own view: their profile, appearance and measurements', es: 'La vista del talento: su propio perfil, con su apariencia y sus medidas' } },
-    { src: '/images/projects/yanga-casting/screenshot_5.png', caption: { en: 'A character from a casting call, as talent see it: requirements, references and scenes to act, with the button to apply', es: 'Un personaje de una convocatoria, desde la vista del talento: requisitos, referencias y escenas a actuar, con el botón para postularse' } },
-    { src: '/images/projects/yanga-casting/screenshot_6.png', caption: { en: 'Open casting calls for talent, with each project’s characters', es: 'Las convocatorias abiertas para talentos, con los personajes de cada proyecto' } },
-    { src: '/images/projects/yanga-casting/screenshot_7.png', caption: { en: 'Reviewing an application: the talent’s answers to the casting questionnaire', es: 'La revisión de una postulación: las respuestas del talento al cuestionario del casting' } },
-    { src: '/images/projects/yanga-casting/screenshot_8.png', caption: { en: 'The cast proposal the client receives, organized by character and downloadable as PDF or ZIP', es: 'La propuesta de elenco que recibe el cliente, organizada por personaje y descargable en PDF o ZIP' } },
-    { src: '/images/projects/yanga-casting/screenshot_9.png', caption: { en: 'A casting call document with all of the project’s details: dates, terms and rates', es: 'El documento de una convocatoria con todos los detalles del proyecto: fechas, condiciones y tarifas' } },
-    { src: '/images/projects/yanga-casting/screenshot_10.png', caption: { en: 'Folders for organizing talent by profile, like bilingual talent or voice-over artists', es: 'Carpetas para organizar talentos por perfil, como talento bilingüe o voces en off' } },
+    { src: '/media/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it: personal details, contact info, photos and videos', es: 'El perfil de un talento visto por el equipo de Yanga: datos personales, contacto, fotos y videos' } },
+    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: 'The talent database, showing each person’s agency and tags', es: 'La base de datos de talentos, con la agencia y las etiquetas de cada persona' } },
+    { src: '/media/projects/yanga-casting/screenshot_3.png', caption: { en: 'The admin panel: users and their roles (Admin, Booking, Casting)', es: 'El panel de administración: usuarios y sus roles (Admin, Booking, Casting)' } },
+    { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: 'The talent’s own view: their profile, appearance and measurements', es: 'La vista del talento: su propio perfil, con su apariencia y sus medidas' } },
+    { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: 'A character from a casting call, as talent see it: requirements, references and scenes to act, with the button to apply', es: 'Un personaje de una convocatoria, desde la vista del talento: requisitos, referencias y escenas a actuar, con el botón para postularse' } },
+    { src: '/media/projects/yanga-casting/screenshot_6.png', caption: { en: 'Open casting calls for talent, with each project’s characters', es: 'Las convocatorias abiertas para talentos, con los personajes de cada proyecto' } },
+    { src: '/media/projects/yanga-casting/screenshot_7.png', caption: { en: 'Reviewing an application: the talent’s answers to the casting questionnaire', es: 'La revisión de una postulación: las respuestas del talento al cuestionario del casting' } },
+    { src: '/media/projects/yanga-casting/screenshot_8.png', caption: { en: 'The cast proposal the client receives, organized by character and downloadable as PDF or ZIP', es: 'La propuesta de elenco que recibe el cliente, organizada por personaje y descargable en PDF o ZIP' } },
+    { src: '/media/projects/yanga-casting/screenshot_9.png', caption: { en: 'A casting call document with all of the project’s details: dates, terms and rates', es: 'El documento de una convocatoria con todos los detalles del proyecto: fechas, condiciones y tarifas' } },
+    { src: '/media/projects/yanga-casting/screenshot_10.png', caption: { en: 'Folders for organizing talent by profile, like bilingual talent or voice-over artists', es: 'Carpetas para organizar talentos por perfil, como talento bilingüe o voces en off' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  studio: 'freelance',                         // or 'freelance' · 'independent' · 'Studio name'
+  org: { name: 'Crafted Mayhem', url: 'https://www.craftedmayhem.studio/', type: 'studio' }, // type: studio · startup · company · collective · freelance · independent
   client: { name: 'Yanga', url: 'https://yangacasting.mx/' }, // or 'Client name'
-  // cofounded: { name: '…', url: 'https://…' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',

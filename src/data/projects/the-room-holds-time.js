@@ -8,8 +8,8 @@ export default {
   // end: 2026,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'secondary',                          // colors from config.js, used when there's no cover
 
-  // ── Images & video ─ files go in public/images/projects/<id>/ (a plain filename is enough) ──
-  cover: '/images/projects/the-room-holds-time/main.png', // card image, 16:9
+  // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
+  cover: '/media/projects/the-room-holds-time/main.png', // card image, 16:9
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
@@ -18,9 +18,8 @@ export default {
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
-  studio: 'freelance',                         // or 'freelance' · 'independent' · 'Studio name'
+  org: 'freelance',                            // or { name, url, type: studio · startup · company · collective }
   client: 'Jimena Maldonado',                  // or 'Client name'
-  // cofounded: { name: '…', url: 'https://…' }, // a company you co-founded (instead of studio/client)
 
   // ── Buttons ─────────────────────────────────────────────
   // steam: 'https://store.steampowered.com/app/…',

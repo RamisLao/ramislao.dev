@@ -1,4 +1,4 @@
-import { t } from '../i18n/index.js';
+import { t, tr } from '../i18n/index.js';
 import { palettes } from '../config.js';
 
 /** Escape text before putting it inside an HTML template string. */
@@ -25,20 +25,42 @@ export function orgInfo(value) {
 }
 
 /**
- * Who the project was made with.
- *   studio: 'freelance'      → "Freelance"
- *   studio: 'independent'    → "Independent" / "Independiente"
- *   studio: 'Crafted Mayhem' → shown as written (optionally with a url, see orgInfo)
+ * Who / how the project was made: the `org` field of a project.
+ *   org: 'freelance'                                        → "Freelance"
+ *   org: 'independent'                                      → "Independent" / "Independiente"
+ *   org: { name: 'Crafted Mayhem', url: '…', type: 'studio' } → "Studio: Crafted Mayhem"
+ *   org: { name: 'Nectoma', type: 'collective' }            → "Collective: Nectoma"
+ *   org: 'Some name'  (no type)                             → just the name
+ * Optional label: false hides the type word; label: { en, es } replaces it.
  */
-const STUDIO_KEYWORDS = { freelance: 'studio.freelance', independent: 'studio.independent' };
-const keywordOf = (studio) => STUDIO_KEYWORDS[orgInfo(studio).name.trim().toLowerCase()];
+export const ORG_TYPES = ['studio', 'startup', 'company', 'collective', 'freelance', 'independent'];
+const SOLO = ['freelance', 'independent']; // shown as the word alone, no name needed
 
-export function studioName(studio) {
-  const key = keywordOf(studio);
-  return key ? t(key) : orgInfo(studio).name;
+export function orgOf(value) {
+  if (!value) return null;
+  if (typeof value === 'string') {
+    const word = value.trim().toLowerCase();
+    return SOLO.includes(word) ? { name: '', url: '', type: word } : { name: value, url: '', type: '' };
+  }
+  const type = String(value.type ?? '').trim().toLowerCase();
+  if (type && !ORG_TYPES.includes(type)) console.warn(`org type "${type}" is not one of: ${ORG_TYPES.join(', ')}`);
+  return { name: String(value.name ?? ''), url: String(value.url ?? ''), type, label: value.label };
 }
 
-export const isStudio = (studio) => Boolean(orgInfo(studio).name) && !keywordOf(studio);
+/** The name to show: the org's name, or "Freelance" / "Independent" for those types. */
+export function orgName(value) {
+  const org = orgOf(value);
+  if (!org) return '';
+  return org.name || (SOLO.includes(org.type) ? t(`org.${org.type}`) : '');
+}
+
+/** The word before the name ("Studio", "Collective"…), or '' when there shouldn't be one. */
+export function orgLabel(value) {
+  const org = orgOf(value);
+  if (!org || !org.name || org.label === false) return '';
+  if (org.label) return tr(org.label); // custom word, e.g. { en: 'Agency', es: 'Agencia' }
+  return org.type && !SOLO.includes(org.type) ? t(`org.${org.type}`) : '';
+}
 
 /** The accent color of a palette (its main shape color). */
 export const accentOf = (paletteName) => `var(${(palettes[paletteName] || palettes.soft).arch})`;

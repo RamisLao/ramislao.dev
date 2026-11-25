@@ -5,7 +5,7 @@ import { section, textBlock, listBlock, linksBlock, galleryHTML, mountGallery } 
 /** Side-sheet content for a teaching entry. */
 export function teachingSheet(item) {
   // Plain filenames in media are looked up in the entry's own folder
-  const base = `/images/teaching/${item.id}/`;
+  const base = `/media/teaching/${item.id}/`;
   return {
     render: () => `
       <header class="sheet-header" style="--entry:${accentOf(item.palette)}">

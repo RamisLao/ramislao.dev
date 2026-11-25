@@ -37,9 +37,9 @@ out (`// 'luna',`) to hide that project. Files whose name starts with `_` are ig
 Every project and teaching entry has its own folder, named after its `id`:
 
 ```
-public/images/projects/luna/        ← cover.jpg, 01.jpg, demo.gif …
-public/images/teaching/bedu/        ← optional
-public/images/about/                ← your photo
+public/media/projects/luna/        ← cover.jpg, 01.jpg, demo.gif …
+public/media/teaching/bedu/        ← optional
+public/media/about/                ← your photo
 ```
 
 Then list them in the data file. A plain filename (`'about_1.gif'`) is looked up in that entry's
@@ -47,16 +47,16 @@ own folder; a full path (written **without** `public`) works too:
 
 ```js
 // src/data/projects/luna.js
-cover: '/images/projects/luna/cover.jpg',          // card image
+cover: '/media/projects/luna/cover.jpg',          // card image
 media: [                                           // side-sheet gallery, any length
-  '/images/projects/luna/01.jpg',                  // images & GIFs: shape detected automatically
-  '/images/projects/luna/boss-fight.gif',
+  '/media/projects/luna/01.jpg',                  // images & GIFs: shape detected automatically
+  '/media/projects/luna/boss-fight.gif',
   'https://www.youtube.com/watch?v=VIDEO_ID',      // 16:9
   'https://www.youtube.com/shorts/VIDEO_ID',       // 9:16
   'https://www.instagram.com/p/POST_ID/',          // 4:5
   'https://www.instagram.com/reel/REEL_ID/',       // 9:16
   { src: 'https://www.instagram.com/p/POST_ID/', ratio: '1:1' },   // force a shape
-  { src: '/images/projects/luna/02.jpg', alt: { en: 'Level editor', es: 'Editor de niveles' } },
+  { src: '/media/projects/luna/02.jpg', alt: { en: 'Level editor', es: 'Editor de niveles' } },
 ],
 ```
 
@@ -83,15 +83,16 @@ ffmpeg -i about_1.gif -an -c:v libx264 -preset slow -tune animation -crf 20 -pix
 Lower `-crf` (e.g. 16) = sharper but bigger; higher (e.g. 26) = smaller but softer.
 Keep original GIFs in `media-originals/` (outside `public/`) so they aren't published with the site.
 
-### Studio, client, store pages and credits (projects)
+### Org, client, store pages and credits (projects)
 
 All optional:
 
 ```js
-studio: 'Crafted Mayhem',      // or 'freelance' → "Freelance", or 'independent' → "Independent / Independiente"
-studio: { name: 'Crafted Mayhem', url: 'https://…' },   // with a website (the name becomes a link)
+org: 'freelance',              // or 'independent' → "Independent / Independiente"
+org: { name: 'Crafted Mayhem', url: 'https://…', type: 'studio' },  // "Studio: Crafted Mayhem" (the name links to url)
+//   type: studio · startup · company · collective (sets the word and icon) · label: false hides the word
 client: 'Example Co.',         // or { name: 'Example Co.', url: 'https://…' }
-cofounded: { name: 'Nectoma', url: 'https://…' },       // "Co-founder · Nectoma" / "Cofundadorx · Nectoma" (instead of studio/client)
+// org + client together = client work done at that org (or 'freelance' + client = as a freelancer)
 steam: 'https://store.steampowered.com/app/…',          // "View on Steam" button
 itch: 'https://….itch.io/…',                            // "View on itch.io" button
 tech: ['Unity', 'Blender', 'p5.js', 'Node.js'],         // "Tools & tech" chips (hidden when empty)

@@ -89,6 +89,7 @@ export function initProjects(root) {
   });
 
   initPreviews(featuredEl);
+  initPreviews(gridEl);
 
   renderFeatured();
   render();
@@ -98,7 +99,7 @@ export function initProjects(root) {
   });
 }
 
-/** Featured cards with a looping video play it on hover / keyboard focus (desktop only). */
+/** Cards with a looping video play it on hover / keyboard focus (desktop only). */
 function initPreviews(container) {
   const canHover = matchMedia('(hover: hover) and (pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');

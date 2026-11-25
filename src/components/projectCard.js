@@ -1,12 +1,12 @@
 import { projectTypes, roles } from '../data/taxonomy.js';
 import { t, tr } from '../i18n/index.js';
-import { esc, yearsLabel, accentOf, studioName, orgInfo } from '../utils/dom.js';
+import { esc, yearsLabel, accentOf, orgName } from '../utils/dom.js';
 import { artworkSVG } from './artwork.js';
 import { projectFolder } from '../sheets/projectSheet.js';
 import { resolveSrc } from '../sheets/parts.js';
 
-/** Name shown on the card next to the years: the co-founded company, else the studio. */
-const cardOrg = (p) => (p.cofounded ? orgInfo(p.cofounded).name : studioName(p.studio));
+/** Name shown on the card next to the years: the org (or "Freelance" / "Independent"). */
+const cardOrg = (p) => orgName(p.org);
 
 const VIDEO = /\.(mp4|webm)(\?.*)?$/i;
 
@@ -18,7 +18,7 @@ export function previewOf(p) {
 
 /** One project card (used by the featured row and the grid). */
 export function projectCard(p, { featured = false } = {}) {
-  const preview = featured ? previewOf(p) : '';
+  const preview = previewOf(p); // every card (featured row and grid) plays its clip on hover
   return `
     <article class="project-card${featured ? ' is-featured' : ''}" style="--entry:${accentOf(p.palette)}"${preview ? ` data-preview="${esc(preview)}"` : ''}>
       <div class="card-media">
