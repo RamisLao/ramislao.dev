@@ -73,7 +73,7 @@
  * except the description when there's no pitch. Keep them as long as you like.
  * description paragraph(s); separate paragraphs with a blank line (\n\n)
  * roleDetails what you did in your role(s)
- * built       list: what you did — things you built or made, but also things like
+ * whatIDid    list of things you did — things you built or made, but also things like
  *             "Managed a team of 5" (shown as "What I did / Lo que hice")
  * tech        technologies / platforms used, shown as chips (optional):
  *               ['Unity', 'Blender', 'p5.js', 'Node.js']
@@ -88,13 +88,15 @@
  * FEATURED — shown as big cards right below the hero, in this order (use the project ids).
  * On hover, every card (featured or not) plays a looping video: `preview: 'clip.mp4'` on the project,
  * or else its first .mp4 in media. Projects without either just show their cover.
- * Featured projects are left out of the grid below (unless a filter is active), so they don't show twice.
+ * Featured projects also appear in the "All projects" grid below.
  */
 export const featured = ['shutterbug-skies', 'yanga-casting', 'party-demon', 'hyperbeard'];
 
 /**
- * ORDER — the projects shown on the site, in this order (use the project ids = file names without .js).
+ * ORDER — the projects shown on the site (use the project ids = file names without .js).
  * Only projects listed here appear. To hide one, delete its line or comment it out with //
+ * The "All projects" grid sorts them by date automatically (newest first, by start year),
+ * so the order here only matters for projects with exactly the same years.
  * (this also hides it from the featured row).
  */
 export const order = [

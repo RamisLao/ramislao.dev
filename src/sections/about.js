@@ -3,14 +3,25 @@ import { t, tr, onLangChange } from '../i18n/index.js';
 import { esc } from '../utils/dom.js';
 import { artworkSVG } from '../components/artwork.js';
 import { resolveSrc } from '../sheets/parts.js';
+// Studies and languages come from the CV's data, so they're written once (cv/data.js → site: true)
+import { cv as cvData } from '../../cv/data.js';
 
-/** About: photo, bio, playful skill cards and software list. */
+/** About: photo, bio, playful skill cards, software list, and education & languages. */
 export function initAbout(root) {
   const photo = root.querySelector('[data-about-photo]');
   const bio = root.querySelector('[data-about-bio]');
   const skills = root.querySelector('[data-skills]');
   const software = root.querySelector('[data-software]');
   const cv = root.querySelector('[data-about-cv]');
+  const background = root.querySelector('[data-background]');
+
+  // Studies marked site: true in cv/data.js, newest first
+  const studies = [...(cvData.education || []), ...(cvData.courses || [])]
+    .filter((s) => s.site)
+    .sort((a, b) => parseInt(tr(b.years)) - parseInt(tr(a.years)));
+  const COLORS = ['var(--accent)', 'var(--secondary)', 'var(--pop)', 'var(--primary)'];
+  // badge can be one award or a list of them
+  const badgesOf = (s) => [].concat(s.badge || []).map(tr).filter(Boolean);
 
   // Only show the button for a file that really exists (a missing file would download the web page).
   const cvExists = new Map();
@@ -71,6 +82,40 @@ export function initAbout(root) {
         </div>`
       )
       .join('');
+
+    background.innerHTML = `
+      ${studies.length ? `
+      <div class="background-group">
+        <h4>${esc(t('about.education'))}</h4>
+        <ul class="studies">${studies
+          .map(
+            (s, i) => `
+            <li class="study" style="--c:${COLORS[i % COLORS.length]}">
+              <span class="study-years">${esc(tr(s.years))}</span>
+              <span class="study-name">${esc(tr(s.name))}</span>
+              ${tr(s.where) ? `<span class="study-where">${esc(tr(s.where))}</span>` : ''}
+              ${s.grade ? `<span class="study-grade">${esc(tr(cvData.labels.grade))}: <strong>${esc(tr(s.grade))}</strong></span>` : ''}
+              ${badgesOf(s).length ? `<span class="study-badges">${badgesOf(s).map((b) => `<span class="study-badge">${esc(b)}</span>`).join('')}</span>` : ''}
+            </li>`
+          )
+          .join('')}</ul>
+      </div>` : ''}
+      ${cvData.languages?.length ? `
+      <div class="background-group">
+        <h4>${esc(t('about.languages'))}</h4>
+        <ul class="languages">${cvData.languages
+          .map(
+            (l, i) => `
+            <li class="language" style="--c:${COLORS[i % COLORS.length]}">
+              <span class="language-name">${esc(tr(l.name))}</span>
+              <span class="language-note">${esc(tr(l.note))}</span>
+              <span class="language-meter" role="img" aria-label="${l.level} / 5">${[1, 2, 3, 4, 5]
+                .map((n) => `<span class="${n <= l.level ? 'on' : ''}"></span>`)
+                .join('')}</span>
+            </li>`
+          )
+          .join('')}</ul>
+      </div>` : ''}`;
   }
 
   render();

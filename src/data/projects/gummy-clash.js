@@ -50,7 +50,7 @@ export default {
     en: 'My main role was programmer: I implemented most of the game’s systems. One of the most interesting is the levels, which transform in real time, changing their shape and height. I designed and built a tool to create these levels from Google Sheets, so the designers could quickly put together different level layouts and test them in the game. I also implemented local multiplayer, the characters’ ragdoll physics, and the pickups that give you points and special powers.\n\nI also composed all of the game’s music and implemented its audio.',
     es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas del juego. Uno de los más interesantes es el de los niveles, que se transforman en tiempo real cambiando de forma y de altura. Diseñé e implementé una herramienta para crear esos niveles desde Google Sheets, para que el equipo de diseño pudiera armar rápidamente distintas estructuras y probarlas en el juego. También implementé el multijugador local, las físicas de ragdoll de los personajes y los objetos que se recogen para sumar puntos y obtener poderes especiales.\n\nAdemás, compuse toda la música del juego e implementé el audio.',
   },
-  built: [
+  whatIDid: [
     { en: 'Most of the game’s systems, in Unity', es: 'Implementé la mayoría de los sistemas del juego en Unity' },
     { en: 'A system that morphs one level into another in real time', es: 'Implementé un sistema que transforma un nivel en otro en tiempo real' },
     { en: 'A tool for building levels from a Google Sheets spreadsheet', es: 'Creé una herramienta para construir niveles desde una hoja de cálculo de Google Sheets' },

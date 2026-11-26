@@ -54,7 +54,7 @@ export default {
     en: 'My main role was programmer: I implemented most of the game’s systems and gameplay. Because development was so fast-paced, much of my work went into building tools that let the game designers iterate on their ideas quickly.\n\nI also composed all of the game’s music, and recorded and edited the voice of its protagonist.',
     es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas y del gameplay. Como el desarrollo fue muy acelerado, buena parte de mi trabajo consistió en crear herramientas para que el equipo de diseño pudiera iterar sus ideas con rapidez.\n\nTambién compuse toda la música del juego, y grabé y edité la voz de la protagonista.',
   },
-  built: [
+  whatIDid: [
     { en: 'The progression system that moves you through the game', es: 'Implementé el sistema de progreso que te permite avanzar en el juego' },
     { en: 'A tool for designers to create new enemy waves easily', es: 'Implementé una herramienta para que el equipo de diseño creara nuevas oleadas de enemigos fácilmente' },
     { en: 'The AI for every enemy', es: 'Implementé la inteligencia artificial de todos los enemigos' },

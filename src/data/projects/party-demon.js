@@ -50,7 +50,7 @@ export default {
     en: 'My main role on this project was programmer. I designed and implemented most of the game’s systems and gameplay.',
     es: 'Mi rol principal en este proyecto fue el de programadorx. Diseñé e implementé la mayoría de los sistemas y del gameplay del juego.',
   },
-  built: [
+  whatIDid: [
     { en: 'A system for building your castle dynamically with pieces bought in a shop', es: 'Un sistema para construir tu castillo de forma dinámica con piezas que compras en una tienda' },
     { en: 'Dynamic pathfinding from scratch, using A*', es: 'Pathfinding dinámico desde cero, con A*' },
     { en: 'A tool that lets game designers build enemy waves, combining procedural and deterministic systems', es: 'Una herramienta para que el equipo de diseño construyera oleadas de enemigos, combinando sistemas procedurales y deterministas' },

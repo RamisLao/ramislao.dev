@@ -57,7 +57,7 @@ export default {
     en: 'Together with Dinorah, I run the project’s social media, mainly Instagram: I write, film and edit reels. I also design some of the posters we use to promote our events, and I handle customer service, answering questions from people who reach out to us.\n\nIn our online community, I’m a moderator: I propose activities and moderate interactions between members.\n\nIn 4 years, we’ve built an audience of 7,000 followers, hosted more than 100 in-person events and welcomed thousands of people. Our online community currently has 300 members.',
     es: 'Junto con Dinorah, llevo las redes sociales del proyecto, principalmente Instagram: escribo, grabo y edito reels. También diseño algunos de los carteles con los que promocionamos nuestros eventos y me encargo de la atención a clientes, respondiendo las dudas de quienes nos escriben.\n\nEn la comunidad virtual soy moderadorx: propongo actividades y modero las interacciones entre las personas.\n\nEn 4 años hemos construido una cuenta con 7,000 seguidores, realizado más de 100 eventos presenciales y recibido a miles de personas. Actualmente, nuestra comunidad virtual tiene 300 miembrxs.',
   },
-  built: [
+  whatIDid: [
     { en: 'Posters to promote the activities we offer', es: 'Carteles para promocionar las actividades que ofrecemos' },
     { en: 'Reels that attract new followers and share social skills tools', es: 'Reels para atraer más seguidores y compartir herramientas sociales' },
     { en: 'Our sales funnels, plus the setup of the tech tools that power them', es: 'Nuestros embudos de venta, junto con la configuración de las herramientas tecnológicas que los hacen posibles' },

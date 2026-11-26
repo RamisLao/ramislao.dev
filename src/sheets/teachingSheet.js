@@ -1,6 +1,6 @@
 import { tr } from '../i18n/index.js';
-import { esc, yearsLabel, accentOf } from '../utils/dom.js';
-import { section, textBlock, listBlock, linksBlock, galleryHTML, mountGallery } from './parts.js';
+import { esc, yearsLabel, teachColorOf } from '../utils/dom.js';
+import { section, textBlock, listBlock, linksBlock, creditsBlock, galleryHTML, mountGallery } from './parts.js';
 
 /** Side-sheet content for a teaching entry. */
 export function teachingSheet(item) {
@@ -8,7 +8,7 @@ export function teachingSheet(item) {
   const base = `/media/teaching/${item.id}/`;
   return {
     render: () => `
-      <header class="sheet-header" style="--entry:${accentOf(item.palette)}">
+      <header class="sheet-header" style="--entry:${teachColorOf(item)}">
         <p class="sheet-kicker"><span class="dot"></span>${esc(yearsLabel(item.start, item.end))}</p>
         <h2 id="sheet-title">${esc(tr(item.subject))}</h2>
         <p class="sheet-subtitle">${esc(item.institution)}</p>
@@ -18,6 +18,7 @@ export function teachingSheet(item) {
       ${section('sheet.course', textBlock(item.description))}
       ${section('sheet.topics', listBlock(item.topics))}
       ${section('sheet.teachHighlights', listBlock(item.highlights))}
+      ${section('sheet.collaborators', creditsBlock(item.collaborators))}
     `,
     mount: (el) => mountGallery(el, item.media, base),
   };

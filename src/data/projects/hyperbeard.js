@@ -55,7 +55,7 @@ export default {
     en: 'I programmed this project from scratch. I took part in the ideation process and then built the backend and frontend of the entire app. I also worked directly in Unity, adapting the existing tools so they would work properly with the web platform.\n\nAt the start of the project I collaborated with a UI/UX designer, who created a couple of screens to set the visual direction (typography, colors, shapes and layout). Using her guidelines, I designed the rest of the screens.',
     es: 'Programé este proyecto desde cero. Participé en el proceso de ideación y después implementé el backend y el frontend de toda la aplicación. También trabajé directamente en Unity para adaptar las herramientas existentes y que funcionaran correctamente con la plataforma web.\n\nAl principio del proyecto colaboré con una diseñadora de UI/UX, que creó un par de vistas para definir la dirección visual (tipografía, colores, formas y layout). A partir de sus guías, diseñé el resto de las vistas.',
   },
-  built: [
+  whatIDid: [
     { en: 'The UI/UX design of most of the screens', es: 'El diseño de UI/UX de la mayoría de las vistas' },
     { en: 'The node.js backend, including every database query', es: 'El backend en node.js, incluido el diseño de todas las consultas a la base de datos' },
     { en: 'The entire frontend, built with React.js', es: 'Todo el frontend, desarrollado con React.js' },

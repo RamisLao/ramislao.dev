@@ -72,7 +72,8 @@ export function factsBlock(facts) {
 }
 
 export function linksBlock(links) {
-  if (!links?.length) return '';
+  links = (links || []).filter((l) => l && l.url); // links without a url are skipped
+  if (!links.length) return '';
   return `<div class="sheet-links">${links
     .map(
       (l) =>

@@ -86,7 +86,7 @@ export function projectSheet(p) {
       ${galleryHTML(media, { seed: p.id, palette: p.palette, base })}
       ${factsBlock(p.facts)}
       ${linkButtons(p)}
-      ${section('sheet.built', listBlock(p.built))}
+      ${section('sheet.whatIDid', listBlock(p.whatIDid))}
       ${section('sheet.tech', techBlock(p.tech))}
       ${collapsible('sheet.description', textBlock(p.description), { open: !tr(p.pitch) })}
       ${collapsible('sheet.roles', textBlock(p.roleDetails))}

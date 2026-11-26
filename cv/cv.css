@@ -150,7 +150,7 @@ ul.dots li::before {
 .item .note { font-size: 7.5pt; }
 .item .where { font-size: 7.3pt; color: var(--ink-soft); }
 .badge {
-  display: inline-block; margin-top: 0.8mm; padding: 0.3mm 2mm; border-radius: 999px;
+  display: inline-block; margin: 0.8mm 0.6mm 0 0; padding: 0.3mm 2mm; border-radius: 999px;
   font-size: 6.8pt; font-weight: 700; background: color-mix(in srgb, var(--highlight) 40%, var(--surface));
 }
 

@@ -51,7 +51,7 @@ export default {
     en: 'First and foremost, my role was to understand Jimena’s piece in depth and identify the emotional pillars it’s built on. I did extensive research to find technologies that would fit her budget. I designed the visuals, choosing a color palette and visual language that matched the music. Finally, I programmed the entire animation in p5.js.',
     es: 'Mi rol consistió, ante todo, en comprender a fondo la pieza de Jimena e identificar los pilares emocionales que la conforman. Hice una investigación exhaustiva para encontrar tecnologías que se ajustaran a su presupuesto. Diseñé la parte visual, eligiendo una paleta de colores y un lenguaje visual acordes con la música. Finalmente, programé toda la animación con p5.js.',
   },
-  built: [
+  whatIDid: [
     { en: 'A visual design that reflects the narrative and emotional weight of the piece', es: 'Diseño visual que refleja la narrativa y la carga emocional de la pieza' },
     { en: 'An animation that clearly shows the tempo, each instrument’s entrances and the length of every note', es: 'Animación que muestra con claridad el tempo, las entradas de cada instrumento y la duración de cada nota' },
     { en: 'A final video edited from several takes of the animation', es: 'Video final editado a partir de varias tomas de la animación' },

@@ -7,12 +7,19 @@ import { projectCard } from '../components/projectCard.js';
 import { projectSheet } from '../sheets/projectSheet.js';
 
 /**
- * Projects: the featured row at the top, then the filterable grid.
- * The grid leaves out featured projects unless a filter is active,
- * so nothing appears twice but filters still search everything.
+ * Projects: the featured row at the top, then the filterable grid of all projects
+ * ("All projects"), which includes the featured ones too.
  */
 
 const filters = { type: 'all', role: 'all' };
+
+/**
+ * Newest first, by start year. Same start year: ongoing projects first, then the one that ended later.
+ * Projects with the same dates keep their order from the `order` list.
+ */
+const endKey = (p) => (p.end === null ? Infinity : Number(p.end ?? p.start) || 0);
+const byDate = (list) =>
+  [...list].sort((a, b) => (Number(b.start) || 0) - (Number(a.start) || 0) || endKey(b) - endKey(a));
 
 export function initProjects(root) {
   const featuredEl = root.querySelector('[data-featured]');
@@ -21,7 +28,6 @@ export function initProjects(root) {
   const countEl = root.querySelector('[data-count]');
 
   const featuredProjects = featured.map((id) => projects.find((p) => p.id === id)).filter(Boolean);
-  const isFeatured = (p) => featuredProjects.includes(p);
 
   // Only show filter options that are actually used, in taxonomy order
   const usedTypes = Object.keys(projectTypes).filter((k) => projects.some((p) => p.type === k));
@@ -50,10 +56,9 @@ export function initProjects(root) {
       filterGroup('type', t('filters.type'), usedTypes, projectTypes) +
       filterGroup('role', t('filters.role'), usedRoles, roles);
 
-    const unfiltered = filters.type === 'all' && filters.role === 'all';
-    const visible = projects.filter(
+    // Every project is listed here, featured ones included, newest first
+    const visible = byDate(projects).filter(
       (p) =>
-        (unfiltered ? !isFeatured(p) : true) &&
         (filters.type === 'all' || p.type === filters.type) &&
         (filters.role === 'all' || p.roles.includes(filters.role))
     );

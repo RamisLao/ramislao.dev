@@ -61,9 +61,10 @@ function item(x) {
       <span class="yr">${esc(T(x.years))}</span>
       <div>
         <p class="name">${esc(T(x.name))}</p>
-        ${T(x.note) ? `<p class="note">${esc(T(x.note))}</p>` : ''}
+        ${[T(x.note), x.grade ? `${T(cv.labels.grade)} ${T(x.grade)}` : ''].filter(Boolean).length
+          ? `<p class="note">${esc([T(x.note), x.grade ? `${T(cv.labels.grade)} ${T(x.grade)}` : ''].filter(Boolean).join(' · '))}</p>` : ''}
         ${T(x.where) ? `<p class="where">${esc(T(x.where))}</p>` : ''}
-        ${T(x.badge) ? `<span class="badge">${esc(T(x.badge))}</span>` : ''}
+        ${[].concat(x.badge || []).map(T).filter(Boolean).map((b) => `<span class="badge">${esc(b)}</span>`).join(' ')}
       </div>
     </div>`;
 }

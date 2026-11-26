@@ -64,3 +64,6 @@ export function orgLabel(value) {
 
 /** The accent color of a palette (its main shape color). */
 export const accentOf = (paletteName) => `var(${(palettes[paletteName] || palettes.soft).arch})`;
+
+/** Every teaching entry uses the same color: the palette's accent (tokens.css → --accent). */
+export const teachColorOf = () => 'var(--accent)';

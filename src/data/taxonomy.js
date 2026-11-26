@@ -13,13 +13,14 @@ export const projectTypes = {
 };
 
 export const roles = {
+  // Labels name the activity in both languages ("Production", not "Producer").
   // Production, programming and the three kinds of design first (the hero's "Design" covers all three)
-  producer:        { en: 'Producer', es: 'Producción' },
-  programmer:      { en: 'Programmer', es: 'Programación' },
-  gameDesigner:    { en: 'Game Designer', es: 'Diseño de juegos' },
-  uxDesigner:      { en: 'UI/UX Designer', es: 'Diseño UI/UX' },
-  graphicDesigner: { en: 'Graphic Designer', es: 'Diseño gráfico' },
-  artDirector:     { en: 'Art Director', es: 'Dirección de arte' },
+  producer:        { en: 'Production', es: 'Producción' },
+  programmer:      { en: 'Programming', es: 'Programación' },
+  gameDesigner:    { en: 'Game Design', es: 'Diseño de juegos' },
+  uxDesigner:      { en: 'UI/UX Design', es: 'Diseño UI/UX' },
+  graphicDesigner: { en: 'Graphic Design', es: 'Diseño gráfico' },
+  artDirector:     { en: 'Art Direction', es: 'Dirección de arte' },
   music:           { en: 'Music', es: 'Música' },
-  community:       { en: 'Community Manager', es: 'Gestión de comunidad' },
+  community:       { en: 'Community Management', es: 'Gestión de comunidad' },
 };

@@ -178,19 +178,28 @@ export const cv = {
   ],
 
   // ── Education ───────────────────────────────────────────────────────
+  // site: true → also shown on the website, in About → "Education & languages"
+  // (works in education and courses). All languages below are shown there too.
+  // grade: final grade, shown as "Promedio / GPA: …" (optional)
+  // badge: one award, or a list of awards: [{ es, en }, { es, en }]
   education: [
     {
-      years: '2024 – 2027',
+      years: '2024 – 2027', site: true,
       name: { es: 'Licenciatura en Diseño Gráfico Digital', en: 'BA in Digital Graphic Design' },
       note: { es: 'Titulación prevista para enero de 2027', en: 'Expected graduation: January 2027' },
+      grade: '9.48 / 10',
       where: 'UNIR',
     },
     {
-      years: '2008 – 2016',
+      years: '2008 – 2016', site: true,
       name: { es: 'Licenciatura en Composición Musical', en: 'BA in Music Composition' },
-      note: { es: 'Créditos concluidos, sin titulación · Promedio 9.7 / 10', en: 'Coursework completed, degree not conferred · GPA 9.7 / 10' },
+      note: { es: 'Créditos concluidos, sin titulación', en: 'Coursework completed, degree not conferred' },
+      grade: '9.7 / 10',
       where: { es: 'Facultad de Música, UNAM', en: 'Faculty of Music, UNAM' },
-      badge: { es: 'Medalla Gabino Barreda', en: 'Gabino Barreda Medal' },
+      badge: [
+        { es: 'Medalla Gabino Barreda', en: 'Gabino Barreda Medal' },
+        { es: 'Diploma de Aprovechamiento por Excelencia Académica, 4 años seguidos', en: 'Academic Excellence Diploma, 4 years in a row' },
+      ],
     },
   ],
 
@@ -202,11 +211,15 @@ export const cv = {
       where: 'Escena',
     },
     {
-      years: '2021 – 2022',
+      years: '2021 – 2022', site: true,
       name: { es: 'Diploma en Diseño de Videojuegos', en: 'Diploma in Game Design' },
-      note: { es: 'Promedio 94.15', en: 'GPA 94.15' },
+      grade: '94.15 / 100',
       where: { es: 'Vancouver Film School, Canadá', en: 'Vancouver Film School, Canada' },
-      badge: { es: 'Premio a la Excelencia en Código', en: 'Award for Excellence in Code' },
+      badge: [
+        { es: 'Premio a la Excelencia en Código', en: 'Award for Excellence in Code' },
+        { es: 'Premio a Mejor Juego de Mesa', en: 'Best Board Game award' },
+        { es: 'Premio a Mejor Proyecto Final', en: 'Best Final Project award' },
+      ],
     },
     { years: '2017 – 2018', name: { es: 'Nanodegree en Inteligencia Artificial', en: 'Artificial Intelligence Nanodegree' }, where: 'Udacity' },
     { years: '2017', name: { es: 'Nanodegree en Fundamentos de Deep Learning', en: 'Deep Learning Foundations Nanodegree' }, where: 'Udacity' },
@@ -257,6 +270,7 @@ export const cv = {
     awards:      { es: 'Premios', en: 'Awards' },
     languages:   { es: 'Idiomas', en: 'Languages' },
     present:     { es: 'Presente', en: 'Present' },
+    grade:       { es: 'Promedio', en: 'GPA' },
   },
 
   // File names for the exported PDFs.

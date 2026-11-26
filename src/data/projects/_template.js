@@ -50,7 +50,7 @@ export default {
     en: '',
     es: '',
   },
-  built: [
+  whatIDid: [
     { en: '', es: '' },
   ],
   tech: [],                                    // chips, e.g. ['Unity', 'C#', 'Blender']

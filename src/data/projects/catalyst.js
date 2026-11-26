@@ -50,7 +50,7 @@ export default {
     en: 'I implemented the entire app in Unity and was in charge of connecting the hardware with the software. I also worked on the computer-vision system, built with OpenCV, that detected people’s fingers and mapped them onto the Unity app.',
     es: 'Implementé toda la aplicación en Unity y me encargué de conectar el hardware con el software. También trabajé en el sistema de visión por computadora, hecho con OpenCV, que identificaba los dedos de las personas y los mapeaba en la aplicación de Unity.',
   },
-  built: [
+  whatIDid: [
     { en: 'The entire app, in Unity', es: 'Implementé toda la aplicación en Unity' },
     { en: 'The system that used RFID chips to send information to the app', es: 'Implementé el sistema que usaba chips RFID para enviar información a la aplicación' },
     { en: 'Work on the computer-vision system, using OpenCV', es: 'Trabajé en el sistema de visión por computadora con OpenCV' },

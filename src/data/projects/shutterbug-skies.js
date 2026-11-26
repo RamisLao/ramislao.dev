@@ -55,7 +55,7 @@ export default {
     en: 'As producer, I manage the project: I assign tasks to the whole team and make sure the game’s overall vision stays on track.\n\nAs art director, I defined the project’s visual direction, create some of the assets myself and give feedback to Juan, our artist, on every asset.\n\nAs programmer, I built all of the game’s core systems, along with tools that streamline the development process.\n\nAs designer, I handle UI/UX and game design: together with Rafa, I created the core mechanics and the economy.',
     es: 'Como productorx, gestiono el proyecto: asigno las tareas a todo el equipo y me aseguro de que se mantenga la visión general del juego.\n\nComo directorx de arte, definí la dirección visual del proyecto, creo algunos de los assets y doy retroalimentación a Juan, nuestro artista, sobre cada uno de ellos.\n\nComo programadorx, desarrollé todos los sistemas principales del juego, además de herramientas que agilizan el proceso de desarrollo.\n\nComo diseñadorx, me encargo del diseño de UI/UX y del diseño de juego: junto con Rafa, creé las mecánicas principales y la economía.',
   },
-  built: [
+  whatIDid: [
     { en: 'An internal tool for saving game progress to disk', es: 'Una herramienta interna para guardar la partida en disco' },
     { en: 'A tool that generates Scriptable Objects from a Google Sheets spreadsheet', es: 'Una herramienta que genera Scriptable Objects a partir de una hoja de cálculo de Google Sheets' },
     { en: 'The design and implementation of the entire UI, using Juan’s art', es: 'El diseño y la implementación de toda la interfaz, con el arte de Juan' },
@@ -74,5 +74,6 @@ export default {
   credits: [
     { name: 'Juan Téllez', role: { en: 'Art', es: 'Arte' } },
     { name: 'Rafa Arias', role: { en: 'Game design, programming, audio & music', es: 'Diseño de juego, programación, audio y música' } },
+    { name: 'Rito Rifelli', role: { en: 'Steam Art', es: '' } },
   ],
 };

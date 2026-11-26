@@ -1,6 +1,6 @@
 import { teaching } from '../data/teaching.js';
 import { tr, onLangChange } from '../i18n/index.js';
-import { esc, yearsLabel, accentOf } from '../utils/dom.js';
+import { esc, yearsLabel, teachColorOf } from '../utils/dom.js';
 import { openSheet } from '../components/sheet.js';
 import { teachingSheet } from '../sheets/teachingSheet.js';
 
@@ -13,7 +13,7 @@ export function initTeaching(root) {
       .map(
         (item) => `
         <li>
-          <button type="button" class="teach-row" data-teach="${esc(item.id)}" style="--entry:${accentOf(item.palette)}">
+          <button type="button" class="teach-row" data-teach="${esc(item.id)}" style="--entry:${teachColorOf(item)}">
             <span class="teach-years">${esc(yearsLabel(item.start, item.end))}</span>
             <span class="teach-main">
               <span class="teach-subject">${esc(tr(item.subject))}</span>

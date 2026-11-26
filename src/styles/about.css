@@ -169,6 +169,113 @@
   margin-bottom: 12px;
 }
 
+/* ---------- Education & languages (data from cv/data.js) ---------- */
+.background {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 28px 40px;
+  align-items: start;
+}
+.background-group h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.studies,
+.languages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.study {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 14px 18px 14px 22px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.study::before { /* colored edge, like the project and CV cards */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--c);
+}
+.study-years {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.study-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.study-where {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.study-grade {
+  font-size: 0.95rem;
+}
+.study-grade strong {
+  font-weight: 700;
+}
+.study-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.study-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--highlight) 40%, var(--surface));
+}
+.languages {
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  gap: 12px;
+}
+.language {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'name meter' 'note meter';
+  column-gap: 16px;
+  align-items: center;
+}
+.language-name { grid-area: name; font-weight: 700; }
+.language-note { grid-area: note; color: var(--ink-soft); font-size: 0.9rem; }
+.language-meter { grid-area: meter; display: flex; gap: 5px; }
+.language-meter span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.language-meter span.on { background: var(--c); }
+
+@media (max-width: 760px) {
+  .background {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 760px) {
   .about-intro {
     grid-template-columns: 1fr;
