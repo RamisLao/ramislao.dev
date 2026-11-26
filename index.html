@@ -107,11 +107,26 @@
           <h3 class="sub-head" data-i18n="about.skills">What I’m good at</h3>
           <ul class="skills" data-skills></ul>
 
-          <h3 class="sub-head" data-i18n="about.software">Tools &amp; tech</h3>
-          <div class="software" data-software></div>
+          <!-- Foldable: closed by default. Add the word open to a <details> to start it unfolded. -->
+          <details class="about-fold">
+            <summary>
+              <h3 class="sub-head" data-i18n="about.software">Tools &amp; tech</h3>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="about-fold-body">
+              <div class="software" data-software></div>
+            </div>
+          </details>
 
-          <h3 class="sub-head" data-i18n="about.background">Education &amp; languages</h3>
-          <div class="background" data-background></div>
+          <details class="about-fold">
+            <summary>
+              <h3 class="sub-head" data-i18n="about.background">Education &amp; languages</h3>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="about-fold-body">
+              <div class="background" data-background></div>
+            </div>
+          </details>
         </div>
       </section>
 

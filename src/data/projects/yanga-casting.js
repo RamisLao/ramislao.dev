@@ -13,8 +13,8 @@ export default {
   preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    { src: '/media/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it: personal details, contact info, photos and videos', es: 'El perfil de un talento visto por el equipo de Yanga: datos personales, contacto, fotos y videos' } },
-    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: 'The talent database, showing each person’s agency and tags', es: 'La base de datos de talentos, con la agencia y las etiquetas de cada persona' } },
+    { src: '/media/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it', es: 'El perfil de un talento visto por el equipo de Yanga' } },
+    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: '', es: 'La base de datos de talentos, con algunos datos importantes incluidos' } },
     { src: '/media/projects/yanga-casting/screenshot_3.png', caption: { en: 'The admin panel: users and their roles (Admin, Booking, Casting)', es: 'El panel de administración: usuarios y sus roles (Admin, Booking, Casting)' } },
     { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: 'The talent’s own view: their profile, appearance and measurements', es: 'La vista del talento: su propio perfil, con su apariencia y sus medidas' } },
     { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: 'A character from a casting call, as talent see it: requirements, references and scenes to act, with the button to apply', es: 'Un personaje de una convocatoria, desde la vista del talento: requisitos, referencias y escenas a actuar, con el botón para postularse' } },
@@ -63,14 +63,14 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'It’s the largest and most feature-rich app I’ve ever designed. Translating all of the client’s needs and workflows into a platform that was easy to use and made their processes more efficient was a big challenge.', es: 'Es la aplicación más extensa y con más funcionalidades que he diseñado. Fue un gran reto traducir todas las necesidades y el flujo de trabajo del cliente a una plataforma fácil de usar que hiciera sus procesos más eficientes.' } },
   ],
   whatIDid: [
-    { en: 'The research process to understand all of the client’s needs and workflows', es: 'El proceso de investigación para conocer todas las necesidades y los procesos del cliente' },
-    { en: 'Wireframes for the entire app, developed together with the client', es: 'Los wireframes de toda la aplicación, en comunicación con el cliente' },
-    { en: 'The app’s branding', es: 'El branding de la aplicación' },
-    { en: 'The app’s development plan', es: 'El plan de desarrollo de la aplicación' },
-    { en: 'Weekly planning and task assignment for everyone involved', es: 'La planeación y asignación semanal de tareas de todas las personas involucradas' },
-    { en: 'The final design of every screen', es: 'El diseño final de cada vista' },
-    { en: 'Hands-on work in the code to refine the screens and keep them consistent with each other', es: 'Trabajo directo en el código para refinar las vistas y asegurar que fueran coherentes entre sí' },
-    { en: 'The database schema and the migration system', es: 'El esquema de la base de datos y el sistema de migraciones' },
+    { en: 'The **research process** to understand all of the client’s needs and workflows', es: 'El **proceso de investigación** para conocer todas las necesidades y los procesos del cliente' },
+    { en: '**Wireframes** for the entire app, developed together with the client', es: 'Los **wireframes** de toda la aplicación, en comunicación con el cliente' },
+    { en: 'The app’s **branding**', es: 'El **branding** de la aplicación' },
+    { en: 'The app’s **development plan**', es: 'El **plan de desarrollo** de la aplicación' },
+    { en: '**Weekly planning** and **task assignment** for everyone involved', es: 'La **planeación** y **asignación semanal de tareas** de todas las personas involucradas' },
+    { en: 'The **final design** of every screen', es: 'El **diseño final** de cada vista' },
+    { en: '**Hands-on work in the code** to refine the screens and keep them consistent with each other', es: '**Trabajo directo en el código** para refinar las vistas y asegurar que fueran coherentes entre sí' },
+    { en: 'The **database schema** and the **migration system**', es: 'El **esquema de la base de datos** y el **sistema de migraciones**' },
   ],
   tech: ['React.js', 'CSS', 'Figma', 'PostgreSQL'],
   credits: [

@@ -53,11 +53,11 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Construction calls for very precise measurements and very specific requirements. The biggest challenge was carrying those measurements, sizes and textures into the app to reproduce each home as faithfully as possible.', es: 'La construcción exige medidas muy precisas y requisitos muy específicos. El mayor reto fue trasladar esas medidas, tamaños y texturas a la aplicación para reproducir cada vivienda con la mayor fidelidad posible.' } },
   ],
   whatIDid: [
-    { en: 'Researched the client’s business model and needs', es: 'Investigué el modelo de negocio y las necesidades del cliente' },
-    { en: 'Managed the project and coordinated a team of 3', es: 'Gestioné el proyecto y coordiné a un equipo de 3 personas' },
-    { en: 'Designed and implemented all of the app’s logic in Unreal Engine 5', es: 'Diseñé e implementé toda la lógica de la aplicación en Unreal Engine 5' },
-    { en: 'Designed a system that makes it easy to add new house designs', es: 'Diseñé un sistema para añadir nuevos diseños de viviendas de forma sencilla' },
-    { en: 'Set up Pixel Streaming so the app runs in high resolution on any device', es: 'Configuré Pixel Streaming para usar la aplicación en alta resolución desde cualquier dispositivo' },
+    { en: 'Researched the client’s **business model** and **needs**', es: 'Investigué el **modelo de negocio** y las **necesidades** del cliente' },
+    { en: '**Managed the project** and coordinated a **team of 3**', es: '**Gestioné el proyecto** y coordiné a un **equipo de 3 personas**' },
+    { en: 'Designed and implemented **all of the app’s logic** in **Unreal Engine 5**', es: 'Diseñé e implementé **toda la lógica** de la aplicación en **Unreal Engine 5**' },
+    { en: 'Designed a system that makes it easy to **add new house designs**', es: 'Diseñé un sistema para **añadir nuevos diseños de viviendas** de forma sencilla' },
+    { en: 'Set up **Pixel Streaming** so the app runs in high resolution on **any device**', es: 'Configuré **Pixel Streaming** para usar la aplicación en alta resolución desde **cualquier dispositivo**' },
   ],
   tech: ['Unreal Engine 5', 'Pixel Streaming', 'Nanite + Lumen', 'Trello'],                             // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

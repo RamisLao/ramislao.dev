@@ -10,7 +10,7 @@ export default {
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
   cover: '/media/projects/shutterbug-skies/main.jpg', // card image, 16:9
-  // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
+  preview: 'about_2.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
     { src: 'https://www.youtube.com/watch?v=SOqJEuZyA6M', caption: { en: 'Gameplay trailer', es: 'Tráiler de gameplay' } },
@@ -58,13 +58,13 @@ export default {
     { type: 'result', title: { en: 'Selected for Game Conference MX', es: 'Seleccionados para Game Conference MX' }, text: { en: 'We were selected to take part in Game Conference MX in Guadalajara, sponsored by Unity.', es: 'Nos seleccionaron para participar en Game Conference MX, en Guadalajara, con el patrocinio de Unity.' } },
   ],
   whatIDid: [
-    { en: 'Managing a team of 6: planning sprints and setting priorities', es: 'Gestiono un equipo de 6 personas: planeo los sprints y defino prioridades' },
-    { en: 'Game design with Rafa: mechanics, progression and economy', es: 'Diseño el juego junto con Rafa: mecánicas, progresión y economía' },
-    { en: 'Systems programming on a solid, flexible architecture that’s easy to iterate on', es: 'Programo los sistemas sobre una arquitectura sólida y flexible, fácil de iterar' },
-    { en: 'The core systems: saving, game states, an economy editable from Google Sheets and the item shop', es: 'Implementé los sistemas base: guardado, estados del juego, economía editable desde Google Sheets y tienda de ítems' },
-    { en: 'The photo minigame and the system that makes every photo unique', es: 'Diseñé el minijuego de fotografía y el sistema que hace única cada foto' },
-    { en: 'Lead UI/UX design: most of the screens, and Juan’s art implemented in Unity', es: 'Lidero el diseño UI/UX: diseñé la mayoría de las pantallas e implementé en Unity el arte de Juan' },
-    { en: 'Art direction: visual style, palette, shape language, typography and feedback on Juan’s work', es: 'Dirijo el arte: estilo visual, paleta, lenguaje de formas, tipografías y retroalimentación a Juan' },
+    { en: '**Managing a team of 6**: planning sprints and setting priorities', es: '**Gestiono un equipo de 6 personas**: planeo los sprints y defino prioridades' },
+    { en: '**Game design** with Rafa: mechanics, progression and economy', es: '**Diseño el juego** junto con Rafa: mecánicas, progresión y economía' },
+    { en: '**Systems programming** on a solid, flexible **architecture** that’s easy to iterate on', es: '**Programo los sistemas** sobre una **arquitectura** sólida y flexible, fácil de iterar' },
+    { en: 'The **core systems**: saving, game states, an economy editable from Google Sheets and the item shop', es: 'Implementé los **sistemas base**: guardado, estados del juego, economía editable desde Google Sheets y tienda de ítems' },
+    { en: 'The **photo minigame** and the system that makes **every photo unique**', es: 'Diseñé el **minijuego de fotografía** y el sistema que hace **única cada foto**' },
+    { en: '**Lead UI/UX design**: most of the screens, and Juan’s art implemented in Unity', es: '**Lidero el diseño UI/UX**: diseñé la mayoría de las pantallas e implementé en Unity el arte de Juan' },
+    { en: '**Art direction**: visual style, palette, shape language, typography and feedback on Juan’s work', es: '**Dirijo el arte**: estilo visual, paleta, lenguaje de formas, tipografías y retroalimentación a Juan' },
   ],
   tech: ['Unity', 'C#', 'Google Sheets', 'Aseprite'], // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

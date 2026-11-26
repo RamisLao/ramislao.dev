@@ -56,9 +56,9 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Because the project was so short, we had to make a lot of strategic decisions to meet the deadline without letting the scope get out of hand.', es: 'Como el proyecto era muy corto, tuvimos que tomar muchas decisiones estratégicas para cumplir el plazo sin que el alcance se nos saliera de las manos.' } },
   ],
   whatIDid: [
-    { en: 'Managed the project and guided the team throughout development', es: 'Gestioné el proyecto y guié al equipo durante todo el desarrollo' },
-    { en: 'Programmed most of the systems and built tools we reused in later projects', es: 'Programé gran parte de los sistemas y creé herramientas que reutilizamos en proyectos posteriores' },
-    { en: 'Designed the narrative experience and the game mechanics together with Rafa', es: 'Junto con Rafa, diseñé la experiencia narrativa y las mecánicas del juego' },
+    { en: '**Managed the project** and guided the team throughout development', es: '**Gestioné el proyecto** y guié al equipo durante todo el desarrollo' },
+    { en: 'Programmed **most of the systems** and built **reusable tools** for later projects', es: 'Programé **gran parte de los sistemas** y creé **herramientas reutilizables** para proyectos posteriores' },
+    { en: 'Designed the **narrative experience** and the **game mechanics** together with Rafa', es: 'Junto con Rafa, diseñé la **experiencia narrativa** y las **mecánicas** del juego' },
   ],
   tech: ['Unity', 'C#'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

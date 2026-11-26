@@ -57,10 +57,10 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'To allow complete flexibility when creating code batches, the database was designed to be highly normalized. Optimizing its queries took a lot of time and ingenuity.', es: 'Para lograr total flexibilidad al crear code batches, la base de datos se diseñó de forma muy normalizada. Optimizar sus consultas requirió mucho tiempo e ingenio.' } },
   ],
   whatIDid: [
-    { en: 'The UI/UX design of most of the screens', es: 'El diseño de UI/UX de la mayoría de las vistas' },
-    { en: 'The node.js backend, including every database query', es: 'El backend en node.js, incluido el diseño de todas las consultas a la base de datos' },
-    { en: 'The entire frontend, built with React.js', es: 'Todo el frontend, desarrollado con React.js' },
-    { en: 'Changes to the Unity tools so they work smoothly with the web app', es: 'Modificaciones a las herramientas de Unity para que interactuaran de forma fluida con la aplicación web' },
+    { en: 'The **UI/UX design** of most of the screens', es: 'El **diseño de UI/UX** de la mayoría de las vistas' },
+    { en: 'The **Node.js backend**, including every **database query**', es: 'El **backend en Node.js**, incluido el diseño de todas las **consultas a la base de datos**' },
+    { en: 'The **entire frontend**, built with **React.js**', es: '**Todo el frontend**, desarrollado con **React.js**' },
+    { en: 'Changes to the **Unity tools** so they work smoothly with the **web app**', es: 'Modificaciones a las **herramientas de Unity** para que interactuaran de forma fluida con la **aplicación web**' },
   ],
   tech: ['React.js', 'node.js', 'Unity', 'MySQL'], // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

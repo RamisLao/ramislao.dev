@@ -52,9 +52,9 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'The animation had to run without a single interruption, however brief. Because the piece is very long, p5.js occasionally showed glitches lasting a few milliseconds, so I solved it in post-production: I recorded the animation several times and assembled a final version from the sections that looked flawless.', es: 'Era fundamental que la animación corriera sin ninguna interrupción, por mínima que fuera. Como la pieza es muy larga, p5.js a veces presentaba glitches de unas milésimas de segundo, así que lo resolví en postproducción: grabé la animación varias veces y armé una versión final editando las secciones que se veían impecables.' } },
   ],
   whatIDid: [
-    { en: 'A visual design that reflects the narrative and emotional weight of the piece', es: 'Diseño visual que refleja la narrativa y la carga emocional de la pieza' },
-    { en: 'An animation that clearly shows the tempo, each instrument’s entrances and the length of every note', es: 'Animación que muestra con claridad el tempo, las entradas de cada instrumento y la duración de cada nota' },
-    { en: 'A final video edited from several takes of the animation', es: 'Video final editado a partir de varias tomas de la animación' },
+    { en: 'A **visual design** that reflects the narrative and **emotional weight** of the piece', es: '**Diseño visual** que refleja la narrativa y la **carga emocional** de la pieza' },
+    { en: 'An **animation** that clearly shows the **tempo**, each instrument’s entrances and the length of every note', es: '**Animación** que muestra con claridad el **tempo**, las entradas de cada instrumento y la duración de cada nota' },
+    { en: 'A **final video** edited from several takes of the animation', es: '**Video final** editado a partir de varias tomas de la animación' },
   ],
   tech: ['p5.js'],                             // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

@@ -51,12 +51,12 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Party Demon is a highly systemic game, with many systems running at once. Each enemy type has its own special traits, and so does every castle piece and every trap. On top of that, different combinations of placed pieces unlock different effects. Building a game where so many interactions happen at the same time was a big technical challenge for me.', es: 'Party Demon es un juego muy sistémico, con muchos sistemas funcionando al mismo tiempo. Cada tipo de enemigo tiene características especiales, al igual que cada pieza del castillo y cada trampa. Además, según la combinación de piezas que hayas colocado, obtienes efectos distintos. Implementar un juego con tantas interacciones simultáneas fue un gran reto técnico para mí.' } },
   ],
   whatIDid: [
-    { en: 'A system for building your castle dynamically with pieces bought in a shop', es: 'Un sistema para construir tu castillo de forma dinámica con piezas que compras en una tienda' },
-    { en: 'Dynamic pathfinding from scratch, using A*', es: 'Pathfinding dinámico desde cero, con A*' },
-    { en: 'A tool that lets game designers build enemy waves, combining procedural and deterministic systems', es: 'Una herramienta para que el equipo de diseño construyera oleadas de enemigos, combinando sistemas procedurales y deterministas' },
-    { en: 'The system for building and managing your card deck', es: 'El sistema para crear y gestionar tu mazo de cartas' },
-    { en: 'Most of the card effects', es: 'La mayoría de los efectos de las cartas' },
-    { en: 'Enemy status effects (burning, slowed, bleeding, etc.)', es: 'Los estados alterados de los enemigos (quemadura, ralentización, sangrado, etc.)' },
+    { en: 'A system for **building your castle** dynamically with pieces bought in a shop', es: 'Un sistema para **construir tu castillo** de forma dinámica con piezas que compras en una tienda' },
+    { en: '**Dynamic pathfinding** from scratch, using **A***', es: '**Pathfinding dinámico** desde cero, con **A***' },
+    { en: 'A tool that lets game designers build **enemy waves**, combining **procedural** and **deterministic** systems', es: 'Una herramienta para que el equipo de diseño construyera **oleadas de enemigos**, combinando sistemas **procedurales** y **deterministas**' },
+    { en: 'The system for building and managing your **card deck**', es: 'El sistema para crear y gestionar tu **mazo de cartas**' },
+    { en: 'Most of the **card effects**', es: 'La mayoría de los **efectos de las cartas**' },
+    { en: 'Enemy **status effects** (burning, slowed, bleeding, etc.)', es: 'Los **estados alterados** de los enemigos (quemadura, ralentización, sangrado, etc.)' },
   ],
   tech: ['Unity', 'C#'],                       // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

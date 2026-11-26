@@ -60,9 +60,9 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'The topics we work on are niche, and can even feel uncomfortable for some people. Growing our community without letting outside pressure compromise our values has been a big challenge.', es: 'Los temas que trabajamos son de nicho e incluso pueden resultar incómodos para algunas personas. Ha sido un gran reto hacer crecer nuestra comunidad sin que las presiones externas comprometan nuestros valores.' } },
   ],
   whatIDid: [
-    { en: 'Posters to promote the activities we offer', es: 'Carteles para promocionar las actividades que ofrecemos' },
-    { en: 'Reels that attract new followers and share social skills tools', es: 'Reels para atraer más seguidores y compartir herramientas sociales' },
-    { en: 'Our sales funnels, plus the setup of the tech tools that power them', es: 'Nuestros embudos de venta, junto con la configuración de las herramientas tecnológicas que los hacen posibles' },
+    { en: '**Posters** to promote the activities we offer', es: '**Carteles** para promocionar las actividades que ofrecemos' },
+    { en: '**Reels** that attract new followers and share social skills tools', es: '**Reels** para atraer más seguidores y compartir herramientas sociales' },
+    { en: 'Our **sales funnels**, plus the setup of the **tech tools** that power them', es: 'Nuestros **embudos de venta**, junto con la configuración de las **herramientas tecnológicas** que los hacen posibles' },
   ],
   tech: ['Canva', 'Adobe Illustrator', 'Affinity', 'Capcut', 'Instagram Edits', 'Adobe Premiere'], // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

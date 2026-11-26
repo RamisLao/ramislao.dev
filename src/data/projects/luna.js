@@ -56,12 +56,12 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Developing such a varied game in just 3 months was a big challenge. It took a huge amount of coordination and teamwork.', es: 'Fue un gran reto desarrollar un juego tan variado en solo 3 meses. Requirió muchísima coordinación y trabajo en equipo.' } },
   ],
   whatIDid: [
-    { en: 'The progression system that moves you through the game', es: 'Implementé el sistema de progreso que te permite avanzar en el juego' },
-    { en: 'A tool for designers to create new enemy waves easily', es: 'Implementé una herramienta para que el equipo de diseño creara nuevas oleadas de enemigos fácilmente' },
-    { en: 'The AI for every enemy', es: 'Implementé la inteligencia artificial de todos los enemigos' },
-    { en: 'The system that defines the win conditions of each level', es: 'Implementé el sistema que define las condiciones para ganar cada nivel' },
-    { en: 'All of the game’s music', es: 'Compuse la música de todo el juego' },
-    { en: 'The recording and editing of the protagonist’s voice', es: 'Grabé y edité la voz de la protagonista' },
+    { en: 'The **progression system** that moves you through the game', es: 'Implementé el **sistema de progreso** que te permite avanzar en el juego' },
+    { en: 'A tool for designers to create new **enemy waves** easily', es: 'Implementé una herramienta para que el equipo de diseño creara nuevas **oleadas de enemigos** fácilmente' },
+    { en: 'The **AI** for every enemy', es: 'Implementé la **inteligencia artificial** de todos los enemigos' },
+    { en: 'The system that defines the **win conditions** of each level', es: 'Implementé el sistema que define las **condiciones para ganar** cada nivel' },
+    { en: 'All of the game’s **music**', es: 'Compuse **la música** de todo el juego' },
+    { en: 'The **recording and editing** of the protagonist’s **voice**', es: '**Grabé y edité la voz** de la protagonista' },
   ],
   tech: ['Unity', "C#"],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

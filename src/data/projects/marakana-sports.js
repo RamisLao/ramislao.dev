@@ -53,12 +53,12 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Our biggest challenge, which Rafa Arias and I tackled together, was developing the algorithm that turned the neural networks’ output into a count of keep-ups and a measurement of jump height.', es: 'Nuestro mayor reto, que resolví junto con Rafa Arias, fue desarrollar el algoritmo que usaba los resultados de las redes neuronales para contar las dominadas y medir la altura del salto.' } },
   ],
   whatIDid: [
-    { en: 'Prototypes, iterated on until we reached the best version of the product', es: 'Desarrollé prototipos e iteré sobre ellos hasta llegar a la mejor versión del producto' },
-    { en: 'Handling our investors’ requests and needs', es: 'Atendí las peticiones y necesidades de los inversionistas' },
-    { en: 'Pitches to investors to raise funding for the startup', es: 'Presenté el proyecto a inversionistas para conseguir fondos para la startup' },
-    { en: 'The whole app, from scratch, in Swift and Node.js', es: 'Desarrollé la aplicación desde cero con Swift y Node.js' },
-    { en: 'Computer-vision neural networks, trained and optimized together with Rafa Arias to run directly on a phone', es: 'Junto con Rafa Arias, entrené y optimicé redes neuronales de visión por computadora para que corrieran directamente en un celular' },
-    { en: 'Mini-games to measure players’ reaction speed', es: 'Diseñé e implementé minijuegos para medir la velocidad de reacción' },
+    { en: '**Prototypes**, iterated on until we reached the best version of the product', es: 'Desarrollé **prototipos** e **iteré** sobre ellos hasta llegar a la mejor versión del producto' },
+    { en: 'Handling our **investors’** requests and needs', es: 'Atendí las peticiones y necesidades de los **inversionistas**' },
+    { en: '**Pitches to investors** to raise funding for the startup', es: 'Presenté el proyecto a inversionistas para **conseguir fondos** para la startup' },
+    { en: 'The **whole app**, from scratch, in **Swift** and **Node.js**', es: 'Desarrollé **la aplicación desde cero** con **Swift** y **Node.js**' },
+    { en: '**Computer-vision neural networks**, trained and optimized together with Rafa Arias to run directly **on a phone**', es: 'Junto con Rafa Arias, entrené y optimicé **redes neuronales de visión por computadora** para que corrieran directamente **en un celular**' },
+    { en: '**Mini-games** to measure players’ **reaction speed**', es: 'Diseñé e implementé **minijuegos** para medir la **velocidad de reacción**' },
   ],
   tech: ['Swift', 'Node.js', 'Google Cloud', 'Neural Networks'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

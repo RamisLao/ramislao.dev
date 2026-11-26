@@ -50,8 +50,8 @@ export default {
     { type: 'decision', title: { en: '', es: '' }, text: { en: 'I did the UI/UX design and built the entire frontend with HTML, CSS and jQuery. I also used D3.js to create charts that showed the neural networks’ training process and their predictive power.', es: 'Hice el diseño UI/UX e implementé todo el frontend con HTML, CSS y jQuery. También usé D3.js para crear gráficas que mostraban el proceso de entrenamiento de las redes neuronales y su poder predictivo.' } },
   ],
   whatIDid: [
-    { en: 'The app’s entire frontend, designed and built', es: 'Diseñé e implementé todo el frontend de la aplicación' },
-    { en: 'D3.js charts that made the neural networks’ training visible', es: 'Creé gráficas con D3.js para hacer visible el entrenamiento de las redes neuronales' },
+    { en: 'The app’s **entire frontend**, designed and built', es: 'Diseñé e implementé **todo el frontend** de la aplicación' },
+    { en: '**D3.js charts** that made the neural networks’ **training visible**', es: 'Creé **gráficas con D3.js** para hacer visible el **entrenamiento** de las redes neuronales' },
   ],
   tech: ['HTML', 'CSS', 'jQuery', 'D3.js'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

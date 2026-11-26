@@ -70,7 +70,10 @@
  *             each value is text or { en, es }. "impact" (numbers, results) gets a full row.
  *
  * whatIDid    list of things you did — things you built or made, but also things like
- *             "Managed a team of 5" (shown as "What I did / Lo que hice")
+ *             "Managed a team of 5" (shown as "What I did / Lo que hice").
+ *             Wrap keywords in **double asterisks** to make them bold:
+ *               { en: 'The **Node.js backend**', es: 'El **backend en Node.js**' }
+ *             One or two per point is enough.
  * tech        technologies / platforms used, shown as chips (optional):
  *               ['Unity', 'Blender', 'p5.js', 'Node.js']
  *

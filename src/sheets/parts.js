@@ -20,10 +20,13 @@ export function textBlock(field) {
 }
 
 /** Bulleted list from an array of { en, es } items. */
+/** Escapes text, then turns **words** into bold (the only formatting allowed in lists). */
+const withBold = (text) => esc(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
 export function listBlock(items) {
   const list = (items || []).map(tr).filter(Boolean);
   if (!list.length) return placeholder();
-  return `<ul class="sheet-list">${list.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>`;
+  return `<ul class="sheet-list">${list.map((item) => `<li>${withBold(item)}</li>`).join('')}</ul>`;
 }
 
 /**

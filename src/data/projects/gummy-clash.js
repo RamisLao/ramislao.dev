@@ -52,14 +52,14 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'None of us had built a ragdoll system before, so getting the effect we wanted took a huge amount of trial and error.', es: 'No teníamos experiencia con sistemas de ragdoll, así que lograr el efecto que buscábamos requirió muchísima prueba y error.' } },
   ],
   whatIDid: [
-    { en: 'Most of the game’s systems, in Unity', es: 'Implementé la mayoría de los sistemas del juego en Unity' },
-    { en: 'A system that morphs one level into another in real time', es: 'Implementé un sistema que transforma un nivel en otro en tiempo real' },
-    { en: 'A tool for building levels from a Google Sheets spreadsheet', es: 'Creé una herramienta para construir niveles desde una hoja de cálculo de Google Sheets' },
-    { en: 'The characters’ ragdoll physics', es: 'Implementé las físicas de ragdoll de los personajes' },
-    { en: 'Local multiplayer', es: 'Implementé el multijugador local' },
-    { en: 'The scoring system, and the special powers you get by collecting candies', es: 'Implementé el sistema de puntos y los poderes especiales que se obtienen al recoger dulces' },
-    { en: 'All of the game’s music', es: 'Compuse toda la música del juego' },
-    { en: 'The audio implementation', es: 'Implementé el audio' },
+    { en: '**Most of the game’s systems**, in **Unity**', es: 'Implementé **la mayoría de los sistemas** del juego en **Unity**' },
+    { en: 'A system that **morphs one level into another** in real time', es: 'Implementé un sistema que **transforma un nivel en otro** en tiempo real' },
+    { en: 'A **level-building tool** driven by **Google Sheets**', es: 'Creé una **herramienta para construir niveles** desde una hoja de cálculo de **Google Sheets**' },
+    { en: 'The characters’ **ragdoll physics**', es: 'Implementé las **físicas de ragdoll** de los personajes' },
+    { en: '**Local multiplayer**', es: 'Implementé el **multijugador local**' },
+    { en: 'The **scoring system**, and the **special powers** you get by collecting candies', es: 'Implementé el **sistema de puntos** y los **poderes especiales** que se obtienen al recoger dulces' },
+    { en: 'All of the game’s **music**', es: 'Compuse **toda la música** del juego' },
+    { en: 'The **audio implementation**', es: 'Implementé el **audio**' },
   ],
   tech: ['Unity', 'C#', 'Google Sheets'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

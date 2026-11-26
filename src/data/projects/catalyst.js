@@ -51,10 +51,10 @@ export default {
     { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Building the computer-vision system was a big challenge. Because of the table’s shape and size, traditional methods didn’t work for us, so we had to set up a very complex system of projectors and mirrors to make it work. Mapping finger contact onto the app was another big challenge.', es: 'Implementar el sistema de visión por computadora fue un gran reto. Por la forma y el tamaño de la mesa, los métodos tradicionales no nos servían, así que tuvimos que montar un sistema muy complejo de proyectores y espejos para hacerlo funcionar. Mapear el contacto de los dedos en la aplicación también fue todo un reto.' } },
   ],
   whatIDid: [
-    { en: 'The entire app, in Unity', es: 'Implementé toda la aplicación en Unity' },
-    { en: 'The system that used RFID chips to send information to the app', es: 'Implementé el sistema que usaba chips RFID para enviar información a la aplicación' },
-    { en: 'Work on the computer-vision system, using OpenCV', es: 'Trabajé en el sistema de visión por computadora con OpenCV' },
-    { en: 'Presenting the table to the public at Hannover Messe 4.0, as part of the Mexican delegation', es: 'Formé parte de la comitiva que llevó la mesa a Hannover Messe 4.0 y la presentó al público' },
+    { en: 'The **entire app**, in **Unity**', es: 'Implementé **toda la aplicación** en **Unity**' },
+    { en: 'The system that used **RFID chips** to send information to the app', es: 'Implementé el sistema que usaba **chips RFID** para enviar información a la aplicación' },
+    { en: 'Work on the **computer-vision** system, using **OpenCV**', es: 'Trabajé en el sistema de **visión por computadora** con **OpenCV**' },
+    { en: 'Presenting the table to the public at **Hannover Messe 4.0**, as part of the **Mexican delegation**', es: 'Formé parte de la **comitiva mexicana** que llevó la mesa a **Hannover Messe 4.0** y la presentó al público' },
   ],
   tech: ['Unity', 'OpenCV', 'RFID'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [

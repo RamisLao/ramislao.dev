@@ -169,6 +169,51 @@
   margin-bottom: 12px;
 }
 
+/* ---------- Foldable sub-sections (Tools & tech, Education & languages) ---------- */
+.about-fold {
+  margin-top: clamp(40px, 6vw, 64px);
+  border-top: 1px solid var(--line);
+}
+.about-fold + .about-fold {
+  margin-top: 0;
+}
+.about-fold:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+.about-fold summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 0;
+  list-style: none;
+  cursor: pointer;
+}
+.about-fold summary::-webkit-details-marker {
+  display: none;
+}
+.about-fold summary .sub-head {
+  margin: 0;
+  transition: color 0.2s;
+}
+.about-fold summary:hover .sub-head {
+  color: var(--accent-text);
+}
+.about-fold summary:hover .fold-icon {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.about-fold[open] .fold-icon::after {
+  transform: rotate(0deg); /* + becomes − when open */
+}
+.about-fold summary:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.about-fold-body {
+  padding-bottom: 32px;
+}
+
 /* ---------- Education & languages (data from cv/data.js) ---------- */
 .background {
   display: grid;
