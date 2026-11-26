@@ -78,9 +78,11 @@ export function projectSheet(p) {
 
       return `
       <header class="sheet-header" style="--entry:${accentOf(p.palette)}">
-        <p class="sheet-kicker"><span class="dot"></span>${esc(tr(projectTypes[p.type]))} · ${esc(yearsLabel(p.start, p.end))}</p>
+        <div class="sheet-meta">
+          <p class="sheet-kicker"><span class="dot"></span>${esc(tr(projectTypes[p.type]))} · ${esc(yearsLabel(p.start, p.end))}</p>
+          ${badges ? `<div class="sheet-badges">${badges}</div>` : ''}
+        </div>
         <h2 id="sheet-title">${esc(p.title)}</h2>
-        ${badges ? `<div class="sheet-badges">${badges}</div>` : ''}
         ${tagList(p.roles.map((r) => tr(roles[r])))}
         ${pitchBlock(p.pitch)}
       </header>

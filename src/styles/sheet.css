@@ -80,21 +80,44 @@
   font-weight: 800;
   letter-spacing: -0.03em;
 }
-/* Studio / client badges under the title */
+/* Top row: type · years on the left, org / client badges on the right */
+.sheet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 8px; /* a bit of air before the title */
+}
+/* …and before the pitch, after the role chips */
+.sheet-header .sheet-pitch {
+  margin-top: 8px;
+}
 .sheet-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  justify-content: flex-end;
+  gap: 6px;
 }
 .sheet-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px 6px 12px;
+  gap: 6px;
+  padding: 4px 12px 4px 10px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--entry) 16%, var(--surface));
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--ink-soft);
+}
+.sheet-badge svg {
+  width: 14px;
+  height: 14px;
+}
+/* When the row wraps on narrow screens, the badges sit on the left too */
+@media (max-width: 560px) {
+  .sheet-badges {
+    justify-content: flex-start;
+  }
 }
 .sheet-badge strong {
   color: var(--ink);
