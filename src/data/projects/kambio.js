@@ -42,15 +42,16 @@ export default {
     impact: { en: '', es: '' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Kambio is a startup that sells homes and buildings made with materials and techniques that make construction much easier, cheaper and faster. We built them a web app where their customers could view a home in real time and customize it to their liking before buying it.\n\nThe tool showed the home in 3D and let customers change the materials of walls, floors and ceilings, choose their colors, and decide which furniture to include in the purchase. They could also walk through it in first person, to get a close feel for what living there would be like.\n\nWe built it in Unreal Engine 5. Nanite and Lumen sped up asset creation and lighting, and Pixel Streaming made it possible to view the home in high resolution and fine detail from any device: desktops, laptops, tablets or phones.',
     es: 'Kambio es una startup que comercializa viviendas y construcciones hechas con materiales y técnicas que vuelven la construcción mucho más fácil, barata y rápida. Le desarrollamos una aplicación web en la que sus clientes podían visualizar una vivienda en tiempo real y personalizarla a su gusto antes de comprarla.\n\nLa herramienta mostraba la vivienda en 3D y permitía cambiar los materiales de paredes, pisos y techos, elegir sus colores y decidir qué muebles incluir en la compra. También se podía recorrer en primera persona, para experimentar de cerca cómo sería habitarla.\n\nLa desarrollamos en Unreal Engine 5. Nanite y Lumen agilizaron la creación de assets y la iluminación, y Pixel Streaming permitió ver la vivienda en alta resolución y con gran nivel de detalle desde cualquier dispositivo: computadoras de escritorio, laptops, tablets o móviles.',
   },
-  roleDetails: {
-    en: 'As producer, I researched Kambio’s business model, its needs and exactly how it wanted to use the app. I coordinated the team (a designer, a 3D modeler and me): I planned and assigned everyone’s tasks and made sure everything was delivered on time. I was also the client’s point of contact, planning the production pipeline in detail and making adjustments based on their feedback.\n\nAs programmer, I implemented all the designs and 3D models, as well as the app’s logic, and set up Pixel Streaming to test it on any device. I also designed and built a flexible system so Kambio could easily add new house designs.',
-    es: 'Como productorx, investigué a fondo el modelo de negocio de Kambio, sus necesidades y el uso concreto que quería darle a la aplicación. Coordiné al equipo (un diseñador, una modeladora 3D y yo): planeé y repartí las tareas de cada quien y me aseguré de que todo se entregara a tiempo. También fui el punto de contacto con el cliente, para planear en detalle el pipeline de producción y hacer ajustes a partir de su retroalimentación.\n\nComo programadorx, implementé todos los diseños y modelos 3D, además de la lógica de la aplicación, y configuré Pixel Streaming para probarla en cualquier dispositivo. También diseñé e implementé un sistema flexible para que Kambio pudiera añadir nuevos diseños de viviendas con facilidad.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'As producer, I researched Kambio’s business model, its needs and exactly how it wanted to use the app. I coordinated the team (a designer, a 3D modeler and me): I planned and assigned everyone’s tasks and made sure everything was delivered on time. I was also the client’s point of contact, planning the production pipeline in detail and making adjustments based on their feedback.', es: 'Como productorx, investigué a fondo el modelo de negocio de Kambio, sus necesidades y el uso concreto que quería darle a la aplicación. Coordiné al equipo (un diseñador, una modeladora 3D y yo): planeé y repartí las tareas de cada quien y me aseguré de que todo se entregara a tiempo. También fui el punto de contacto con el cliente, para planear en detalle el pipeline de producción y hacer ajustes a partir de su retroalimentación.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'As programmer, I implemented all the designs and 3D models, as well as the app’s logic, and set up Pixel Streaming to test it on any device. I also designed and built a flexible system so Kambio could easily add new house designs.', es: 'Como programadorx, implementé todos los diseños y modelos 3D, además de la lógica de la aplicación, y configuré Pixel Streaming para probarla en cualquier dispositivo. También diseñé e implementé un sistema flexible para que Kambio pudiera añadir nuevos diseños de viviendas con facilidad.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Construction calls for very precise measurements and very specific requirements. The biggest challenge was carrying those measurements, sizes and textures into the app to reproduce each home as faithfully as possible.', es: 'La construcción exige medidas muy precisas y requisitos muy específicos. El mayor reto fue trasladar esas medidas, tamaños y texturas a la aplicación para reproducir cada vivienda con la mayor fidelidad posible.' } },
+  ],
   whatIDid: [
     { en: 'Researched the client’s business model and needs', es: 'Investigué el modelo de negocio y las necesidades del cliente' },
     { en: 'Managed the project and coordinated a team of 3', es: 'Gestioné el proyecto y coordiné a un equipo de 3 personas' },
@@ -59,12 +60,6 @@ export default {
     { en: 'Set up Pixel Streaming so the app runs in high resolution on any device', es: 'Configuré Pixel Streaming para usar la aplicación en alta resolución desde cualquier dispositivo' },
   ],
   tech: ['Unreal Engine 5', 'Pixel Streaming', 'Nanite + Lumen', 'Trello'],                             // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'Construction calls for very precise measurements and very specific requirements. The biggest challenge was carrying those measurements, sizes and textures into the app to reproduce each home as faithfully as possible.',
-      es: 'La construcción exige medidas muy precisas y requisitos muy específicos. El mayor reto fue trasladar esas medidas, tamaños y texturas a la aplicación para reproducir cada vivienda con la mayor fidelidad posible.',
-    },
-  ],
   credits: [
     { name: 'Jimena Fernández', role: { en: '3D modeling', es: 'Modelado 3D' } },
     { name: 'Adrián Regnier', role: { en: 'UI/UX design', es: 'Diseño UI/UX' } },

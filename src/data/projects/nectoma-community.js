@@ -48,27 +48,23 @@ export default {
     impact: { en: '7,000 followers · 100+ events · thousands of attendees · 300-member community', es: '7,000 seguidores · más de 100 eventos · miles de asistentes · comunidad de 300 miembrxs' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Nectoma is a collective I co-founded with Dinorah Ponce. We run workshops and experiences that help people grow their social skills and strengthen their support networks, including our Fiestas de Apapachos (cuddle parties), Incubadoras de Amiguis (friendship incubators) and other events. We focus on teaching nonviolent communication, consent, consensus, self-awareness and conflict resolution.\n\nWe also host an online community on WhatsApp, where members can propose activities, ask for advice and recommendations, and practice the tools we share.',
     es: 'Nectoma es un colectivo que cofundé junto con Dinorah Ponce. Organizamos talleres y experiencias para ayudar a las personas a cultivar sus habilidades sociales y fortalecer sus redes afectivas, como las Fiestas de Apapachos, las Incubadoras de Amiguis y otros eventos. Nos enfocamos en enseñar comunicación no violenta, consentimiento, consenso, autoconocimiento y resolución de conflictos.\n\nTambién tenemos una comunidad virtual en WhatsApp, donde lxs miembrxs pueden proponer actividades, pedir consejos y recomendaciones, y practicar las herramientas que compartimos.',
   },
-  roleDetails: {
-    en: 'Together with Dinorah, I run the project’s social media, mainly Instagram: I write, film and edit reels. I also design some of the posters we use to promote our events, and I handle customer service, answering questions from people who reach out to us.\n\nIn our online community, I’m a moderator: I propose activities and moderate interactions between members.\n\nIn 4 years, we’ve built an audience of 7,000 followers, hosted more than 100 in-person events and welcomed thousands of people. Our online community currently has 300 members.',
-    es: 'Junto con Dinorah, llevo las redes sociales del proyecto, principalmente Instagram: escribo, grabo y edito reels. También diseño algunos de los carteles con los que promocionamos nuestros eventos y me encargo de la atención a clientes, respondiendo las dudas de quienes nos escriben.\n\nEn la comunidad virtual soy moderadorx: propongo actividades y modero las interacciones entre las personas.\n\nEn 4 años hemos construido una cuenta con 7,000 seguidores, realizado más de 100 eventos presenciales y recibido a miles de personas. Actualmente, nuestra comunidad virtual tiene 300 miembrxs.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'Together with Dinorah, I run the project’s social media, mainly Instagram: I write, film and edit reels. I also design some of the posters we use to promote our events, and I handle customer service, answering questions from people who reach out to us.', es: 'Junto con Dinorah, llevo las redes sociales del proyecto, principalmente Instagram: escribo, grabo y edito reels. También diseño algunos de los carteles con los que promocionamos nuestros eventos y me encargo de la atención a clientes, respondiendo las dudas de quienes nos escriben.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'In our online community, I’m a moderator: I propose activities and moderate interactions between members.', es: 'En la comunidad virtual soy moderadorx: propongo actividades y modero las interacciones entre las personas.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'In 4 years, we’ve built an audience of 7,000 followers, hosted more than 100 in-person events and welcomed thousands of people. Our online community currently has 300 members.', es: 'En 4 años hemos construido una cuenta con 7,000 seguidores, realizado más de 100 eventos presenciales y recibido a miles de personas. Actualmente, nuestra comunidad virtual tiene 300 miembrxs.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'The topics we work on are niche, and can even feel uncomfortable for some people. Growing our community without letting outside pressure compromise our values has been a big challenge.', es: 'Los temas que trabajamos son de nicho e incluso pueden resultar incómodos para algunas personas. Ha sido un gran reto hacer crecer nuestra comunidad sin que las presiones externas comprometan nuestros valores.' } },
+  ],
   whatIDid: [
     { en: 'Posters to promote the activities we offer', es: 'Carteles para promocionar las actividades que ofrecemos' },
     { en: 'Reels that attract new followers and share social skills tools', es: 'Reels para atraer más seguidores y compartir herramientas sociales' },
     { en: 'Our sales funnels, plus the setup of the tech tools that power them', es: 'Nuestros embudos de venta, junto con la configuración de las herramientas tecnológicas que los hacen posibles' },
   ],
   tech: ['Canva', 'Adobe Illustrator', 'Affinity', 'Capcut', 'Instagram Edits', 'Adobe Premiere'], // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'The topics we work on are niche, and can even feel uncomfortable for some people. Growing our community without letting outside pressure compromise our values has been a big challenge.',
-      es: 'Los temas que trabajamos son de nicho e incluso pueden resultar incómodos para algunas personas. Ha sido un gran reto hacer crecer nuestra comunidad sin que las presiones externas comprometan nuestros valores.',
-    },
-  ],
   credits: [
     { name: 'Dinorah Ponce', role: { en: 'Co-founder, content, moderation', es: 'Cofundadora, contenido, moderación' } },
   ],

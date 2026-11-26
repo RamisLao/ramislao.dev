@@ -69,15 +69,27 @@
  *               facts: { team: …, platform: …, format: …, status: …, impact: … }
  *             each value is text or { en, es }. "impact" (numbers, results) gets a full row.
  *
- * The texts below start FOLDED in the sheet (the visitor clicks to open them),
- * except the description when there's no pitch. Keep them as long as you like.
- * description paragraph(s); separate paragraphs with a blank line (\n\n)
- * roleDetails what you did in your role(s)
  * whatIDid    list of things you did — things you built or made, but also things like
  *             "Managed a team of 5" (shown as "What I did / Lo que hice")
  * tech        technologies / platforms used, shown as chips (optional):
  *               ['Unity', 'Blender', 'p5.js', 'Node.js']
- * challenges  list
+ *
+ * Longer texts (always visible in the sheet):
+ * description paragraph(s) about the project; separate paragraphs with a blank line (\n\n).
+ * highlights  "Highlights / Lo más destacado": the key moments of the project, as short points
+ *             on a line. Each one has a type, which sets its label and marker:
+ *               type: 'challenge'  "Challenge / Reto"              what was hard          (dark square, !)
+ *               type: 'decision'   "Key decision / Decisión clave" a choice you made, and why (violet, fork)
+ *               type: 'result'     "Result / Resultado"            what came out of it     (aqua, check)
+ *               highlights: [
+ *                 { type: 'challenge', title: { en: '…', es: '…' }, text: { en: '…', es: '…' } },
+ *                 { type: 'decision',  title: { en: '…', es: '…' }, text: { en: '…', es: '…' } },
+ *                 { type: 'result',    title: { en: '…', es: '…' }, text: { en: '…', es: '…' } },
+ *               ]
+ *             They show in the order you write them. title is optional (2–4 words works best);
+ *             keep each text to one or two sentences.
+ *
+ * Sheet order: … what I did → about the project → highlights → tools & tech → credits
  * credits     people involved:
  *               [{ name: 'Ana López', role: { en: 'Composer', es: 'Composición' }, url: 'https://…' }]
  *               (url is optional; the name becomes a link)

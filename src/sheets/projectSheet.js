@@ -1,7 +1,7 @@
 import { t, tr } from '../i18n/index.js';
 import { esc, yearsLabel, accentOf, orgInfo, orgOf, orgName, orgLabel } from '../utils/dom.js';
 import { projectTypes, roles } from '../data/taxonomy.js';
-import { section, collapsible, pitchBlock, factsBlock, textBlock, listBlock, creditsBlock, techBlock, tagList, galleryHTML, mountGallery } from './parts.js';
+import { section, pitchBlock, factsBlock, textBlock, listBlock, highlightsBlock, creditsBlock, techBlock, tagList, galleryHTML, mountGallery } from './parts.js';
 
 /** Each project's own image folder: plain filenames in cover/media are looked up here. */
 export const projectFolder = (p) => `/media/projects/${p.id}/`;
@@ -65,7 +65,8 @@ function linkButtons(p) {
 
 /**
  * Side-sheet content for a project. Section order is set here:
- * title → badges → role chips → pitch → gallery → key facts → what I did → tech → (folded) description, role, challenges → credits
+ * title → badges → role chips → pitch → gallery → key facts → links → what I did → about the project → highlights → tools & tech → credits
+ * (everything is always visible; nothing is folded)
  */
 export function projectSheet(p) {
   const base = projectFolder(p);
@@ -74,7 +75,7 @@ export function projectSheet(p) {
   return {
     render: () => {
       const badges = orgBadge(p.org) + clientBadge(p.client);
-      // Longer texts start folded. Without a pitch, the description stays open so there's always an intro.
+
       return `
       <header class="sheet-header" style="--entry:${accentOf(p.palette)}">
         <p class="sheet-kicker"><span class="dot"></span>${esc(tr(projectTypes[p.type]))} · ${esc(yearsLabel(p.start, p.end))}</p>
@@ -87,10 +88,9 @@ export function projectSheet(p) {
       ${factsBlock(p.facts)}
       ${linkButtons(p)}
       ${section('sheet.whatIDid', listBlock(p.whatIDid))}
+      ${section('sheet.description', textBlock(p.description))}
+      ${section('sheet.highlights', highlightsBlock(p.highlights))}
       ${section('sheet.tech', techBlock(p.tech))}
-      ${collapsible('sheet.description', textBlock(p.description), { open: !tr(p.pitch) })}
-      ${collapsible('sheet.roles', textBlock(p.roleDetails))}
-      ${collapsible('sheet.challenges', listBlock(p.challenges))}
       ${section('sheet.credits', creditsBlock(p.credits))}
     `;
     },

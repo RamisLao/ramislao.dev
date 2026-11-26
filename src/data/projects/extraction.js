@@ -44,27 +44,23 @@ export default {
     impact: { en: '', es: '' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Extraction is a short psychological horror game where you wake up in an unfamiliar apartment and explore it to find out why you’re there and who is holding you captive.\n\nIt was a short project we made to test our development pipeline and to finish some tools we’ve used in our later projects, such as our save system in Unity.',
     es: 'Extraction es un videojuego corto de horror psicológico en el que despiertas en un departamento desconocido y lo exploras para descubrir qué haces ahí y quién te tiene en cautiverio.\n\nFue un proyecto breve que hicimos para poner a prueba nuestro pipeline de desarrollo y terminar algunas herramientas que hemos usado en nuestros proyectos posteriores, como el sistema de guardado en Unity.',
   },
-  roleDetails: {
-    en: 'I was the producer and project manager: I assigned the whole team’s tasks and guided development so we could finish on time. It was a short, 2-month project, so it took careful planning to hit our goal.\n\nAs programmer, I built tools we could reuse in later projects, such as a very flexible save system, a system for communication between the game’s different systems, and some technical art.\n\nAs game designer, I designed the experience together with Rafa, aiming to make it as intuitive as possible so it could be played without any instructions.',
-    es: 'En este proyecto fui productorx y project manager: repartí las tareas de todo el equipo y guié el desarrollo para terminarlo a tiempo. Fue un proyecto corto, de 2 meses, que requirió una buena planeación para cumplir con el objetivo.\n\nComo programadorx, desarrollé herramientas que pudiéramos reutilizar en proyectos posteriores, como un sistema de guardado muy flexible, un sistema de comunicación entre los distintos sistemas del juego y algunos elementos de arte técnico.\n\nComo diseñadorx de juegos, diseñé la experiencia junto con Rafa, buscando que fuera lo más intuitiva posible para que se pudiera jugar sin instrucciones.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I was the producer and project manager: I assigned the whole team’s tasks and guided development so we could finish on time. It was a short, 2-month project, so it took careful planning to hit our goal.', es: 'En este proyecto fui productorx y project manager: repartí las tareas de todo el equipo y guié el desarrollo para terminarlo a tiempo. Fue un proyecto corto, de 2 meses, que requirió una buena planeación para cumplir con el objetivo.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'As programmer, I built tools we could reuse in later projects, such as a very flexible save system, a system for communication between the game’s different systems, and some technical art.', es: 'Como programadorx, desarrollé herramientas que pudiéramos reutilizar en proyectos posteriores, como un sistema de guardado muy flexible, un sistema de comunicación entre los distintos sistemas del juego y algunos elementos de arte técnico.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'As game designer, I designed the experience together with Rafa, aiming to make it as intuitive as possible so it could be played without any instructions.', es: 'Como diseñadorx de juegos, diseñé la experiencia junto con Rafa, buscando que fuera lo más intuitiva posible para que se pudiera jugar sin instrucciones.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Because the project was so short, we had to make a lot of strategic decisions to meet the deadline without letting the scope get out of hand.', es: 'Como el proyecto era muy corto, tuvimos que tomar muchas decisiones estratégicas para cumplir el plazo sin que el alcance se nos saliera de las manos.' } },
+  ],
   whatIDid: [
     { en: 'Managed the project and guided the team throughout development', es: 'Gestioné el proyecto y guié al equipo durante todo el desarrollo' },
     { en: 'Programmed most of the systems and built tools we reused in later projects', es: 'Programé gran parte de los sistemas y creé herramientas que reutilizamos en proyectos posteriores' },
     { en: 'Designed the narrative experience and the game mechanics together with Rafa', es: 'Junto con Rafa, diseñé la experiencia narrativa y las mecánicas del juego' },
   ],
   tech: ['Unity', 'C#'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'Because the project was so short, we had to make a lot of strategic decisions to meet the deadline without letting the scope get out of hand.',
-      es: 'Como el proyecto era muy corto, tuvimos que tomar muchas decisiones estratégicas para cumplir el plazo sin que el alcance se nos saliera de las manos.',
-    },
-  ],
   credits: [
     { name: 'Sarah Grommelt', role: { en: 'Programming & audio', es: 'Programación y audio' } },
     { name: 'Rafa Arias', role: { en: 'Programming & technical art', es: 'Programación y arte técnico' } },

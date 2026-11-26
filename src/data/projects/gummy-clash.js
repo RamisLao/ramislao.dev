@@ -41,15 +41,16 @@ export default {
     impact: { en: '', es: '' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Gummy Clash is a 3D multiplayer arena platformer in which wobbly ragdoll gummy characters compete on a stage that changes shape in real time, racing to collect the most berries.\n\nIt’s a local multiplayer game for 2 to 4 players, using controllers or keyboards. To win, you have to eat more berries than your opponents, and candies give you power-ups to steal berries from the other players.',
     es: 'Gummy Clash es un juego de plataformas y arena en 3D, multijugador, en el que personajes de gomita con físicas de ragdoll compiten en un escenario que cambia de forma en tiempo real para recolectar la mayor cantidad de bayas.\n\nEs un juego multijugador local para 2 a 4 personas, con controles o teclados. Para ganar hay que comer más bayas que tus rivales, y los dulces dan poderes especiales para robarles bayas a los demás.',
   },
-  roleDetails: {
-    en: 'My main role was programmer: I implemented most of the game’s systems. One of the most interesting is the levels, which transform in real time, changing their shape and height. I designed and built a tool to create these levels from Google Sheets, so the designers could quickly put together different level layouts and test them in the game. I also implemented local multiplayer, the characters’ ragdoll physics, and the pickups that give you points and special powers.\n\nI also composed all of the game’s music and implemented its audio.',
-    es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas del juego. Uno de los más interesantes es el de los niveles, que se transforman en tiempo real cambiando de forma y de altura. Diseñé e implementé una herramienta para crear esos niveles desde Google Sheets, para que el equipo de diseño pudiera armar rápidamente distintas estructuras y probarlas en el juego. También implementé el multijugador local, las físicas de ragdoll de los personajes y los objetos que se recogen para sumar puntos y obtener poderes especiales.\n\nAdemás, compuse toda la música del juego e implementé el audio.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'My main role was programmer: I implemented most of the game’s systems. One of the most interesting is the levels, which transform in real time, changing their shape and height. I designed and built a tool to create these levels from Google Sheets, so the designers could quickly put together different level layouts and test them in the game. I also implemented local multiplayer, the characters’ ragdoll physics, and the pickups that give you points and special powers.', es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas del juego. Uno de los más interesantes es el de los niveles, que se transforman en tiempo real cambiando de forma y de altura. Diseñé e implementé una herramienta para crear esos niveles desde Google Sheets, para que el equipo de diseño pudiera armar rápidamente distintas estructuras y probarlas en el juego. También implementé el multijugador local, las físicas de ragdoll de los personajes y los objetos que se recogen para sumar puntos y obtener poderes especiales.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I also composed all of the game’s music and implemented its audio.', es: 'Además, compuse toda la música del juego e implementé el audio.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'None of us had built a ragdoll system before, so getting the effect we wanted took a huge amount of trial and error.', es: 'No teníamos experiencia con sistemas de ragdoll, así que lograr el efecto que buscábamos requirió muchísima prueba y error.' } },
+  ],
   whatIDid: [
     { en: 'Most of the game’s systems, in Unity', es: 'Implementé la mayoría de los sistemas del juego en Unity' },
     { en: 'A system that morphs one level into another in real time', es: 'Implementé un sistema que transforma un nivel en otro en tiempo real' },
@@ -61,12 +62,6 @@ export default {
     { en: 'The audio implementation', es: 'Implementé el audio' },
   ],
   tech: ['Unity', 'C#', 'Google Sheets'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'None of us had built a ragdoll system before, so getting the effect we wanted took a huge amount of trial and error.',
-      es: 'No teníamos experiencia con sistemas de ragdoll, así que lograr el efecto que buscábamos requirió muchísima prueba y error.',
-    },
-  ],
   credits: [
     { name: 'Andre Ruiz', role: { en: 'Project Manager / System Designer', es: 'Gestión del proyecto / Diseño de sistemas' } },
     { name: 'Yoshimaro Ikeguchi', role: { en: 'Technical Artist / Level Designer', es: 'Arte técnico / Diseño de niveles' } },

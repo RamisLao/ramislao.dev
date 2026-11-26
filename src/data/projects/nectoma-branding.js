@@ -41,25 +41,19 @@ export default {
     impact: { en: '', es: '' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: '',
     es: '',
   },
-  roleDetails: {
-    en: '',
-    es: '',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: '', es: '' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: '', es: '' } },
+  ],
   whatIDid: [
     { en: '', es: '' },
   ],
   tech: [],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: '',
-      es: '',
-    },
-  ],
   credits: [
     // { name: '…', role: { en: '…', es: '…' }, url: 'https://…' },  (url is optional)
   ],

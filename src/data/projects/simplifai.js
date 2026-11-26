@@ -41,26 +41,19 @@ export default {
     impact: { en: '', es: '' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Simple Predict was a web app with one very clear goal: to make neural networks and their predictive power accessible to people with no training in math or programming. It was built for small and medium-sized businesses that wanted to use that power to manage their inventory better, forecast sales, or model any other problem with dependent and independent variables.\n\nTo use it, you just uploaded an Excel or .csv file. The system automatically identified the variables and their data types, and then you chose which one or ones were dependent. From there, it automatically trained many neural networks with different architectures to find the best fit for your problem, and gave you an interface to make predictions on new data with the chosen network.',
     es: 'Simple Predict era una aplicación web con un objetivo muy claro: hacer que las redes neuronales y su poder predictivo fueran accesibles para personas sin formación en matemáticas ni en programación. Estaba pensada para pequeñas y medianas empresas que quisieran aprovechar ese poder para gestionar mejor sus inventarios, predecir sus ventas o modelar cualquier otro problema con variables dependientes e independientes.\n\nPara usarla, bastaba con subir un archivo de Excel o .csv. El sistema identificaba automáticamente las variables y sus tipos de datos, y luego tú elegías cuál o cuáles eran las dependientes. A partir de ahí, entrenaba automáticamente muchas redes neuronales con arquitecturas distintas para encontrar la más adecuada para tu problema, y te daba una interfaz para hacer predicciones con datos nuevos usando la red elegida.',
   },
-  roleDetails: {
-    en: 'I did the UI/UX design and built the entire frontend with HTML, CSS and jQuery. I also used D3.js to create charts that showed the neural networks’ training process and their predictive power.',
-    es: 'Hice el diseño UI/UX e implementé todo el frontend con HTML, CSS y jQuery. También usé D3.js para crear gráficas que mostraban el proceso de entrenamiento de las redes neuronales y su poder predictivo.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I did the UI/UX design and built the entire frontend with HTML, CSS and jQuery. I also used D3.js to create charts that showed the neural networks’ training process and their predictive power.', es: 'Hice el diseño UI/UX e implementé todo el frontend con HTML, CSS y jQuery. También usé D3.js para crear gráficas que mostraban el proceso de entrenamiento de las redes neuronales y su poder predictivo.' } },
+  ],
   whatIDid: [
     { en: 'The app’s entire frontend, designed and built', es: 'Diseñé e implementé todo el frontend de la aplicación' },
     { en: 'D3.js charts that made the neural networks’ training visible', es: 'Creé gráficas con D3.js para hacer visible el entrenamiento de las redes neuronales' },
   ],
   tech: ['HTML', 'CSS', 'jQuery', 'D3.js'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: '',
-      es: '',
-    },
-  ],
   credits: [
     { name: 'Andrés Páez', role: { en: 'Machine learning engineering, backend', es: 'Ingeniería de machine learning, backend' } },
   ],

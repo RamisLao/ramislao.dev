@@ -503,6 +503,78 @@
   margin-top: 12px;
 }
 
+/* ---------- Highlights: challenges, key decisions and results on a line ---------- */
+.highlights {
+  margin: 0;
+  padding: 4px 0 0;
+  list-style: none;
+}
+.highlight {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 16px;
+  padding-bottom: 22px;
+}
+.highlight:last-child {
+  padding-bottom: 0;
+}
+/* The line that connects one highlight to the next */
+.highlight:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 38px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--line);
+}
+/* Each type has its own marker: shape, color and icon */
+.highlight-marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.highlight-marker svg {
+  display: block;
+}
+.highlight.is-decision .highlight-marker {   /* a violet circle with a fork */
+  background: var(--secondary);
+  color: var(--on-dark);
+}
+.highlight.is-challenge .highlight-marker {  /* a dark square with "!" */
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--on-dark);
+}
+.highlight.is-result .highlight-marker {     /* an aqua circle with a check */
+  background: var(--pop);
+  color: var(--ink);
+}
+.highlight-body {
+  padding-top: 6px;
+}
+.highlight-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.highlight-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.highlight-body p + p {
+  margin-top: 10px;
+}
+
 .sheet-placeholder {
   color: var(--ink-soft);
   font-style: italic;

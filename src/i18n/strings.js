@@ -58,9 +58,11 @@ export const strings = {
 
     'sheet.close': 'Close',
     'sheet.description': 'About the project',
-    'sheet.roles': 'My role',
+    'sheet.highlights': 'Highlights',
+    'highlight.challenge': 'Challenge',
+    'highlight.decision': 'Key decision',
+    'highlight.result': 'Result',
     'sheet.whatIDid': 'What I did',
-    'sheet.challenges': 'Challenges',
     'sheet.credits': 'Credits',
     'sheet.tech': 'Tools & tech',
     // org types (project field `org`)
@@ -149,9 +151,11 @@ export const strings = {
 
     'sheet.close': 'Cerrar',
     'sheet.description': 'Sobre el proyecto',
-    'sheet.roles': 'Mi rol',
+    'sheet.highlights': 'Lo más destacado',
+    'highlight.challenge': 'Reto',
+    'highlight.decision': 'Decisión clave',
+    'highlight.result': 'Resultado',
     'sheet.whatIDid': 'Lo que hice',
-    'sheet.challenges': 'Retos',
     'sheet.credits': 'Créditos',
     'sheet.tech': 'Herramientas y tecnología',
     // tipos de org (campo `org` de los proyectos)

@@ -41,15 +41,15 @@ export default {
     impact: { en: 'Shown at Hannover Messe 4.0 (2018) to visitors including Angela Merkel', es: 'La presentamos en Hannover Messe 4.0 (2018) ante visitantes como Angela Merkel' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'We developed this project specifically for the Hannover Messe 4.0 technology fair, as part of the Mexican delegation that brought new technologies to the event. The table’s goal was to showcase investment opportunities in Mexico.\n\nWe built the touchscreen technology from scratch. The table was circular, 5 meters in diameter, and ran an app made in Unity. We also used RFID so visitors could open different sections of the app by placing cylindrical pieces on the table.',
     es: 'Desarrollamos este proyecto específicamente para la feria de tecnología Hannover Messe 4.0, como parte de la comitiva mexicana que llevó nuevas tecnologías al evento. El objetivo de la mesa era mostrar oportunidades de inversión en México.\n\nDesarrollamos la tecnología táctil desde cero. La mesa era circular, de 5 metros de diámetro, y dentro de ella corría una aplicación hecha en Unity. También usamos tecnología RFID para que el público pudiera abrir distintas secciones de la aplicación colocando unas piezas cilíndricas sobre la mesa.',
   },
-  roleDetails: {
-    en: 'I implemented the entire app in Unity and was in charge of connecting the hardware with the software. I also worked on the computer-vision system, built with OpenCV, that detected people’s fingers and mapped them onto the Unity app.',
-    es: 'Implementé toda la aplicación en Unity y me encargué de conectar el hardware con el software. También trabajé en el sistema de visión por computadora, hecho con OpenCV, que identificaba los dedos de las personas y los mapeaba en la aplicación de Unity.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I implemented the entire app in Unity and was in charge of connecting the hardware with the software. I also worked on the computer-vision system, built with OpenCV, that detected people’s fingers and mapped them onto the Unity app.', es: 'Implementé toda la aplicación en Unity y me encargué de conectar el hardware con el software. También trabajé en el sistema de visión por computadora, hecho con OpenCV, que identificaba los dedos de las personas y los mapeaba en la aplicación de Unity.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Building the computer-vision system was a big challenge. Because of the table’s shape and size, traditional methods didn’t work for us, so we had to set up a very complex system of projectors and mirrors to make it work. Mapping finger contact onto the app was another big challenge.', es: 'Implementar el sistema de visión por computadora fue un gran reto. Por la forma y el tamaño de la mesa, los métodos tradicionales no nos servían, así que tuvimos que montar un sistema muy complejo de proyectores y espejos para hacerlo funcionar. Mapear el contacto de los dedos en la aplicación también fue todo un reto.' } },
+  ],
   whatIDid: [
     { en: 'The entire app, in Unity', es: 'Implementé toda la aplicación en Unity' },
     { en: 'The system that used RFID chips to send information to the app', es: 'Implementé el sistema que usaba chips RFID para enviar información a la aplicación' },
@@ -57,12 +57,6 @@ export default {
     { en: 'Presenting the table to the public at Hannover Messe 4.0, as part of the Mexican delegation', es: 'Formé parte de la comitiva que llevó la mesa a Hannover Messe 4.0 y la presentó al público' },
   ],
   tech: ['Unity', 'OpenCV', 'RFID'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'Building the computer-vision system was a big challenge. Because of the table’s shape and size, traditional methods didn’t work for us, so we had to set up a very complex system of projectors and mirrors to make it work. Mapping finger contact onto the app was another big challenge.',
-      es: 'Implementar el sistema de visión por computadora fue un gran reto. Por la forma y el tamaño de la mesa, los métodos tradicionales no nos servían, así que tuvimos que montar un sistema muy complejo de proyectores y espejos para hacerlo funcionar. Mapear el contacto de los dedos en la aplicación también fue todo un reto.',
-    },
-  ],
   credits: [
     { name: 'Cris', role: { en: 'Programmer, hardware designer', es: 'Programación, diseño de hardware' } },
     { name: 'Ceci', role: { en: 'Graphic designer', es: 'Diseño gráfico' } },

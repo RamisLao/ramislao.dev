@@ -26,6 +26,33 @@ export function listBlock(items) {
   return `<ul class="sheet-list">${list.map((item) => `<li>${esc(item)}</li>`).join('')}</ul>`;
 }
 
+/**
+ * "Highlights": key moments of a project, each one with a type:
+ *   challenge → "Challenge / Reto"           what was hard
+ *   decision  → "Key decision / Decisión clave"  a choice you made and why
+ *   result    → "Result / Resultado"         what came out of it
+ *   [{ type: 'decision', title: { en, es }, text: { en, es } }, …]
+ * title is optional. Items with no text and no title in the current language are skipped.
+ */
+export const HIGHLIGHT_TYPES = ['challenge', 'decision', 'result'];
+const HIGHLIGHT_ICONS = {
+  challenge: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 5v9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>',
+  decision: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 21v-7m0 0L6 8m6 6l6-6M6 8V4m0 4H2m16 0V4m0 4h4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  result: '<svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+export function highlightsBlock(items) {
+  const list = (items || []).filter((h) => h && (tr(h.text) || tr(h.title)));
+  if (!list.length) return placeholder();
+  return `<ul class="highlights">${list
+    .map((h) => {
+      const type = HIGHLIGHT_TYPES.includes(h.type) ? h.type : 'decision';
+      const title = tr(h.title) ? `<h4 class="highlight-title">${esc(tr(h.title))}</h4>` : '';
+      const text = tr(h.text) ? textBlock(h.text) : '';
+      return `<li class="highlight is-${type}"><span class="highlight-marker" aria-hidden="true">${HIGHLIGHT_ICONS[type]}</span><div class="highlight-body"><p class="highlight-kicker">${esc(t(`highlight.${type}`))}</p>${title}${text}</div></li>`;
+    })
+    .join('')}</ul>`;
+}
+
 /** Credits: [{ name: 'Ana López', role: { en: 'Composer', es: 'Compositora' }, url?: 'https://…' }] */
 export function creditsBlock(credits) {
   const list = (credits || []).filter((c) => c && c.name);

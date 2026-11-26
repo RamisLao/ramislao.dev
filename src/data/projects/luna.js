@@ -45,15 +45,16 @@ export default {
     impact: { en: 'Winner of the Best Final Project award at Vancouver Film School', es: 'Ganador del premio a Mejor Proyecto Final de Vancouver Film School' },
   },
 
-  // ── Texts (folded in the sheet) · new paragraph = \n\n ──
+  // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Luna is an isometric 3D hack-and-slash about a young Patagonian monk named Luna, who must prove herself by passing the sacred Trial of the Gates to become a master. The game has 4 levels, each with its own visual identity and mechanic.\n\nWe developed it in just 3 months as our final project for Vancouver Film School’s Game Design program, and it won the Best Final Project award. The core team had 6 people, plus 4 external collaborators.',
     es: 'Luna es un hack and slash isométrico en 3D sobre una joven monja patagónica llamada Luna, que debe demostrar su valía superando la sagrada Prueba de las Puertas para convertirse en maestra. El juego tiene 4 niveles, cada uno con su propia identidad visual y su propia mecánica.\n\nLo desarrollamos en solo 3 meses como proyecto final del programa de Diseño de Videojuegos de Vancouver Film School, y ganó el premio a Mejor Proyecto Final. El equipo base fue de 6 personas, más 4 colaboradorxs externxs.',
   },
-  roleDetails: {
-    en: 'My main role was programmer: I implemented most of the game’s systems and gameplay. Because development was so fast-paced, much of my work went into building tools that let the game designers iterate on their ideas quickly.\n\nI also composed all of the game’s music, and recorded and edited the voice of its protagonist.',
-    es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas y del gameplay. Como el desarrollo fue muy acelerado, buena parte de mi trabajo consistió en crear herramientas para que el equipo de diseño pudiera iterar sus ideas con rapidez.\n\nTambién compuse toda la música del juego, y grabé y edité la voz de la protagonista.',
-  },
+  highlights: [
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'My main role was programmer: I implemented most of the game’s systems and gameplay. Because development was so fast-paced, much of my work went into building tools that let the game designers iterate on their ideas quickly.', es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas y del gameplay. Como el desarrollo fue muy acelerado, buena parte de mi trabajo consistió en crear herramientas para que el equipo de diseño pudiera iterar sus ideas con rapidez.' } },
+    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I also composed all of the game’s music, and recorded and edited the voice of its protagonist.', es: 'También compuse toda la música del juego, y grabé y edité la voz de la protagonista.' } },
+    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Developing such a varied game in just 3 months was a big challenge. It took a huge amount of coordination and teamwork.', es: 'Fue un gran reto desarrollar un juego tan variado en solo 3 meses. Requirió muchísima coordinación y trabajo en equipo.' } },
+  ],
   whatIDid: [
     { en: 'The progression system that moves you through the game', es: 'Implementé el sistema de progreso que te permite avanzar en el juego' },
     { en: 'A tool for designers to create new enemy waves easily', es: 'Implementé una herramienta para que el equipo de diseño creara nuevas oleadas de enemigos fácilmente' },
@@ -63,12 +64,6 @@ export default {
     { en: 'The recording and editing of the protagonist’s voice', es: 'Grabé y edité la voz de la protagonista' },
   ],
   tech: ['Unity', "C#"],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
-  challenges: [
-    {
-      en: 'Developing such a varied game in just 3 months was a big challenge. It took a huge amount of coordination and teamwork.',
-      es: 'Fue un gran reto desarrollar un juego tan variado en solo 3 meses. Requirió muchísima coordinación y trabajo en equipo.',
-    },
-  ],
   credits: [
     // Core team
     { name: 'Andre Ruiz', role: { en: 'Project Manager / System Designer', es: 'Gestión del proyecto / Diseño de sistemas' } },
