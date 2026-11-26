@@ -245,7 +245,11 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     max-width: 100%;
-    padding-bottom: 4px;
+    /* A scrolling row clips anything that pokes out, so leave room around the chips
+       for the hover lift and the focus outline; the negative margins keep them in place. */
+    padding: 6px 6px 8px;
+    margin: -6px -6px -4px;
+    max-width: calc(100% + 12px);
     scrollbar-width: none;
   }
   .chip {

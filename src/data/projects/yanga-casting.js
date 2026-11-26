@@ -14,15 +14,13 @@ export default {
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
     { src: '/media/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it', es: 'El perfil de un talento visto por el equipo de Yanga' } },
-    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: '', es: 'La base de datos de talentos, con algunos datos importantes incluidos' } },
+    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: '', es: 'La base de datos de talentos, con algunos datos importantes para fácil acceso' } },
     { src: '/media/projects/yanga-casting/screenshot_3.png', caption: { en: 'The admin panel: users and their roles (Admin, Booking, Casting)', es: 'El panel de administración: usuarios y sus roles (Admin, Booking, Casting)' } },
-    { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: 'The talent’s own view: their profile, appearance and measurements', es: 'La vista del talento: su propio perfil, con su apariencia y sus medidas' } },
-    { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: 'A character from a casting call, as talent see it: requirements, references and scenes to act, with the button to apply', es: 'Un personaje de una convocatoria, desde la vista del talento: requisitos, referencias y escenas a actuar, con el botón para postularse' } },
+    { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: '', es: 'La vista del talento: su propio perfil, completamente editable' } },
+    { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: '', es: 'Un personaje de una convocatoria para que un talento aplique.' } },
     { src: '/media/projects/yanga-casting/screenshot_6.png', caption: { en: 'Open casting calls for talent, with each project’s characters', es: 'Las convocatorias abiertas para talentos, con los personajes de cada proyecto' } },
-    { src: '/media/projects/yanga-casting/screenshot_7.png', caption: { en: 'Reviewing an application: the talent’s answers to the casting questionnaire', es: 'La revisión de una postulación: las respuestas del talento al cuestionario del casting' } },
-    { src: '/media/projects/yanga-casting/screenshot_8.png', caption: { en: 'The cast proposal the client receives, organized by character and downloadable as PDF or ZIP', es: 'La propuesta de elenco que recibe el cliente, organizada por personaje y descargable en PDF o ZIP' } },
-    { src: '/media/projects/yanga-casting/screenshot_9.png', caption: { en: 'A casting call document with all of the project’s details: dates, terms and rates', es: 'El documento de una convocatoria con todos los detalles del proyecto: fechas, condiciones y tarifas' } },
-    { src: '/media/projects/yanga-casting/screenshot_10.png', caption: { en: 'Folders for organizing talent by profile, like bilingual talent or voice-over artists', es: 'Carpetas para organizar talentos por perfil, como talento bilingüe o voces en off' } },
+    { src: '/media/projects/yanga-casting/screenshot_8.png', caption: { en: 'The cast proposal the client receives, organized by character', es: 'La propuesta de elenco que recibe el cliente, organizada por personaje' } },
+    { src: '/media/projects/yanga-casting/screenshot_9.png', caption: { en: 'A casting call document with all of the project’s details', es: 'El documento de una convocatoria con todos los detalles del proyecto' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
