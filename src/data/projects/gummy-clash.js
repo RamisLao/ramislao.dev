@@ -3,17 +3,23 @@ export default {
   id: 'gummy-clash',                           // = this file's name, no spaces
   title: 'Gummy Clash',
   type: 'videogame',                           // a key from taxonomy.js → projectTypes
-  roles: ['programmer', 'music'],              // keys from taxonomy.js → roles
+  roles: ['programmer', 'gameDesigner', 'music'],              // keys from taxonomy.js → roles
   start: 2021,
   // end: 2022,                                // null = ongoing ("Present") · leave commented for a single year
   palette: 'soft',                            // colors from config.js, used when there's no cover
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
   cover: 'main.jpg',                        // card image, 16:9
-  // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
+  preview: 'preview.mp4',                   // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
     { src: 'https://youtu.be/l6F9ZjVlYG0', caption: { en: 'A full playthrough', es: 'Una partida completa' } },
+    { src: 'screenshot_1.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_2.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_3.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_4.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_5.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_6.jpg', caption: { en: '', es: '' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
