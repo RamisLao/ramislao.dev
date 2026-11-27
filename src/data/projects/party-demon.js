@@ -58,10 +58,10 @@ export default {
     },
     {
       type: 'result',
-      title: { en: 'Gamescom Latam Official Selection', es: 'Selección oficial de Gamescom Latam' },
+      title: { en: 'Freedom for the design team', es: 'Autonomía para el equipo de diseño' },
       text: {
-        en: 'Party Demon was part of the official selection at Gamescom Latam 2025, in Brazil.',
-        es: 'Party Demon formó parte de la selección oficial de Gamescom Latam 2025, en Brasil.',
+        en: 'The enemy wave systems I built let the game designers test their ideas quickly, without constantly needing a programmer.',
+        es: 'Los sistemas que implementé para generar oleadas de enemigos permitieron que lxs diseñadorxs de juego probaran sus ideas rápidamente, sin depender todo el tiempo de unx programadorx.',
       },
     },
   ],

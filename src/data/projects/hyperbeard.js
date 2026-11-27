@@ -44,7 +44,7 @@ export default {
     platform: { en: 'Web app + Unity tools', es: 'App web + herramientas en Unity' },
     format: { en: 'Internal tool for QA and live ops', es: 'Herramienta interna para QA y live ops' },
     status: { en: 'Live', es: 'En línea' },
-    impact: { en: 'Used to manage all of Hyperbeard’s games', es: 'Se usa para gestionar todos los juegos de Hyperbeard' },
+    impact: { en: '', es: '' },
   },
 
   // ── Texts · new paragraph = \n\n ──

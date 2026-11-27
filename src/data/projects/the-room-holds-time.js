@@ -48,8 +48,22 @@ export default {
     es: 'Jimena Maldonado es una compositora mexicana. Para su pieza The Room Holds Time, que retrata un día de su vida criando a su bebé, quería una animación que permitiera a lxs músicxs tocar en sincronía con ella. La desarrollé en p5.js: sigue el tempo exacto de la pieza y funciona como una guía estable para que cada músicx sepa cuándo entrar y cuánto dura cada nota. Además, aporta ambientación, acompañando la música con emociones expresadas de forma visual.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: '', es: 'La pieza está generada de manera procedural.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: '', es: '' } },
+    {
+      type: 'decision',
+      title: { en: 'A procedural animation', es: 'Una animación procedural' },
+      text: {
+        en: 'The animation is generated procedurally. Since it had to work as a precise guide for every note, animating it by hand would have taken far too long. Instead, I generated a JSON file with the start and end times of each note and used p5.js to build the animations in real time from that data.',
+        es: 'La animación se genera de forma procedural. Como debía funcionar como una guía precisa para cada nota, animarla a mano habría tomado demasiado tiempo. Por eso generé un archivo JSON con los tiempos de inicio y fin de cada nota y, con p5.js, creé las animaciones en tiempo real a partir de esos datos.',
+      },
+    },
+    {
+      type: 'challenge',
+      title: { en: 'Glitches at 4K', es: 'Glitches en 4K' },
+      text: {
+        en: 'The animation needed a very high resolution (at least 4K) to be projected large behind the musicians. At that resolution, a few glitches appeared when recording it to video, so I recorded it several times and assembled the final video from the parts of each take that looked flawless.',
+        es: 'La animación necesitaba una resolución muy alta (al menos 4K) para proyectarse en gran tamaño detrás de lxs músicxs. A esa resolución aparecían algunos glitches al grabarla en video, así que la grabé varias veces y armé el video final con los fragmentos de cada grabación que se veían impecables.',
+      },
+    },
   ],
   whatIDid: [
     { en: 'A **musical analysis** of the piece to fully understand its structure', es: '**Análisis musical** de la pieza para comprender a fondo su estructura' },
