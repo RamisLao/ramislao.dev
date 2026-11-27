@@ -14,12 +14,12 @@ export default {
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
     { src: 'https://youtu.be/l6F9ZjVlYG0', caption: { en: 'A full playthrough', es: 'Una partida completa' } },
-    { src: 'screenshot_1.jpg', caption: { en: '', es: '' } },
-    { src: 'screenshot_2.jpg', caption: { en: '', es: '' } },
-    { src: 'screenshot_3.jpg', caption: { en: '', es: '' } },
-    { src: 'screenshot_4.jpg', caption: { en: '', es: '' } },
-    { src: 'screenshot_5.jpg', caption: { en: '', es: '' } },
-    { src: 'screenshot_6.jpg', caption: { en: '', es: '' } },
+    { src: 'screenshot_1.jpg', caption: { en: 'The starting hub, which doubles as a tutorial', es: 'El hub inicial, que también funciona como tutorial' } },
+    { src: 'screenshot_2.jpg', caption: { en: 'The start of a battle', es: 'El inicio de una batalla' } },
+    { src: 'screenshot_3.jpg', caption: { en: 'A character in “rage” mode, which lets them steal berries from the others', es: 'Uno de los personajes en modo “rage”, con el que puede robarles bayas a otrxs' } },
+    { src: 'screenshot_4.jpg', caption: { en: 'A level mid-transformation', es: 'Un nivel en plena transformación' } },
+    { src: 'screenshot_5.jpg', caption: { en: 'The crown you have to grab to end the battle', es: 'La corona que hay que recoger para terminar la batalla' } },
+    { src: 'screenshot_6.jpg', caption: { en: 'A level with a lava floor that makes you lose berries', es: 'Un nivel con piso de lava, que te hace perder bayas' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
@@ -49,27 +49,49 @@ export default {
 
   // ── Texts · new paragraph = \n\n ──
   description: {
-    en: 'Gummy Clash is a 3D multiplayer arena platformer in which wobbly ragdoll gummy characters compete on a stage that changes shape in real time, racing to collect the most berries.\n\nIt’s a local multiplayer game for 2 to 4 players, using controllers or keyboards. To win, you have to eat more berries than your opponents, and candies give you power-ups to steal berries from the other players.',
-    es: 'Gummy Clash es un juego de plataformas y arena en 3D, multijugador, en el que personajes de gomita con físicas de ragdoll compiten en un escenario que cambia de forma en tiempo real para recolectar la mayor cantidad de bayas.\n\nEs un juego multijugador local para 2 a 4 personas, con controles o teclados. Para ganar hay que comer más bayas que tus rivales, y los dulces dan poderes especiales para robarles bayas a los demás.',
+    en: 'In Gummy Clash, every match is a race to eat more berries than your rivals. You can play with controllers or keyboards, and the candies scattered around the stage give you special powers to steal berries from the other players.',
+    es: 'En Gummy Clash, cada partida es una carrera por comer más bayas que tus rivales. Se juega con controles o teclados, y los dulces que aparecen en el escenario dan poderes especiales para robarles bayas a lxs demás.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'My main role was programmer: I implemented most of the game’s systems. One of the most interesting is the levels, which transform in real time, changing their shape and height. I designed and built a tool to create these levels from Google Sheets, so the designers could quickly put together different level layouts and test them in the game. I also implemented local multiplayer, the characters’ ragdoll physics, and the pickups that give you points and special powers.', es: 'Mi rol principal fue el de programadorx: implementé la mayoría de los sistemas del juego. Uno de los más interesantes es el de los niveles, que se transforman en tiempo real cambiando de forma y de altura. Diseñé e implementé una herramienta para crear esos niveles desde Google Sheets, para que el equipo de diseño pudiera armar rápidamente distintas estructuras y probarlas en el juego. También implementé el multijugador local, las físicas de ragdoll de los personajes y los objetos que se recogen para sumar puntos y obtener poderes especiales.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I also composed all of the game’s music and implemented its audio.', es: 'Además, compuse toda la música del juego e implementé el audio.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'None of us had built a ragdoll system before, so getting the effect we wanted took a huge amount of trial and error.', es: 'No teníamos experiencia con sistemas de ragdoll, así que lograr el efecto que buscábamos requirió muchísima prueba y error.' } },
+    {
+      type: 'challenge',
+      title: { en: 'Morphing levels', es: 'Niveles que se transforman' },
+      text: {
+        en: 'The biggest and most interesting challenge was building the system that morphs one level into another. The transition had to feel natural, look delicious and not interfere with the game’s physics. I made the tiles shared by the current level and the next one stay in place, and only the different ones transform, so the game keeps a certain stability while you play.',
+        es: 'El reto más grande e interesante fue implementar el sistema que transforma un nivel en otro. La transición debía sentirse natural, ser deliciosa a la vista y no interferir con la física del juego. Lo resolví haciendo que los tiles que comparten el nivel actual y el siguiente permanezcan en su lugar y solo se transformen los distintos; así, el juego conserva cierta estabilidad mientras juegas.',
+      },
+    },
+    {
+      type: 'decision',
+      title: { en: 'Ragdoll chaos', es: 'El caos del ragdoll' },
+      text: {
+        en: 'We wanted a game that was really fun and absurd. That’s why we chose ragdoll physics, which add a certain amount of randomness to movements and attacks.',
+        es: 'Queríamos que el juego fuera muy divertido y absurdo. Por eso decidimos usar físicas de ragdoll, que añaden cierto grado de aleatoriedad a los movimientos y los ataques.',
+      },
+    },
+    {
+      type: 'decision',
+      title: { en: 'Levels from a spreadsheet', es: 'Niveles desde una hoja de cálculo' },
+      text: {
+        en: 'It was very important to make designing and testing new levels super easy, so we could iterate quickly. So I built a system to create the levels in Google Sheets and then simply test them in Unity.',
+        es: 'Era muy importante que diseñar y probar niveles nuevos fuera súper fácil, para iterar rápidamente. Por eso creé un sistema para diseñar los niveles en Google Sheets y después solo probarlos en Unity.',
+      },
+    },
   ],
   whatIDid: [
-    { en: '**Most of the game’s systems**, in **Unity**', es: 'Implementé **la mayoría de los sistemas** del juego en **Unity**' },
-    { en: 'A system that **morphs one level into another** in real time', es: 'Implementé un sistema que **transforma un nivel en otro** en tiempo real' },
-    { en: 'A **level-building tool** driven by **Google Sheets**', es: 'Creé una **herramienta para construir niveles** desde una hoja de cálculo de **Google Sheets**' },
-    { en: 'The characters’ **ragdoll physics**', es: 'Implementé las **físicas de ragdoll** de los personajes' },
-    { en: '**Local multiplayer**', es: 'Implementé el **multijugador local**' },
-    { en: 'The **scoring system**, and the **special powers** you get by collecting candies', es: 'Implementé el **sistema de puntos** y los **poderes especiales** que se obtienen al recoger dulces' },
-    { en: 'All of the game’s **music**', es: 'Compuse **toda la música** del juego' },
-    { en: 'The **audio implementation**', es: 'Implementé el **audio**' },
+    { en: 'Programmed **most of the game’s systems** in **Unity**', es: 'Programé **la mayoría de los sistemas** del juego en **Unity**' },
+    { en: 'Built a system that **morphs one level into another** in real time', es: 'Desarrollé un sistema que **transforma un nivel en otro** en tiempo real' },
+    { en: 'Created a **level-building tool** driven by **Google Sheets**', es: 'Creé una **herramienta para construir niveles** desde una hoja de cálculo de **Google Sheets**' },
+    { en: 'Implemented the characters’ **ragdoll physics**', es: 'Implementé las **físicas de ragdoll** de los personajes' },
+    { en: 'Programmed the **local multiplayer**', es: 'Programé el **multijugador local**' },
+    { en: 'Implemented the **scoring system** and the **special powers** you get by collecting candies', es: 'Implementé el **sistema de puntos** y los **poderes especiales** que se obtienen al recoger dulces' },
+    { en: 'Programmed the special **physical effects** of each **floor type**', es: 'Programé los **efectos físicos** especiales de cada **tipo de suelo**' },
+    { en: 'Composed **all of the game’s music**', es: 'Compuse **toda la música** del juego' },
+    { en: 'Integrated the **audio** into the game', es: 'Integré el **audio** en el juego' },
   ],
   tech: ['Unity', 'C#', 'Google Sheets'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [
-    { name: 'Andre Ruiz', role: { en: 'Project Manager / System Designer', es: 'Gestión del proyecto / Diseño de sistemas' } },
+    { name: 'André Ruiz', role: { en: 'Project Manager / System Designer', es: 'Gestión del proyecto / Diseño de sistemas' } },
     { name: 'Yoshimaro Ikeguchi', role: { en: 'Technical Artist / Level Designer', es: 'Arte técnico / Diseño de niveles' } },
     { name: 'Jimena Fernández', role: { en: 'Character Artist / Environment Artist', es: 'Arte de personajes / Arte de entornos' } },
   ],
