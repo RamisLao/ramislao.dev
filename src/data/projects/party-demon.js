@@ -10,9 +10,10 @@ export default {
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
   cover: '/media/projects/party-demon/main.png', // card image, 16:9
-  // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
+  preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
+    { src: 'https://www.youtube.com/watch?v=AR5354rR4b0', caption: { en: 'A short gameplay video', es: 'Un video corto del juego en acción' } },
     { src: 'https://youtu.be/Q7G6yXLfwlY?si=bCXgqGln_UL2HlFR', caption: { en: 'Game trailer (Gamescom Latam 2025)', es: 'Tráiler del juego (Gamescom Latam 2025)' } },
   ],
 
@@ -21,7 +22,7 @@ export default {
   // client: { name: '…', url: 'https://…' },  // or 'Client name'
 
   // ── Buttons ─────────────────────────────────────────────
-  // steam: 'https://store.steampowered.com/app/…',
+  steam: 'https://store.steampowered.com/app/1659530/Party_Demon/',
   // itch: 'https://….itch.io/…',
   links: [
     // { label: { en: '…', es: '…' }, url: 'https://…' },
@@ -30,25 +31,39 @@ export default {
   // ── Top of the side sheet ───────────────────────────────
   // pitch: ONE sentence, ~25 words: what it is + what you did
   pitch: {
-    en: 'A tower defense and deck-building game where I designed and programmed most of the systems: castle building, pathfinding, enemy waves and cards.',
-    es: 'Un juego de tower defense y construcción de mazos en el que diseñé y programé la mayoría de los sistemas: construcción, pathfinding, oleadas y cartas.',
+    en: 'A tower defense deck-builder where you build Lady Demon’s castle and defend her birthday party with traps in real time; I programmed many of its core systems.',
+    es: 'Un juego de defensa de torres y construcción de mazos en el que construyes el castillo de Lady Demon y defiendes su fiesta de cumpleaños con trampas en tiempo real; programé muchos de sus sistemas principales.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
-    team: { en: '5 people', es: '5 personas' },
-    platform: { en: '', es: '' },
+    team: { en: '10 people', es: '10 personas' },
+    platform: { en: 'PC (Windows)', es: 'PC (Windows)' },
     format: { en: 'Tower defense · deck-building', es: 'Tower defense · construcción de mazos' },
-    status: { en: '', es: '' },
-    impact: { en: '', es: '' },
+    status: { en: 'Released on Steam', es: 'Publicado en Steam' },
+    impact: { en: 'Gamescom Latam 2025 Official Selection', es: 'Selección oficial de Gamescom Latam 2025' },
   },
 
   // ── Texts · new paragraph = \n\n ──
   description: {
-    en: 'Party Demon is a tower defense, deck-building game where your main goal is to protect a Lady Demon’s birthday party from human intruders. Build your castle on a budget and defend it in real-time with a deadly Trap Deck full of demonic weapons.',
-    es: 'Party Demon es un juego de tower defense y construcción de mazos en el que tu objetivo principal es proteger la fiesta de cumpleaños de una Lady Demon de los intrusos humanos. Construye tu castillo con un presupuesto limitado y defiéndelo en tiempo real con un mortífero mazo de trampas lleno de armas demoníacas.',
+    en: 'Party Demon was Crafted Mayhem’s first game, developed together with the Brazilian studio Barely Alive. It’s a tower defense deck-builder.\n\nFirst you buy rooms of different sizes in the shop, use them to build your castle and set the exact path the enemies will follow. Then, during each wave, you play trap cards in real time to block and take out the humans and protect your queen. There are many kinds of cards, each with its own effect.\n\nThe game puts a twist on the genre: most of the towers are temporary, and you place them in real time. As you play, you earn upgrades that let you carry more cards and place them faster in the castle’s rooms.',
+    es: 'Party Demon fue el primer videojuego de Crafted Mayhem, desarrollado en colaboración con el estudio brasileño Barely Alive. Es un juego de defensa de torres y construcción de mazos.\n\nPrimero compras cuartos de distintos tamaños en la tienda, construyes con ellos tu castillo y defines el camino exacto que recorrerán los enemigos. Después, durante cada oleada, usas cartas de trampas en tiempo real para bloquear y eliminar a los humanos y proteger a tu reina. Hay muchos tipos de cartas, cada una con un efecto distinto.\n\nEl juego le da un giro al género: la mayoría de las torres son temporales y se colocan en tiempo real. A lo largo de la partida obtienes mejoras para llevar más cartas y colocarlas más rápido en los cuartos del castillo.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'My main role on this project was programmer. I designed and implemented most of the game’s systems and gameplay.', es: 'Mi rol principal en este proyecto fue el de programadorx. Diseñé e implementé la mayoría de los sistemas y del gameplay del juego.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Party Demon is a highly systemic game, with many systems running at once. Each enemy type has its own special traits, and so does every castle piece and every trap. On top of that, different combinations of placed pieces unlock different effects. Building a game where so many interactions happen at the same time was a big technical challenge for me.', es: 'Party Demon es un juego muy sistémico, con muchos sistemas funcionando al mismo tiempo. Cada tipo de enemigo tiene características especiales, al igual que cada pieza del castillo y cada trampa. Además, según la combinación de piezas que hayas colocado, obtienes efectos distintos. Implementar un juego con tantas interacciones simultáneas fue un gran reto técnico para mí.' } },
+    {
+      type: 'challenge',
+      title: { en: 'Many systems at once', es: 'Muchos sistemas a la vez' },
+      text: {
+        en: 'Party Demon is a deeply systemic game: every enemy type, castle piece and trap has its own traits, and the way you combine pieces creates different effects. Making so many simultaneous interactions work was a big technical challenge, and one I really enjoyed solving.',
+        es: 'Party Demon es un juego muy sistémico: cada tipo de enemigo, cada pieza del castillo y cada trampa tiene sus propias características, y la combinación de piezas que colocas produce efectos distintos. Implementar tantas interacciones simultáneas fue un gran reto técnico, y disfruté mucho resolverlo.',
+      },
+    },
+    {
+      type: 'result',
+      title: { en: 'Gamescom Latam Official Selection', es: 'Selección oficial de Gamescom Latam' },
+      text: {
+        en: 'Party Demon was part of the official selection at Gamescom Latam 2025, in Brazil.',
+        es: 'Party Demon formó parte de la selección oficial de Gamescom Latam 2025, en Brasil.',
+      },
+    },
   ],
   whatIDid: [
     { en: 'A system for **building your castle** dynamically with pieces bought in a shop', es: 'Un sistema para **construir tu castillo** de forma dinámica con piezas que compras en una tienda' },
@@ -60,9 +75,14 @@ export default {
   ],
   tech: ['Unity', 'C#'],                       // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [
-    { name: 'André', role: { en: 'Game design, project management', es: 'Diseño de juego, gestión del proyecto' } },
-    { name: 'Rito', role: { en: 'Art', es: 'Arte' } },
-    { name: 'Sarah Grommelt', role: { en: 'Audio design & implementation', es: 'Diseño e implementación de audio' } },
-    { name: 'Rafa Arias', role: { en: 'Music', es: 'Música' } },
+    { name: 'André Ruiz', role: { en: 'Creative direction, game & system design, UI/UX', es: 'Dirección creativa, diseño de juego y de sistemas, UI/UX' } },
+    { name: 'Henrique Rito', role: { en: 'Art, UI/UX', es: 'Arte, UI/UX' } },
+    { name: 'João Victor Barreto', role: { en: 'Programming', es: 'Programación' } },
+    { name: 'Arthur Francesconi', role: { en: 'Tech art', es: 'Arte técnico' } },
+    { name: 'Danny Oliveira', role: { en: 'Tech art', es: 'Arte técnico' } },
+    { name: 'Helena Coelho', role: { en: 'Animation', es: 'Animación' } },
+    { name: 'Sarah Grommelt', role: { en: 'Sound design', es: 'Diseño de sonido' } },
+    { name: 'Rafael “Overthinker” Arias', role: { en: 'Music', es: 'Música' } },
+    { name: 'Luci Andrade', role: { en: 'Marketing & community', es: 'Marketing y comunidad' } },
   ],
 };

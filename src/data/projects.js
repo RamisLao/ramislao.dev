@@ -105,7 +105,7 @@
  * or else its first .mp4 in media. Projects without either just show their cover.
  * Featured projects also appear in the "All projects" grid below.
  */
-export const featured = ['shutterbug-skies', 'yanga-casting', 'party-demon', 'hyperbeard'];
+export const featured = ['shutterbug-skies', 'party-demon', 'yanga-casting', 'hyperbeard'];
 
 /**
  * ORDER — the projects shown on the site (use the project ids = file names without .js).
