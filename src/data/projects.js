@@ -111,7 +111,7 @@ export const featured = ['shutterbug-skies', 'party-demon', 'yanga-casting', 'hy
 /**
  * ORDER — the projects shown on the site (use the project ids = file names without .js).
  * Only projects listed here appear. To hide one, delete its line or comment it out with //
- * The "All projects" grid sorts them by date automatically (newest first, by start year),
+ * The "All projects" grid sorts them by date automatically (newest first, by end/release year),
  * so the order here only matters for projects with exactly the same years.
  * (this also hides it from the featured row).
  */

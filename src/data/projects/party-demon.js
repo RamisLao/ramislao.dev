@@ -5,7 +5,7 @@ export default {
   type: 'videogame',                           // a key from taxonomy.js → projectTypes
   roles: ['programmer', 'gameDesigner'],                       // keys from taxonomy.js → roles
   start: 2022,
-  end: 2024,                                   // null = ongoing ("Present") · leave commented for a single year
+  end: 2025,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'secondary',                          // colors from config.js, used when there's no cover
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──

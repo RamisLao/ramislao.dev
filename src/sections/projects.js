@@ -14,12 +14,13 @@ import { projectSheet } from '../sheets/projectSheet.js';
 const filters = { type: 'all', role: 'all' };
 
 /**
- * Newest first, by start year. Same start year: ongoing projects first, then the one that ended later.
+ * Newest first, by end (or release) year; single-year projects use their start year.
+ * Ongoing projects come first. Same end year: the one that started later goes first.
  * Projects with the same dates keep their order from the `order` list.
  */
 const endKey = (p) => (p.end === null ? Infinity : Number(p.end ?? p.start) || 0);
 const byDate = (list) =>
-  [...list].sort((a, b) => (Number(b.start) || 0) - (Number(a.start) || 0) || endKey(b) - endKey(a));
+  [...list].sort((a, b) => endKey(b) - endKey(a) || (Number(b.start) || 0) - (Number(a.start) || 0));
 
 export function initProjects(root) {
   const featuredEl = root.querySelector('[data-featured]');
