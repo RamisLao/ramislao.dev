@@ -10,17 +10,17 @@ export default {
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
   cover: '/media/projects/nectoma-community/main.jpg', // card image, 16:9
-  // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
+  preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
     { src: '/media/projects/nectoma-community/post_1.jpg', caption: { en: 'Poster I designed for an Incubadora de Amiguis (friendship incubator) co-hosted with Conexión en Boga', es: 'Cartel que diseñé para una Incubadora de Amiguis organizada junto con Conexión en Boga' } },
     { src: '/media/projects/nectoma-community/post_2.jpg', caption: { en: 'Poster I designed for the workshop “Apapachos y cuidados más allá de la pareja” (affection and care beyond romantic partners)', es: 'Cartel que diseñé para el taller “Apapachos y cuidados más allá de la pareja”' } },
-    { src: '/media/projects/nectoma-community/post_3.jpg', caption: { en: 'Poster I designed for a Fiesta de Apapachos (cuddle party)', es: 'Cartel que diseñé para una Fiesta de Apapachos' } },
+    { src: '/media/projects/nectoma-community/post_3.jpg', caption: { en: 'Poster I designed for a Fiesta de Apapachos (Cuddle Party)', es: 'Cartel que diseñé para una Fiesta de Apapachos' } },
     { src: '/media/projects/nectoma-community/post_4.jpg', caption: { en: 'Poster I designed for the “Preferred Identities” edition of the Incubadora de Amiguis, with costumes', es: 'Cartel que diseñé para la Incubadora de Amiguis, edición “Identidades preferidas”, con disfraces' } },
-    { src: 'https://www.instagram.com/reel/DcjHPv-hMH8/?utm_source=ig_web_copy_link&hvrq=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
-    { src: 'https://www.instagram.com/reel/Ddg36tSRWyW/?utm_source=ig_web_button_share_sheet&gwpx=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
-    { src: 'https://www.instagram.com/reel/DdWec-aRv1-/?utm_source=ig_web_copy_link&hvrq=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
-    { src: 'https://www.instagram.com/reel/DI2Uh7auWE3/?utm_source=ig_web_copy_link&hvrq=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==', caption: { en: '', es: '' } },
+    { src: 'https://www.instagram.com/reel/DcjHPv-hMH8/', caption: { en: 'A Reel explaining how a Fiesta de Apapachos (Cuddle Party) works', es: 'Reel que explica cómo funciona una Fiesta de Apapachos' } },
+    { src: 'https://www.instagram.com/reel/Ddg36tSRWyW/', caption: { en: 'A Reel breaking down three non-assertive requests', es: 'Reel en el que explicamos la anatomía de tres peticiones no asertivas' } },
+    { src: 'https://www.instagram.com/reel/DdWec-aRv1-/', caption: { en: 'A Reel with three examples of agreements for cuddling', es: 'Reel con tres ejemplos para crear acuerdos para el apapacho' } },
+    { src: 'https://www.instagram.com/reel/DI2Uh7auWE3/', caption: { en: 'A Reel explaining that cuddling doesn’t have to be sexual', es: 'Reel en el que explicamos que el apapacho puede desligarse de lo sexual' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
@@ -31,41 +31,59 @@ export default {
   // steam: 'https://store.steampowered.com/app/…',
   // itch: 'https://….itch.io/…',
   links: [
-    // { label: { en: '…', es: '…' }, url: 'https://…' },
+    { label: { en: 'Nectoma on Instagram', es: 'Nectoma en Instagram' }, url: 'https://www.instagram.com/nectoma/' },
   ],
 
   // ── Top of the side sheet ───────────────────────────────
   // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A social-skills collective with an online community of 7,000 followers and over 100 in-person events.',
-    es: 'Un colectivo de habilidades sociales con una comunidad virtual de 7000 seguidores y más de 100 eventos presenciales.',
+    en: 'A collective for practicing social skills and building support networks, with over 7,000 Instagram followers and a 500-member online community.',
+    es: 'Un colectivo para practicar habilidades sociales y tejer redes afectivas, con más de 7000 seguidores en Instagram y una comunidad virtual de 500 miembrxs.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
-    team: { en: '2 co-founders', es: '2 cofundadorxs' },
-    platform: { en: 'Instagram · WhatsApp · in person', es: 'Instagram · WhatsApp · presencial' },
+    team: { en: '6 people', es: '6 personas' },
+    platform: { en: 'Instagram · WhatsApp', es: 'Instagram · WhatsApp' },
     format: { en: '', es: '' },
     status: { en: '', es: '' },
-    impact: { en: '7,000 followers · 100+ events · thousands of attendees · 300-member community', es: '7,000 seguidores · más de 100 eventos · miles de asistentes · comunidad de 300 miembrxs' },
+    impact: { en: '7,000 followers · 100+ events · thousands of attendees · 500-member community', es: '7000 seguidores · más de 100 eventos · miles de asistentes · comunidad de 500 miembrxs' },
   },
 
   // ── Texts · new paragraph = \n\n ──
   description: {
-    en: 'Nectoma is a collective I co-founded with Dinorah Ponce. We run workshops and experiences that help people grow their social skills and strengthen their support networks, including our Fiestas de Apapachos (cuddle parties), Incubadoras de Amiguis (friendship incubators) and other events. We focus on teaching nonviolent communication, consent, consensus, self-awareness and conflict resolution.\n\nWe also host an online community on WhatsApp, where members can propose activities, ask for advice and recommendations, and practice the tools we share.',
-    es: 'Nectoma es un colectivo que cofundé junto con Dinorah Ponce. Organizamos talleres y experiencias para ayudar a las personas a cultivar sus habilidades sociales y fortalecer sus redes afectivas, como las Fiestas de Apapachos, las Incubadoras de Amiguis y otros eventos. Nos enfocamos en enseñar comunicación no violenta, consentimiento, consenso, autoconocimiento y resolución de conflictos.\n\nTambién tenemos una comunidad virtual en WhatsApp, donde lxs miembrxs pueden proponer actividades, pedir consejos y recomendaciones, y practicar las herramientas que compartimos.',
+    en: 'Nectoma is a collective I co-founded with Dinorah Ponce. We run workshops and experiences, such as our Fiestas de Apapachos (cuddle parties) and Incubadoras de Amiguis (friendship incubators), that help people grow their social skills and strengthen their support networks. We focus on teaching nonviolent communication, consent, consensus, self-awareness and conflict resolution.\n\nWe also host an online community on WhatsApp, where members can propose activities, ask for advice and recommendations, and practice the tools we share.\n\nWe currently work with four more people who run and facilitate online spaces for the community, such as a monthly Reading Circle and a Meditation Circle every two weeks.',
+    es: 'Nectoma es un colectivo que cofundé junto con Dinorah Ponce. Organizamos talleres y experiencias, como las Fiestas de Apapachos y las Incubadoras de Amiguis, para ayudar a las personas a cultivar sus habilidades sociales y fortalecer sus redes afectivas. Nos enfocamos en enseñar comunicación no violenta, consentimiento, consenso, autoconocimiento y resolución de conflictos.\n\nTambién tenemos una comunidad virtual en WhatsApp, donde lxs miembrxs pueden proponer actividades, pedir consejos y recomendaciones, y practicar las herramientas que compartimos.\n\nActualmente colaboramos con cuatro personas más, que gestionan y facilitan espacios virtuales para la comunidad, como un Círculo de Lectura mensual y un Círculo de Meditación quincenal.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'Together with Dinorah, I run the project’s social media, mainly Instagram: I write, film and edit reels. I also design some of the posters we use to promote our events, and I handle customer service, answering questions from people who reach out to us.', es: 'Junto con Dinorah, llevo las redes sociales del proyecto, principalmente Instagram: escribo, grabo y edito reels. También diseño algunos de los carteles con los que promocionamos nuestros eventos y me encargo de la atención a clientes, respondiendo las dudas de quienes nos escriben.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'In our online community, I’m a moderator: I propose activities and moderate interactions between members.', es: 'En la comunidad virtual soy moderadorx: propongo actividades y modero las interacciones entre las personas.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'In 4 years, we’ve built an audience of 7,000 followers, hosted more than 100 in-person events and welcomed thousands of people. Our online community currently has 300 members.', es: 'En 4 años hemos construido una cuenta con 7,000 seguidores, realizado más de 100 eventos presenciales y recibido a miles de personas. Actualmente, nuestra comunidad virtual tiene 300 miembrxs.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'The topics we work on are niche, and can even feel uncomfortable for some people. Growing our community without letting outside pressure compromise our values has been a big challenge.', es: 'Los temas que trabajamos son de nicho e incluso pueden resultar incómodos para algunas personas. Ha sido un gran reto hacer crecer nuestra comunidad sin que las presiones externas comprometan nuestros valores.' } },
+    {
+      type: 'challenge',
+      title: { en: 'A warm online space', es: 'Un espacio virtual cálido' },
+      text: {
+        en: 'Online communities often become impersonal or uncomfortable for some people. We’ve worked hard to build a culture grounded in tenderness, consent and vulnerability.',
+        es: 'Es común que las comunidades virtuales se vuelvan espacios impersonales o incómodos para algunas personas. Nos hemos esforzado mucho por construir una cultura cuyos pilares son la ternura, el consentimiento y la vulnerabilidad.',
+      },
+    },
+    {
+      type: 'result',
+      title: { en: 'Real friendships', es: 'Amistades reales' },
+      text: {
+        en: 'Many friendships have been born and grown in this space. We’ve met our goal of weaving support networks; we ourselves have even found circles of friends we love dearly.',
+        es: 'En este espacio han nacido y se han fortalecido muchas amistades. El objetivo de tejer redes afectivas se ha cumplido; incluso nosotrxs hemos formado círculos de amistades a quienes queremos mucho.',
+      },
+    },
   ],
   whatIDid: [
-    { en: '**Posters** to promote the activities we offer', es: '**Carteles** para promocionar las actividades que ofrecemos' },
-    { en: '**Reels** that attract new followers and share social skills tools', es: '**Reels** para atraer más seguidores y compartir herramientas sociales' },
-    { en: 'Our **sales funnels**, plus the setup of the **tech tools** that power them', es: 'Nuestros **embudos de venta**, junto con la configuración de las **herramientas tecnológicas** que los hacen posibles' },
+    { en: 'With Dinorah, I handle **community management**: planning and creating Instagram content to grow the community', es: 'Junto con Dinorah, llevo la **gestión de la comunidad**: planeo y creo contenido para Instagram para hacerla crecer' },
+    { en: 'I design **posters** to promote our activities', es: 'Diseño **carteles** para promocionar nuestras actividades' },
+    { en: 'I shoot and edit **Reels** to attract followers and share social tools', es: 'Grabo y edito **Reels** para atraer seguidores y compartir herramientas sociales' },
+    { en: 'I design our **sales funnels** and set up the **tools** that make them work', es: 'Diseño nuestros **embudos de venta** y configuro las **herramientas tecnológicas** que los hacen posibles' },
+    { en: 'I moderate our **WhatsApp community**, starting conversations and activities that strengthen bonds', es: 'Modero nuestra **comunidad en WhatsApp** y propongo conversaciones y actividades para fortalecer los vínculos' },
   ],
-  tech: ['Canva', 'Adobe Illustrator', 'Affinity', 'Capcut', 'Instagram Edits', 'Adobe Premiere'], // chips, e.g. ['Unity', 'C#', 'Blender']
+  tech: ['Canva', 'Affinity', 'CapCut', 'Instagram Edits', 'Instagram', 'WhatsApp'], // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [
-    { name: 'Dinorah Ponce', role: { en: 'Co-founder, content, moderation', es: 'Cofundadora, contenido, moderación' } },
+    { name: 'Dinorah Ponce', role: { en: 'Co-founder, content creator, moderator, facilitator', es: 'Cofundadora, creadora de contenido, moderadora, facilitadora' } },
+    { name: 'Dan', role: { en: 'Reading Circle facilitator', es: 'Facilitador del Círculo de Lectura' } },
+    { name: 'Paula', role: { en: 'Meditation Circle facilitator', es: 'Facilitadora del Círculo de Meditación' } },
+    { name: 'Ivette', role: { en: 'Meditation Circle facilitator', es: 'Facilitadora del Círculo de Meditación' } },
+    { name: 'Vero', role: { en: 'Meditation Circle facilitator', es: 'Facilitadora del Círculo de Meditación' } },
   ],
 };
