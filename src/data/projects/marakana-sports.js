@@ -28,10 +28,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'An iPhone app that used computer vision to assess soccer players’ potential. As co-founder and CTO, I designed and built it, and developed its machine learning with Rafa Arias.',
-    es: 'Una app de iPhone que evaluaba con visión por computadora el potencial de futbolistas. Como cofundadorx y CTO, la diseñé y programé; el machine learning lo desarrollé junto con Rafa Arias.',
+    en: 'An iPhone app that used computer vision to assess soccer players’ potential.',
+    es: 'Una app de iPhone que evaluaba con visión por computadora el potencial de futbolistas.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '5 people', es: '5 personas' },

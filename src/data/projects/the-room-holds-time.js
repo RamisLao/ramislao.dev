@@ -29,10 +29,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'An animated score I designed and programmed in p5.js so musicians could play Jimena Maldonado’s piece in perfect sync, while setting its emotional tone.',
-    es: 'Una partitura animada que diseñé y programé en p5.js para que los músicxs tocaran en sincronía la pieza de Jimena Maldonado, marcando también su tono emocional.',
+    en: 'An animated score, programmed in p5.js, that let musicians play Jimena Maldonado’s piece in perfect sync while setting its emotional tone.',
+    es: 'Una partitura animada, programada en p5.js, para que lxs músicxs tocaran en sincronía la pieza de Jimena Maldonado, marcando también su tono emocional.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: 'Solo, with the composer', es: 'Individual, con la compositora' },

@@ -28,10 +28,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A web app that let small and medium-sized businesses train neural networks and make predictions just by uploading a spreadsheet. I designed its interface and built the entire frontend.',
-    es: 'Una aplicación web que permitía a pequeñas y medianas empresas entrenar redes neuronales y hacer predicciones con solo subir una hoja de cálculo. Diseñé su interfaz y programé todo el frontend.',
+    en: 'A web app that let small and medium-sized businesses train neural networks and make predictions just by uploading a spreadsheet.',
+    es: 'Una aplicación web que permitía a pequeñas y medianas empresas entrenar redes neuronales y hacer predicciones con solo subir una hoja de cálculo.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '2 people', es: '2 personas' },

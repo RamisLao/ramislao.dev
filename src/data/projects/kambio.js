@@ -29,10 +29,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A web app built in Unreal Engine 5 for exploring and customizing homes in real time before buying them. I produced it and programmed its logic and streaming.',
-    es: 'Una aplicación web en Unreal Engine 5 para recorrer y personalizar viviendas en tiempo real antes de comprarlas. La produje y programé su lógica y su transmisión.',
+    en: 'A web app built in Unreal Engine 5 for exploring and customizing homes in real time before buying them.',
+    es: 'Una aplicación web en Unreal Engine 5 para recorrer y personalizar viviendas en tiempo real antes de comprarlas.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '3 people', es: '3 personas' },

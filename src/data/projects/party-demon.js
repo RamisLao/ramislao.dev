@@ -29,10 +29,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A tower defense deck-builder where you build Lady Demon’s castle and defend her birthday party with traps in real time; I programmed many of its core systems.',
-    es: 'Un juego de defensa de torres y construcción de mazos en el que construyes el castillo de Lady Demon y defiendes su fiesta de cumpleaños con trampas en tiempo real; programé muchos de sus sistemas principales.',
+    en: 'A tower defense deck-building game where you build your castle and defend it in real time with a deck full of traps, to protect Lady Demon’s birthday party from waves of humans.',
+    es: 'Un juego de defensa de torres y construcción de mazos en el que construyes tu castillo y lo defiendes en tiempo real con un mazo lleno de trampas, para proteger la fiesta de cumpleaños de Lady Demon de oleadas de humanos.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '10 people', es: '10 personas' },

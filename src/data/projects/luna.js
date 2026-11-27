@@ -32,10 +32,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'An isometric 3D hack-and-slash that won Vancouver Film School’s Best Final Project award. I programmed most of its systems and composed all of its music.',
-    es: 'Un hack and slash isométrico en 3D, ganador del premio a Mejor Proyecto Final de Vancouver Film School. Programé la mayoría de sus sistemas y compuse toda su música.',
+    en: 'An isometric 3D hack-and-slash that won Vancouver Film School’s Best Final Project award.',
+    es: 'Un hack and slash isométrico en 3D, ganador del premio a Mejor Proyecto Final de Vancouver Film School.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '10 people (6 core + 4 external)', es: '10 personas (6 de base + 4 externas)' },

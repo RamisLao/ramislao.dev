@@ -35,10 +35,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A social-skills collective I co-founded. I lead its content and online community, which have grown to 7,000 followers and over 100 in-person events.',
-    es: 'Un colectivo de habilidades sociales que cofundé. Llevo su contenido y su comunidad virtual, que ya suman 7,000 seguidores y más de 100 eventos presenciales.',
+    en: 'A social-skills collective with an online community of 7,000 followers and over 100 in-person events.',
+    es: 'Un colectivo de habilidades sociales con una comunidad virtual de 7000 seguidores y más de 100 eventos presenciales.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '2 co-founders', es: '2 cofundadorxs' },

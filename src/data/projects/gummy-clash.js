@@ -28,10 +28,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A local multiplayer 3D arena game where ragdoll gummies fight over berries on stages that change shape in real time. I programmed most of its systems and composed its music.',
-    es: 'Un juego de arena en 3D, multijugador local, en el que gomitas con físicas de ragdoll se disputan bayas en escenarios que cambian de forma en tiempo real. Programé la mayoría de sus sistemas y compuse su música.',
+    en: 'A local multiplayer 3D arena game where ragdoll gummies fight over berries on stages that change shape in real time.',
+    es: 'Un juego de arena en 3D, multijugador local, en el que gomitas con físicas de ragdoll se disputan bayas en escenarios que cambian de forma en tiempo real.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '4 people', es: '4 personas' },

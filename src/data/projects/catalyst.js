@@ -28,10 +28,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A custom-built, 5-meter circular touchscreen table that showcased investment opportunities in Mexico at Hannover Messe 4.0. I programmed its Unity app and its hardware integration.',
-    es: 'Una mesa táctil circular de 5 metros, hecha a la medida para mostrar oportunidades de inversión en México en Hannover Messe 4.0. Programé su aplicación en Unity y su integración con el hardware.',
+    en: 'A custom-built, 5-meter circular touchscreen table that showcased investment opportunities in Mexico at Hannover Messe 4.0.',
+    es: 'Una mesa táctil circular de 5 metros, hecha a la medida para mostrar oportunidades de inversión en México en Hannover Messe 4.0.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '3 people', es: '3 personas' },

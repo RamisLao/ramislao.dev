@@ -39,10 +39,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A web platform that runs casting projects end to end, from the casting call to the client proposal, which I researched, designed and produced.',
-    es: 'Una plataforma web para gestionar castings de principio a fin, desde la convocatoria hasta la propuesta para el cliente, que investigué, diseñé y produje.',
+    en: 'A web platform for managing casting projects, from creating casting calls to producing deliverables for clients.',
+    es: 'Una plataforma web para gestionar proyectos de casting, desde la creación de convocatorias hasta la generación de entregables para clientes.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '3 people', es: '3 personas' },

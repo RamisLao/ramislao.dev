@@ -31,10 +31,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A short first-person psychological horror game where you wake up held captive in an unfamiliar apartment. I produced it, programmed most of its systems and co-designed it with Rafa.',
-    es: 'Un juego corto de horror psicológico en primera persona en el que despiertas en cautiverio en un departamento desconocido. Lo produje, programé gran parte de sus sistemas y lo diseñé junto con Rafa.',
+    en: 'A short first-person psychological horror game where you wake up held captive in an unfamiliar apartment.',
+    es: 'Un juego corto de horror psicológico en primera persona en el que despiertas en cautiverio en un departamento desconocido.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '3 people', es: '3 personas' },

@@ -62,7 +62,8 @@
  * steam       Steam store page link (optional) → "View on Steam" button
  * itch        itch.io page link (optional)     → "View on itch.io" button
  * links       any other buttons: [{ label: { en, es }, url: 'https://...' }]
- * pitch       ONE sentence (≈25 words max) shown under the title: what it is + what you did.
+ * pitch       ONE sentence (≈25 words max) shown under the title: what the project is.
+ *             No need to describe your role: the role chips right above already do.
  *             Many visitors only read this, so make it count.
  * facts       key facts as small tiles below the media (all optional, skip any you don't want).
  *             They must go INSIDE facts: { … } to show up:

@@ -33,10 +33,10 @@ export default {
   ],
 
   // ── Top of the side sheet ───────────────────────────────
-  // pitch: ONE sentence, ~25 words: what it is + what you did
+  // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'A cozy desktop companion about photographing bugs and crustaceans while you work or relax. At my studio, I produce it, program it, design it and lead its art direction.',
-    es: 'Un desktop companion acogedor sobre fotografiar insectos y crustáceos mientras trabajas o descansas. En mi estudio, lo produzco, programo y diseño, y dirijo su arte.',
+    en: 'A cozy desktop companion about photographing bugs and crustaceans while you work or relax.',
+    es: 'Un desktop companion acogedor sobre fotografiar insectos y crustáceos mientras trabajas o descansas.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '6 people', es: '6 personas' },
