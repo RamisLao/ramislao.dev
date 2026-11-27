@@ -13,11 +13,15 @@ export default {
   preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
+    { src: '/media/projects/yanga-casting/yanga_1.jpg', caption: { en: 'The user flow for the staff role', es: 'El flujo de usuario del rol de staff' } },
+    { src: '/media/projects/yanga-casting/yanga_2.jpg', caption: { en: 'Some of the wireframes designed for the app', es: 'Algunos de los wireframes diseñados para la aplicación' } },
+    { src: '/media/projects/yanga-casting/yanga_3.jpg', caption: { en: 'Screen designs with the branding applied', es: 'Diseños de vistas con el branding aplicado' } },
+    { src: '/media/projects/yanga-casting/yanga_4.jpg', caption: { en: 'Part of the database schema', es: 'Parte del esquema de la base de datos' } },
     { src: '/media/projects/yanga-casting/screenshot_1.png', caption: { en: 'A talent profile as the Yanga team sees it', es: 'El perfil de un talento visto por el equipo de Yanga' } },
-    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: '', es: 'La base de datos de talentos, con algunos datos importantes para fácil acceso' } },
+    { src: '/media/projects/yanga-casting/screenshot_2.png', caption: { en: 'The talent database, with the key details at a glance', es: 'La base de datos de talentos, con los datos clave a la vista' } },
     { src: '/media/projects/yanga-casting/screenshot_3.png', caption: { en: 'The admin panel: users and their roles (Admin, Booking, Casting)', es: 'El panel de administración: usuarios y sus roles (Admin, Booking, Casting)' } },
-    { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: '', es: 'La vista del talento: su propio perfil, completamente editable' } },
-    { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: '', es: 'Un personaje de una convocatoria para que un talento aplique.' } },
+    { src: '/media/projects/yanga-casting/screenshot_4.png', caption: { en: 'The talent’s view: their own profile, fully editable', es: 'La vista del talento: su propio perfil, completamente editable' } },
+    { src: '/media/projects/yanga-casting/screenshot_5.png', caption: { en: 'A character from a casting call, ready for talent to apply', es: 'Un personaje de una convocatoria, listo para que los talentos se postulen' } },
     { src: '/media/projects/yanga-casting/screenshot_6.png', caption: { en: 'Open casting calls for talent, with each project’s characters', es: 'Las convocatorias abiertas para talentos, con los personajes de cada proyecto' } },
     { src: '/media/projects/yanga-casting/screenshot_8.png', caption: { en: 'The cast proposal the client receives, organized by character', es: 'La propuesta de elenco que recibe el cliente, organizada por personaje' } },
     { src: '/media/projects/yanga-casting/screenshot_9.png', caption: { en: 'A casting call document with all of the project’s details', es: 'El documento de una convocatoria con todos los detalles del proyecto' } },
@@ -31,14 +35,14 @@ export default {
   // steam: 'https://store.steampowered.com/app/…',
   // itch: 'https://….itch.io/…',
   links: [
-    // { label: { en: '…', es: '…' }, url: 'https://…' },
+    { label: { en: 'Visit Wayob', es: 'Wayob en línea' }, url: 'https://wayob.yanga.mx/' },
   ],
 
   // ── Top of the side sheet ───────────────────────────────
   // pitch: ONE sentence, ~25 words: what it is + what you did
   pitch: {
-    en: 'A web platform for running casting projects, from open calls to cast proposals. I led its research, UX, visual design and production.',
-    es: 'Una plataforma web para gestionar proyectos de casting, de la convocatoria a la propuesta de elenco. Lideré su investigación, UX, diseño visual y producción.',
+    en: 'A web platform that runs casting projects end to end, from the casting call to the client proposal, which I researched, designed and produced.',
+    es: 'Una plataforma web para gestionar castings de principio a fin, desde la convocatoria hasta la propuesta para el cliente, que investigué, diseñé y produje.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '3 people', es: '3 personas' },
@@ -50,27 +54,46 @@ export default {
 
   // ── Texts · new paragraph = \n\n ──
   description: {
-    en: 'Wayob is a web platform built for Yanga Casting. It has four types of users (roles): talent, casting, agencies and clients, and each one has its own workflow. The Yanga team can create casting projects directly in the platform and export every document they need to run them. They can also manage talent applications, curate profiles and put together cast proposals for clients.\n\nTalent can create and edit their profiles, browse all of Yanga’s open calls and apply directly from the platform, uploading any photos and videos they need.\n\nAgencies can manage their talent’s profiles, see their applications and apply on their behalf.\n\nClients can review a cast selection right in the platform, mark their favorites and leave notes for Yanga’s agents.',
-    es: 'Wayob es una plataforma web desarrollada para Yanga Casting. Tiene cuatro tipos de usuario (roles): talentos, casting, agencias y clientes, y cada uno tiene su propio flujo de uso. El equipo de Yanga puede crear proyectos de casting directamente desde la plataforma y exportar todos los documentos que necesita para llevarlos a cabo. También puede gestionar las postulaciones de los talentos, curar sus perfiles y preparar propuestas de elenco para los clientes.\n\nLos talentos pueden crear y editar sus perfiles, ver todas las convocatorias públicas de Yanga y postularse directamente desde la plataforma, subiendo las fotos y los videos que necesiten.\n\nLas agencias pueden gestionar los perfiles de sus talentos, ver sus postulaciones y postularlos en su nombre.\n\nLos clientes pueden ver en la plataforma una selección de elenco, marcar a sus favoritos y dejar notas para los agentes de Yanga.',
+    en: 'Wayob is a web platform built for Yanga Casting. It has five user roles (admin, staff, talent, agencies and clients), each with its own flow.\n\nAdmins create, edit and manage every user and agency account on the platform, along with some global settings.\n\nStaff create casting projects right on the platform and export every document they need to run them. They also manage talent applications, review and select profiles, and put together cast proposals for clients.\n\nTalent create and edit their profiles, browse all of Yanga’s open casting calls and apply right from the platform, uploading the photos and videos each call asks for.\n\nAgencies manage their talent’s profiles, follow their applications and apply on their behalf.\n\nClients review the cast selection on the platform, mark their favorites and leave notes for the Yanga team.',
+    es: 'Wayob es una plataforma web desarrollada para Yanga Casting. Tiene cinco roles de usuario (admin, staff, talentos, agencias y clientes), cada uno con su propio flujo.\n\nEl rol de admin crea, edita y gestiona todas las cuentas de usuario y de agencia de la plataforma, además de algunas configuraciones globales.\n\nEl staff crea proyectos de casting directamente en la plataforma y exporta todos los documentos que necesita para llevarlos a cabo. También gestiona las postulaciones de los talentos, revisa y selecciona perfiles, y prepara propuestas de elenco para los clientes.\n\nLos talentos crean y editan su perfil, ven todas las convocatorias abiertas de Yanga y se postulan desde la plataforma, con las fotos y los videos que pida cada convocatoria.\n\nLas agencias gestionan los perfiles de sus talentos, dan seguimiento a sus postulaciones y los postulan en su nombre.\n\nLos clientes revisan en la plataforma la selección de elenco, marcan a sus favoritos y dejan notas para el equipo de Yanga.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'On this project I was producer and designer. I led the research to analyze and understand Yanga’s workflows in detail, and used it to design a user experience tailored to their specific needs. I created hundreds of wireframes for every screen and refined them with the client’s feedback. The goal was to streamline their processes and avoid the problems they had with their previous tool.', es: 'En este proyecto fui productorx y diseñadorx. Me encargué de la investigación para analizar y comprender a detalle los procesos de trabajo de Yanga y, a partir de ella, diseñé una experiencia de usuario adaptada a sus necesidades específicas. Elaboré cientos de wireframes para todas las vistas y los fui refinando con la retroalimentación del cliente. El objetivo era optimizar sus procesos y evitar los problemas que tenían con su herramienta anterior.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'Next, I created the platform’s branding: color palette, typography and shape language. Building on the wireframes and the branding, I designed every screen one by one, with a strong focus on making them easy to use and pleasant to look at.', es: 'Después, creé el branding de la plataforma: paleta de colores, tipografías y lenguaje de formas. Con los wireframes y el branding como base, diseñé cada una de las vistas, con mucho énfasis en que fueran fáciles de usar y agradables a la vista.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I also worked directly in the code, mainly the CSS files, to refine the implementation, make sure it stayed true to the designs and make the visual fixes I considered necessary. On top of that, I designed the database schema and implemented the migration system.', es: 'También trabajé directamente en el código, principalmente en los archivos CSS, para refinar las implementaciones, asegurarme de que fueran fieles a los diseños y hacer las correcciones visuales que consideré necesarias. Además, diseñé el esquema de la base de datos e implementé el sistema de migraciones.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'Finally, I was the project lead. I drew up the work plan to finish the project in six months and assigned everyone’s tasks each week. I handled direct communication with the client and managed the app’s testing, to make sure the final delivery was solid and truly useful for the Yanga team.', es: 'Por último, fui líder del proyecto. Elaboré el plan de trabajo para terminarlo en seis meses y cada semana asigné las tareas de todas las personas involucradas. Me encargué de la comunicación directa con el cliente y gestioné las pruebas de la aplicación, para asegurarme de que la entrega fuera adecuada y realmente útil para el equipo de Yanga.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'It’s the largest and most feature-rich app I’ve ever designed. Translating all of the client’s needs and workflows into a platform that was easy to use and made their processes more efficient was a big challenge.', es: 'Es la aplicación más extensa y con más funcionalidades que he diseñado. Fue un gran reto traducir todas las necesidades y el flujo de trabajo del cliente a una plataforma fácil de usar que hiciera sus procesos más eficientes.' } },
+    {
+      type: 'challenge',
+      title: { en: 'Replacing a mature tool', es: 'Reemplazar una herramienta madura' },
+      text: {
+        en: 'Yanga needed to replace, from scratch, the tool it had used for years: a mature system, long proven in production. The challenge was building something good enough to take its place in only six months.',
+        es: 'Yanga necesitaba reemplazar, desde cero, la herramienta que llevaba años usando: un sistema maduro y probado en producción. El reto fue construir algo lo bastante bueno para sustituirla en solo seis meses.',
+      },
+    },
+    {
+      type: 'decision',
+      title: { en: 'Design first', es: 'Primero, el diseño' },
+      text: {
+        en: 'We spent three of the six months on research, wireframes and screen design, so the platform would fit the workflow Yanga has refined over many years.',
+        es: 'Dedicamos tres de los seis meses a la investigación, los wireframes y el diseño de vistas, para que la plataforma se adaptara al flujo de trabajo que Yanga ha perfeccionado durante años.',
+      },
+    },
+    {
+      type: 'result',
+      title: { en: '1,400+ talent profiles', es: 'Más de 1400 talentos' },
+      text: {
+        en: 'After the first round of sign-ups, the platform already holds more than 1,400 talent profiles.',
+        es: 'Tras la primera ronda de registros, la plataforma ya cuenta con más de 1400 talentos.',
+      },
+    },
   ],
   whatIDid: [
-    { en: 'The **research process** to understand all of the client’s needs and workflows', es: 'El **proceso de investigación** para conocer todas las necesidades y los procesos del cliente' },
-    { en: '**Wireframes** for the entire app, developed together with the client', es: 'Los **wireframes** de toda la aplicación, en comunicación con el cliente' },
-    { en: 'The app’s **branding**', es: 'El **branding** de la aplicación' },
-    { en: 'The app’s **development plan**', es: 'El **plan de desarrollo** de la aplicación' },
-    { en: '**Weekly planning** and **task assignment** for everyone involved', es: 'La **planeación** y **asignación semanal de tareas** de todas las personas involucradas' },
-    { en: 'The **final design** of every screen', es: 'El **diseño final** de cada vista' },
-    { en: '**Hands-on work in the code** to refine the screens and keep them consistent with each other', es: '**Trabajo directo en el código** para refinar las vistas y asegurar que fueran coherentes entre sí' },
-    { en: 'The **database schema** and the **migration system**', es: 'El **esquema de la base de datos** y el **sistema de migraciones**' },
+    { en: 'Ran the **client research** to understand Yanga’s needs and workflows in depth', es: 'Realicé la **investigación con el cliente** para entender a fondo sus necesidades y flujos de trabajo' },
+    { en: 'Designed the **user flows** for all five roles', es: 'Diseñé los **flujos de usuario** de los cinco roles' },
+    { en: 'Designed the **wireframes** for the whole app, on mobile and desktop', es: 'Diseñé los **wireframes** de toda la aplicación, para móvil y escritorio' },
+    { en: 'Created the app’s **branding**: style, color palette, shape language and typography', es: 'Creé el **branding** de la aplicación: estilo, paleta de colores, lenguaje de formas y tipografía' },
+    { en: 'Designed **every screen** from the wireframes and the branding', es: 'Diseñé **todas las vistas** a partir de los wireframes y el branding' },
+    { en: 'Wrote the **development plan** and assigned the tasks for each sprint', es: 'Elaboré el **plan de desarrollo** y asigné las tareas de cada sprint' },
+    { en: 'Designed the **database schema** and wrote the migration scripts', es: 'Diseñé el **esquema de la base de datos** y escribí los scripts de migración' },
+    { en: 'Fine-tuned every screen directly in **CSS**', es: 'Ajusté y pulí todas las vistas directamente en **CSS**' },
   ],
-  tech: ['React.js', 'CSS', 'Figma', 'PostgreSQL'],
+  tech: ['React.js', 'CSS', 'PostgreSQL', 'Google Cloud', 'Firebase', 'Google Cloud Storage', 'Figma', 'dbdiagram.io', 'Miro'],
   credits: [
     { name: 'Sarah Grommelt', role: { en: 'Programming', es: 'Programación' } },
     { name: 'Rafa Arias', role: { en: 'Programming', es: 'Programación' } },
