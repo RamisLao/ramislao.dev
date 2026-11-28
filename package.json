@@ -10,6 +10,7 @@
     "cv": "node cv/export.mjs"
   },
   "dependencies": {
+    "matter-js": "^0.20.0",
     "three": "^0.187.0"
   },
   "devDependencies": {

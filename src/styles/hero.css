@@ -46,9 +46,32 @@
 
 .hero-content {
   position: relative;
+  isolation: isolate; /* keeps the halo behind the text but in front of the shapes */
   text-align: center;
   padding: 0 var(--gutter);
   pointer-events: none; /* let the mouse reach the 3D scene */
+}
+
+/* Soft halo behind the name and title (config.js → hero.textBackdrop: 'halo'):
+   the shapes behind it get blurred and washed in sky color, fading out toward the edges. */
+.hero[data-text-backdrop='halo'] .hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -22% -24%;
+  z-index: -1;
+  /* Two glows: a wider one around the name at the top, and the main one around everything */
+  --glow: color-mix(in srgb, var(--sky-mid) 88%, transparent);
+  background:
+    radial-gradient(ellipse 50% 34% at 50% 33%, var(--glow) 35%, transparent),
+    radial-gradient(ellipse 42% 50% at 50% 50%, var(--glow) 35%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  -webkit-mask-image:
+    radial-gradient(ellipse 50% 34% at 50% 33%, #000 45%, transparent),
+    radial-gradient(ellipse 42% 50% at 50% 50%, #000 45%, transparent);
+  mask-image:
+    radial-gradient(ellipse 50% 34% at 50% 33%, #000 45%, transparent),
+    radial-gradient(ellipse 42% 50% at 50% 50%, #000 45%, transparent);
 }
 
 .hero-title {
@@ -109,4 +132,145 @@
   50% {
     transform: translateY(8px);
   }
+}
+
+/* Cream outline around the letters (config.js → hero.textBackdrop: 'outline').
+   paint-order puts the outline behind the letters, so they keep their full shape. */
+.hero[data-text-backdrop='outline'] :is(.hero-title, .hero-role) {
+  -webkit-text-stroke: 0.14em var(--bg);
+  paint-order: stroke fill;
+}
+.hero[data-text-backdrop='outline'] .hero-role {
+  -webkit-text-stroke-width: 0.24em;
+}
+
+/* 3D letters (config.js → hero.textBackdrop: 'letters'): the name and title are
+   drawn on the shelves, so the HTML ones are hidden from view but stay on the
+   page for search engines and screen readers. The pill is moved onto its shelf by heroScene.js. */
+.hero[data-text-backdrop='letters'] :is(.hero-title, .hero-role) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Frosted-glass panel behind the name and title (config.js → hero.textBackdrop: 'glass'),
+   the same glass as the floating nav bar. The roles pill sits inside it. */
+.hero[data-text-backdrop='glass'] .hero-content::before {
+  content: '';
+  position: absolute;
+  inset: -28px calc(var(--gutter) * 0.5 - 8px) -28px;
+  z-index: -1;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--bg) 58%, transparent);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border: 1px solid color-mix(in srgb, var(--on-dark) 55%, transparent);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Playground (src/hero/heroScene.js) ---------- */
+/* Shapes can be dragged; vertical swipes on touch screens still scroll the page */
+.hero-canvas canvas {
+  touch-action: pan-y;
+}
+
+/* The controls, in the corner just above the floor: the key guide where
+   there's a mouse and keyboard, two buttons on touch screens */
+.hero-tools {
+  position: absolute;
+  right: var(--gutter);
+  bottom: calc(clamp(56px, 9vh, 100px) / 2 + 14px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+.hero-tool {
+  display: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid color-mix(in srgb, var(--surface) 60%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.25s var(--ease-bounce), background 0.2s, color 0.2s;
+}
+@media (hover: none), (pointer: coarse) {
+  .hero-tool {
+    display: grid;
+  }
+}
+.hero-tool:active {
+  transform: scale(0.9);
+  background: var(--accent);
+  color: var(--on-dark);
+}
+.hero-tool:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 3px;
+}
+
+/* The ring left by an explosion */
+.hero-blast {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  border: 3px solid color-mix(in srgb, var(--on-dark) 85%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: hero-blast 0.55s var(--ease-out) forwards;
+}
+@keyframes hero-blast {
+  from {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Key guide: only where there's a mouse (and so a keyboard) */
+.hero-keys {
+  display: none;
+  gap: 12px;
+  margin: 0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 760px) {
+  .hero-keys {
+    display: flex;
+  }
+}
+.hero-keys kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  margin-right: 2px;
+  padding: 0 4px;
+  border-radius: 5px;
+  background: var(--surface);
+  box-shadow: 0 1px 0 var(--line);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ink);
 }

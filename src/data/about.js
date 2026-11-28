@@ -13,6 +13,7 @@ export const about = {
   // The "Download CV" button only appears once the file actually exists.
   // These two are made by `npm run cv` (names set in cv/data.js → files.web).
   cv: { en: 'ramis-lao-cv-en.pdf', es: 'ramis-lao-cv-es.pdf' },
+  showCV: false, // true shows the "Download CV" button again
 
   // Paragraphs are separated by a blank line (\n\n).
   bio: {

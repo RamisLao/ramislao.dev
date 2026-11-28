@@ -7,12 +7,14 @@ import { initProjects } from './sections/projects.js';
 import { initTeaching } from './sections/teaching.js';
 import { initAbout } from './sections/about.js';
 import { initContact } from './sections/contact.js';
+import { initBrandMark } from './components/brandMark.js';
 import { tokenColor } from './utils/tokens.js';
 
 applyStatic();
 
 initNav();
 initSheet();
+initBrandMark();
 initHero();
 initProjects(document.getElementById('projects'));
 initTeaching(document.getElementById('teaching'));
@@ -21,9 +23,9 @@ initContact(document.getElementById('contact'));
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
-// Favicon (the arch) drawn in the --accent token color, so it follows tokens.css too
+// Favicon (the circle, the logo's first shape) drawn in the --accent token color, so it follows tokens.css too
 const favicon = document.querySelector('link[rel="icon"]');
 if (favicon) {
   const fill = encodeURIComponent(tokenColor('--accent'));
-  favicon.href = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 30V16a10 10 0 0 1 20 0v14h-6V16a4 4 0 0 0-8 0v14z' fill='${fill}'/%3E%3C/svg%3E`;
+  favicon.href = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='${fill}'/%3E%3C/svg%3E`;
 }

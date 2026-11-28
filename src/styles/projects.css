@@ -10,6 +10,7 @@
 }
 .featured-head .section-shape {
   --s: 26px;
+  --t: 0.34; /* thicker arch: holds its own next to the bold title */
 }
 .featured-head h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -74,6 +75,16 @@
 }
 .more-head .sub-head {
   margin: 0;
+}
+/* Shape + title in one row, like "Featured work" */
+.more-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.more-title .section-shape {
+  --s: 26px;
+  flex-shrink: 0;
 }
 .more-head p {
   color: var(--ink-soft);

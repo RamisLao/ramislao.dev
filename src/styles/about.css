@@ -109,6 +109,9 @@
 .skill-shape.shape-pill {
   transform-origin: 0 50%;      /* stretch from the left */
 }
+.skill-shape.shape-arch {
+  --t: 0.34;                    /* as thick as the Featured work arch */
+}
 
 @keyframes skill-bounce {
   15% { transform: scale(1.2, 0.8); }

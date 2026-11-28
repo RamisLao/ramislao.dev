@@ -40,7 +40,7 @@ export function initAbout(root) {
   async function renderCV() {
     const file = tr(about.cv);
     cv.innerHTML = '';
-    if (!file) return;
+    if (!file || about.showCV === false) return;
     const url = resolveSrc(file, '/files/');
     if (!(await checkFile(url)) || tr(about.cv) !== file) return;
     const name = url.split('/').pop();

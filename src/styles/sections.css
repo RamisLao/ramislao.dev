@@ -50,13 +50,13 @@
 }
 .shape-arch {
   background: none;
-  border: calc(var(--s) * 0.24) solid var(--c);
+  border: calc(var(--s) * var(--t, 0.24)) solid var(--c);
   border-bottom: 0;
   border-radius: var(--s) var(--s) 0 0;
 }
 .shape-ring {
   background: none;
-  border: calc(var(--s) * 0.24) solid var(--c);
+  border: calc(var(--s) * var(--t, 0.24)) solid var(--c);
   border-radius: 50%;
 }
 .shape-triangle {
