@@ -1,0 +1,131 @@
+/* ============================================================================
+   PALETTE: ARCHWAY  —  warm arches under a desert sky
+   Inspired by soft 3D scenes of arches, stairs and spheres: vermilion arches
+   on raspberry walls, golden stairs, peach light, plum and cobalt spheres,
+   and a teal sky over sand.
+   Reference: #E8461F (vermilion) · #B3174E (raspberry) · #F4A52A (gold)
+              · #5B2660 (plum) · #2C5C9C (cobalt) · #5FA8B8 (sky)
+
+   How to read this file
+   • Every token has a ROLE. The whole site uses these roles, never raw colors,
+     so a palette is just a set of values for the same 22 tokens.
+   • TEXT-SAFE tokens may be used for text: they reach at least 4.5:1 against
+     --bg, --bg-tint and --surface, and white text on them also passes.
+   • DECOR tokens are for shapes, fills, tints and icons only. Never put
+     small text in these colors. Dark text (--ink) on top of them is fine.
+   • Contrast ratios are noted as "x:1 on --bg / on --bg-tint".
+   • To activate this palette, set it in the @import line of tokens.css.
+   ============================================================================ */
+:root {
+  /* ──────────────────────────────────────────────────────────────────────────
+     SURFACES — the backgrounds everything sits on
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Page background: a warm blush cream, like the lit floor of the arches.
+     Also: the side sheet, the mobile menu, form fields, the band under the
+     hero, and (semi-transparent) the floating nav bar and the title pill. */
+  --bg: #fbf4ee;
+
+  /* Alternate background for every other section (Teaching, Contact), the
+     footer, and the empty space behind images while they load. Soft peach. */
+  --bg-tint: #f5e6dc;
+
+  /* Cards: project cards, filter chips, the contact form, tags, the active
+     nav link, and the white backing of Instagram embeds. Skill cards and
+     studio badges are this color mixed with a bit of their own color. */
+  --surface: #ffffff;
+
+  /* Thin borders and dividers. */
+  --line: #ecd5c6;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TEXT & DARK UI
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Main text: a very dark plum instead of black, so it belongs with the
+     warm colors. Also the dark round buttons, the active filter chip and
+     language button, and the shadows. 16.0:1 / 14.3:1 */
+  --ink: #2a1122;
+
+  /* Secondary text: intros, card details, years, captions, labels, nav
+     links, the footer. 7.3:1 / 6.5:1 */
+  --ink-soft: #674857;
+
+  /* The darkest tone: the fullscreen viewer's backdrop, behind videos, and
+     the soft shadow under the balls in the placeholder artwork. */
+  --ink-deep: #1a0914;
+
+  /* Text and icons on dark or colored fills. Keep it light. */
+  --on-dark: #ffffff;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TEXT-SAFE COLORS — brand colors that can also carry text
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* PRIMARY — raspberry, the wall behind the arches. Used for: the main
+     button, the "challenge" marker in the side sheets, one of the colored
+     roles under your title, the shape next to "Teaching", skills and
+     side-sheet bullets.
+     6.1:1 / 5.5:1 · white on it 6.7:1 */
+  --primary: #b3174e;
+
+  /* PRIMARY DEEP — plum, from the purple arch. Used for: the main button on
+     hover, the shape next to "About", the "Programming" skill, placeholder
+     artworks and 3D shapes.
+     10.2:1 / 9.1:1 */
+  --primary-deep: #5b2660;
+
+  /* SECONDARY — cobalt, from the blue spheres. A cool contrast to all the
+     warm tones. Used for: the form's success message, the "decision"
+     marker in the side sheets, one of the colored roles, skills, artworks
+     and 3D shapes.
+     6.2:1 / 5.5:1 · white on it 6.7:1 */
+  --secondary: #2c5c9c;
+
+  /* The vermilion darkened for text and focus rings: the keyboard focus
+     outline, form field borders while typing, folded section titles on
+     hover, the form's error message, one of the colored roles under your
+     title, the "Teaching" skill. 6.5:1 / 5.8:1 */
+  --accent-text: #a3300c;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     DECOR COLORS — shapes, fills and tints (no small text in these)
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* ACCENT — vermilion, the arches themselves and the color you see most:
+     the logo arch, the favicon, round buttons on hover, side-sheet bullets,
+     link underlines, the focus glow, artwork and 3D shapes.
+     3.6:1 on --bg (fine for shapes and icons, not for small text) */
+  --accent: #e8461f;
+
+  /* Peach, the light that fills the scenes. Selected text, a 3D shape
+     color and the warm tone of the sunlight in the 3D hero. */
+  --accent-soft: #f9cbb3;
+
+  /* POP — gold, from the stairs and the desert arches. The "result" marker
+     in the side sheets, the "Production" skill, artwork and 3D shapes. */
+  --pop: #f4a52a;
+
+  /* Butter, a light tint of pop. The background of the "soft" artwork
+     palette, skills and 3D shapes. */
+  --pop-soft: #fbd98c;
+
+  /* HIGHLIGHT — sky teal, the cool breath of the palette. The shape next to
+     "Contact", the "Communication" skill, bullets, artwork and 3D shapes. */
+  --highlight: #5fa8b8;
+
+  /* Rose, a light tint of primary. The "Divergent thinking" skill and 3D
+     shapes. */
+  --primary-soft: #f3a3b6;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     HERO SKY — the gradient behind the 3D shapes, top to bottom
+     A teal sky fading into warm sand, like arches standing in the desert.
+     --sky-mid and --sky-low stay light enough for --ink (10.9:1 and 14.5:1).
+     ────────────────────────────────────────────────────────────────────────── */
+  --sky-top: #4f98a8;      /* top edge, behind the nav bar */
+  --sky-mid: #a9d4d8;      /* around your name */
+  --sky-low: #f7e8d6;      /* around the roles pill */
+  --sky-horizon: #f2cd9c;  /* bottom edge; also the warm light bouncing up
+                              onto the 3D shapes */
+}

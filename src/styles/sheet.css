@@ -377,7 +377,7 @@
   width: 100%;
   height: 100%;
   color: var(--on-dark);
-  background: linear-gradient(45deg, var(--pop), var(--secondary) 50%, var(--primary));
+  background: linear-gradient(45deg, var(--pop), var(--accent) 35%, var(--primary) 70%, var(--primary-deep));
 }
 
 .sheet-links {
@@ -564,16 +564,16 @@
 .highlight-marker svg {
   display: block;
 }
-.highlight.is-decision .highlight-marker {   /* a violet circle with a fork */
+.highlight.is-decision .highlight-marker {   /* a cobalt circle with a fork */
   background: var(--secondary);
   color: var(--on-dark);
 }
-.highlight.is-challenge .highlight-marker {  /* a dark square with "!" */
+.highlight.is-challenge .highlight-marker {  /* a raspberry square with "!" */
   border-radius: 10px;
-  background: var(--ink);
+  background: var(--primary);
   color: var(--on-dark);
 }
-.highlight.is-result .highlight-marker {     /* an aqua circle with a check */
+.highlight.is-result .highlight-marker {     /* a gold circle with a check */
   background: var(--pop);
   color: var(--ink);
 }

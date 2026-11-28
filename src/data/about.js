@@ -27,14 +27,19 @@ export const about = {
    */
   skills: [
     {
+      shape: 'triangle', color: 'var(--pop)',
+      name: { en: 'Production', es: 'Producción' },
+      line: { en: 'Seeing projects through to the end.', es: 'Llevar los proyectos hasta el final.' },
+    },
+    {
+      shape: 'ring', color: 'var(--secondary)',
+      name: { en: 'Project management', es: 'Gestión de proyectos' },
+      line: { en: 'Careful planning to deliver on time.', es: 'Planear con precisión para entregar a tiempo.' },
+    },
+    {
       shape: 'circle', color: 'var(--accent)',
       name: { en: 'Game design', es: 'Diseño de juegos' },
       line: { en: 'Turning systems into fun.', es: 'Convertir sistemas en diversión.' },
-    },
-    {
-      shape: 'arch', color: 'var(--primary)',
-      name: { en: 'Visual & UI design', es: 'Diseño visual y de interfaces' },
-      line: { en: 'Designing around the people who use it.', es: 'Diseñar pensando en quienes lo usan.' },
     },
     {
       shape: 'square', color: 'var(--primary-deep)',
@@ -42,29 +47,24 @@ export const about = {
       line: { en: 'Making ideas actually work.', es: 'Hacer que las ideas funcionen.' },
     },
     {
-      shape: 'triangle', color: 'var(--pop)',
-      name: { en: 'Production', es: 'Producción' },
-      line: { en: 'Guiding teams all the way to launch.', es: 'Guiar equipos hasta el lanzamiento.' },
+      shape: 'arch', color: 'var(--primary)',
+      name: { en: 'UI/UX design', es: 'Diseño UI/UX' },
+      line: { en: 'Designing around the people who use it.', es: 'Diseñar pensando en quienes lo usan.' },
     },
     {
-      shape: 'pill', color: 'var(--pop-soft)',
-      name: { en: 'Prototyping', es: 'Prototipado' },
-      line: { en: 'Testing ideas fast to make them better.', es: 'Probar ideas rápido para mejorarlas.' },
-    },
-    {
-      shape: 'half', color: 'var(--highlight)',
-      name: { en: 'Teaching', es: 'Enseñanza' },
-      line: { en: 'Making hard things enjoyable.', es: 'Hacer disfrutable lo difícil.' },
-    },
-    {
-      shape: 'ring', color: 'var(--secondary)',
-      name: { en: 'Community', es: 'Comunidad' },
-      line: { en: 'Building spaces people want to be in.', es: 'Crear espacios donde la gente quiera estar.' },
-    },
-    {
-      shape: 'circle', color: 'var(--primary-soft)',
+      shape: 'circle', color: 'var(--highlight)',
       name: { en: 'Communication', es: 'Comunicación' },
       line: { en: 'Helping people and ideas connect.', es: 'Facilitar la conexión entre personas e ideas.' },
+    },
+    {
+      shape: 'pill', color: 'var(--primary-soft)',
+      name: { en: 'Divergent thinking', es: 'Pensamiento divergente' },
+      line: { en: 'Coming up with ideas that break convention.', es: 'Crear ideas que se salen de lo convencional.' },
+    },
+    {
+      shape: 'half', color: 'var(--accent-text)',
+      name: { en: 'Teaching', es: 'Enseñanza' },
+      line: { en: 'Making hard things enjoyable.', es: 'Hacer disfrutable lo difícil.' },
     },
   ],
 

@@ -65,10 +65,10 @@
   color: var(--ink-soft);
 }
 .form-status[data-kind='success'] {
-  color: var(--primary);
+  color: var(--secondary);
 }
 .form-status[data-kind='error'] {
-  color: var(--secondary);
+  color: var(--accent-text);
 }
 
 @media (max-width: 800px) {

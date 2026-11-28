@@ -13,7 +13,8 @@ export default {
   // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    // { src: 'screenshot_1.png', caption: { en: '', es: '' } },
+    { src: 'https://youtu.be/o_8BXjnw_ow', caption: { en: '', es: '' } },
+    { src: 'https://youtu.be/bPQogR7FPmY', caption: { en: '', es: '' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────

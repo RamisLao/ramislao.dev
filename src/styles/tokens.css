@@ -3,10 +3,10 @@
 
    COLORS live in a palette file in src/styles/palettes/.
    To switch palettes, change the file name on the next line
-   (available: ember.css, vivid.css, sunset.css). To make a new one,
+   (available: archway.css, ember.css, vivid.css, sunset.css). To make a new one,
    copy a palette file, rename it and edit its colors.
    ============================================================ */
-@import './palettes/ember.css';
+@import './palettes/archway.css';
 
 /*
    Color tokens every palette defines (by role, so any palette fits):

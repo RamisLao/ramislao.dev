@@ -31,7 +31,7 @@ export const site = {
  */
 export const palettes = {
   primary:   { bg: '--primary',      arch: '--accent',       accent: '--highlight', sphere: '--pop-soft' },
-  secondary: { bg: '--secondary',    arch: '--primary-deep', accent: '--pop',       sphere: '--bg' },
+  secondary: { bg: '--secondary',    arch: '--accent',       accent: '--pop',       sphere: '--accent-soft' },
   accent:    { bg: '--accent',       arch: '--primary',      accent: '--highlight', sphere: '--bg' },
   pop:       { bg: '--pop',          arch: '--secondary',    accent: '--bg',        sphere: '--primary' },
   soft:      { bg: '--pop-soft',     arch: '--primary',      accent: '--highlight', sphere: '--accent' },

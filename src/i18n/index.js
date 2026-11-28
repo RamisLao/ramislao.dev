@@ -21,7 +21,8 @@ function detectLanguage() {
   } catch {
     /* storage unavailable */
   }
-  return (navigator.language || '').toLowerCase().startsWith('es') ? 'es' : 'en';
+  // No saved choice: English by default, whatever the browser's language.
+  return 'en';
 }
 
 export const getLang = () => lang;

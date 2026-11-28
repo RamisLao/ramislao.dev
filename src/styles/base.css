@@ -88,15 +88,15 @@ button {
 .btn:active {
   transform: translateY(0);
 }
-/* White text needs a dark fill: --primary and --secondary are both text-safe */
+/* White text needs a dark fill: --primary and --primary-deep are both text-safe */
 .btn-primary {
   background: var(--primary);
   border-color: var(--primary);
   color: var(--on-dark);
 }
 .btn-primary:hover {
-  background: var(--secondary);
-  border-color: var(--secondary);
+  background: var(--primary-deep);
+  border-color: var(--primary-deep);
 }
 .btn-small {
   padding: 9px 18px;
@@ -123,6 +123,12 @@ button {
   border: 1px solid var(--line);
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+/* Selected text: the palette's soft accent */
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
 }
 
 /* Small colored dot used before labels */

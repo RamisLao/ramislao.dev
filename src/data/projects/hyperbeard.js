@@ -3,7 +3,7 @@ export default {
   id: 'hyperbeard',                            // = this file's name, no spaces
   title: 'Hyper Cheats',
   type: 'webapp',                              // a key from taxonomy.js → projectTypes
-  roles: ['programmer', 'uxDesigner'],           // keys from taxonomy.js → roles
+  roles: ['producer', 'programmer', 'uxDesigner'],           // keys from taxonomy.js → roles
   start: 2023,
   end: 2024,                                   // null = ongoing ("Present") · leave commented for a single year
   palette: 'deep',                             // colors from config.js, used when there's no cover
