@@ -37,12 +37,17 @@ const OUTLINES = {
   cone: () => [poly([[-0.65, -0.65], [0.65, -0.65], [0, 0.65]])],
   hemisphere: () => [poly(arc(0, -0.34, 0.85, 0, Math.PI, 16))],
   arch: () => {
-    // two legs, and the curved top cut into 3 slices (thinner slices make Matter.js
-    // jitter: the arch sinks into the floor and never settles)
-    const parts = [rect(-0.575, -0.375, 0.35, 0.55), rect(0.575, -0.375, 0.35, 0.55)];
-    const outer = arc(0, -0.1, 0.75, 0, Math.PI, 3);
-    const inner = arc(0, -0.1, 0.4, 0, Math.PI, 3);
-    for (let i = 0; i < 3; i++) parts.push(poly([outer[i], outer[i + 1], inner[i + 1], inner[i]]));
+    // Two legs, and the curved top in 3 thick slices. Each slice's outer edge is
+    // curved like the mesh (a flat-sided top made the round arch poke through the
+    // floor and rock from side to side); its inner edge is straight, so every
+    // slice stays convex. Thinner slices make Matter.js jitter, so 3 it is.
+    // Sizes include the mesh's 0.04 bevel, so the outline hugs what you see.
+    const parts = [rect(-0.575, -0.395, 0.43, 0.59), rect(0.575, -0.395, 0.43, 0.59)];
+    for (let i = 0; i < 3; i++) {
+      const from = (Math.PI * i) / 3;
+      const to = (Math.PI * (i + 1)) / 3;
+      parts.push(poly([...arc(0, -0.1, 0.79, from, to, 8), ...arc(0, -0.1, 0.36, to, from, 1)]));
+    }
     return parts;
   },
   stairs: () =>
@@ -295,8 +300,7 @@ export function createHeroScene(container) {
     return mesh;
   }
 
-  function addShape(x, y, popIn) {
-    const name = pick(cfg.shapes);
+  function addShape(x, y, popIn, name = pick(cfg.shapes)) {
     const scale = rand(...cfg.size);
     const { body, offset } = makeBody(name, scale);
     Body.setPosition(body, { x, y });
@@ -589,7 +593,7 @@ export function createHeroScene(container) {
   resize();
 
   // For testing on the local dev server only (never in the published site)
-  if (import.meta.env.DEV) window.__playground = { items, engine, get box() { return box; }, get U() { return U; } };
+  if (import.meta.env.DEV) window.__playground = { items, engine, Body, Sleeping, add: (name, x, y) => addShape(x, y, false, name), get box() { return box; }, get U() { return U; } };
 
   // ---------- Pause when off-screen ----------
   let onScreen = true;

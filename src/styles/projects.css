@@ -44,9 +44,10 @@
   opacity: 1;
 }
 
-/* Phones: a swipeable strip, each card most of the screen wide */
+/* Phones: Featured work and All projects become swipeable strips, each card most of the screen wide */
 @media (max-width: 700px) {
-  .featured-grid {
+  .featured-grid,
+  .section-projects .project-grid { /* more specific: the grid's own rule comes later in this file */
     grid-template-columns: none;
     grid-auto-flow: column;
     grid-auto-columns: 84%;
@@ -58,11 +59,11 @@
     scroll-padding: 0 var(--gutter);
     scrollbar-width: none;
   }
-  .featured-grid .project-card {
+  :is(.featured-grid, .project-grid) .project-card {
     scroll-snap-align: start;
     animation: none;
   }
-  .featured-grid .project-card:hover {
+  :is(.featured-grid, .project-grid) .project-card:hover {
     transform: none;
   }
 }
@@ -84,6 +85,7 @@
 }
 .more-title .section-shape {
   --s: 26px;
+  --t: 0.29; /* a touch thicker than the default ring */
   flex-shrink: 0;
 }
 .more-head p {
