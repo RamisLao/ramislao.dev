@@ -68,7 +68,7 @@ export const brandMark = {
  * lie on the floor like toy blocks. Drag them around (a picked shape squares up
  * to the nearest quarter turn); keys: Q / W turn a quarter left / right, E sets
  * off an explosion at the mouse, R adds a shape, T clears everything.
- * Touch screens: drag any way, double tap to explode, + and clear buttons, no turning.
+ * Touch screens: drag any way, buttons to explode, add and clear, no turning.
  * A light from above casts soft shadows on the floor.
  * Shapes only turn flat to the screen, so the physics stays in two dimensions.
  */
@@ -77,6 +77,7 @@ export const hero = {
   countMobile: 8,      // on screens narrower than 700px
   size: [0.75, 1.25],  // min / max scale of each shape
   gravity: 1,          // 1 = normal; higher = heavier, faster falls
+  physicsScale: 60,    // physics units per world unit (Matter.js is steadiest with pixel-sized bodies)
   bounce: 0.2,         // 0 = no bounce · 1 = very bouncy
   friction: 0.5,       // how much shapes grip each other and the floor
   blast: 22,           // strength of an explosion (E key): the speed it gives shapes at its center

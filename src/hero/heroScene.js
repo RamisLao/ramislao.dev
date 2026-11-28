@@ -118,8 +118,8 @@ function makeDecalTexture(colors) {
  * Drag shapes around (a picked shape turns to the nearest quarter turn).
  * Q / W turn the held or hovered shape a quarter left / right, E sets off an
  * explosion at the mouse, R adds a shape and T clears them all.
- * Touch screens: drag a shape any way (a finger on empty sky scrolls the page),
- * double tap to explode, and + / clear buttons replace R and T (no turning).
+ * Touch screens: drag a shape any way (a finger anywhere else scrolls the page),
+ * and buttons replace E, R and T (no turning).
  * Soft shadows on the floor show how high each shape is.
  * Physics runs in 2D (Matter.js); shapes only turn flat to the screen.
  * The sky itself is a CSS gradient behind the transparent canvas (see hero.css).
@@ -149,11 +149,10 @@ export function createHeroScene(container) {
 
   // ---------- Units ----------
   // Three.js works in world units (z = 0 is where the shapes are); Matter.js likes
-  // pixel-sized numbers. Physics units = world units × U, with U fixed when the
-  // page opens, so shapes keep their size if the window changes.
+  // pixel-sized numbers. Physics units = world units × U.
   let halfW = 1;
   let halfH = 1;
-  let U = 1;
+  const U = cfg.physicsScale; // the same on every screen, so shapes behave the same on a phone
   const view = () => {
     halfH = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
     halfW = halfH * camera.aspect;
@@ -393,8 +392,9 @@ export function createHeroScene(container) {
   });
   canvas.addEventListener('pointerleave', () => (pointer.inside = false));
 
-  // Touch screens: a finger that lands on a shape grabs it, so it can be dragged
-  // any way without the page scrolling; a finger on empty sky scrolls the page as usual.
+  // Touch screens: the hero scrolls the page like any other part of it (touch-action:
+  // manipulation in hero.css). Only a finger that lands on a shape stops the scroll and
+  // grabs the shape, so it can be dragged any way.
   canvas.addEventListener(
     'touchstart',
     (e) => {
@@ -431,6 +431,13 @@ export function createHeroScene(container) {
   }
 
   // ---------- Explosions ----------
+  /** A physics point → client pixels on screen (the opposite of screenToPhysics). */
+  function physicsToScreen(p) {
+    const r = container.getBoundingClientRect();
+    const k = worldPerPx();
+    return { x: r.left + (p.x / U + halfW) / k, y: r.top + (p.y / U + halfH) / k };
+  }
+
   function explodeAt(clientX, clientY) {
     const c = screenToPhysics(clientX, clientY);
     const radius = cfg.blastRadius * worldPerPx() * U;
@@ -453,35 +460,25 @@ export function createHeroScene(container) {
     awake = true;
   }
 
-  /** A quick ring on screen where the explosion went off. */
-  function showBlast(clientX, clientY) {
-    const r = hero.getBoundingClientRect();
-    const ring = document.createElement('span');
-    ring.className = 'hero-blast';
-    ring.style.left = `${clientX - r.left}px`;
-    ring.style.top = `${clientY - r.top}px`;
-    ring.style.setProperty('--size', `${cfg.blastRadius * 2}px`);
-    hero.appendChild(ring);
-    ring.addEventListener('animationend', () => ring.remove());
+  /** An explosion at a random spot just above the floor (the touch-screen button). */
+  function explodeSomewhere() {
+    const p = { x: rand(box.left * 0.8, box.right * 0.8), y: box.floor - rand(0.1, 0.6) * (box.floor - box.top) * 0.25 };
+    const s = physicsToScreen(p);
+    explodeAt(s.x, s.y);
   }
 
-  // On touch screens there's no keyboard: a double tap sets off the explosion
-  let tapStart = null; // { x, y, time } of the finger going down
-  let lastTap = null; // { x, y, time } of the last quick tap
-  canvas.addEventListener('pointerdown', (e) => {
-    if (e.pointerType !== 'mouse') tapStart = { x: e.clientX, y: e.clientY, time: e.timeStamp };
-  });
-  canvas.addEventListener('pointerup', (e) => {
-    if (e.pointerType === 'mouse' || !tapStart) return;
-    const quick = e.timeStamp - tapStart.time < 250 && Math.hypot(e.clientX - tapStart.x, e.clientY - tapStart.y) < 12;
-    tapStart = null;
-    if (!quick) return;
-    const tap = { x: e.clientX, y: e.clientY, time: e.timeStamp };
-    if (lastTap && tap.time - lastTap.time < 320 && Math.hypot(tap.x - lastTap.x, tap.y - lastTap.y) < 40) {
-      explodeAt(tap.x, tap.y);
-      lastTap = null;
-    } else lastTap = tap;
-  });
+  /** Where the explosion went off: a flash and three rings rippling out one after another. */
+  function showBlast(clientX, clientY) {
+    const r = hero.getBoundingClientRect();
+    const blast = document.createElement('span');
+    blast.className = 'hero-blast';
+    blast.style.left = `${clientX - r.left}px`;
+    blast.style.top = `${clientY - r.top}px`;
+    blast.style.setProperty('--size', `${cfg.blastRadius * 2}px`);
+    blast.innerHTML = '<i></i><i></i><i></i>';
+    hero.appendChild(blast);
+    setTimeout(() => blast.remove(), 1200);
+  }
 
   // ---------- Adding and clearing ----------
   const hero = container.parentElement;
@@ -518,7 +515,8 @@ export function createHeroScene(container) {
   }
 
 
-  // Touch screens get two buttons instead of the R and T keys
+  // Touch screens get buttons instead of the E, R and T keys
+  hero.querySelector('[data-hero-explode]')?.addEventListener('click', explodeSomewhere);
   hero.querySelector('[data-hero-add]')?.addEventListener('click', addOne);
   hero.querySelector('[data-hero-reset]')?.addEventListener('click', clearAll);
 
@@ -557,6 +555,7 @@ export function createHeroScene(container) {
 
   // ---------- Resize ----------
   let started = false;
+  let lastSize = { w: 0, h: 0 };
   function resize() {
     const w = container.clientWidth;
     const h = container.clientHeight;
@@ -567,8 +566,13 @@ export function createHeroScene(container) {
     camera.position.z = camera.aspect < 0.8 ? 26 : 18;
     camera.updateProjectionMatrix();
     view();
-    if (!started) U = 1 / worldPerPx(); // physics units start out the same as pixels
-    box = buildWalls();
+    // Rebuild the walls only for a real change: on phones the browser bar hiding and
+    // showing while scrolling nudges the height, and moving the floor would shake the pile
+    const changed = !started || w !== lastSize.w || Math.abs(h - lastSize.h) > 120;
+    if (changed) {
+      lastSize = { w, h };
+      box = buildWalls();
+    }
     if (!started) {
       started = true;
       // Drop the first shapes from random spots and let them settle before showing them
