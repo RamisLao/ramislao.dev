@@ -71,17 +71,26 @@ export function initProjects(root) {
       : `<div class="empty-state"><p>${esc(t('filters.empty'))}</p><button type="button" class="btn btn-small" data-reset>${esc(t('filters.reset'))}</button></div>`;
   }
 
+  /** Re-render after a filter change. On phones the grid is a swipeable strip:
+   *  it goes back to its first card, while the rows of chips keep where you scrolled them. */
+  function applyFilters() {
+    const chipScroll = [...filtersEl.querySelectorAll('.chips')].map((row) => row.scrollLeft);
+    render();
+    filtersEl.querySelectorAll('.chips').forEach((row, i) => (row.scrollLeft = chipScroll[i] || 0));
+    gridEl.scrollLeft = 0;
+  }
+
   filtersEl.addEventListener('click', (e) => {
     const chip = e.target.closest('[data-filter]');
     if (!chip) return;
     filters[chip.dataset.filter] = chip.dataset.value;
-    render();
+    applyFilters();
   });
 
   gridEl.addEventListener('click', (e) => {
     if (e.target.closest('[data-reset]')) {
       filters.type = filters.role = 'all';
-      render();
+      applyFilters();
     }
   });
 

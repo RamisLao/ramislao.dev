@@ -309,15 +309,20 @@
 /* Phones: the strip of page color under the floor holds the controls — the
    scroll arrow on the left, the playground buttons on the right */
 @media (max-width: 700px) {
+  /* A taller strip (the edge's line runs through the middle of its drawing, so
+     the strip is half of this): room for the arrow and its little bob */
+  .hero-wave {
+    height: calc(124px + 24px);
+  }
   .hero-scroll {
     left: var(--gutter);
     translate: none;
-    bottom: 4px;
+    bottom: 14px;
     width: 40px;
     height: 40px;
   }
   .hero-tools {
-    bottom: 4px;
+    bottom: 15px; /* lined up with the arrow */
   }
   .hero-tool {
     width: 38px;
