@@ -10,11 +10,11 @@ export default {
 
   // ── Images & video ─ files go in public/media/projects/<id>/ (a plain filename is enough) ──
   cover: 'main.jpg',                        // card image, 16:9
-  // preview: 'clip.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
+  preview: 'preview.mp4',                      // hover video on featured cards (otherwise the first .mp4 in media)
   // Each item: { src: file or link, caption: short description shown under it }
   media: [
-    { src: 'https://youtu.be/bPQogR7FPmY', caption: { en: '', es: '' } },
-    { src: 'https://youtu.be/o_8BXjnw_ow', caption: { en: '', es: '' } },
+    { src: 'https://youtu.be/bPQogR7FPmY', caption: { en: 'A walkthrough of the Combine app', es: 'Un recorrido por la app Combine' } },
+    { src: 'https://youtu.be/o_8BXjnw_ow', caption: { en: 'The video we made to apply to Y Combinator', es: 'El video que hicimos para postularnos a Y Combinator' } },
   ],
 
   // ── Made with / for (use the ones that apply) ─────────────
@@ -31,8 +31,8 @@ export default {
   // ── Top of the side sheet ───────────────────────────────
   // pitch: ONE sentence, ~25 words: what the project is (your roles already show as chips above it)
   pitch: {
-    en: 'An iPhone app that used computer vision to assess soccer players’ potential.',
-    es: 'Una app de iPhone que evaluaba con visión por computadora el potencial de futbolistas.',
+    en: 'An iPhone app that used computer vision to assess the potential of amateur soccer players by comparing them with the performance of professional athletes.',
+    es: 'Una app para iPhone que evaluaba con visión por computadora el potencial de jugadorxs amateur de futbol, comparándolxs con el desempeño de atletas profesionales.',
   },
   facts: {                                     // small tiles under the media; empty ones are hidden
     team: { en: '5 people', es: '5 personas' },
@@ -45,23 +45,36 @@ export default {
   // ── Texts · new paragraph = \n\n ──
   description: {
     en: 'Combine.ai was a mobile app we developed at Marakana Sports, a San Francisco startup. Its goal was to create technology that made soccer scouting easier and helped discover talent in remote places that often don’t have access to these opportunities. The first step was in-depth, data-driven research to identify which traits make someone more likely to have a successful career as a soccer player.\n\nWith those markers in hand, we built technology to automate the analysis of that potential. We used pose-estimation neural networks to measure jumping power from a video players recorded on their own phones. We also trained a neural network to detect soccer balls and developed an algorithm that counted how many keep-ups each player could do. On top of that, we created mini-games to measure reaction speed.',
-    es: 'Combine.ai era una aplicación móvil que desarrollamos en Marakana Sports, una startup de San Francisco. Su objetivo era crear una tecnología que facilitara el scouting de futbolistas y permitiera descubrir talento en lugares remotos que muchas veces no tienen acceso a estas oportunidades. El primer paso fue una investigación a fondo, basada en ciencia de datos, para identificar qué características hacen más probable que una persona tenga una carrera exitosa en el fútbol.\n\nCon esos marcadores, desarrollamos tecnología para automatizar el análisis de ese potencial. Usamos redes neuronales de estimación de pose para medir la fuerza de salto a partir de un video que lxs jugadorxs grababan con su propio celular. También entrenamos una red neuronal para detectar balones de fútbol y desarrollamos un algoritmo que contaba cuántas dominadas podía hacer cada persona. Además, creamos minijuegos para medir la velocidad de reacción.',
+    es: 'Combine.ai era una aplicación móvil que desarrollamos en Marakana Sports, una startup de San Francisco. Su objetivo era crear una tecnología que facilitara el scouting de futbolistas y permitiera descubrir talento en lugares remotos que muchas veces no tienen acceso a estas oportunidades. El primer paso fue una investigación a fondo, basada en ciencia de datos, para identificar qué características hacen más probable que una persona tenga una carrera exitosa en el futbol.\n\nCon esos marcadores, desarrollamos tecnología para automatizar el análisis de ese potencial. Usamos redes neuronales de estimación de pose para medir la fuerza de salto a partir de un video que lxs jugadorxs grababan con su propio celular. También entrenamos una red neuronal para detectar balones de futbol y desarrollamos un algoritmo que contaba cuántas dominadas podía hacer cada persona. Además, creamos minijuegos para medir la velocidad de reacción.',
   },
   highlights: [
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I had many roles on this project. As a co-founder of Marakana Sports, my job went beyond building the app: I closely followed the industry research, ran tests with real players and handled our investors’ requests. I traveled with the team to cities across the US to pitch to investors and raise the funding we needed. As CTO, I chose the project’s technologies and implemented most of its systems.', es: 'En este proyecto tuve varios roles. Como cofundadorx de Marakana Sports, mi trabajo no se limitó a desarrollar la aplicación: también seguí de cerca la investigación de la industria, hice pruebas con jugadorxs reales y atendí las peticiones de nuestros inversionistas. Viajé con el equipo a varias ciudades de EE. UU. para presentar el proyecto a inversionistas y conseguir los fondos para el desarrollo. Como CTO, elegí las tecnologías del proyecto e implementé la mayoría de los sistemas.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'I built the app from scratch in Swift, and the entire backend in Node.js. All of the machine learning work I did in collaboration with Rafa Arias, our Head of Machine Learning: together we trained the neural networks and optimized them to run in real time on a phone.', es: 'Desarrollé la aplicación desde cero en Swift, y todo el backend en Node.js. Todo lo relacionado con machine learning lo hice en colaboración con Rafa Arias, a cargo de esa área: juntxs entrenamos las redes neuronales y las optimizamos para que funcionaran en tiempo real en un celular.' } },
-    { type: 'decision', title: { en: '', es: '' }, text: { en: 'We worked with a design studio that created the app’s branding; based on it, I designed and built the app’s screens.', es: 'Colaboramos con un estudio de diseño que creó el branding de la aplicación; a partir de él, diseñé y desarrollé sus distintas pantallas.' } },
-    { type: 'challenge', title: { en: '', es: '' }, text: { en: 'Our biggest challenge, which Rafa Arias and I tackled together, was developing the algorithm that turned the neural networks’ output into a count of keep-ups and a measurement of jump height.', es: 'Nuestro mayor reto, que resolví junto con Rafa Arias, fue desarrollar el algoritmo que usaba los resultados de las redes neuronales para contar las dominadas y medir la altura del salto.' } },
+    {
+      type: 'challenge',
+      title: { en: 'Neural networks on a phone', es: 'Redes neuronales en un celular' },
+      text: {
+        en: 'Our biggest challenge, which I solved together with Rafa Arias, was developing neural networks accurate and efficient enough to run on a phone. This was before the AI boom, so we had to collect much of the data and train the models ourselves.',
+        es: 'Nuestro mayor reto, que resolví junto con Rafa Arias, fue desarrollar redes neuronales lo suficientemente precisas y eficientes para correr en un celular. Esto fue antes del auge de la IA, así que tuvimos que recabar muchos de los datos y entrenar los modelos por nuestra cuenta.',
+      },
+    },
+    {
+      type: 'decision',
+      title: { en: 'iPhone first', es: 'Primero, iPhone' },
+      text: {
+        en: 'We decided to build the app for iPhone only, because we knew those phones had the hardware to run the cutting-edge technology we needed. The iPhone X had just come out, and it was our starting point. We knew that if the product worked, phones would eventually catch up enough for us to build versions for Android and other brands.',
+        es: 'Decidimos desarrollar la aplicación solo para iPhone, porque sabíamos que esos teléfonos tenían el hardware necesario para correr la tecnología de punta que necesitábamos. El iPhone X acababa de salir y fue nuestro punto de partida. Sabíamos que, si el producto funcionaba, la tecnología avanzaría lo suficiente como para desarrollar versiones para Android y otras marcas.',
+      },
+    },
   ],
   whatIDid: [
-    { en: '**Prototypes**, iterated on until we reached the best version of the product', es: 'Desarrollé **prototipos** e **iteré** sobre ellos hasta llegar a la mejor versión del producto' },
-    { en: 'Handling our **investors’** requests and needs', es: 'Atendí las peticiones y necesidades de los **inversionistas**' },
-    { en: '**Pitches to investors** to raise funding for the startup', es: 'Presenté el proyecto a inversionistas para **conseguir fondos** para la startup' },
-    { en: 'The **whole app**, from scratch, in **Swift** and **Node.js**', es: 'Desarrollé **la aplicación desde cero** con **Swift** y **Node.js**' },
-    { en: '**Computer-vision neural networks**, trained and optimized together with Rafa Arias to run directly **on a phone**', es: 'Junto con Rafa Arias, entrené y optimicé **redes neuronales de visión por computadora** para que corrieran directamente **en un celular**' },
-    { en: '**Mini-games** to measure players’ **reaction speed**', es: 'Diseñé e implementé **minijuegos** para medir la **velocidad de reacción**' },
+    { en: 'As **CTO**, researched technologies and chose the best fit for our use case', es: 'Como **CTO**, investigué tecnologías y elegí las más adecuadas para nuestro caso de uso' },
+    { en: 'Pitched the project to investors to **raise funding** for the startup', es: 'Presenté el proyecto a inversionistas para **conseguir fondos** para la startup' },
+    { en: 'Designed the **wireframes** for most of the app’s screens', es: 'Diseñé los **wireframes** de la mayoría de las pantallas de la aplicación' },
+    { en: 'Built **the whole app from scratch** in **Swift** and **Node.js**', es: 'Desarrollé **la aplicación desde cero** con **Swift** y **Node.js**' },
+    { en: 'Took part in **testing sessions** with professional soccer teams and iterated on their feedback', es: 'Participé en **sesiones de prueba** con equipos de futbol profesionales e iteré a partir de su retroalimentación' },
+    { en: 'Trained and optimized **computer-vision neural networks** with Rafa Arias to run directly **on a phone**', es: 'Junto con Rafa Arias, entrené y optimicé **redes neuronales de visión por computadora** para que corrieran directamente **en un celular**' },
+    { en: 'Designed and built **mini-games** to measure players’ **reaction speed**', es: 'Diseñé e implementé **minijuegos** para medir la **velocidad de reacción**' },
   ],
-  tech: ['Swift', 'Node.js', 'Google Cloud', 'Neural Networks'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
+  tech: ['Swift', 'Node.js', 'Google Cloud', 'Neural Networks', 'Python'],                                    // chips, e.g. ['Unity', 'C#', 'Blender']
   credits: [
     { name: 'Nadia Haven', role: 'CEO' },
     { name: 'Elliot Stern', role: { en: 'Head of Data Science', es: 'Dirección de ciencia de datos' } },
