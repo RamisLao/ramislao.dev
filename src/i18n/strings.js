@@ -62,6 +62,10 @@ export const strings = {
     'contact.error': 'Something went wrong. Please try again or email me directly.',
     'contact.mailto': 'Your email app should open with the message ready to send.',
     'contact.mailSubject': 'Portfolio message from',
+    'contact.or': 'Or reach me directly:',
+    'contact.copy': 'Copy email address',
+    'contact.copied': 'Copied!',
+    'contact.linkedin': 'LinkedIn profile',
 
     'sheet.close': 'Close',
     'sheet.description': 'About the project',
@@ -162,6 +166,10 @@ export const strings = {
     'contact.error': 'Algo salió mal. Inténtalo de nuevo o escríbeme directamente.',
     'contact.mailto': 'Tu aplicación de correo debería abrirse con el mensaje listo para enviar.',
     'contact.mailSubject': 'Mensaje del portafolio de',
+    'contact.or': 'O escríbeme directamente:',
+    'contact.copy': 'Copiar correo',
+    'contact.copied': '¡Copiado!',
+    'contact.linkedin': 'Perfil de LinkedIn',
 
     'sheet.close': 'Cerrar',
     'sheet.description': 'Sobre el proyecto',

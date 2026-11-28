@@ -6,8 +6,11 @@
 export const site = {
   name: 'Ramis Lao',
 
-  // Where contact-form messages go.
+  // Where contact-form messages go; also shown in the Contact section, ready to copy.
   email: 'ramislao@craftedmayhem.studio',
+
+  // Shown in the Contact section. Leave empty to hide.
+  linkedin: 'https://www.linkedin.com/in/ramis-lao/',
 
   // Optional: a form service URL (e.g. https://formspree.io/f/xxxxxxx).
   // If empty, the contact form opens the visitor's email app instead.
@@ -92,6 +95,7 @@ export const hero = {
     back: -2.4,        // how far behind them the back wall stands
     floorShade: 0.16,  // how much darker the floor is than the sky's horizon color
     decal: 0.13,       // how visible the shapes on the wall are (0 = invisible, 1 = solid)
+    decalSoften: 0.4,  // how much the decal colors are washed toward the page color (0 = full color)
     decalCell: 1.15,   // size of each decal cell on the wall (world units)
   },
 

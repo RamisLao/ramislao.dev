@@ -59,11 +59,16 @@ const OUTLINES = {
 
 /**
  * A tile of faint flat shapes for the back wall, like a decal: a grid with a
- * random shape and palette color in each cell. It repeats across the wall.
+ * shape and a palette color in each cell. It repeats across the wall.
+ * To keep patterns from jumping out, the tile is big (so repeats are far
+ * apart), every color and shape is used about equally, no cell shares its
+ * color with any of the 8 cells around it, and none shares its shape with the
+ * 4 cells beside, above and below it (there are only 7 shapes). This holds
+ * across the tile's edges too, where one copy of the tile meets the next.
  */
-const DECAL_COLS = 6;
+const DECAL_COLS = 12;
 function makeDecalTexture(colors) {
-  const cellPx = 128;
+  const cellPx = 96;
   const c = document.createElement('canvas');
   c.width = c.height = cellPx * DECAL_COLS;
   const ctx = c.getContext('2d');
@@ -98,13 +103,40 @@ function makeDecalTexture(colors) {
     },
   };
   const names = Object.keys(draw);
-  for (let r = 0; r < DECAL_COLS; r++) {
-    for (let col = 0; col < DECAL_COLS; col++) {
+  const n = DECAL_COLS;
+  const colorAt = [];
+  const shapeAt = [];
+  // Neighbors of a cell, wrapping around the edges like the repeating tile does
+  const cell = (r, c) => ((r + n) % n) * n + ((c + n) % n);
+  const around = (r, c) => [-1, 0, 1].flatMap((dr) => [-1, 0, 1].filter((dc) => dr || dc).map((dc) => cell(r + dr, c + dc)));
+  const beside = (r, c) => [cell(r - 1, c), cell(r + 1, c), cell(r, c - 1), cell(r, c + 1)];
+  // Draw from a shuffled "bag" so every option comes up about as often as the others
+  const bag = (options) => {
+    let left = [];
+    return (allowed) => {
+      if (!left.length) left = [...options].sort(() => Math.random() - 0.5);
+      const i = left.findIndex(allowed);
+      if (i >= 0) return left.splice(i, 1)[0];
+      return pick(options.filter(allowed)) ?? pick(options); // the bag's leftovers don't fit: any that does
+    };
+  };
+  const nextColor = bag(colors);
+  const nextShape = bag(names);
+  for (let r = 0; r < n; r++) {
+    for (let col = 0; col < n; col++) {
+      const near = around(r, col);
+      const next = beside(r, col);
+      colorAt[r * n + col] = nextColor((x) => !near.some((i) => colorAt[i] === x));
+      shapeAt[r * n + col] = nextShape((x) => !next.some((i) => shapeAt[i] === x));
+    }
+  }
+  for (let r = 0; r < n; r++) {
+    for (let col = 0; col < n; col++) {
       ctx.save();
       ctx.translate((col + 0.5) * cellPx, (r + 0.5) * cellPx);
-      ctx.fillStyle = pick(colors);
+      ctx.fillStyle = colorAt[r * n + col];
       ctx.beginPath();
-      draw[pick(names)]();
+      draw[shapeAt[r * n + col]]();
       ctx.fill('evenodd');
       ctx.restore();
     }
@@ -180,7 +212,10 @@ export function createHeroScene(container) {
   // A floor that goes a little into the screen, and a back wall behind the shapes
   // with a faint decal of shapes. The floor's front edge lines up with the page
   // edge at the bottom of the hero; the shapes stand on it a bit further back.
-  const decal = makeDecalTexture(cfg.colors.filter((c) => c !== '--bg').map((c) => tokenColor(c)));
+  // Palette colors washed toward the page color, so the decal stays soft
+  const decal = makeDecalTexture(
+    cfg.colors.filter((c) => c !== '--bg').map((c) => mixHex(tokenColor(c), tokenColor('--bg'), cfg.room.decalSoften))
+  );
   const floorMesh = new THREE.Mesh(
     new THREE.PlaneGeometry(1, 1),
     new THREE.MeshStandardMaterial({

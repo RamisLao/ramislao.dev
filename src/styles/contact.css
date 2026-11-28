@@ -5,6 +5,91 @@
   align-items: start;
 }
 
+/* Email and LinkedIn, under the intro */
+.contact-direct {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.contact-direct-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 12px 10px 14px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.contact-icon {
+  display: grid;
+  flex: none;
+  color: var(--accent-text);
+}
+.contact-item a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: break-word; /* long addresses break after the @ (see contact.js) */
+}
+.contact-item a:hover {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+.contact-email {
+  user-select: all; /* one click selects the whole address */
+}
+.contact-copy {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--bg-tint);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-copy:hover,
+.contact-copy.done {
+  background: var(--primary);
+  color: var(--on-dark);
+}
+.contact-copy:focus-visible {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 2px;
+}
+.contact-copied {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  translate: -50% 0;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--on-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.contact-copied:empty {
+  display: none;
+}
+
 .contact-form {
   display: grid;
   gap: 18px;
